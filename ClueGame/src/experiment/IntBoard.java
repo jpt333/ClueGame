@@ -6,7 +6,7 @@ import java.util.Set;
 public class IntBoard {
 
 	public void calcAdjacencies() {
-		//calculates the adjacency list for each grid cell and stores the results as a Map in an inst. var.
+		//calculates the adjacency list for each grid cell and stores the results as a Map in an inst. var
 		
 	}
 	public Set<BoardCell> getAdjList() {
