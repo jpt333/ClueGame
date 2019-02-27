@@ -13,4 +13,14 @@ public class IntBoard {
 		//Returns the adjacency list for one cell
 		return null;
 	}
+	
+	public void calcTargets(startCell, pathLength) {
+		//Calculates targets that are pathLength distance 
+		//from start cell. List of targets stored as a set in inst. var.
+	}
+	
+	public Set<BoardCell> getTargets(){
+		//returns list of targets as a set
+		return null;
+	}
 }
