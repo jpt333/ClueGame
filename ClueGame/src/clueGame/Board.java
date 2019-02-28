@@ -4,6 +4,9 @@ import java.util.Map;
 import java.util.Set;
 
 public class Board {
+	
+	
+	
 	private int numRows;
 	private int numColumns;
 	public static final int MAX_BOARD_SIZE = 50;
