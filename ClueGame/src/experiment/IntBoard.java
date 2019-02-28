@@ -24,7 +24,7 @@ public class IntBoard {
 		grid[x-1][y];
 		grid[x+1][y];
 		grid[x][y-1];
-		grid[x][y+1];
+		grid[x][y+1]
 		
 	}
 	public Set<BoardCell> getAdjList() {
