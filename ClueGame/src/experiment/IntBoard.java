@@ -5,6 +5,9 @@ import java.util.Set;
 
 public class IntBoard {
 
+	public IntBoard() { //Constructor
+		super();
+	}
 	
 	
 	public void calcAdjacencies() {
