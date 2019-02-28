@@ -21,10 +21,10 @@ public class IntBoard {
 	public void calcAdjacencies() {
 		//calculates the adjacency list for each grid cell and stores the results as a Map in an inst. var
 		// Look for neighbors. Make sure it is valid neighbor. Add neighbor
-		grid[x-1][y]
-		grid[x+1][y]
-		grid[x][y-1]
-		grid[x][y+1]
+		grid[x-1][y];
+		grid[x+1][y];
+		grid[x][y-1];
+		grid[x][y+1];
 		
 	}
 	public Set<BoardCell> getAdjList() {
