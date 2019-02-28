@@ -23,12 +23,12 @@ public class IntBoard {
 		// Look for neighbors. Make sure it is valid neighbor. Add neighbor
 		
 		Set<BoardCell> adjTiles;
-		adjTiles.add(grid[x-1][y]);
-		adjTiles.add(grid[x+1][y]);
-		adjTiles.add(grid[x][y-1]);
-		adjTiles.add(grid[x][y+1]);
+		adjTiles.add(grid[row-1]col]);
+		adjTiles.add(grid[row+1][col]);
+		adjTiles.add(grid[row][col-1]);
+		adjTiles.add(grid[row][col+1]);
 		
-		adjMtx.put(grid[x][y], adjTiles);
+		adjMtx.put(grid[row][col], adjTiles);
 	}
 	public Set<BoardCell> getAdjList() {
 		//Returns the adjacency list for one cell
