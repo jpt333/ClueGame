@@ -3,5 +3,5 @@ package experiment;
 
 public class BoardCell {
 	private int row;
-	private int column;
+	private int col;
 }
