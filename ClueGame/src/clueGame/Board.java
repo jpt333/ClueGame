@@ -31,6 +31,12 @@ public class Board {
 		
 	}
 	
-	public void clac
+	public void calcAdjacencies() {
+		
+	}
+	
+	public void calacTargets(BoardCell cell, int pathLenght) {
+		
+	}
 	
 }
