@@ -45,7 +45,7 @@ public class IntBoard {
 	public void calcTargets(BoardCell startCell, int pathLength) {
 		//Calculates targets that are pathLength distance 
 		//from start cell. List of targets stored as a set in inst. var.
-		
+		//
 	}
 	
 	public Set<BoardCell> getTargets(){
