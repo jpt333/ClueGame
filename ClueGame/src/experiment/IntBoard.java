@@ -18,9 +18,13 @@ public class IntBoard {
 		calcAdjacencies();
 	}
 	
-	
 	public void calcAdjacencies() {
 		//calculates the adjacency list for each grid cell and stores the results as a Map in an inst. var
+		// Look for neighbors. Make sure it is valid neighbor. Add neighbor
+		grid[x-1][y]
+		grid[x+1][y]
+		grid[x][y-1]
+		grid[x][y+1]
 		
 	}
 	public Set<BoardCell> getAdjList() {
@@ -35,6 +39,7 @@ public class IntBoard {
 	
 	public Set<BoardCell> getTargets(){
 		//returns list of targets as a set
-		return Set<BoardCell>; //returns type Set<BoardCell>
+		return targets; //returns type Set<BoardCell>
+		//Use interface and HashSet
 	}
 }
