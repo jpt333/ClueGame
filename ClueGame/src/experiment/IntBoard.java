@@ -23,21 +23,29 @@ public class IntBoard {
 		// Look for neighbors. Make sure it is valid neighbor. Add neighbor
 		
 		Set<BoardCell> adjTiles;
-		adjTiles.add(grid[row-1]col]);
+		if(row > 0) {
+			adjTiles.add(grid[row-1]col]);
+		}
+		//if row less than board size do
 		adjTiles.add(grid[row+1][col]);
-		adjTiles.add(grid[row][col-1]);
+		if(col > 0) {
+			adjTiles.add(grid[row][col-1]);
+		}
+		//if col less than board size
 		adjTiles.add(grid[row][col+1]);
 		
 		adjMtx.put(grid[row][col], adjTiles);
 	}
 	public Set<BoardCell> getAdjList() {
 		//Returns the adjacency list for one cell
+		//return adjMtx;
 		return null;
 	}
 	
-	public void calcTargets(int startCell, int pathLength) {
+	public void calcTargets(BoardCell startCell, int pathLength) {
 		//Calculates targets that are pathLength distance 
 		//from start cell. List of targets stored as a set in inst. var.
+		
 	}
 	
 	public Set<BoardCell> getTargets(){
