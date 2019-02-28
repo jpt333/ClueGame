@@ -3,6 +3,8 @@ package experiment;
 
 import java.util.Set;
 
+import clueGame.BoardCell;
+
 public class IntBoard {
 
 	public void calcAdjacencies() {
