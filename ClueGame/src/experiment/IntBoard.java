@@ -28,7 +28,7 @@ public class IntBoard {
 		adjTiles.add(grid[row][col-1]);
 		adjTiles.add(grid[row][col+1]);
 		
-		adjMtx.put(grid[x][y], adjTiles);
+		adjMtx.put(grid[row][col], adjTiles);
 	}
 	public Set<BoardCell> getAdjList() {
 		//Returns the adjacency list for one cell
