@@ -1,12 +1,22 @@
 //Authors: Michael Berg and Jennifer Phan
 package experiment;
 
+import java.util.Map;
 import java.util.Set;
 
 import clueGame.BoardCell;
 
 public class IntBoard {
 
+	private Map<BoardCell, Set<BoardCell>> adjMtx; //stores what is adjacent to a cell
+	private Set<BoardCell> visited; //stores which cells were visited
+	private Set<BoardCell> targets; //stores which cells are targets
+	private BoardCell[][] grid; //Grid
+	
+	public IntBoard() { //Constructor
+		super();
+		calcAdjacencies();
+	}
 	
 	
 	public void calcAdjacencies() {
@@ -18,7 +28,7 @@ public class IntBoard {
 		return null;
 	}
 	
-	public void calcTargets(startCell, pathLength) {
+	public void calcTargets(int startCell, int pathLength) {
 		//Calculates targets that are pathLength distance 
 		//from start cell. List of targets stored as a set in inst. var.
 	}
