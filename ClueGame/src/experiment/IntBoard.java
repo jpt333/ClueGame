@@ -62,11 +62,16 @@ public class IntBoard {
 		//from start cell. List of targets stored as a set in inst. var.
 		for(BoardCell cell : adjTiles) {
 			//if already in visited list, skip the rest
-			visited.add(cell); //adds cell into visited list
+			boolean blnExist = visited.contains(cell);
+			if(blnExist) {
+				break;
+			}else {
+				visited.add(cell); //adds cell into visited list
+			}
 			if(pathLength == 1) {
 				targets.add(cell);
 			}else {
-				calcTargets(cell, pathLength-1);
+				calcTargets(cell, pathLength-1); //recursively calls
 			}
 			visited.remove(cell);
 		}
