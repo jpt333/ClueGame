@@ -18,22 +18,34 @@ public class IntBoard {
 		calcAdjacencies();
 	}
 	
-	public void calcAdjacencies() {
+	public void calcAdjacencies(int row, int col) {
 		//calculates the adjacency list for each grid cell and stores the results as a Map in an inst. var
 		// Look for neighbors. Make sure it is valid neighbor. Add neighbor
 		
 		Set<BoardCell> adjTiles;
-		if(row > 0) {
-			adjTiles.add(grid[row-1]col]);
-		}
 		//if row less than board size do
-		adjTiles.add(grid[row+1][col]);
-		if(col > 0) {
-			adjTiles.add(grid[row][col-1]);
+		//bottom adj tile
+		if(row > 0) {
+			if(grid[row - 1][col].isWalkway()) {
+				adjTiles.add(grid[row-1]col]);
+			}
 		}
-		//if col less than board size
-		adjTiles.add(grid[row][col+1]);
+		//if col less than board size do
+		//left adj tile
+		if(col > 0) {
+			if(grid[row][col -1].isWalkway()) {
+				adjTiles.add(grid[row][col-1]);
+			}
+		}
 		
+		//right adj tile
+		if(grid[row][col+1].isWalkway()) {
+			adjTiles.add(grid[row][col+1]);
+		}
+		//top adj tile
+		if(grid[row+1][col].isWalkway()) {
+			adjTiles.add(grid[row][col+1]);
+		}
 		adjMtx.put(grid[row][col], adjTiles);
 	}
 	public Set<BoardCell> getAdjList() {
