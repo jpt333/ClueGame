@@ -19,7 +19,7 @@ public class IntBoardTests {
 	}
 
 	 @Test
-	 public void testAdjacency0_0() {   //top left location
+	 public void testAdjacency0_0() {   //top left location & checks adj list
 		 BoardCell cell = board.getCell(0,0);
 		 Set<BoardCell> testList = board.getAdjList(cell);
 		 assertTrue(testList.contains(board.getCell(1, 0)));
@@ -28,7 +28,7 @@ public class IntBoardTests {
 	 }
 
 	 @Test
-	 public void testAdjacency0_3() {
+	 public void testAdjacency0_3() { //top right corner & checks targets
 		 BoardCell cell = board.getCell(0,0);
 		 board.calcTargets(cell, 3);
 		 Set<BoardCell> targets = board.getTargets();
