@@ -19,6 +19,11 @@ public class IntBoard {
 	private static final int maxCol = 4;
 	
 	public IntBoard() { //Constructor
+		for(int row = 0; row < maxRows; row ++) {
+			for(int col = 0; col < maxCol; col++){
+				grid[row][col] = new BoardCell(row, col);
+			}
+		}
 		calcAdjacencies();
 	}
 	
@@ -26,7 +31,6 @@ public class IntBoard {
 		//calculates the adjacency list for each grid cell and stores the results as a Map in an inst. var
 		// Look for neighbors. Make sure it is valid neighbor. Add neighbor
 		
-		//Doors still need to be checked
 		
 		for(int row = 0; row < maxRows; row ++) {
 			for(int col = 0; col < maxCol; col++){
@@ -44,16 +48,24 @@ public class IntBoard {
 				}
 				
 				//right adj tile
-				if(col+1 > maxCol) {
+				if(col+1 < maxCol) {
 					adjTiles.add(grid[row][col+1]);
 				}
 				//top adj tile
-				if(row+1 > maxRows) {
-					adjTiles.add(grid[row][col+1]);
+				if(row+1 < maxRows) {
+					adjTiles.add(grid[row+1][col]);
 				}
-				adjMtx.put(grid[row][col], adjTiles);
+				try {
+					adjMtx.put(grid[row][col], adjTiles);
+				}
+				catch(NullPointerException e) {
+					System.out.println("Row " + row);
+					System.out.println("Col " + col + "\n");
+				}
 			}
-		}	
+		}
+		
+		
 	}
 	
 	public void calcTargets(BoardCell startCell, int pathLength) {
