@@ -24,7 +24,7 @@ public class IntBoardTests {
 		 Set<BoardCell> testList = board.getAdjList(cell);
 		 assertTrue(testList.contains(board.getCell(1, 0)));
 		 assertTrue(testList.contains(board.getCell(0, 1)));
-		 assertEquals(2, testList.size());
+		 assertEquals(2, testList.size()); 
 	 }
 
 	 @Test
