@@ -30,7 +30,7 @@ public class IntBoard {
 		//bottom adj tile
 		if(row > 0) {
 			if(grid[row - 1][col].isWalkway()) {
-				adjTiles.add(grid[row-1]col]);
+				adjTiles.add(grid[row-1][col]);
 			}
 		}
 		//if col less than board size do
