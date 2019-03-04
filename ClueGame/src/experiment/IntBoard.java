@@ -72,12 +72,13 @@ public class IntBoard {
 		//Calculates targets that are pathLength distance 
 		//from start cell. List of targets stored as a set in inst. var.
 		
+		visited.add(startCell);
+		
 		Set<BoardCell> adjTiles = adjMtx.get(startCell);
 		for(BoardCell cell : adjTiles) {
 			//if already in visited list, skip the rest
-			boolean blnExist = visited.contains(cell);
-			if(blnExist) {
-				break;
+			if(visited.contains(cell)) {
+				continue;
 			}else {
 				visited.add(cell); //adds cell into visited list
 			}  

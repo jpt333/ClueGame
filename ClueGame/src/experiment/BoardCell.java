@@ -13,6 +13,4 @@ public class BoardCell {
 	public String toString() {
 		return "BoardCell (" + row + "," + col + ")";
 	}
-	
-	
 }

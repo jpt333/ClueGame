@@ -85,13 +85,12 @@ public class IntBoardTests {
 		 BoardCell cell = board.getCell(0,3);
 		 board.calcTargets(cell, 3);
 		 Set<BoardCell> targets = board.getTargets();
-		 System.out.println(targets);
 		 assertTrue(targets.contains(board.getCell(3, 3)));
 		 assertTrue(targets.contains(board.getCell(2, 2)));
 		 assertTrue(targets.contains(board.getCell(1, 1)));
 		 assertTrue(targets.contains(board.getCell(0, 0)));
 		 assertTrue(targets.contains(board.getCell(0, 2)));
-		 assertTrue(targets.contains(board.getCell(3, 1)));
+		 assertTrue(targets.contains(board.getCell(1, 3)));
 		 assertEquals(6, targets.size());
 		}
 	 
