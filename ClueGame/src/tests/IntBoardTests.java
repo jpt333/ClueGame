@@ -74,7 +74,7 @@ public class IntBoardTests {
 	 }
 	 
 	 @Test
-	 public void testAdjacency1_1() {
+	 public void testAdjacency1_1() { //checks second column middle of grid
 		 BoardCell cell = board.getCell(1,1);
 		 board.calcTargets(cell, 1);
 		 Set<BoardCell> targets = board.getTargets();
@@ -86,7 +86,7 @@ public class IntBoardTests {
 	 }
 	 
 	 @Test
-	 public void testAdjacency2_2() {
+	 public void testAdjacency2_2() { // check middle of grid
 		 BoardCell cell = board.getCell(2,2);
 		 board.calcTargets(cell, 1);
 		 Set<BoardCell> targets = board.getTargets();
@@ -97,14 +97,7 @@ public class IntBoardTests {
 		 assertTrue(targets.contains(board.getCell(2,3)));
 	 }
 		 
-	@Test
-	public void testAdjacency0() {
-		BoardCell cell = board.getCell(0,0);
-		Set<BoardCell> testList = board.getAdjList(cell);
-		assertTrue(testList.contains(board.getCell(1, 0)));
-		assertTrue(testList.contains(board.getCell(0, 1)));
-		assertEquals(2, testList.size());
-	}
+
 	
 
 }
