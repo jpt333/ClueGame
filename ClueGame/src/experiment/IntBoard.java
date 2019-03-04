@@ -14,8 +14,8 @@ public class IntBoard {
 	private Set<BoardCell> targets = new HashSet<>(); //stores which cells are targets
 	private BoardCell[][] grid  = new BoardCell[4][4]; //Grid
 	
-	private static final int maxRows = 25;
-	private static final int maxCol = 17;
+	private static final int maxRows = 4;
+	private static final int maxCol = 4;
 	
 	public IntBoard() { //Constructor
 		calcAdjacencies();
@@ -33,31 +33,31 @@ public class IntBoard {
 				//if row less than board size do
 				//bottom adj tile
 				if(row > 0) {
-					//if(grid[row - 1][col].isWalkway()) {
-						adjTiles.add(grid[row-1][col]);
-					//}
+					adjTiles.add(grid[row-1][col]);
 				}
 				//if col less than board size do
 				//left adj tile
 				if(col > 0) {
-					//if(grid[row][col -1].isWalkway()) {
-						adjTiles.add(grid[row][col-1]);
-					//}
+					adjTiles.add(grid[row][col-1]);
 				}
 				
 				//right adj tile
 				if(grid[row][col+1] != null) {
-					if(grid[row][col+1].isWalkway()) {
-						adjTiles.add(grid[row][col+1]);
-					}
+					adjTiles.add(grid[row][col+1]);
 				}
 				//top adj tile
 				if(grid[row+1][col] != null) {
-					//if(grid[row+1][col].isWalkway()) {
-						adjTiles.add(grid[row][col+1]);
-					//}
+					adjTiles.add(grid[row][col+1]);
 				}
-				adjMtx.put(grid[row][col], adjTiles);
+				try {
+					adjMtx.put(grid[row][col], adjTiles);
+				}
+				catch(NullPointerException e) {
+					System.out.println("Grid value [" + grid[row][col] + "]");
+					System.out.println("adjTiles " + adjTiles);
+					System.out.println("Row " + row);
+					System.out.println("Col " + col + "\n");
+				}
 			}
 		}
 		
