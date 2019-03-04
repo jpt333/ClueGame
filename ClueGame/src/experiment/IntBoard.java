@@ -33,25 +33,29 @@ public class IntBoard {
 				//if row less than board size do
 				//bottom adj tile
 				if(row > 0) {
-					if(grid[row - 1][col].isWalkway()) {
+					//if(grid[row - 1][col].isWalkway()) {
 						adjTiles.add(grid[row-1][col]);
-					}
+					//}
 				}
 				//if col less than board size do
 				//left adj tile
 				if(col > 0) {
-					if(grid[row][col -1].isWalkway()) {
+					//if(grid[row][col -1].isWalkway()) {
 						adjTiles.add(grid[row][col-1]);
-					}
-				}ft
+					//}
+				}
 				
 				//right adj tile
-				if(grid[row][col+1].isWalkway()) {
-					adjTiles.add(grid[row][col+1]);
+				if(grid[row][col+1] != null) {
+					if(grid[row][col+1].isWalkway()) {
+						adjTiles.add(grid[row][col+1]);
+					}
 				}
 				//top adj tile
-				if(grid[row+1][col].isWalkway()) {
-					adjTiles.add(grid[row][col+1]);
+				if(grid[row+1][col] != null) {
+					//if(grid[row+1][col].isWalkway()) {
+						adjTiles.add(grid[row][col+1]);
+					//}
 				}
 				adjMtx.put(grid[row][col], adjTiles);
 			}
