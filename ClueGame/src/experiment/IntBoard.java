@@ -14,42 +14,51 @@ public class IntBoard {
 	private Set<BoardCell> targets = new HashSet<>(); //stores which cells are targets
 	private BoardCell[][] grid; //Grid
 	
+	private static final int maxRows = 25;
+	private static final int maxCol = 17;
+	
 	public IntBoard() { //Constructor
 		super();
 		calcAdjacencies();
 	}
 	
-	public void calcAdjacencies(int row, int col) {
+	public void calcAdjacencies() {
 		//calculates the adjacency list for each grid cell and stores the results as a Map in an inst. var
 		// Look for neighbors. Make sure it is valid neighbor. Add neighbor
 		
 		//Doors still need to be checked
 		
-		Set<BoardCell> adjTiles;
-		//if row less than board size do
-		//bottom adj tile
-		if(row > 0) {
-			if(grid[row - 1][col].isWalkway()) {
-				adjTiles.add(grid[row-1]col]);
-			}
-		}
-		//if col less than board size do
-		//left adj tile
-		if(col > 0) {
-			if(grid[row][col -1].isWalkway()) {
-				adjTiles.add(grid[row][col-1]);
+		for(int row = 0; row < maxRows; row ++) {
+			for(int col = 0; col < maxCol; col++){
+				Set<BoardCell> adjTiles;
+				//if row less than board size do
+				//bottom adj tile
+				if(row > 0) {
+					if(grid[row - 1][col].isWalkway()) {
+						adjTiles.add(grid[row-1]col]);
+					}
+				}
+				//if col less than board size do
+				//left adj tile
+				if(col > 0) {
+					if(grid[row][col -1].isWalkway()) {
+						adjTiles.add(grid[row][col-1]);
+					}
+				}
+				
+				//right adj tile
+				if(grid[row][col+1].isWalkway()) {
+					adjTiles.add(grid[row][col+1]);
+				}
+				//top adj tile
+				if(grid[row+1][col].isWalkway()) {
+					adjTiles.add(grid[row][col+1]);
+				}
+				adjMtx.put(grid[row][col], adjTiles);
 			}
 		}
 		
-		//right adj tile
-		if(grid[row][col+1].isWalkway()) {
-			adjTiles.add(grid[row][col+1]);
-		}
-		//top adj tile
-		if(grid[row+1][col].isWalkway()) {
-			adjTiles.add(grid[row][col+1]);
-		}
-		adjMtx.put(grid[row][col], adjTiles);
+		
 	}
 	public Set<BoardCell> getAdjList() {
 		//Returns the adjacency list for one cell
@@ -60,6 +69,8 @@ public class IntBoard {
 	public void calcTargets(BoardCell startCell, int pathLength) {
 		//Calculates targets that are pathLength distance 
 		//from start cell. List of targets stored as a set in inst. var.
+		
+		Set<BoardCell> adjTiles = adjMtx.get(startCell);
 		for(BoardCell cell : adjTiles) {
 			//if already in visited list, skip the rest
 			boolean blnExist = visited.contains(cell);

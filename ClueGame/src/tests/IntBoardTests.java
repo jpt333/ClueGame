@@ -1,9 +1,15 @@
 //Authors: Michael Berg and Jennifer Phan
 package tests;
 
+import static org.junit.Assert.assertEquals;
+
 import java.util.Set;
 
+import org.junit.Before;
+import org.junit.Test;
+
 import clueGame.BoardCell;
+import experiment.IntBoard;
 
 public class IntBoardTests {
 	
