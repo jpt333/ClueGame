@@ -1,6 +1,7 @@
 //Authors: Michael Berg and Jennifer Phan
 package experiment;
 
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
@@ -9,8 +10,8 @@ import clueGame.BoardCell;
 public class IntBoard {
 
 	private Map<BoardCell, Set<BoardCell>> adjMtx; //stores what is adjacent to a cell
-	private Set<BoardCell> visited; //stores which cells were visited
-	private Set<BoardCell> targets; //stores which cells are targets
+	private Set<BoardCell> visited = new HashSet<>(); //stores which cells were visited
+	private Set<BoardCell> targets = new HashSet<>(); //stores which cells are targets
 	private BoardCell[][] grid; //Grid
 	
 	public IntBoard() { //Constructor
@@ -21,6 +22,8 @@ public class IntBoard {
 	public void calcAdjacencies(int row, int col) {
 		//calculates the adjacency list for each grid cell and stores the results as a Map in an inst. var
 		// Look for neighbors. Make sure it is valid neighbor. Add neighbor
+		
+		//Doors still need to be checked
 		
 		Set<BoardCell> adjTiles;
 		//if row less than board size do
@@ -57,7 +60,17 @@ public class IntBoard {
 	public void calcTargets(BoardCell startCell, int pathLength) {
 		//Calculates targets that are pathLength distance 
 		//from start cell. List of targets stored as a set in inst. var.
-		//
+		for(BoardCell cell : adjTiles) {
+			//if already in visited list, skip the rest
+			visited.add(cell); //adds cell into visited list
+			if(pathLength == 1) {
+				targets.add(cell);
+			}else {
+				calcTargets(cell, pathLength-1);
+			}
+			visited.remove(cell);
+		}
+		
 	}
 	
 	public Set<BoardCell> getTargets(){
