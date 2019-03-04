@@ -55,7 +55,40 @@ public class IntBoardTests {
 		 assertTrue(targets.contains(board.getCell(0,3)));
 	 }
 	 
+	 @Test
+	 public void testAdjacency3_0() { //check left edge
+		 BoardCell cell = board.getCell(3,0);
+		 board.calcTargets(cell, 2);
+		 Set<BoardCell> targets = board.getTargets();
+		 assertEquals(3, targets.size());
+		 assertTrue(targets.contains(board.getCell(1,0)));
+		 assertTrue(targets.contains(board.getCell(2,1)));
+		 assertTrue(targets.contains(board.getCell(3,2)));
+	 }
 	 
+	 @Test
+	 public void testAdjacency1_1() {
+		 BoardCell cell = board.getCell(1,1);
+		 board.calcTargets(cell, 1);
+		 Set<BoardCell> targets = board.getTargets();
+		 assertEquals(4, targets.size());
+		 assertTrue(targets.contains(board.getCell(1,0)));
+		 assertTrue(targets.contains(board.getCell(0,1)));
+		 assertTrue(targets.contains(board.getCell(2,1)));
+		 assertTrue(targets.contains(board.getCell(1,2)));
+	 }
+	 
+	 @Test
+	 public void testAdjacency2_2() {
+		 BoardCell cell = board.getCell(2,2);
+		 board.calcTargets(cell, 1);
+		 Set<BoardCell> targets = board.getTargets();
+		 assertEquals(4, targets.size());
+		 assertTrue(targets.contains(board.getCell(1,2)));
+		 assertTrue(targets.contains(board.getCell(2,1)));
+		 assertTrue(targets.contains(board.getCell(3,2)));
+		 assertTrue(targets.contains(board.getCell(2,3)));
+	 }
 		 
 }
 
