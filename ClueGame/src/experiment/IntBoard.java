@@ -94,4 +94,15 @@ public class IntBoard {
 		return targets; //returns type Set<BoardCell>
 		//Use interface and HashSet
 	}
+
+	public Set<BoardCell> getAdjList(BoardCell cell) {
+		//return the sounding tiles in a set
+		return adjMtx.get(cell);
+	}
+
+	public Object getCell(int i, int j) {
+		//returns the cell at cord(i,j)
+		return grid[i][j];
+	}
+	
 }
