@@ -1,18 +1,19 @@
 //Authors: Michael Berg and Jennifer Phan
 package experiment;
 
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-import clueGame.BoardCell;
+import experiment.BoardCell;
 
 public class IntBoard {
 
-	private Map<BoardCell, Set<BoardCell>> adjMtx; //stores what is adjacent to a cell
+	private Map<BoardCell, Set<BoardCell>> adjMtx = new HashMap<BoardCell, Set<BoardCell>>(); //stores what is adjacent to a cell
 	private Set<BoardCell> visited = new HashSet<>(); //stores which cells were visited
 	private Set<BoardCell> targets = new HashSet<>(); //stores which cells are targets
-	private BoardCell[][] grid  = new BoardCell[4][4]; //Grid
+	private BoardCell[][] grid = new BoardCell[4][4]; //Grid
 	
 	private static final int maxRows = 4;
 	private static final int maxCol = 4;
@@ -31,6 +32,7 @@ public class IntBoard {
 			for(int col = 0; col < maxCol; col++){
 				Set<BoardCell> adjTiles = new HashSet<>();
 				//if row less than board size do
+				
 				//bottom adj tile
 				if(row > 0) {
 					adjTiles.add(grid[row-1][col]);
@@ -42,26 +44,16 @@ public class IntBoard {
 				}
 				
 				//right adj tile
-				if(grid[row][col+1] != null) {
+				if(col+1 > maxCol) {
 					adjTiles.add(grid[row][col+1]);
 				}
 				//top adj tile
-				if(grid[row+1][col] != null) {
+				if(row+1 > maxRows) {
 					adjTiles.add(grid[row][col+1]);
 				}
-				try {
-					adjMtx.put(grid[row][col], adjTiles);
-				}
-				catch(NullPointerException e) {
-					System.out.println("Grid value [" + grid[row][col] + "]");
-					System.out.println("adjTiles " + adjTiles);
-					System.out.println("Row " + row);
-					System.out.println("Col " + col + "\n");
-				}
+				adjMtx.put(grid[row][col], adjTiles);
 			}
-		}
-		
-		
+		}	
 	}
 	
 	public void calcTargets(BoardCell startCell, int pathLength) {

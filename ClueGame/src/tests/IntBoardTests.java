@@ -6,7 +6,7 @@ import org.junit.*;
 import java.util.Set;
 
 
-import clueGame.BoardCell;
+import experiment.BoardCell;
 import experiment.IntBoard;
 
 public class IntBoardTests {
