@@ -16,7 +16,7 @@ public class IntBoardTests {
 	@Before
 	public void beforeAll() {
 		board = new IntBoard();
-	}
+	}              
 
 	 @Test
 	 public void testAdjacency0_0() {   //top left location & checks adj list
