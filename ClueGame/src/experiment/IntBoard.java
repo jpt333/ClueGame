@@ -88,8 +88,7 @@ public class IntBoard {
 	}
 	
 	public Set<BoardCell> getTargets(){
-		//returns list of targets as a set
-		return targets; //returns type Set<BoardCell>
+		return targets; 
 		//Use interface and HashSet
 	}
 
