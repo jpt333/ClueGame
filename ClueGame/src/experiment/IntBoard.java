@@ -100,7 +100,7 @@ public class IntBoard {
 		return adjMtx.get(cell);
 	}
 
-	public Object getCell(int i, int j) {
+	public BoardCell getCell(int i, int j) {
 		//returns the cell at cord(i,j)
 		return grid[i][j];
 	}
