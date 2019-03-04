@@ -44,7 +44,7 @@ public class IntBoard {
 					if(grid[row][col -1].isWalkway()) {
 						adjTiles.add(grid[row][col-1]);
 					}
-				}
+				}ft
 				
 				//right adj tile
 				if(grid[row][col+1].isWalkway()) {
@@ -59,11 +59,6 @@ public class IntBoard {
 		}
 		
 		
-	}
-	public Set<BoardCell> getAdjList() {
-		//Returns the adjacency list for one cell
-		//return adjMtx;
-		return null;
 	}
 	
 	public void calcTargets(BoardCell startCell, int pathLength) {
