@@ -12,13 +12,12 @@ public class IntBoard {
 	private Map<BoardCell, Set<BoardCell>> adjMtx; //stores what is adjacent to a cell
 	private Set<BoardCell> visited = new HashSet<>(); //stores which cells were visited
 	private Set<BoardCell> targets = new HashSet<>(); //stores which cells are targets
-	private BoardCell[][] grid; //Grid
+	private BoardCell[][] grid  = new BoardCell[4][4]; //Grid
 	
 	private static final int maxRows = 25;
 	private static final int maxCol = 17;
 	
 	public IntBoard() { //Constructor
-		super();
 		calcAdjacencies();
 	}
 	
@@ -73,7 +72,7 @@ public class IntBoard {
 				break;
 			}else {
 				visited.add(cell); //adds cell into visited list
-			}
+			}  
 			if(pathLength == 1) {
 				targets.add(cell);
 			}else {
