@@ -2,6 +2,6 @@
 package experiment;
 
 public class BoardCell {
-	private int row;
-	private int col;
+	public int row;
+	public int col;
 }
