@@ -1,0 +1,11 @@
+W, Walkway, Other
+X, Closet, Other
+B, Butterfly room, Card
+C, Computer room, Card
+K, Kitchen, Card
+D, Dining room, Card
+A, Bedroom, Card
+P, Parlor, Card
+M, Music room, Card
+G, Game room, Card
+L, Living room, Card

@@ -21,6 +21,18 @@ public class Board {
 	private String boardConfigFile;
 	private String roomConfigFile;
 	
+	public int getNumRows() {
+		return numRows;
+	}
+
+	public int getNumColumns() {
+		return numColumns;
+	}
+
+	public BoardCell[][] getBoard() {
+		return board;
+	}
+
 	public Board getInstance() {
 		return this;
 	}
