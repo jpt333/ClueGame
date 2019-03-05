@@ -1,4 +1,4 @@
-Authors: Michael Berg and Jennifer Phan
+Authors: Michael Berg and Jennifer Phan.
 
 The reason how to determine that there is at least one direction 
 is by using a boolean and going through every door in clue, it gets the
