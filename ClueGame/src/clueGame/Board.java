@@ -1,3 +1,4 @@
+//Authors: Michael Berg and Jennifer Phan
 package clueGame;
 
 import java.util.Map;
