@@ -3,15 +3,14 @@ package tests;
 import static org.junit.Assert.assertEquals;
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.Map;
 
 import org.junit.Before;
 import org.junit.jupiter.api.Test;
 
 import clueGame.Board;
 import clueGame.DoorDirection;
-import experiment.BoardCell;
+import clueGame.BoardCell;
 
 class BoardTests {
 
@@ -19,6 +18,7 @@ class BoardTests {
 	final static int ACTUAL_DOOR_COUNT = 11;
 	final static int ACTUAL_ROW_COUNT = 24;
 	final static int ACTUAL_COL_COUNT = 16;
+	final static int ACTUAL_ROOM_COUNT = 11;
 	
 	@Before
 	public void beforeAll() {
@@ -34,6 +34,19 @@ class BoardTests {
 		
 		assertEquals(ACTUAL_ROW_COUNT, Rows); 
 		assertEquals(ACTUAL_COL_COUNT, Col); 
+	}
+	
+	@Test
+	void legendTest() {
+		//tests to see if the legend loaded in correctly
+		Map<Character, String> legend = board.getLegend();
+		
+		assertEquals("Walkway",legend.get('W'));
+		assertEquals("Living room",legend.get('L'));
+		assertEquals("Dining room",legend.get('D'));
+		
+		assertEquals(ACTUAL_ROOM_COUNT, legend.size()); 
+		
 	}
 	
 	@Test
