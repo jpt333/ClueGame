@@ -15,12 +15,6 @@ import experiment.BoardCell;
 
 class BoardTests {
 
-<<<<<<< HEAD
-	@Before
-	public void beforeAll() {
-		//calls in board
-	}
-=======
 	Board board;
 	final static int ACTUAL_DOOR_COUNT = 11;
 	final static int ACTUAL_ROW_COUNT = 24;
@@ -30,7 +24,6 @@ class BoardTests {
 	public void beforeAll() {
 		board = new Board();
 	}  
->>>>>>> branch 'master' of https://github.com/michaelberg12/ClueGame.git
 	
 	@Test
 	void correctNumColRowTest() {
