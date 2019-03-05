@@ -1,7 +1,7 @@
 //Authors: Michael Berg and Jennifer Phan
 package clueGame;
 
-import java.util.Map;
+import java.util.Map;.
 import java.util.Set;
 
 public class Board {
