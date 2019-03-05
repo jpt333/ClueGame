@@ -1,0 +1,14 @@
+Authors: Michael Berg and Jennifer Phan
+
+The reason how to determine that there is at least one direction 
+is by using a boolean and going through every door in clue, it gets the
+direction of the door and if it exists it would have true for that direction
+having existed. If all directions hold true, then the test will pass.
+
+For our other test, we used a for loop to determine whether the location on the 
+board is a door. If it is it would be counted. Since we already know the door count on
+the board we would check if the door counted through the loop is equal to the number of doors
+on the board.
+
+For the correctInitial, we used assertEquals to check whether the initial on the board corresponds
+to the specific location on the board.
