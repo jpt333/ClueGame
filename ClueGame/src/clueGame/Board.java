@@ -4,11 +4,11 @@ import java.util.Map;
 import java.util.Set;
 
 public class Board {
-	
-	
 	private int numRows;
 	private int numColumns;
 	public static final int MAX_BOARD_SIZE = 50;
+	
+	private static Board theInstance = new Board();
 	
 	private BoardCell board [][];
 	
@@ -20,6 +20,8 @@ public class Board {
 	
 	private String boardConfigFile;
 	private String roomConfigFile;
+	
+	private Board() {}
 	
 	public Map<Character, String> getLegend() {
 		return legend;
@@ -33,12 +35,8 @@ public class Board {
 		return numColumns;
 	}
 
-	public BoardCell[][] getBoard() {
-		return board;
-	}
-
-	public Board getInstance() {
-		return this;
+	public static Board getInstance() {
+		return theInstance;
 	}
 	
 	public void initialize() {
@@ -55,6 +53,15 @@ public class Board {
 	
 	public void calcTargets(BoardCell cell, int pathLength) {
 		
+	}
+
+	public void setConfigFiles(String boardFile, String legendFile) {
+		boardConfigFile = boardFile;
+		roomConfigFile = legendFile;
+	}
+
+	public BoardCell getCellAt(int row, int col) {
+		return board[row][col];
 	}
 	
 }

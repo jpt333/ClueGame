@@ -10,7 +10,6 @@ import org.junit.jupiter.api.Test;
 
 import clueGame.Board;
 import clueGame.DoorDirection;
-import clueGame.BoardCell;
 
 class BoardTests {
 
@@ -22,8 +21,8 @@ class BoardTests {
 	
 	@Before
 	public void beforeAll() {
-		board = new Board();
-
+		board = Board.getInstance();
+		board.setConfigFiles("ClueBoard.csv", "rooms.txt");
 	}  
 	
 	@Test
@@ -65,11 +64,11 @@ class BoardTests {
 			
 		for(int rows = 0; rows < maxRows; rows++) {
 			for(int col = 0; col < maxCol; col++) {
-				if(board.getBoard()[rows][col].isDoorway()) {
-					if(board.getBoard()[rows][col].getDirection() == DoorDirection.UP) {up = true;}
-					if(board.getBoard()[rows][col].getDirection() == DoorDirection.DOWN) {down = true;}
-					if(board.getBoard()[rows][col].getDirection() == DoorDirection.LEFT) {left = true;}
-					if(board.getBoard()[rows][col].getDirection() == DoorDirection.RIGHT) {right = true;}
+				if(board.getCellAt(rows,col).isDoorway()) {
+					if(board.getCellAt(rows,col).getDoorDirection() == DoorDirection.UP) {up = true;}
+					if(board.getCellAt(rows,col).getDoorDirection() == DoorDirection.DOWN) {down = true;}
+					if(board.getCellAt(rows,col).getDoorDirection() == DoorDirection.LEFT) {left = true;}
+					if(board.getCellAt(rows,col).getDoorDirection() == DoorDirection.RIGHT) {right = true;}
 				}
 			}
 		}
@@ -91,7 +90,7 @@ class BoardTests {
 		int doorCount = 0;
 		for(int rows = 0; rows < maxRows; rows++) {
 			for(int col = 0; col < maxCol; col++) {
-				if(board.getBoard()[rows][col].isDoorway()) {
+				if(board.getCellAt(rows,col).isDoorway()) {
 					doorCount++;
 				}
 			}
@@ -101,17 +100,17 @@ class BoardTests {
 
 	@Test
 	public void correctInitial() { //checks whether the cells have the correct initial
-		assertEquals('B', board.getBoard()[0][0]);
-		assertEquals('W', board.getBoard()[4][8]);
-		assertEquals('P', board.getBoard()[0][10]);
-		assertEquals('X', board.getBoard()[1][22]);
-		assertEquals('L', board.getBoard()[6][23]);
-		assertEquals('K', board.getBoard()[11][22]);
-		assertEquals('D', board.getBoard()[16][14]);
-		assertEquals('C', board.getBoard()[8][5]);
-		assertEquals('A', board.getBoard()[13][1]);
-		assertEquals('G', board.getBoard()[3][14]);
-		assertEquals('M', board.getBoard()[12][13]);
+		assertEquals('B', board.getCellAt(0,0));
+		assertEquals('W', board.getCellAt(4,8));
+		assertEquals('P', board.getCellAt(0,10));
+		assertEquals('X', board.getCellAt(1,22));
+		assertEquals('L', board.getCellAt(6,23));
+		assertEquals('K', board.getCellAt(11,22));
+		assertEquals('D', board.getCellAt(16,14));
+		assertEquals('C', board.getCellAt(8,5));
+		assertEquals('A', board.getCellAt(13,1));
+		assertEquals('G', board.getCellAt(3,14));
+		assertEquals('M', board.getCellAt(12,13));
 	}
 	
 	
