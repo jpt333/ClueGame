@@ -37,7 +37,7 @@ public class Board {
 		
 	}
 	
-	public void calacTargets(BoardCell cell, int pathLenght) {
+	public void calacTargets(BoardCell cell, int pathLength) {
 		
 	}
 	
