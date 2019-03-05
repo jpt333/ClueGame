@@ -23,6 +23,7 @@ class BoardTests {
 	@Before
 	public void beforeAll() {
 		board = new Board();
+
 	}  
 	
 	@Test
@@ -87,10 +88,17 @@ class BoardTests {
 
 	@Test
 	public void correctInitial() { //checks whether the cells have the correct initial
-		assertEquals('C', board[0][0]);
-		assertEquals('W', board[5][0]);
-		assertEquals('B', board[1][7]);
-		assertEquals('X', board[8][12]);
+		assertEquals('B', board.getBoard()[0][0]);
+		assertEquals('W', board.getBoard()[4][8]);
+		assertEquals('P', board.getBoard()[0][10]);
+		assertEquals('X', board.getBoard()[1][22]);
+		assertEquals('L', board.getBoard()[6][23]);
+		assertEquals('K', board.getBoard()[11][22]);
+		assertEquals('D', board.getBoard()[16][14]);
+		assertEquals('C', board.getBoard()[8][5]);
+		assertEquals('A', board.getBoard()[13][1]);
+		assertEquals('G', board.getBoard()[3][14]);
+		assertEquals('M', board.getBoard()[12][13]);
 	}
 	
 	
