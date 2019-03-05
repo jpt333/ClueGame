@@ -21,7 +21,7 @@ public class Board {
 	private String boardConfigFile;
 	private String roomConfigFile;
 	
-	public Board getInsrance() {
+	public Board getInstance() {
 		return this;
 	}
 	
