@@ -49,7 +49,7 @@ public class Board {
 		
 	}
 	
-	public void calacTargets(BoardCell cell, int pathLength) {
+	public void calcTargets(BoardCell cell, int pathLength) {
 		
 	}
 	
