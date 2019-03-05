@@ -13,13 +13,17 @@ public class Board {
 	private BoardCell board [][];
 	
 	private Map<Character, String> legend;
-	
+
 	private Map<BoardCell, Set<BoardCell>> adjMatrix;
 	
 	private Set<BoardCell> targets;
 	
 	private String boardConfigFile;
 	private String roomConfigFile;
+	
+	public Map<Character, String> getLegend() {
+		return legend;
+	}
 	
 	public int getNumRows() {
 		return numRows;
