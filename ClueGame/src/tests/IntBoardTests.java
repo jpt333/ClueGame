@@ -120,7 +120,6 @@ public class IntBoardTests {
 		 BoardCell cell = board.getCell(3,0);
 		 board.calcTargets(cell, 2);
 		 Set<BoardCell> targets = board.getTargets();
-		 System.out.println(targets);
 		 assertTrue(targets.contains(board.getCell(1,0)));
 		 assertTrue(targets.contains(board.getCell(2,1)));
 		 assertTrue(targets.contains(board.getCell(3,2)));
