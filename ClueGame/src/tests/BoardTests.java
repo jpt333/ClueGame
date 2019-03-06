@@ -18,23 +18,23 @@ public class BoardTests {
 	private static Board board;
 	
 	final static int ACTUAL_DOOR_COUNT = 11;
-	final static int ACTUAL_ROW_COUNT = 24;
-	final static int ACTUAL_COL_COUNT = 16;
+	final static int ACTUAL_ROW_COUNT = 25;
+	final static int ACTUAL_COL_COUNT = 17;
 	final static int ACTUAL_ROOM_COUNT = 11;
 	
 	@BeforeClass
 	public static void setUp() {
+		// Board is singleton, get the only instance
 		board = Board.getInstance();
-		board.setConfigFiles("data/ClueBoard.csv", "data/rooms.txt");
+		// set the file names to use my config files
+		board.setConfigFiles("ClueBoard.csv", "rooms.txt");	
+		// Initialize will load BOTH config files 
 		board.initialize();
-		
-	}  
+	}
 	
 	@Test
 	public void correctNumColRowTest() {
 		//get how many rows and columns 
-		
-		System.out.print(board);
 		
 		int Rows = board.getNumRows();
 		int Col = board.getNumColumns();
@@ -98,11 +98,15 @@ public class BoardTests {
 		int doorCount = 0;
 		for(int rows = 0; rows < maxRows; rows++) {
 			for(int col = 0; col < maxCol; col++) {
+				System.out.print(rows + " ");
+				System.out.println(col);
 				if(board.getCellAt(rows,col).isDoorway()) {
 					doorCount++;
 				}
 			}
 		}
+		
+		System.out.println(doorCount);
 		assertEquals(ACTUAL_DOOR_COUNT, doorCount); 
 	}
 
