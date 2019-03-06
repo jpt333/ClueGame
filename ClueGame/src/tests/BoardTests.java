@@ -103,17 +103,17 @@ class BoardTests {
 
 	@Test
 	public void correctInitial() { //checks whether the cells have the correct initial
-		assertEquals('B', board.getCellAt(0,0));
-		assertEquals('W', board.getCellAt(4,8));
-		assertEquals('P', board.getCellAt(0,10));
-		assertEquals('X', board.getCellAt(1,22));
-		assertEquals('L', board.getCellAt(6,23));
-		assertEquals('K', board.getCellAt(11,22));
-		assertEquals('D', board.getCellAt(16,14));
-		assertEquals('C', board.getCellAt(8,5));
-		assertEquals('A', board.getCellAt(13,1));
-		assertEquals('G', board.getCellAt(3,14));
-		assertEquals('M', board.getCellAt(12,13));
+		assertEquals('B', board.getCellAt(0,0).getInitial());
+		assertEquals('W', board.getCellAt(4,8).getInitial());
+		assertEquals('P', board.getCellAt(0,10).getInitial());
+		assertEquals('X', board.getCellAt(1,22).getInitial());
+		assertEquals('L', board.getCellAt(6,23).getInitial());
+		assertEquals('K', board.getCellAt(11,22).getInitial());
+		assertEquals('D', board.getCellAt(16,14).getInitial());
+		assertEquals('C', board.getCellAt(8,5).getInitial());
+		assertEquals('A', board.getCellAt(13,1).getInitial());
+		assertEquals('G', board.getCellAt(3,14).getInitial());
+		assertEquals('M', board.getCellAt(12,13).getInitial());
 	}
 	
 	
