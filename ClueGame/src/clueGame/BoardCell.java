@@ -37,7 +37,7 @@ public class BoardCell {
 		return false;
 	}
 
-	public char getInitial() {
+	public String getInitial() {
 		return initital;
 	}
 	

@@ -2,8 +2,6 @@ package tests;
 
 import static org.junit.Assert.assertEquals;
 
-import experiment.BoardCell;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.Map;
@@ -13,6 +11,7 @@ import org.junit.jupiter.api.Test;
 
 import clueGame.Board;
 import clueGame.DoorDirection;
+import clueGame.BoardCell;
 
 class BoardTests {
 
