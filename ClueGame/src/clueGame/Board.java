@@ -120,7 +120,7 @@ public class Board {
 		
 		visited.add(startCell);
 		
-		Set<BoardCell> adjTiles = adjMtx.get(startCell);
+		Set<BoardCell> adjTiles = adjMatrix.get(startCell);
 		for(BoardCell cell : adjTiles) {
 			//if already in visited list, skip the rest
 			if(visited.contains(cell)) {
