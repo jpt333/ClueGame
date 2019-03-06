@@ -31,7 +31,6 @@ public class IntBoard {
 		//calculates the adjacency list for each grid cell and stores the results as a Map in an inst. var
 		// Look for neighbors. Make sure it is valid neighbor. Add neighbor
 		
-		
 		for(int row = 0; row < maxRows; row ++) {
 			for(int col = 0; col < maxCol; col++){
 				Set<BoardCell> adjTiles = new HashSet<>();
@@ -64,8 +63,6 @@ public class IntBoard {
 				}
 			}
 		}
-		
-		
 	}
 	
 	public void calcTargets(BoardCell startCell, int pathLength) {
