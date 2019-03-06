@@ -1,6 +1,9 @@
 package tests;
 
 import static org.junit.Assert.assertEquals;
+
+import experiment.BoardCell;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.Map;
