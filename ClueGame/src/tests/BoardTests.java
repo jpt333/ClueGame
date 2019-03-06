@@ -1,35 +1,41 @@
 package tests;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
-import static org.junit.jupiter.api.Assertions.*;
-
+import java.io.FileNotFoundException;
 import java.util.Map;
 
-import org.junit.Before;
-import org.junit.jupiter.api.Test;
+import org.junit.Assert;
+import org.junit.BeforeClass;
+import org.junit.Test;
 
 import clueGame.Board;
-import clueGame.DoorDirection;
 import clueGame.BoardCell;
+import clueGame.DoorDirection;
 
-class BoardTests {
+public class BoardTests {
 
-	Board board;
+	private static Board board;
+	
 	final static int ACTUAL_DOOR_COUNT = 11;
 	final static int ACTUAL_ROW_COUNT = 24;
 	final static int ACTUAL_COL_COUNT = 16;
 	final static int ACTUAL_ROOM_COUNT = 11;
 	
-	@Before
-	public void beforeAll() {
+	@BeforeClass
+	public static void setUp() {
 		board = Board.getInstance();
-		board.setConfigFiles("ClueBoard.csv", "rooms.txt");
+		board.setConfigFiles("data/ClueBoard.csv", "data/rooms.txt");
+		board.initialize();
+		
 	}  
 	
 	@Test
-	void correctNumColRowTest() {
+	public void correctNumColRowTest() {
 		//get how many rows and columns 
+		
+		System.out.print(board);
+		
 		int Rows = board.getNumRows();
 		int Col = board.getNumColumns();
 		
@@ -38,7 +44,7 @@ class BoardTests {
 	}
 	
 	@Test
-	void legendTest() {
+	public void legendTest() {
 		//tests to see if the legend loaded in correctly
 		Map<Character, String> legend = board.getLegend();
 		
@@ -51,7 +57,7 @@ class BoardTests {
 	}
 	
 	@Test
-	void doorDirectionTest() {
+	public void doorDirectionTest() {
 		//tests that there is a door in every direction
 		
 		//check each direction
@@ -81,7 +87,7 @@ class BoardTests {
 	}
 	
 	@Test
-	void doorNumTest() {
+	public void doorNumTest() {
 		//tests that the correct number of doors are loaded and that non doors are not loaded as doors
 		
 		//how many rows and columns to go through
@@ -101,7 +107,7 @@ class BoardTests {
 	}
 
 	@Test
-	public void correctInitial() { //checks whether the cells have the correct initial
+	 public void correctInitial() { //checks whether the cells have the correct initial
 		assertEquals('B', board.getCellAt(0,0).getInitial());
 		assertEquals('W', board.getCellAt(4,8).getInitial());
 		assertEquals('P', board.getCellAt(0,10).getInitial());

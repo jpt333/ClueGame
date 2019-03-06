@@ -4,14 +4,10 @@ package clueGame;
 import clueGame.DoorDirection;
 
 public class BoardCell {
-	private int row;
-	private int column;
 	private String initital;
 	private DoorDirection direction;
 	
-	public BoardCell(int row, int column, String initital, DoorDirection direction) {
-		this.row = row;
-		this.column = column;
+	public BoardCell(String initital, DoorDirection direction) {
 		this.initital = initital;
 		this.direction = direction;
 	}

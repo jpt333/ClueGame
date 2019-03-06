@@ -18,7 +18,7 @@ public class Board {
 	private int numColumns;
 	public static final int MAX_BOARD_SIZE = 50;
 	
-	private static Board theInstance = new Board();
+	private static Board theInstance;
 	
 	private BoardCell board [][] = new BoardCell[MAX_BOARD_SIZE][MAX_BOARD_SIZE];
 	
@@ -47,36 +47,66 @@ public class Board {
 	}
 
 	public static Board getInstance() {
+		if(theInstance == null) {
+			theInstance = new Board();
+		}
 		return theInstance;
 	}
 	
-	public void initialize() throws FileNotFoundException{
-		List<List<String>> boardArray = new ArrayList<>();
-		Scanner scanner = new Scanner(new File(boardConfigFile)); 
-	    while (scanner.hasNextLine()) {
-    		List<String> values = new ArrayList<String>();
-    		Scanner rowScanner = new Scanner(scanner.nextLine());
-			rowScanner.useDelimiter(",");
-	        while (rowScanner.hasNext()) {
-	            values.add(rowScanner.next());
-	        }
-	        boardArray.add(values);
-	        rowScanner.close();
-	    }	
-	    scanner.close();
+	public void initialize(){
+		
+		int currentRow = 0;
+		int currentCol = 0;
+		try {
+			loadRoomConfig();
+			Scanner scanner = new Scanner(new File(boardConfigFile));
+			while (scanner.hasNextLine()) {
+	    		Scanner rowScanner = new Scanner(scanner.nextLine());
+				rowScanner.useDelimiter(",");
+		        while (rowScanner.hasNext()) {
+		        	//doorways
+		        	if(rowScanner.hasNextInt()) {
+		        		continue;
+		        	}
+		        	if(rowScanner.next().length() == 2) {
+		        		if(rowScanner.next().endsWith("U")) {
+		        			board[currentRow][currentCol] = new BoardCell(rowScanner.next(), DoorDirection.UP);
+		        		}
+		        		if(rowScanner.next().endsWith("D")) {
+		        			board[currentRow][currentCol] = new BoardCell(rowScanner.next(), DoorDirection.DOWN);
+		        		}
+		        		if(rowScanner.next().endsWith("L")) {
+		        			board[currentRow][currentCol] = new BoardCell(rowScanner.next(), DoorDirection.LEFT);
+		        		}
+		        		if(rowScanner.next().endsWith("R")) {
+		        			board[currentRow][currentCol] = new BoardCell(rowScanner.next(), DoorDirection.RIGHT);
+		        		}
+		        	}
+		        	else {
+		        		board[currentRow][currentCol] = new BoardCell(rowScanner.next(), DoorDirection.NONE);
+		        	}
+		            currentCol++;
+		        }
+		        currentRow++;
+		        rowScanner.close();
+		    }	
+			numRows = currentRow;
+			numColumns = currentCol;
+		    scanner.close();
+		} catch (FileNotFoundException e) {
+			System.out.println("File not found");
+		} 
 	}
 	
 	public void loadRoomConfig() throws FileNotFoundException {
-		List<List<String>> boardArray = new ArrayList<>();
 		Scanner scanner = new Scanner(new File(roomConfigFile)); 
 	    while (scanner.hasNextLine()) {
-    		List<String> values = new ArrayList<String>();
     		Scanner rowScanner = new Scanner(scanner.nextLine());
 			rowScanner.useDelimiter(",");
-	        while (rowScanner.hasNext()) {
-	            values.add(rowScanner.next());
+	        if(rowScanner.hasNext()) {
+	        	Character symbol = rowScanner.next().charAt(0);
+	        	legend.put(symbol,  rowScanner.next());
 	        }
-	        boardArray.add(values);
 	        rowScanner.close();
 	    }	
 	    scanner.close();
