@@ -32,7 +32,7 @@ public class BoardCell {
 	}
 	
 	public boolean isDoorway() {
-		if(initital.length() == 2){
+		if(direction !=  DoorDirection.NONE){
 			return true;
 		}
 		return false;

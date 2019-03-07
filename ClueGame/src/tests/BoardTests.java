@@ -2,15 +2,12 @@ package tests;
 
 import static org.junit.Assert.*;
 
-import java.io.FileNotFoundException;
 import java.util.Map;
 
-import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 import clueGame.Board;
-import clueGame.BoardCell;
 import clueGame.DoorDirection;
 
 public class BoardTests {
@@ -47,6 +44,8 @@ public class BoardTests {
 	public void legendTest() {
 		//tests to see if the legend loaded in correctly
 		Map<Character, String> legend = board.getLegend();
+		
+		System.out.println(legend);
 		
 		assertEquals("Walkway",legend.get('W'));
 		assertEquals("Living room",legend.get('L'));
@@ -98,31 +97,27 @@ public class BoardTests {
 		int doorCount = 0;
 		for(int rows = 0; rows < maxRows; rows++) {
 			for(int col = 0; col < maxCol; col++) {
-				System.out.print(rows + " ");
-				System.out.println(col);
 				if(board.getCellAt(rows,col).isDoorway()) {
 					doorCount++;
 				}
 			}
 		}
-		
-		System.out.println(doorCount);
 		assertEquals(ACTUAL_DOOR_COUNT, doorCount); 
 	}
 
 	@Test
 	 public void correctInitial() { //checks whether the cells have the correct initial
 		assertEquals('B', board.getCellAt(0,0).getInitial());
-		assertEquals('W', board.getCellAt(4,8).getInitial());
-		assertEquals('P', board.getCellAt(0,10).getInitial());
-		assertEquals('X', board.getCellAt(1,22).getInitial());
-		assertEquals('L', board.getCellAt(6,23).getInitial());
-		assertEquals('K', board.getCellAt(11,22).getInitial());
-		assertEquals('D', board.getCellAt(16,14).getInitial());
-		assertEquals('C', board.getCellAt(8,5).getInitial());
-		assertEquals('A', board.getCellAt(13,1).getInitial());
-		assertEquals('G', board.getCellAt(3,14).getInitial());
-		assertEquals('M', board.getCellAt(12,13).getInitial());
+		assertEquals('C', board.getCellAt(6,8).getInitial());
+		assertEquals('W', board.getCellAt(0,10).getInitial());
+		assertEquals('X', board.getCellAt(22,1).getInitial());
+		assertEquals('L', board.getCellAt(23,6).getInitial());
+		assertEquals('K', board.getCellAt(22,11).getInitial());
+		assertEquals('D', board.getCellAt(14,16).getInitial());
+		assertEquals('C', board.getCellAt(5,8).getInitial());
+		assertEquals('A', board.getCellAt(1,13).getInitial());
+		assertEquals('G', board.getCellAt(14,3).getInitial());
+		assertEquals('M', board.getCellAt(13,12).getInitial());
 	}
 	
 	

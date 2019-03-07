@@ -84,6 +84,9 @@ public class Board {
 		        		if(item.endsWith("R")) {
 		        			board[currentRow][currentCol] = new BoardCell(item, DoorDirection.RIGHT);
 		        		}
+		        		if(item.endsWith("N")) {
+		        			board[currentRow][currentCol] = new BoardCell(item, DoorDirection.NONE);
+		        		}
 		        	}
 		        	else {
 		        		board[currentRow][currentCol] = new BoardCell(item, DoorDirection.NONE);
@@ -111,7 +114,7 @@ public class Board {
 		Scanner scanner = new Scanner(new File(roomConfigFile)); 
 	    while (scanner.hasNextLine()) {
     		Scanner rowScanner = new Scanner(scanner.nextLine());
-			rowScanner.useDelimiter(",");
+			rowScanner.useDelimiter(", ");
 	        if(rowScanner.hasNext()) {
 	        	Character symbol = rowScanner.next().charAt(0);
 	        	legend.put(symbol,  rowScanner.next());
