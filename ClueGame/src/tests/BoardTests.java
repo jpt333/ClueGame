@@ -1,3 +1,4 @@
+//Authors: Michael Berg and Jennifer Phan
 package tests;
 
 import static org.junit.Assert.*;
