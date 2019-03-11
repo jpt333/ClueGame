@@ -30,7 +30,7 @@ public class BoardCell {
 		if(initital.length() == 2){
 			return true;
 		}
-		return false;
+		return false; 
 	}
 
 	public String getInitial() {

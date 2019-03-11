@@ -25,7 +25,7 @@ public class BoardTests {
 	@BeforeClass
 	public static void setUp() {
 		board = Board.getInstance();
-		board.setConfigFiles("data/ClueBoard.csv", "data/rooms.txt");
+		board.setConfigFiles("ClueBoard.csv", "rooms.txt");
 		board.initialize();
 		
 	}  
