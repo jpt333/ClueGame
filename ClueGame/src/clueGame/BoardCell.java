@@ -4,6 +4,11 @@ package clueGame;
 import clueGame.DoorDirection;
 
 public class BoardCell {
+	@Override
+	public String toString() {
+		return "BoardCell [initital=" + initital + ", direction=" + direction + "]";
+	}
+
 	private String initital;
 	private DoorDirection direction;
 	
@@ -27,14 +32,14 @@ public class BoardCell {
 	}
 	
 	public boolean isDoorway() {
-		if(initital.length() == 2){
+		if(direction !=  DoorDirection.NONE){
 			return true;
 		}
 		return false; 
 	}
 
-	public String getInitial() {
-		return initital;
+	public char getInitial() {
+		return initital.charAt(0);
 	}
 	
 	public DoorDirection getDoorDirection() {

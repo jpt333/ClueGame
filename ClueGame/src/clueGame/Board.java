@@ -61,37 +61,49 @@ public class Board {
 			loadRoomConfig();
 			Scanner scanner = new Scanner(new File(boardConfigFile));
 			while (scanner.hasNextLine()) {
-	    		Scanner rowScanner = new Scanner(scanner.nextLine());
+				String nextLine = scanner.nextLine();
+	    		Scanner rowScanner = new Scanner(nextLine);
 				rowScanner.useDelimiter(",");
 		        while (rowScanner.hasNext()) {
-		        	//doorways
 		        	if(rowScanner.hasNextInt()) {
-		        		continue;
+		        		break;
 		        	}
-		        	if(rowScanner.next().length() == 2) {
-		        		if(rowScanner.next().endsWith("U")) {
-		        			board[currentRow][currentCol] = new BoardCell(rowScanner.next(), DoorDirection.UP);
+		        	String item = rowScanner.next();
+		
+		        	//doorways
+		        	if(item.length() == 2) {
+		        		if(item.endsWith("U")) {
+		        			board[currentRow][currentCol] = new BoardCell(item, DoorDirection.UP);
 		        		}
-		        		if(rowScanner.next().endsWith("D")) {
-		        			board[currentRow][currentCol] = new BoardCell(rowScanner.next(), DoorDirection.DOWN);
+		        		if(item.endsWith("D")) {
+		        			board[currentRow][currentCol] = new BoardCell(item, DoorDirection.DOWN);
 		        		}
-		        		if(rowScanner.next().endsWith("L")) {
-		        			board[currentRow][currentCol] = new BoardCell(rowScanner.next(), DoorDirection.LEFT);
+		        		if(item.endsWith("L")) {
+		        			board[currentRow][currentCol] = new BoardCell(item, DoorDirection.LEFT);
 		        		}
-		        		if(rowScanner.next().endsWith("R")) {
-		        			board[currentRow][currentCol] = new BoardCell(rowScanner.next(), DoorDirection.RIGHT);
+		        		if(item.endsWith("R")) {
+		        			board[currentRow][currentCol] = new BoardCell(item, DoorDirection.RIGHT);
+		        		}
+		        		if(item.endsWith("N")) {
+		        			board[currentRow][currentCol] = new BoardCell(item, DoorDirection.NONE);
 		        		}
 		        	}
 		        	else {
-		        		board[currentRow][currentCol] = new BoardCell(rowScanner.next(), DoorDirection.NONE);
+		        		board[currentRow][currentCol] = new BoardCell(item, DoorDirection.NONE);
 		        	}
 		            currentCol++;
 		        }
 		        currentRow++;
+		        if(currentCol > numColumns) {numColumns = currentCol;}
+		        if(currentCol == 0) {
+		        	currentRow--;
+				}
+		        currentCol = 0;
 		        rowScanner.close();
-		    }	
+		    }
 			numRows = currentRow;
-			numColumns = currentCol;
+			
+			
 		    scanner.close();
 		} catch (FileNotFoundException e) {
 			System.out.println("File not found");
@@ -102,7 +114,7 @@ public class Board {
 		Scanner scanner = new Scanner(new File(roomConfigFile)); 
 	    while (scanner.hasNextLine()) {
     		Scanner rowScanner = new Scanner(scanner.nextLine());
-			rowScanner.useDelimiter(",");
+			rowScanner.useDelimiter(", ");
 	        if(rowScanner.hasNext()) {
 	        	Character symbol = rowScanner.next().charAt(0);
 	        	legend.put(symbol,  rowScanner.next());

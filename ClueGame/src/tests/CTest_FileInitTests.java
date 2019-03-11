@@ -38,6 +38,7 @@ public class CTest_FileInitTests {
 		// Initialize will load BOTH config files 
 		board.initialize();
 	}
+	
 	@Test
 	public void testRooms() {
 		// Get the map of initial => room 
@@ -94,7 +95,10 @@ public class CTest_FileInitTests {
 		for (int row=0; row<board.getNumRows(); row++)
 			for (int col=0; col<board.getNumColumns(); col++) {
 				BoardCell cell = board.getCellAt(row, col);
-				if (cell.isDoorway())
+				System.out.print(col + " ");
+				System.out.print(row + " ");
+				System.out.println(numDoors);
+				if (cell.isDoorway()) 
 					numDoors++;
 			}
 		Assert.assertEquals(16, numDoors);
