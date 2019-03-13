@@ -64,6 +64,33 @@ public class BoardAdjTargetTests {
 	}
 	@Test
 	public void testAdjacencyDoorways() {
-		
+		//Test beside door direction RIGHT
+		Set<BoardCell> testList = board.getAdjList(11,1);
+		assertTrue(testList.contains(board.getCellAt(11,0)));
+		assertTrue(testList.contains(board.getCellAt(11,2)));
+		assertTrue(testList.contains(board.getCellAt(12,1)));
+		assertTrue(testList.contains(board.getCellAt(10,1)));
+		assertEquals(4, testList.size());
+		//Test beside door DOWN
+		testList = board.getAdjList(3,14);
+		assertTrue(testList.contains(board.getCellAt(2,14)));
+		assertTrue(testList.contains(board.getCellAt(4,14)));
+		assertTrue(testList.contains(board.getCellAt(3,13)));
+		assertTrue(testList.contains(board.getCellAt(3,15)));
+		assertEquals(4, testList.size());
+		//Test beside door LEFT
+		testList = board.getAdjList(16,11);
+		assertTrue(testList.contains(board.getCellAt(16,12)));
+		assertTrue(testList.contains(board.getCellAt(16,10)));
+		assertTrue(testList.contains(board.getCellAt(15,11)));
+		assertEquals(3, testList.size());
+		//Test beside door UP
+		testList = board.getAdjList(8,16);
+		assertTrue(testList.contains(board.getCellAt(9,16)));
+		assertTrue(testList.contains(board.getCellAt(7,16)));
+		assertTrue(testList.contains(board.getCellAt(8,15)));
+		assertEquals(3, testList.size());
 	}
+	
+	
 }
