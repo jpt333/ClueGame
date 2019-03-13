@@ -104,6 +104,7 @@ public class BoardTests {
 				}
 			}
 		}
+		System.out.println(doorCount);
 		assertEquals(ACTUAL_DOOR_COUNT, doorCount); 
 	}
 
