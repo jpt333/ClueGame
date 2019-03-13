@@ -92,5 +92,53 @@ public class BoardAdjTargetTests {
 		assertEquals(3, testList.size());
 	}
 	
+	@Test
+	public void testAdjacencyWalkways(){
+		//Test next to room w/ 3 walkway pieces
+		Set<BoardCell> testList = board.getAdjList(5,3);
+		assertTrue(testList.contains(board.getCellAt(4,3)));
+		assertTrue(testList.contains(board.getCellAt(6,3)));
+		assertTrue(testList.contains(board.getCellAt(5,4)));
+		assertEquals(3, testList.size());
+		//Test on left edge with 1 walkway piece
+		testList = board.getAdjList(9,0);
+		assertTrue(testList.contains(board.getCellAt(9,1)));
+		assertEquals(1, testList.size());
+		//Test at top edge with left and right
+		testList = board.getAdjList(0,8);
+		assertTrue(testList.contains(board.getCellAt(0,7)));
+		assertTrue(testList.contains(board.getCellAt(0,9)));
+		assertEquals(2, testList.size());
+		//Test with 4 walkways
+		testList = board.getAdjList(17,4);
+		assertTrue(testList.contains(board.getCellAt(16,4)));
+		assertTrue(testList.contains(board.getCellAt(18,4)));
+		assertTrue(testList.contains(board.getCellAt(17,3)));
+		assertTrue(testList.contains(board.getCellAt(17,5)));
+		assertEquals(4, testList.size());
+
+
+
+
+
+
+		
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 }
