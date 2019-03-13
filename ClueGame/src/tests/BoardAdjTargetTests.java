@@ -49,6 +49,21 @@ public class BoardAdjTargetTests {
 	@Test
 	public void testAdjacencyRoomExit() {
 		//Test Doorway RIGHT
-		Set<BoardCell> testList = board.getAdjList()
+		Set<BoardCell> testList = board.getAdjList(8,2);
+		assertEquals(1, testList.size());
+		//Test Doorway LEFT
+		testList = board.getAdjList(7,6);
+		assertEquals(1, testList.size());
+		//Test Doorway Down
+		testList = board.getAdjList(22,6);
+		assertEquals(1, testList.size());
+		//Test Doorway Up
+		testList = board.getAdjList(12,5);
+		assertEquals(1, testList.size());
+		
+	}
+	@Test
+	public void testAdjacencyDoorways() {
+		
 	}
 }
