@@ -26,8 +26,8 @@ public class BoardTests {
 		board = Board.getInstance();
 		board.setConfigFiles("ClueBoard.csv", "rooms.txt");
 		// set the file names to use my config files
-		board.setConfigFiles("ClueBoard.csv", "rooms.txt");	
-		// Initialize will load BOTH config files 
+//		board.setConfigFiles("ClueBoard.csv", "rooms.txt");	
+//		// Initialize will load BOTH config files 
 		board.initialize();
 	}
 	
@@ -47,7 +47,7 @@ public class BoardTests {
 		//tests to see if the legend loaded in correctly
 		Map<Character, String> legend = board.getLegend();
 		
-		System.out.println(legend);
+		//System.out.println(legend);
 		
 		assertEquals("Walkway",legend.get('W'));
 		assertEquals("Living room",legend.get('L'));
@@ -104,7 +104,6 @@ public class BoardTests {
 				}
 			}
 		}
-		System.out.println(doorCount);
 		assertEquals(ACTUAL_DOOR_COUNT, doorCount); 
 	}
 
