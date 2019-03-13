@@ -117,18 +117,19 @@ public class BoardAdjTargetTests {
 		assertTrue(testList.contains(board.getCellAt(17,5)));
 		assertEquals(4, testList.size());
 
-
-
-
-
-
-		
+	}
+	
+	@Test
+	public void testTargestIntoRoom() {
 		
 	}
 	
+	@Test
+	public void testRoomExit() {
+		
+	}
 	
-	
-	
+	//Still need Tests are various Distances
 	
 	
 	
