@@ -60,6 +60,9 @@ public class Board {
 		board = new BoardCell[MAX_BOARD_SIZE][MAX_BOARD_SIZE];
 		visited = new HashSet<>();
 		targets = new HashSet<>();
+		
+		numRows = 0;
+		numColumns = 0;
 		try {
 			loadRoomConfig();
 			loadBoardConfig();
@@ -77,7 +80,6 @@ public class Board {
 		Scanner scanner = new Scanner(new File(roomConfigFile)); 
 	    while (scanner.hasNextLine()) {
 	    	String[] line = scanner.nextLine().split(", ");
-    		
 	        if(line.length == 3) {
 	        	//make sure rooms are 1 symbol
 	        	if(line[0].length() != 1) {throw new BadConfigFormatException();}
@@ -86,7 +88,7 @@ public class Board {
 	        	if(line[0].length() == 0) {throw new BadConfigFormatException();}
 	        	legend.put(symbol,  line[1]);
 	        	//make sure that it is a card or other
-	        	if(line[2] != "Card" || line[2] != "Other") {throw new BadConfigFormatException();}
+	        	if(!line[2].equals("Card") && !line[2].equals("Other")) {throw new BadConfigFormatException(line[2]);}
 	        	
 	        }else {
 	        	throw new BadConfigFormatException();
@@ -95,51 +97,61 @@ public class Board {
 	    scanner.close();
 	}
 	
-	public void loadBoardConfig() throws FileNotFoundException {
-		int currentRow = 0;
-		int currentCol = 0;
-		
+	public void loadBoardConfig() throws FileNotFoundException, BadConfigFormatException {
 		Scanner scanner = new Scanner(new File(boardConfigFile));
 		while (scanner.hasNextLine()) {
 			String[] line = scanner.nextLine().split(",");
 			//iterates through the line
-			for(int a1 = 0; a1 < line.length; a1++) {
-	        	//doorways
-	        	if(line[a1].length() == 2) {
-	        		if(line[a1].endsWith("U")) {
-	        			board[currentRow][currentCol] = new BoardCell(line[a1], DoorDirection.UP);
-	        		}
-	        		else if(line[a1].endsWith("D")) {
-	        			board[currentRow][currentCol] = new BoardCell(line[a1], DoorDirection.DOWN);
-	        		}
-	        		else if(line[a1].endsWith("L")) {
-	        			board[currentRow][currentCol] = new BoardCell(line[a1], DoorDirection.LEFT);
-	        		}
-	        		else if(line[a1].endsWith("R")) {
-	        			board[currentRow][currentCol] = new BoardCell(line[a1], DoorDirection.RIGHT);
-	        		}
-	        		else if(line[a1].endsWith("N")) {
-	        			board[currentRow][currentCol] = new BoardCell(line[a1], DoorDirection.NONE);
-	        		}
-	        		else {
-	        			throw new BadConfigFormatException();
-	        		}
-	        	}
-	        	else {
-	        		//everything else
-	        		board[currentRow][currentCol] = new BoardCell(line[a1], DoorDirection.NONE);
-	        	}
-	            currentCol++;
-	        }
-	        currentRow++;
-	        if(currentCol > numColumns) {numColumns = currentCol;}
-	        if(currentCol == 0) {
-	        	currentRow--;
+			for(int a1 = 0; a1 < line.length - 1; a1++) {
+	        	//make sure correct length board cant be over 99 in size
+				if(line[a1].length() > 2 || line[a1].length() == 0) {throw new BadConfigFormatException();}
+				//check if number
+				try {
+					 Double.parseDouble(line[a1]); 
+					 //counts the number of numbers
+					 //if all numbers
+					 if(a1 == 0) {
+						 numRows--;
+						 numColumns--;
+					 }else {
+						numColumns--;
+					 }
+					 break;
+				}catch(NumberFormatException e) {
+					//doorways
+		        	if(line[a1].length() == 2) {
+		        		if(line[a1].endsWith("U")) {
+		        			board[numRows][a1] = new BoardCell(line[a1], DoorDirection.UP);
+		        		}
+		        		else if(line[a1].endsWith("D")) {
+		        			board[numRows][a1] = new BoardCell(line[a1], DoorDirection.DOWN);
+		        		}
+		        		else if(line[a1].endsWith("L")) {
+		        			board[numRows][a1] = new BoardCell(line[a1], DoorDirection.LEFT);
+		        		}
+		        		else if(line[a1].endsWith("R")) {
+		        			board[numRows][a1] = new BoardCell(line[a1], DoorDirection.RIGHT);
+		        		}
+		        		else if(line[a1].endsWith("N")) {
+		        			board[numRows][a1] = new BoardCell(line[a1], DoorDirection.NONE);
+		        		}
+		        		else {
+		        			throw new BadConfigFormatException();
+		        		}
+		        	}
+		        	else {
+		        		//everything else
+		        		board[numRows][a1] = new BoardCell(line[a1], DoorDirection.NONE);
+		        	}
+		        	if(a1 == 0) {
+		        		numColumns = line.length;
+					}
+		        }
 			}
-	        currentCol = 0;
-	        rowScanner.close();
+			numRows++;
 	    }
-		numRows = currentRow;
+		System.out.println(numColumns);
+		System.out.println(numRows);
 	    scanner.close();
 	}
 	
