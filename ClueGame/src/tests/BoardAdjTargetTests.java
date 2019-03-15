@@ -124,7 +124,7 @@ public class BoardAdjTargetTests {
 		//test at distance 2
 		board.calcTargets(8, 15, 2);
 		Set<BoardCell> targets = board.getTargets();
-		assertTrue(targets.contains(board.getCellAt(9, 16)));
+		assertTrue(targets.contains(board.getCellAt(9, 16))); 
 		//directly up/down
 		assertTrue(targets.contains(board.getCellAt(6, 15)));
 		assertTrue(targets.contains(board.getCellAt(10, 15)));
