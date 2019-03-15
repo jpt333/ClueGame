@@ -150,9 +150,10 @@ public class Board {
 		        		//everything else
 		        		board[numRows][a1] = new BoardCell(line[a1], DoorDirection.NONE);
 		        	}
-		        	if(a1 == 0) {
+		        	if(a1 == 0 && line.length > numColumns) {
 		        		numColumns = line.length;
 					}
+		        	if(line.length < numColumns) {throw new BadConfigFormatException();}
 		        }
 			}
 			numRows++;
