@@ -121,7 +121,7 @@ public class BoardAdjTargetTests {
 	
 	//Test Edges
 	@Test
-	public void testEdgeAdjTest() {
+	public void testEdgeAdjacencyTest() {
 		//Left
 		Set<BoardCell> testList = board.getAdjList(15, 0);
 		assertTrue(testList.contains(board.getCellAt(15,1)));
