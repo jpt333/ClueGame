@@ -97,7 +97,7 @@ public class CTest_FileInitTests {
 				BoardCell cell = board.getCellAt(row, col);
 				System.out.print(col + " ");
 				System.out.print(row + " ");
-				System.out.println(numDoors);
+				System.out.println(cell);
 				if (cell.isDoorway()) 
 					numDoors++;
 			}

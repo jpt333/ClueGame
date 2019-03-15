@@ -113,11 +113,8 @@ public class Board {
 					 Double.parseDouble(line[a1]); 
 					 //counts the number of numbers
 					 //if all numbers
-					 if(a1 == 0) {
-						 numRows--;
+					 if(a1 != 0) {
 						 numColumns--;
-					 }else {
-						numColumns--;
 					 }
 					 break;
 				}catch(NumberFormatException e) {
@@ -148,7 +145,7 @@ public class Board {
 		        	}
 		        	else {
 		        		//everything else
-		        		board[numRows][a1] = new BoardCell(line[a1], DoorDirection.NONE);
+		        		board[numRows][a1] = new BoardCell(line[a1]);
 		        	}
 		        	if(a1 == 0 && line.length > numColumns) {
 		        		numColumns = line.length;

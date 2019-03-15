@@ -16,8 +16,8 @@ public class BoardTests {
 	private static Board board;
 	
 	final static int ACTUAL_DOOR_COUNT = 11;
-	final static int ACTUAL_ROW_COUNT = 25;
-	final static int ACTUAL_COL_COUNT = 17;
+	final static int ACTUAL_ROW_COUNT = 26;
+	final static int ACTUAL_COL_COUNT = 18;
 	final static int ACTUAL_ROOM_COUNT = 11;
 	
 	@BeforeClass

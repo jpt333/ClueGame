@@ -17,6 +17,10 @@ public class BoardCell {
 		this.direction = direction;
 	}
 
+	public BoardCell(String initital) {
+		this.initital = initital;
+	}
+
 	public boolean isWalkway() {
 		if(initital == "W"){
 			return true;
@@ -32,7 +36,7 @@ public class BoardCell {
 	}
 	
 	public boolean isDoorway() {
-		if(direction !=  DoorDirection.NONE){
+		if(direction ==  null){
 			return true;
 		}
 		return false; 
