@@ -119,12 +119,50 @@ public class BoardAdjTargetTests {
 
 	}
 	
+	//Test Edges
+	@Test
+	public void testEdgeAdjacencyTest() {
+		//Left
+		Set<BoardCell> testList = board.getAdjList(15, 0);
+		assertTrue(testList.contains(board.getCellAt(15,1)));
+		assertTrue(testList.contains(board.getCellAt(14,0)));
+		//Top
+		testList = board.getAdjList(6, 4);
+		assertTrue(testList.contains(board.getCellAt(6,3)));
+		assertTrue(testList.contains(board.getCellAt(6,5)));
+		assertTrue(testList.contains(board.getCellAt(7,4)));
+		//Bottom
+		testList = board.getAdjList(24, 8);
+		assertTrue(testList.contains(board.getCellAt(24,9)));
+		assertTrue(testList.contains(board.getCellAt(24,8)));
+		//Right
+		testList = board.getAdjList(6, 16);
+		assertTrue(testList.contains(board.getCellAt(7,16)));
+		assertTrue(testList.contains(board.getCellAt(5, 16)));
+		assertTrue(testList.contains(board.getCellAt(6,15)));
+	}
+	
+	@Test
+	public void testAdjListBesideRoom() {
+		Set<BoardCell> testList = board.getAdjList(15, 8);
+		assertTrue(testList.contains(board.getCellAt(16,8)));
+		assertTrue(testList.contains(board.getCellAt(16,9)));
+		assertTrue(testList.contains(board.getCellAt(15,9)));
+		
+		testList = board.getAdjList(5, 11);
+		assertTrue(testList.contains(board.getCellAt(4, 11)));
+		assertTrue(testList.contains(board.getCellAt(6, 11)));
+		assertTrue(testList.contains(board.getCellAt(5, 12)));
+	}
+	
+	
+	//TARGET TESTS
 	@Test
 	public void testTargetsIntoRoom() {
 		//test at distance 2
 		board.calcTargets(8, 15, 2);
 		Set<BoardCell> targets = board.getTargets();
-		assertTrue(targets.contains(board.getCellAt(9, 16)));
+		assertTrue(targets.contains(board.getCellAt(9, 16))); 
 		//directly up/down
 		assertTrue(targets.contains(board.getCellAt(6, 15)));
 		assertTrue(targets.contains(board.getCellAt(10, 15)));
@@ -151,6 +189,7 @@ public class BoardAdjTargetTests {
 		assertTrue(targets.contains(board.getCellAt(15, 11)));
 	}
 	
+	//Test at distance of 1 step
 	@Test
 	public void testTargetsOneStep() {
 		board.calcTargets(13, 2, 1);
@@ -167,6 +206,7 @@ public class BoardAdjTargetTests {
 		assertTrue(targets.contains(board.getCellAt(0, 4)));
 	}
 	
+	//Test at distance of 2 steps
 	@Test
 	public void testTargetsTwoSteps() {
 		board.calcTargets(0, 12, 2);
@@ -183,15 +223,17 @@ public class BoardAdjTargetTests {
 		assertTrue(targets.contains(board.getCellAt(17, 14)));
 	}
 	
+	
+	//Test at distance of 7 steps
 	@Test
 	public void testTargetsSevenSteps() {
 		board.calcTargets(24, 14, 7);
-		Set<BoardCell> targets = baord.getTargets();
-		assertTrue(targets.contains(board.getCellAt(17, 14)));
-		assertTrue(targets.contains(board.getCellAt(18, 15)));
-		assertTrue(targets.contains(board.getCellAt(20, 13)));
-		assertTrue(targets.contains(board.getCellAt(20, 11)));
-		assertTrue(targets.contains(board.getCellAt(19, 12)));
+		Set<BoardCell> targets = board.getTargets();
+		assertTrue(targets.contains(board.getCellAt(19, 15)));
+		assertTrue(targets.contains(board.getCellAt(18, 14)));
+		assertTrue(targets.contains(board.getCellAt(20, 12)));
+		assertTrue(targets.contains(board.getCellAt(20, 14)));
+		assertTrue(targets.contains(board.getCellAt(19, 13)));
 	}
 	
 	
