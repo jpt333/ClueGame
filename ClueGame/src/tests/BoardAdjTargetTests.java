@@ -121,12 +121,34 @@ public class BoardAdjTargetTests {
 	
 	@Test
 	public void testTargestIntoRoom() {
+		//test at distance 2
+		board.calcTargets(8, 15, 2);
+		Set<BoardCell> targets = board.getTargets();
+		assertTrue(targets.contains(board.getCellAt(9, 16)));
+		//directly up/down
+		assertTrue(targets.contains(board.getCellAt(6, 15)));
+		assertTrue(targets.contains(board.getCellAt(10, 15)));
+		//one right one down/up
+		assertTrue(targets.contains(board.getCellAt(9, 14)));
+		assertTrue(targets.contains(board.getCellAt(7, 14)));
+		//one up, one right
+		assertTrue(targets.contains(board.getCellAt(7, 16)));
 		
 	}
 	
 	@Test
 	public void testRoomExit() {
+		board.calcTargets(22, 10, 1);
+		Set<BoardCell> targets = board.getTargets();
 		
+		assertEquals(1, targets.size());
+		assertTrue(targets.contains(board.getCellAt(22, 9)));
+		
+		board.calcTargets(16, 12, 2);
+		targets = board.getTargets();
+		assertEquals(2, targets.size());
+		assertTrue(targets.contains(board.getCellAt(16, 10)));
+		assertTrue(targets.contains(board.getCellAt(15, 11)));
 	}
 	
 	//Still need Tests are various Distances
