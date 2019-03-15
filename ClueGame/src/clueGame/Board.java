@@ -188,5 +188,9 @@ public class Board {
 	public BoardCell getCellAt(int row, int col) {
 		return board[row][col];
 	}
+
+	public Set<BoardCell> getAdjList(int i, int j) {
+		return adjMatrix.get(board[i][j]);
+	}
 	
 }
