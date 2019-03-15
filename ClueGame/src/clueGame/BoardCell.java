@@ -19,6 +19,7 @@ public class BoardCell {
 
 	public BoardCell(String initital) {
 		this.initital = initital;
+		this.direction = null;
 	}
 
 	public boolean isWalkway() {
@@ -36,7 +37,7 @@ public class BoardCell {
 	}
 	
 	public boolean isDoorway() {
-		if(direction ==  null){
+		if(direction !=  null){
 			return true;
 		}
 		return false; 

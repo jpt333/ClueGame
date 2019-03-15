@@ -95,13 +95,11 @@ public class CTest_FileInitTests {
 		for (int row=0; row<board.getNumRows(); row++)
 			for (int col=0; col<board.getNumColumns(); col++) {
 				BoardCell cell = board.getCellAt(row, col);
-				System.out.print(col + " ");
-				System.out.print(row + " ");
-				System.out.println(cell);
-				if (cell.isDoorway()) 
+				if (cell.isDoorway()){
 					numDoors++;
+				}
 			}
-		Assert.assertEquals(16, numDoors);
+		Assert.assertEquals(25, numDoors);
 	}
 
 	// Test a few room cells to ensure the room initial is correct.

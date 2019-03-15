@@ -60,8 +60,6 @@ public class Board {
 		visited = new HashSet<>();
 		targets = new HashSet<>();
 		
-		numRows = 0;
-		numColumns = 0;
 		try {
 			loadRoomConfig();
 			loadBoardConfig();
@@ -101,23 +99,31 @@ public class Board {
 		
 		board = new BoardCell[MAX_BOARD_SIZE][MAX_BOARD_SIZE];
 		
+		numRows = 0;
+		numColumns = 0;
+		
 		Scanner scanner = new Scanner(new File(boardConfigFile));
 		while (scanner.hasNextLine()) {
 			String[] line = scanner.nextLine().split(",");
 			//iterates through the line
-			for(int a1 = 0; a1 < line.length - 1; a1++) {
+			for(int a1 = 0; a1 < line.length; a1++) {
 	        	//make sure correct length board cant be over 99 in size
 				if(line[a1].length() > 2 || line[a1].length() == 0) {throw new BadConfigFormatException();}
 				//check if number
 				try {
 					 Double.parseDouble(line[a1]); 
 					 //counts the number of numbers
-					 //if all numbers
+					 
+					 //if it is a  numbers
 					 if(a1 != 0) {
 						 numColumns--;
+					 }else{
+						 numRows--;
 					 }
 					 break;
 				}catch(NumberFormatException e) {
+					//not a number
+					
 					//make sure correct  number of characters
 					if(line[a1].length() > 2 || line[a1].length() == 0){throw new BadConfigFormatException();}
 					//check that the room exists
@@ -147,16 +153,16 @@ public class Board {
 		        		//everything else
 		        		board[numRows][a1] = new BoardCell(line[a1]);
 		        	}
+		        	//always take the max length
 		        	if(a1 == 0 && line.length > numColumns) {
 		        		numColumns = line.length;
 					}
+		        	//check that all rows are the same length
 		        	if(line.length < numColumns) {throw new BadConfigFormatException();}
 		        }
 			}
 			numRows++;
 	    }
-		System.out.println(numColumns);
-		System.out.println(numRows);
 	    scanner.close();
 	}
 	
