@@ -60,74 +60,86 @@ public class Board {
 		board = new BoardCell[MAX_BOARD_SIZE][MAX_BOARD_SIZE];
 		visited = new HashSet<>();
 		targets = new HashSet<>();
-		
-		int currentRow = 0;
-		int currentCol = 0;
 		try {
 			loadRoomConfig();
-			Scanner scanner = new Scanner(new File(boardConfigFile));
-			while (scanner.hasNextLine()) {
-				String nextLine = scanner.nextLine();
-	    		Scanner rowScanner = new Scanner(nextLine);
-				rowScanner.useDelimiter(",");
-		        while (rowScanner.hasNext()) {
-		        	if(rowScanner.hasNextInt()) {
-		        		break;
-		        	}
-		        	String item = rowScanner.next();
-		
-		        	//doorways
-		        	if(item.length() == 2) {
-		        		if(item.endsWith("U")) {
-		        			board[currentRow][currentCol] = new BoardCell(item, DoorDirection.UP);
-		        		}
-		        		if(item.endsWith("D")) {
-		        			board[currentRow][currentCol] = new BoardCell(item, DoorDirection.DOWN);
-		        		}
-		        		if(item.endsWith("L")) {
-		        			board[currentRow][currentCol] = new BoardCell(item, DoorDirection.LEFT);
-		        		}
-		        		if(item.endsWith("R")) {
-		        			board[currentRow][currentCol] = new BoardCell(item, DoorDirection.RIGHT);
-		        		}
-		        		if(item.endsWith("N")) {
-		        			board[currentRow][currentCol] = new BoardCell(item, DoorDirection.NONE);
-		        		}
-		        	}
-		        	else {
-		        		board[currentRow][currentCol] = new BoardCell(item, DoorDirection.NONE);
-		        	}
-		            currentCol++;
-		        }
-		        currentRow++;
-		        if(currentCol > numColumns) {numColumns = currentCol;}
-		        if(currentCol == 0) {
-		        	currentRow--;
-				}
-		        currentCol = 0;
-		        rowScanner.close();
-		    }
-			numRows = currentRow;
-			
-			
-		    scanner.close();
+			loadBoardConfig();
 		} catch (FileNotFoundException e) {
 			System.out.println("File not found");
-		} 
+			e.printStackTrace();
+		} catch (BadConfigFormatException e) {
+			System.out.println(e.getMessage());
+			e.printStackTrace();
+		}
 		calcAdjacencies();
 	}
 	
-	public void loadRoomConfig() throws FileNotFoundException {
+	public void loadRoomConfig() throws FileNotFoundException, BadConfigFormatException {
 		Scanner scanner = new Scanner(new File(roomConfigFile)); 
 	    while (scanner.hasNextLine()) {
-    		Scanner rowScanner = new Scanner(scanner.nextLine());
-			rowScanner.useDelimiter(", ");
-	        if(rowScanner.hasNext()) {
-	        	Character symbol = rowScanner.next().charAt(0);
-	        	legend.put(symbol,  rowScanner.next());
+	    	String[] line = scanner.nextLine().split(", ");
+    		
+	        if(line.length == 3) {
+	        	//make sure rooms are 1 symbol
+	        	if(line[0].length() != 1) {throw new BadConfigFormatException();}
+	        	Character symbol = line[0].charAt(0);
+	        	//make sure there is a string for the room name
+	        	if(line[0].length() == 0) {throw new BadConfigFormatException();}
+	        	legend.put(symbol,  line[1]);
+	        	//make sure that it is a card or other
+	        	if(line[2] != "Card" || line[2] != "Other") {throw new BadConfigFormatException();}
+	        	
+	        }else {
+	        	throw new BadConfigFormatException();
 	        }
-	        rowScanner.close();
 	    }	
+	    scanner.close();
+	}
+	
+	public void loadBoardConfig() throws FileNotFoundException {
+		int currentRow = 0;
+		int currentCol = 0;
+		
+		Scanner scanner = new Scanner(new File(boardConfigFile));
+		while (scanner.hasNextLine()) {
+			String[] line = scanner.nextLine().split(",");
+			//iterates through the line
+			for(int a1 = 0; a1 < line.length; a1++) {
+	        	//doorways
+	        	if(line[a1].length() == 2) {
+	        		if(line[a1].endsWith("U")) {
+	        			board[currentRow][currentCol] = new BoardCell(line[a1], DoorDirection.UP);
+	        		}
+	        		else if(line[a1].endsWith("D")) {
+	        			board[currentRow][currentCol] = new BoardCell(line[a1], DoorDirection.DOWN);
+	        		}
+	        		else if(line[a1].endsWith("L")) {
+	        			board[currentRow][currentCol] = new BoardCell(line[a1], DoorDirection.LEFT);
+	        		}
+	        		else if(line[a1].endsWith("R")) {
+	        			board[currentRow][currentCol] = new BoardCell(line[a1], DoorDirection.RIGHT);
+	        		}
+	        		else if(line[a1].endsWith("N")) {
+	        			board[currentRow][currentCol] = new BoardCell(line[a1], DoorDirection.NONE);
+	        		}
+	        		else {
+	        			throw new BadConfigFormatException();
+	        		}
+	        	}
+	        	else {
+	        		//everything else
+	        		board[currentRow][currentCol] = new BoardCell(line[a1], DoorDirection.NONE);
+	        	}
+	            currentCol++;
+	        }
+	        currentRow++;
+	        if(currentCol > numColumns) {numColumns = currentCol;}
+	        if(currentCol == 0) {
+	        	currentRow--;
+			}
+	        currentCol = 0;
+	        rowScanner.close();
+	    }
+		numRows = currentRow;
 	    scanner.close();
 	}
 	
