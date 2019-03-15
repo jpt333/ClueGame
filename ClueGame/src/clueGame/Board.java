@@ -56,8 +56,7 @@ public class Board {
 	public void initialize(){
 		//initialize variables
 		adjMatrix = new HashMap<BoardCell, Set<BoardCell>>();
-		legend= new HashMap<Character, String>();
-		board = new BoardCell[MAX_BOARD_SIZE][MAX_BOARD_SIZE];
+		
 		visited = new HashSet<>();
 		targets = new HashSet<>();
 		
@@ -77,6 +76,7 @@ public class Board {
 	}
 	
 	public void loadRoomConfig() throws FileNotFoundException, BadConfigFormatException {
+		legend= new HashMap<Character, String>();
 		Scanner scanner = new Scanner(new File(roomConfigFile)); 
 	    while (scanner.hasNextLine()) {
 	    	String[] line = scanner.nextLine().split(", ");
@@ -85,7 +85,7 @@ public class Board {
 	        	if(line[0].length() != 1) {throw new BadConfigFormatException();}
 	        	Character symbol = line[0].charAt(0);
 	        	//make sure there is a string for the room name
-	        	if(line[0].length() == 0) {throw new BadConfigFormatException();}
+	        	if(line[1].length() == 0) {throw new BadConfigFormatException();}
 	        	legend.put(symbol,  line[1]);
 	        	//make sure that it is a card or other
 	        	if(!line[2].equals("Card") && !line[2].equals("Other")) {throw new BadConfigFormatException(line[2]);}
@@ -98,6 +98,9 @@ public class Board {
 	}
 	
 	public void loadBoardConfig() throws FileNotFoundException, BadConfigFormatException {
+		
+		board = new BoardCell[MAX_BOARD_SIZE][MAX_BOARD_SIZE];
+		
 		Scanner scanner = new Scanner(new File(boardConfigFile));
 		while (scanner.hasNextLine()) {
 			String[] line = scanner.nextLine().split(",");
@@ -118,6 +121,10 @@ public class Board {
 					 }
 					 break;
 				}catch(NumberFormatException e) {
+					//make sure correct  number of characters
+					if(line[a1].length() > 2 || line[a1].length() == 0){throw new BadConfigFormatException();}
+					//check that the room exists
+					if(!legend.containsKey(line[a1].charAt(0))){throw new BadConfigFormatException();}
 					//doorways
 		        	if(line[a1].length() == 2) {
 		        		if(line[a1].endsWith("U")) {
