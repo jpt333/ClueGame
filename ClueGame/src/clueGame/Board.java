@@ -20,14 +20,14 @@ public class Board {
 	
 	private static Board theInstance;
 	
-	private BoardCell board [][] = new BoardCell[MAX_BOARD_SIZE][MAX_BOARD_SIZE];
+	private BoardCell board [][];
 	
-	private Map<Character, String> legend= new HashMap<Character, String>(); //stores what is in legend
+	private Map<Character, String> legend; //stores what is in legend
 
-	private Map<BoardCell, Set<BoardCell>> adjMatrix = new HashMap<BoardCell, Set<BoardCell>>(); //stores what is adjacent to a cell
+	private Map<BoardCell, Set<BoardCell>> adjMatrix; //stores what is adjacent to a cell
 	
-	private Set<BoardCell> visited = new HashSet<>(); //stores which cells were visited
-	private Set<BoardCell> targets = new HashSet<>(); //stores which cells are targets
+	private Set<BoardCell> visited; //stores which cells were visited
+	private Set<BoardCell> targets; //stores which cells are targets
 	
 	private String boardConfigFile;
 	private String roomConfigFile;
@@ -54,6 +54,12 @@ public class Board {
 	}
 	
 	public void initialize(){
+		//initialize variables
+		adjMatrix = new HashMap<BoardCell, Set<BoardCell>>();
+		legend= new HashMap<Character, String>();
+		board = new BoardCell[MAX_BOARD_SIZE][MAX_BOARD_SIZE];
+		visited = new HashSet<>();
+		targets = new HashSet<>();
 		
 		int currentRow = 0;
 		int currentCol = 0;
@@ -108,6 +114,7 @@ public class Board {
 		} catch (FileNotFoundException e) {
 			System.out.println("File not found");
 		} 
+		calcAdjacencies();
 	}
 	
 	public void loadRoomConfig() throws FileNotFoundException {
