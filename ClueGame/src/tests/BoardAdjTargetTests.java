@@ -119,6 +119,33 @@ public class BoardAdjTargetTests {
 
 	}
 	
+	//Test Edges
+	@Test
+	public void testEdgeAdjTest() {
+		//Left
+		Set<BoardCell> testList = board.getAdjList(15, 0);
+		assertTrue(testList.contains(board.getCellAt(15,1)));
+		assertTrue(testList.contains(board.getCellAt(14,0)));
+		//Top
+		testList = board.getAdjList(6, 4);
+		assertTrue(testList.contains(board.getCellAt(6,3)));
+		assertTrue(testList.contains(board.getCellAt(6,5)));
+		assertTrue(testList.contains(board.getCellAt(7,4)));
+		//Bottom
+		testList = board.getAdjList(24, 8);
+		assertTrue(testList.contains(board.getCellAt(24,9)));
+		assertTrue(testList.contains(board.getCellAt(24,8)));
+		//Right
+		testList = board.getAdjList(6, 16);
+		assertTrue(testList.contains(board.getCellAt(7,16)));
+		assertTrue(testList.contains(board.getCellAt(5, 16)));
+		assertTrue(testList.contains(board.getCellAt(6,15)));
+	}
+	
+	
+	
+	
+	//TARGET TESTS
 	@Test
 	public void testTargetsIntoRoom() {
 		//test at distance 2
