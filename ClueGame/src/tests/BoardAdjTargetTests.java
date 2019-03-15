@@ -151,7 +151,7 @@ public class BoardAdjTargetTests {
 		assertTrue(targets.contains(board.getCellAt(15, 11)));
 	}
 	
-	//Still need Tests are various Distances
+	//Still need Tests are various Distances 
 	
 	
 	
