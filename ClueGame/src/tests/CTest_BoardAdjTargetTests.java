@@ -96,9 +96,9 @@ public class CTest_BoardAdjTargetTests {
 			assertEquals(3, testList.size());
 			// Test beside a door direction DOWN
 			testList = board.getAdjList(6, 15);
-			assertTrue(testList.contains(board.getCellAt(5, 15)));
+			assertTrue(testList.contains(board.getCellAt(5, 15))); 
 			assertTrue(testList.contains(board.getCellAt(6, 14)));
-			assertTrue(testList.contains(board.getCellAt(6, 16)));
+			assertTrue(testList.contains(board.getCellAt(6, 16))); 
 			assertEquals(3, testList.size());
 			// Test beside a door direction LEFT
 			testList = board.getAdjList(15, 17);
@@ -244,7 +244,7 @@ public class CTest_BoardAdjTargetTests {
 			assertTrue(targets.contains(board.getCellAt(14, 4)));	
 			assertTrue(targets.contains(board.getCellAt(15, 1)));	
 			assertTrue(targets.contains(board.getCellAt(14, 2)));	
-			assertTrue(targets.contains(board.getCellAt(13, 4)));	
+			assertTrue(targets.contains(board.getCellAt(13, 4))); //missing problem with visited
 		}	
 		
 		// Test getting into a room
@@ -256,11 +256,6 @@ public class CTest_BoardAdjTargetTests {
 			// One room is exactly 2 away
 			board.calcTargets(17, 16, 2);
 			Set<BoardCell> targets= board.getTargets();
-			
-			
-			System.out.println(targets);
-			
-			
 			assertEquals(7, targets.size());
 			// directly left (can't go right 2 steps)
 			assertTrue(targets.contains(board.getCellAt(17, 14)));
@@ -318,6 +313,10 @@ public class CTest_BoardAdjTargetTests {
 			// Take two steps
 			board.calcTargets(4, 20, 2);
 			targets= board.getTargets();
+			
+			
+			System.out.println(targets + " : " + board.getCellAt(4, 20));
+			
 			assertEquals(3, targets.size());
 			assertTrue(targets.contains(board.getCellAt(3, 19)));
 			assertTrue(targets.contains(board.getCellAt(5, 19)));

@@ -146,7 +146,6 @@ public class BoardAdjTargetTests {
 	public void testAdjListBesideRoom() {
 		Set<BoardCell> testList = board.getAdjList(15, 8);
 		assertTrue(testList.contains(board.getCellAt(16,8)));
-		assertTrue(testList.contains(board.getCellAt(16,9)));
 		assertTrue(testList.contains(board.getCellAt(15,9)));
 		
 		testList = board.getAdjList(5, 11);

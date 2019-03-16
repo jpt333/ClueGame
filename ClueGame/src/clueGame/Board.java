@@ -205,7 +205,7 @@ public class Board {
 					if(row > 0){
 						if(board[row][col].getInitial() == board[row-1][col].getInitial() //same room or walkway
 							||(board[row][col].getInitial() != board[row-1][col].getInitial() //not the same room
-							&& (board[row - 1][col].getDoorDirection() == DoorDirection.UP //can move down
+							&& (board[row - 1][col].getDoorDirection() == DoorDirection.DOWN //can move down
 							|| board[row - 1][col].getDoorDirection() == DoorDirection.NONE))) { //can move down
 		
 							adjTiles.add(board[row-1][col]);
@@ -240,7 +240,7 @@ public class Board {
 					if(row+1 < numRows){
 						if(board[row][col].getInitial() == board[row + 1][col].getInitial() //same room or walkway
 							||(board[row][col].getInitial() != board[row + 1][col].getInitial() //not the same room
-							&& (board[row + 1][col].getDoorDirection() == DoorDirection.DOWN //can move down
+							&& (board[row + 1][col].getDoorDirection() == DoorDirection.UP //can move down
 							|| board[row + 1][col].getDoorDirection() == DoorDirection.NONE))) {
 						
 							adjTiles.add(board[row+1][col]);
@@ -267,7 +267,7 @@ public class Board {
 			}else {
 				visited.add(cell); //adds cell into visited list
 			} 
-			if(pathLength == 1 || startCell.getInitial() != cell.getInitial()) {
+			if(pathLength == 1 || (startCell.getInitial() != cell.getInitial() && startCell.getInitial() == 'W')) {
 				targets.add(cell);
 			}else {
 				calcTargetsFun(cell, pathLength-1); //recursively calls
@@ -279,6 +279,7 @@ public class Board {
 	
 	
 	public void calcTargets(BoardCell startCell, int pathLength) {
+		visited.clear();
 		targets.clear();
 		calcTargetsFun(startCell, pathLength);
 	}
@@ -303,6 +304,5 @@ public class Board {
 	public Set<BoardCell> getTargets() {
 		return targets; 
 	}
-
 	
 }
