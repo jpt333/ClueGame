@@ -176,22 +176,50 @@ public class Board {
 				//if row less than board size do
 				
 				//bottom adj tile
-				if(row > 0) {
-					adjTiles.add(board[row-1][col]);
+				if(row > 0){
+					if(board[row][col].getInitial() == board[row-1][col].getInitial() //same room or walkway
+						||(board[row][col].getInitial() != board[row-1][col].getInitial() //not the same room
+						&& (board[row][col].getDoorDirection() == DoorDirection.DOWN //can move down
+						|| board[row][col].getDoorDirection() == DoorDirection.NONE))) { //can move down
+	
+						adjTiles.add(board[row-1][col]);
+						
+					}
 				}
 				//if col less than board size do
 				//left adj tile
-				if(col > 0) {
-					adjTiles.add(board[row][col-1]);
+				if(col > 0){
+					if(board[row][col].getInitial() == board[row][col - 1].getInitial() //same room or walkway
+						||(board[row][col].getInitial() != board[row][col - 1].getInitial() //not the same room
+						&& (board[row][col].getDoorDirection() == DoorDirection.LEFT //can move down
+						|| board[row][col].getDoorDirection() == DoorDirection.NONE))) {
+					
+						adjTiles.add(board[row][col-1]);
+						
+					}
 				}
 				
 				//right adj tile
-				if(col+1 < numColumns) {
-					adjTiles.add(board[row][col+1]);
+				if(col+1 < numColumns){
+					if(board[row][col].getInitial() == board[row][col + 1].getInitial() //same room or walkway
+						||(board[row][col].getInitial() != board[row][col + 1].getInitial() //not the same room
+						&& (board[row][col].getDoorDirection() == DoorDirection.RIGHT //can move down
+						|| board[row][col].getDoorDirection() == DoorDirection.NONE))) {
+					
+						adjTiles.add(board[row][col+1]);
+						
+					}
 				}
 				//top adj tile
-				if(row+1 < numRows) {
-					adjTiles.add(board[row+1][col]);
+				if(row+1 < numRows){
+					if(board[row][col].getInitial() == board[row + 1][col].getInitial() //same room or walkway
+						||(board[row][col].getInitial() != board[row + 1][col].getInitial() //not the same room
+						&& (board[row][col].getDoorDirection() == DoorDirection.UP //can move down
+						|| board[row][col].getDoorDirection() == DoorDirection.NONE))) {
+					
+						adjTiles.add(board[row+1][col]);
+					}
+					
 				}
 				adjMatrix.put(board[row][col], adjTiles);
 			}
