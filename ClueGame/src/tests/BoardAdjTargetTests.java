@@ -134,7 +134,7 @@ public class BoardAdjTargetTests {
 		//Bottom
 		testList = board.getAdjList(24, 8);
 		assertTrue(testList.contains(board.getCellAt(24,9)));
-		assertTrue(testList.contains(board.getCellAt(24,8)));
+		assertTrue(testList.contains(board.getCellAt(23,8)));
 		//Right
 		testList = board.getAdjList(6, 16);
 		assertTrue(testList.contains(board.getCellAt(7,16)));
@@ -225,8 +225,8 @@ public class BoardAdjTargetTests {
 	
 	//Test at distance of 7 steps
 	@Test
-	public void testTargetsSevenSteps() {
-		board.calcTargets(24, 14, 7);
+	public void testTargetsSixSteps() {
+		board.calcTargets(24, 14, 6);
 		Set<BoardCell> targets = board.getTargets();
 		assertTrue(targets.contains(board.getCellAt(19, 15)));
 		assertTrue(targets.contains(board.getCellAt(18, 14)));
