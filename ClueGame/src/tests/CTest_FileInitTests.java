@@ -99,7 +99,7 @@ public class CTest_FileInitTests {
 					numDoors++;
 				}
 			}
-		Assert.assertEquals(25, numDoors);
+		Assert.assertEquals(16, numDoors);
 	}
 
 	// Test a few room cells to ensure the room initial is correct.

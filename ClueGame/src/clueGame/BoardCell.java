@@ -6,7 +6,7 @@ import clueGame.DoorDirection;
 public class BoardCell {
 	@Override
 	public String toString() {
-		return "BoardCell [initital=" + initital + ", direction=" + direction + "]";
+		return initital + ":" + direction;
 	}
 
 	private String initital;
@@ -37,10 +37,11 @@ public class BoardCell {
 	}
 	
 	public boolean isDoorway() {
-		if(direction !=  null){
-			return true;
+		if(direction ==  null || direction == DoorDirection.NONE){
+			return false; 
 		}
-		return false; 
+			
+		return true;
 	}
 
 	public char getInitial() {

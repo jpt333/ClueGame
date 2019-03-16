@@ -175,58 +175,85 @@ public class Board {
 				Set<BoardCell> adjTiles = new HashSet<>();
 				//if row less than board size do
 				
-				//bottom adj tile
-				if(row > 0){
-					if(board[row][col].getInitial() == board[row-1][col].getInitial() //same room or walkway
-						||(board[row][col].getInitial() != board[row-1][col].getInitial() //not the same room
-						&& (board[row][col].getDoorDirection() == DoorDirection.DOWN //can move down
-						|| board[row][col].getDoorDirection() == DoorDirection.NONE))) { //can move down
-	
-						adjTiles.add(board[row-1][col]);
-						
-					}
-				}
-				//if col less than board size do
-				//left adj tile
-				if(col > 0){
-					if(board[row][col].getInitial() == board[row][col - 1].getInitial() //same room or walkway
-						||(board[row][col].getInitial() != board[row][col - 1].getInitial() //not the same room
-						&& (board[row][col].getDoorDirection() == DoorDirection.LEFT //can move down
-						|| board[row][col].getDoorDirection() == DoorDirection.NONE))) {
-					
-						adjTiles.add(board[row][col-1]);
-						
-					}
+				
+				if(board[row][col].getDoorDirection() == DoorDirection.DOWN 
+						&& row+1 < numRows
+						&& board[row + 1][col].getInitial() == 'W'){
+					adjTiles.add(board[row+1][col]);
 				}
 				
-				//right adj tile
-				if(col+1 < numColumns){
-					if(board[row][col].getInitial() == board[row][col + 1].getInitial() //same room or walkway
-						||(board[row][col].getInitial() != board[row][col + 1].getInitial() //not the same room
-						&& (board[row][col].getDoorDirection() == DoorDirection.RIGHT //can move down
-						|| board[row][col].getDoorDirection() == DoorDirection.NONE))) {
+				if(board[row][col].getDoorDirection() == DoorDirection.UP 
+						&& row > 0
+						&& board[row - 1][col].getInitial() == 'W'){
+					adjTiles.add(board[row - 1][col]);
+				}
+				
+				if(board[row][col].getDoorDirection() == DoorDirection.LEFT 
+						&& col > 0
+						&& board[row][col - 1].getInitial() == 'W'){
+					adjTiles.add(board[row][col - 1]);
+				}
+				
+				if(board[row][col].getDoorDirection() == DoorDirection.RIGHT 
+						&& col+1 < numColumns
+						&& board[row][col + 1].getInitial() == 'W'){
+					adjTiles.add(board[row][col + 1]);
+				}
+				
+				//bottom adj tile
+				if(board[row][col].getInitial() == 'W'){
+					if(row > 0){
+						if(board[row][col].getInitial() == board[row-1][col].getInitial() //same room or walkway
+							||(board[row][col].getInitial() != board[row-1][col].getInitial() //not the same room
+							&& (board[row - 1][col].getDoorDirection() == DoorDirection.UP //can move down
+							|| board[row - 1][col].getDoorDirection() == DoorDirection.NONE))) { //can move down
+		
+							adjTiles.add(board[row-1][col]);
+							
+						}
+					}
+					//if col less than board size do
+					//left adj tile
+					if(col > 0){
+						if(board[row][col].getInitial() == board[row][col - 1].getInitial() //same room or walkway
+							||(board[row][col].getInitial() != board[row][col - 1].getInitial() //not the same room
+							&& (board[row][col - 1].getDoorDirection() == DoorDirection.RIGHT //can move down
+							|| board[row][col - 1].getDoorDirection() == DoorDirection.NONE))) {
+						
+							adjTiles.add(board[row][col-1]);
+							
+						}
+					}
 					
-						adjTiles.add(board[row][col+1]);
+					//right adj tile
+					if(col+1 < numColumns){
+						if(board[row][col].getInitial() == board[row][col + 1].getInitial() //same room or walkway
+							||(board[row][col].getInitial() != board[row][col + 1].getInitial() //not the same room
+							&& (board[row][col + 1].getDoorDirection() == DoorDirection.LEFT //can move down
+							|| board[row][col + 1].getDoorDirection() == DoorDirection.NONE))) {
+						
+							adjTiles.add(board[row][col+1]);
+							
+						}
+					}
+					//top adj tile
+					if(row+1 < numRows){
+						if(board[row][col].getInitial() == board[row + 1][col].getInitial() //same room or walkway
+							||(board[row][col].getInitial() != board[row + 1][col].getInitial() //not the same room
+							&& (board[row + 1][col].getDoorDirection() == DoorDirection.DOWN //can move down
+							|| board[row + 1][col].getDoorDirection() == DoorDirection.NONE))) {
+						
+							adjTiles.add(board[row+1][col]);
+						}
 						
 					}
-				}
-				//top adj tile
-				if(row+1 < numRows){
-					if(board[row][col].getInitial() == board[row + 1][col].getInitial() //same room or walkway
-						||(board[row][col].getInitial() != board[row + 1][col].getInitial() //not the same room
-						&& (board[row][col].getDoorDirection() == DoorDirection.UP //can move down
-						|| board[row][col].getDoorDirection() == DoorDirection.NONE))) {
-					
-						adjTiles.add(board[row+1][col]);
-					}
-					
 				}
 				adjMatrix.put(board[row][col], adjTiles);
 			}
 		}
 	}
 	
-	public void calcTargets(BoardCell startCell, int pathLength) {
+	public void calcTargetsFun(BoardCell startCell, int pathLength) {
 		//Calculates targets that are pathLength distance 
 		//from start cell. List of targets stored as a set in inst. var.
 		
@@ -239,16 +266,23 @@ public class Board {
 				continue;
 			}else {
 				visited.add(cell); //adds cell into visited list
-			}  
-			if(pathLength == 1) {
+			} 
+			if(pathLength == 1 || startCell.getInitial() != cell.getInitial()) {
 				targets.add(cell);
 			}else {
-				calcTargets(cell, pathLength-1); //recursively calls
+				calcTargetsFun(cell, pathLength-1); //recursively calls
 			}
 			visited.remove(cell);
 		}
 		
 	}
+	
+	
+	public void calcTargets(BoardCell startCell, int pathLength) {
+		targets.clear();
+		calcTargetsFun(startCell, pathLength);
+	}
+	
 	public void calcTargets(int i, int j, int k) {
 		calcTargets(board[i][j], k);
 	}

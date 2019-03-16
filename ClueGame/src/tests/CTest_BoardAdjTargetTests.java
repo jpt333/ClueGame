@@ -256,6 +256,11 @@ public class CTest_BoardAdjTargetTests {
 			// One room is exactly 2 away
 			board.calcTargets(17, 16, 2);
 			Set<BoardCell> targets= board.getTargets();
+			
+			
+			System.out.println(targets);
+			
+			
 			assertEquals(7, targets.size());
 			// directly left (can't go right 2 steps)
 			assertTrue(targets.contains(board.getCellAt(17, 14)));
@@ -291,8 +296,8 @@ public class CTest_BoardAdjTargetTests {
 			// right then up
 			assertTrue(targets.contains(board.getCellAt(10, 8)));
 			// into the rooms
-			assertTrue(targets.contains(board.getCellAt(11, 6)));
-			assertTrue(targets.contains(board.getCellAt(10, 6)));		
+			assertTrue(targets.contains(board.getCellAt(11, 6))); 
+			assertTrue(targets.contains(board.getCellAt(10, 6)));	
 			// 
 			assertTrue(targets.contains(board.getCellAt(11, 7)));		
 			assertTrue(targets.contains(board.getCellAt(12, 8)));		
