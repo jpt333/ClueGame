@@ -221,6 +221,9 @@ public class Board {
 		}
 		
 	}
+	public void calcTargets(int i, int j, int k) {
+		calcTargets(board[i][j], k);
+	}
 
 	public void setConfigFiles(String boardFile, String legendFile) {
 		boardConfigFile = boardFile;
@@ -234,5 +237,10 @@ public class Board {
 	public Set<BoardCell> getAdjList(int i, int j) {
 		return adjMatrix.get(board[i][j]);
 	}
+
+	public Set<BoardCell> getTargets() {
+		return targets; 
+	}
+
 	
 }
