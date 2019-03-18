@@ -203,10 +203,10 @@ public class Board {
 				
 				//bottom adj tile
 				if(board[row][col].getInitial() == 'W'){
-					if(row > 0){
-						if(board[row][col].getInitial() == board[row-1][col].getInitial() //same room or walkway
-							||(board[row][col].getInitial() != board[row-1][col].getInitial() //not the same room
-							&& (board[row - 1][col].getDoorDirection() == DoorDirection.DOWN))) {
+					if(row > 0){//avoid array out of bounds errors
+						if(board[row][col].getInitial() == board[row-1][col].getInitial() //if its the same room or hallway
+							||(board[row][col].getInitial() != board[row-1][col].getInitial() //or its not the same room or hallway 
+							&& (board[row - 1][col].getDoorDirection() == DoorDirection.DOWN))) {//and is a doorway
 		
 							adjTiles.add(board[row-1][col]);
 							
@@ -214,10 +214,10 @@ public class Board {
 					}
 					//if col less than board size do
 					//left adj tile
-					if(col > 0){
-						if(board[row][col].getInitial() == board[row][col - 1].getInitial() //same room or walkway
-							||(board[row][col].getInitial() != board[row][col - 1].getInitial() //not the same room
-							&& (board[row][col - 1].getDoorDirection() == DoorDirection.RIGHT ))) {
+					if(col > 0){//avoid array out of bounds errors
+						if(board[row][col].getInitial() == board[row][col - 1].getInitial() //if its the same room or hallway
+							||(board[row][col].getInitial() != board[row][col - 1].getInitial() //or its not the same room or hallway 
+							&& (board[row][col - 1].getDoorDirection() == DoorDirection.RIGHT ))) {//and is a doorway
 						
 							adjTiles.add(board[row][col-1]);
 							
@@ -225,20 +225,20 @@ public class Board {
 					}
 					
 					//right adj tile
-					if(col+1 < numColumns){
-						if(board[row][col].getInitial() == board[row][col + 1].getInitial() //same room or walkway
-							||(board[row][col].getInitial() != board[row][col + 1].getInitial() //not the same room
-							&& (board[row][col + 1].getDoorDirection() == DoorDirection.LEFT ))) {
+					if(col+1 < numColumns){//avoid array out of bounds errors
+						if(board[row][col].getInitial() == board[row][col + 1].getInitial() //if its the same room or hallway
+							||(board[row][col].getInitial() != board[row][col + 1].getInitial() //or its not the same room or hallway 
+							&& (board[row][col + 1].getDoorDirection() == DoorDirection.LEFT ))) {//and is a doorway
 						
 							adjTiles.add(board[row][col+1]);
 							
 						}
 					}
 					//top adj tile
-					if(row+1 < numRows){
-						if(board[row][col].getInitial() == board[row + 1][col].getInitial() //same room or walkway
-							||(board[row][col].getInitial() != board[row + 1][col].getInitial() //not the same room
-							&& (board[row + 1][col].getDoorDirection() == DoorDirection.UP ))) {
+					if(row+1 < numRows){//avoid array out of bounds errors
+						if(board[row][col].getInitial() == board[row + 1][col].getInitial() //if its the same room or hallway
+							||(board[row][col].getInitial() != board[row + 1][col].getInitial() //or its not the same room or hallway 
+							&& (board[row + 1][col].getDoorDirection() == DoorDirection.UP ))) {//and is a doorway
 						
 							adjTiles.add(board[row+1][col]);
 						}
