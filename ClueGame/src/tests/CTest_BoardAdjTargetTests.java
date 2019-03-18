@@ -1,3 +1,4 @@
+//Authors: Michael Berg and Jennifer Phan
 package tests;
 /*
  * This program tests that adjacencies and targets are calculated correctly.
