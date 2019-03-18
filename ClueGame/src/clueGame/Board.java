@@ -175,7 +175,8 @@ public class Board {
 				Set<BoardCell> adjTiles = new HashSet<>();
 				//if row less than board size do
 				
-				
+				//all door adj tiles calculations
+				//gets the tile in front of the door direction
 				if(board[row][col].getDoorDirection() == DoorDirection.DOWN 
 						&& row+1 < numRows
 						&& board[row + 1][col].getInitial() == 'W'){
@@ -205,8 +206,7 @@ public class Board {
 					if(row > 0){
 						if(board[row][col].getInitial() == board[row-1][col].getInitial() //same room or walkway
 							||(board[row][col].getInitial() != board[row-1][col].getInitial() //not the same room
-							&& (board[row - 1][col].getDoorDirection() == DoorDirection.DOWN //can move down
-							|| board[row - 1][col].getDoorDirection() == DoorDirection.NONE))) { //can move down
+							&& (board[row - 1][col].getDoorDirection() == DoorDirection.DOWN))) {
 		
 							adjTiles.add(board[row-1][col]);
 							
@@ -217,8 +217,7 @@ public class Board {
 					if(col > 0){
 						if(board[row][col].getInitial() == board[row][col - 1].getInitial() //same room or walkway
 							||(board[row][col].getInitial() != board[row][col - 1].getInitial() //not the same room
-							&& (board[row][col - 1].getDoorDirection() == DoorDirection.RIGHT //can move down
-							|| board[row][col - 1].getDoorDirection() == DoorDirection.NONE))) {
+							&& (board[row][col - 1].getDoorDirection() == DoorDirection.RIGHT ))) {
 						
 							adjTiles.add(board[row][col-1]);
 							
@@ -229,8 +228,7 @@ public class Board {
 					if(col+1 < numColumns){
 						if(board[row][col].getInitial() == board[row][col + 1].getInitial() //same room or walkway
 							||(board[row][col].getInitial() != board[row][col + 1].getInitial() //not the same room
-							&& (board[row][col + 1].getDoorDirection() == DoorDirection.LEFT //can move down
-							|| board[row][col + 1].getDoorDirection() == DoorDirection.NONE))) {
+							&& (board[row][col + 1].getDoorDirection() == DoorDirection.LEFT ))) {
 						
 							adjTiles.add(board[row][col+1]);
 							
@@ -240,8 +238,7 @@ public class Board {
 					if(row+1 < numRows){
 						if(board[row][col].getInitial() == board[row + 1][col].getInitial() //same room or walkway
 							||(board[row][col].getInitial() != board[row + 1][col].getInitial() //not the same room
-							&& (board[row + 1][col].getDoorDirection() == DoorDirection.UP //can move down
-							|| board[row + 1][col].getDoorDirection() == DoorDirection.NONE))) {
+							&& (board[row + 1][col].getDoorDirection() == DoorDirection.UP ))) {
 						
 							adjTiles.add(board[row+1][col]);
 						}

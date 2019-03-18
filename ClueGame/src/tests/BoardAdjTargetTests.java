@@ -224,7 +224,7 @@ public class BoardAdjTargetTests {
 	}
 	
 	
-	//Test at distance of 7 steps
+	//Test at distance of 6 steps
 	@Test
 	public void testTargetsSixSteps() {
 		board.calcTargets(24, 14, 6);
