@@ -1,19 +1,22 @@
 package tests;
 
+
+
 /*
  * This program tests that config files are loaded properly.
  */
 
 // Doing a static import allows me to write assertEquals rather than
 // Assert.assertEquals
-import static org.junit.Assert.*;
+
 
 import java.io.FileNotFoundException;
 import java.util.Map;
 
+import static org.junit.Assert.*;
 import org.junit.Assert;
 import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import clueGame.Board;
 import clueGame.BoardCell;
