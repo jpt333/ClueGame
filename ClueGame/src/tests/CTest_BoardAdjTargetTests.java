@@ -7,8 +7,6 @@ package tests;
 
 import static org.junit.Assert.*;
 import java.util.Set;
-import java.util.Map;
-
 import org.junit.BeforeClass;
 import org.junit.Test;
 

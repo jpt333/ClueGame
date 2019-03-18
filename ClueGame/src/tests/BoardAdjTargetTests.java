@@ -10,7 +10,6 @@ import org.junit.Test;
 
 import clueGame.Board;
 import clueGame.BoardCell;
-import clueGame.DoorDirection;
 
 public class BoardAdjTargetTests {
 	private static Board board;

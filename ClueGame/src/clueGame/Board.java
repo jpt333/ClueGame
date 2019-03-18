@@ -3,10 +3,8 @@ package clueGame;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 import java.util.Set;
@@ -80,15 +78,25 @@ public class Board {
 	    	String[] line = scanner.nextLine().split(", ");
 	        if(line.length == 3) {
 	        	//make sure rooms are 1 symbol
-	        	if(line[0].length() != 1) {throw new BadConfigFormatException();}
+	        	if(line[0].length() != 1) {
+	        		scanner.close();
+	        		throw new BadConfigFormatException();
+	        		}
 	        	Character symbol = line[0].charAt(0);
 	        	//make sure there is a string for the room name
-	        	if(line[1].length() == 0) {throw new BadConfigFormatException();}
+	        	if(line[1].length() == 0) {
+	        		scanner.close();
+	        		throw new BadConfigFormatException();
+	        		}
 	        	legend.put(symbol,  line[1]);
 	        	//make sure that it is a card or other
-	        	if(!line[2].equals("Card") && !line[2].equals("Other")) {throw new BadConfigFormatException(line[2]);}
+	        	if(!line[2].equals("Card") && !line[2].equals("Other")) {
+	        		scanner.close();
+	        		throw new BadConfigFormatException(line[2]);
+	        		}
 	        	
 	        }else {
+	        	scanner.close();
 	        	throw new BadConfigFormatException();
 	        }
 	    }	
@@ -108,7 +116,10 @@ public class Board {
 			//iterates through the line
 			for(int a1 = 0; a1 < line.length; a1++) {
 	        	//make sure correct length board cant be over 99 in size
-				if(line[a1].length() > 2 || line[a1].length() == 0) {throw new BadConfigFormatException();}
+				if(line[a1].length() > 2 || line[a1].length() == 0) {
+					scanner.close();
+					throw new BadConfigFormatException();
+					}
 				//check if number
 				try {
 					 Double.parseDouble(line[a1]); 
@@ -125,9 +136,15 @@ public class Board {
 					//not a number
 					
 					//make sure correct  number of characters
-					if(line[a1].length() > 2 || line[a1].length() == 0){throw new BadConfigFormatException();}
+					if(line[a1].length() > 2 || line[a1].length() == 0){
+						scanner.close();
+						throw new BadConfigFormatException();
+						}
 					//check that the room exists
-					if(!legend.containsKey(line[a1].charAt(0))){throw new BadConfigFormatException();}
+					if(!legend.containsKey(line[a1].charAt(0))){
+						scanner.close();
+						throw new BadConfigFormatException();
+						}
 					//doorways
 		        	if(line[a1].length() == 2) {
 		        		if(line[a1].endsWith("U")) {
@@ -146,6 +163,7 @@ public class Board {
 		        			board[numRows][a1] = new BoardCell(line[a1], DoorDirection.NONE);
 		        		}
 		        		else {
+		        			scanner.close();
 		        			throw new BadConfigFormatException();
 		        		}
 		        	}
@@ -158,7 +176,10 @@ public class Board {
 		        		numColumns = line.length;
 					}
 		        	//check that all rows are the same length
-		        	if(line.length < numColumns) {throw new BadConfigFormatException();}
+		        	if(line.length < numColumns) {
+		        		scanner.close();
+		        		throw new BadConfigFormatException();
+		        		}
 		        }
 			}
 			numRows++;

@@ -1,5 +1,6 @@
 package clueGame;
 
+//fix this warning
 public class BadConfigFormatException extends Exception {
 
 	public BadConfigFormatException() {
