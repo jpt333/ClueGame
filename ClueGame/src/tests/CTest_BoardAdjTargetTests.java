@@ -6,11 +6,12 @@ package tests;
 
 import java.util.Set;
 
+import org.junit.BeforeClass;
+import org.junit.jupiter.api.Test;
+
 //Doing a static import allows me to write assertEquals rather than
 //assertEquals
-import static org.junit.Assert.*;
-import org.junit.BeforeClass;
-import org.junit.Test;
+
 
 import clueGame.Board;
 import clueGame.BoardCell;
