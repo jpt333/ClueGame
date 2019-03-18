@@ -4,13 +4,16 @@ package tests;
  * This program tests that adjacencies and targets are calculated correctly.
  */
 
+
+import static org.junit.Assert.*;
 import java.util.Set;
+import java.util.Map;
+
+import org.junit.BeforeClass;
+import org.junit.Test;
 
 //Doing a static import allows me to write assertEquals rather than
 //assertEquals
-import static org.junit.Assert.*;
-import org.junit.BeforeClass;
-import org.junit.Test;
 
 import clueGame.Board;
 import clueGame.BoardCell;
@@ -314,9 +317,6 @@ public class CTest_BoardAdjTargetTests {
 			// Take two steps
 			board.calcTargets(4, 20, 2);
 			targets= board.getTargets();
-			
-			
-			System.out.println(targets + " : " + board.getCellAt(4, 20));
 			
 			assertEquals(3, targets.size());
 			assertTrue(targets.contains(board.getCellAt(3, 19)));
