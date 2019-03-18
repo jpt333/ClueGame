@@ -274,15 +274,10 @@ public class Board {
 		
 	}
 	
-	
-	public void calcTargets(BoardCell startCell, int pathLength) {
+	public void calcTargets(int row, int col, int steps) {
 		visited.clear();
 		targets.clear();
-		calcTargetsFun(startCell, pathLength);
-	}
-	
-	public void calcTargets(int i, int j, int k) {
-		calcTargets(board[i][j], k);
+		calcTargetsFun(board[row][col], steps);
 	}
 
 	public void setConfigFiles(String boardFile, String legendFile) {
@@ -294,8 +289,8 @@ public class Board {
 		return board[row][col];
 	}
 
-	public Set<BoardCell> getAdjList(int i, int j) {
-		return adjMatrix.get(board[i][j]);
+	public Set<BoardCell> getAdjList(int row, int col) {
+		return adjMatrix.get(board[row][col]);
 	}
 
 	public Set<BoardCell> getTargets() {
