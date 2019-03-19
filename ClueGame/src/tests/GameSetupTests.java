@@ -51,7 +51,7 @@ public class GameSetupTests {
 	
 	//Test that all players have roughly same number of cards after dealing
 	@Test
-	public void testDealingCards() {
+	public void testDealingCards() { 
 		//Also test that same card not given to more than 1 player
 	}
 	
