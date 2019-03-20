@@ -103,7 +103,7 @@ public class Board {
 	 
 	        	//loads the rooms into the card deck
 	        	if(line[2].equals("Card")) {
-	        		cards.add(new Card(line[1]));
+	        		cards.add(new Card(line[1], CardType.ROOM));
 	        	}
 	        }else {
 	        	scanner.close();
@@ -152,7 +152,7 @@ public class Board {
 		        		throw new BadConfigFormatException();
 	        		}
 	        		players.add(new Player(line[0] , (int)Double.parseDouble(line[2]), (int)Double.parseDouble(line[3]), locColor));
-	        		cards.add(new Card(line[0]));
+	        		cards.add(new Card(line[0], CardType.PERSON));
 	        		//if not a number
 	        	}catch(NumberFormatException e){
 	        		scanner.close();
@@ -172,7 +172,7 @@ public class Board {
 	    		scanner.close();
         		throw new BadConfigFormatException();
 	    	}
-	    	cards.add(new Card(line));
+	    	cards.add(new Card(line, CardType.WEAPON));
 	    }
 	    scanner.close();
 	}
