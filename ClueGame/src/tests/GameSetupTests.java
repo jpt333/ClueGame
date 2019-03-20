@@ -107,6 +107,8 @@ public class GameSetupTests {
 	public void testDealingCards() { 
 		//Also test that same card not given to more than 1 player
 		Set<Card> cards = board.getCards();
+		//board.dealCards();
+		
 		
 	}
 	
