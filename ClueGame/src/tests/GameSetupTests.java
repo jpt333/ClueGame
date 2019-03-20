@@ -33,15 +33,16 @@ public class GameSetupTests {
 	//Checks correct number of each type of card
 	@Test
 	public void testTypeOfCard() {
-		if(/*PERSON*/) {
-			assertEquals(6, );
-		}
-		if(/*WEAPON*/) {
-			assertEquals(6, );
-		}
-		if(/*Room*/) {
-			assertEquals(9, );
-		}
+		
+		//NEED FOR LOOP for checking the cards
+		int rooms = 0;
+		int person = 0;
+		int weapons = 0;
+		
+		assertEquals(6, person);
+		assertEquals(6, rooms);
+		assertEquals(9, weapons);
+		
 	}
 	
 	//Checks that there is a room, weapon, and person in deck
@@ -63,6 +64,7 @@ public class GameSetupTests {
 	@Test
 	public void testDealingCards() { 
 		//Also test that same card not given to more than 1 player
+		
 	}
 	
 	
