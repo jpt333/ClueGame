@@ -69,8 +69,8 @@ public class GameSetupTests {
 		}
 		
 		assertEquals(6, person);
-		assertEquals(6, rooms);
-		assertEquals(9, weapons);
+		assertEquals(6, weapons);
+		assertEquals(9, rooms);
 		
 	}
 	
