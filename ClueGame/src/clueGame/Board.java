@@ -29,6 +29,8 @@ public class Board {
 	
 	private String boardConfigFile;
 	private String roomConfigFile;
+	private String weaponFile;
+	private String characterFile;
 	
 	private Board() {}
 	
@@ -101,6 +103,15 @@ public class Board {
 	        }
 	    }	
 	    scanner.close();
+	}
+	
+	public void setCardFiles(String weaponFile, String characterFile) {
+		this.weaponFile = weaponFile;
+		this.characterFile = characterFile;
+	}
+	
+	public void loadCards() {
+		
 	}
 	
 	public void loadBoardConfig() throws FileNotFoundException, BadConfigFormatException {
