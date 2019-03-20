@@ -21,12 +21,14 @@ public class GameSetupTests {
 	
 	@BeforeClass
 	public static void setUp() {
-		
+		//load deck of cards
 	}
 	
 	//Checks correct total number of cards
 	@Test
 	public void testNumberOfCardsInDeck() {
+		int cards = 0;
+		//Loop and count every card in deck
 		assertEquals(24, /*TBD*/);
 	}
 	
