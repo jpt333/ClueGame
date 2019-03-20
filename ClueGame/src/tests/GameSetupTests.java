@@ -36,10 +36,13 @@ public class GameSetupTests {
 	//Checks correct total number of cards
 	@Test
 	public void testNumberOfCardsInDeck() {
-	int cards = 0;
+	int numCards = 0;
+	Set<Card> cards = board.getCards();
 	//Loop and count every card in deck
-	
-	assertEquals(24, cards);
+	for(Card card : cards) {
+		numCards++;
+	}
+	assertEquals(24, numCards);
 	}
 	
 	//Checks correct number of each type of card
