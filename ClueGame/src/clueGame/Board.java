@@ -67,6 +67,7 @@ public class Board {
 		try {
 			loadRoomConfig();
 			loadBoardConfig();
+			loadCards();
 		} catch (FileNotFoundException e) {
 			System.out.println("File not found");
 			e.printStackTrace();
@@ -382,6 +383,14 @@ public class Board {
 
 	public BoardCell getCellAt(int row, int col) {
 		return board[row][col];
+	}
+
+	public Set<Player> getPlayers() {
+		return players;
+	}
+
+	public Set<Card> getCards() {
+		return cards;
 	}
 
 	public Set<BoardCell> getAdjList(int row, int col) {
