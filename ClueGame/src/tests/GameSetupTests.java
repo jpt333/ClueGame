@@ -10,6 +10,7 @@ import org.junit.Test;
 
 import clueGame.Board;
 import clueGame.BoardCell;
+import clueGame.CardType;
 
 //Test loading people, load/create deck of cards, and dealing cards
 public class GameSetupTests {
@@ -46,6 +47,15 @@ public class GameSetupTests {
 	//Checks that there is a room, weapon, and person in deck
 	@Test
 	public void testHasCard() {
+		boolean person = false;
+		boolean weapon = false;
+		boolean room = false;
+		
+		//for loop to check that there is at least 1
+		
+		assertTrue(person);
+		assertTrue(weapon);
+		assertTrue(room);
 		
 	}
 	
