@@ -12,6 +12,7 @@ import org.junit.Test;
 import clueGame.BadConfigFormatException;
 import clueGame.Board;
 import clueGame.BoardCell;
+import clueGame.Card;
 import clueGame.CardType;
 
 //Test loading people, load/create deck of cards, and dealing cards
@@ -50,6 +51,20 @@ public class GameSetupTests {
 		int person = 0;
 		int weapons = 0;
 		
+		Set<Card> cards = board.getCards();
+		
+		for(Card card : cards) {
+			if(card.getCardType() == CardType.PERSON) {
+				person++;
+			}
+			if(card.getCardType() == CardType.WEAPON) {
+				weapons++;
+			}
+			if(card.getCardType() == CardType.ROOM) {
+				rooms++;
+			}
+		}
+		
 		assertEquals(6, person);
 		assertEquals(6, rooms);
 		assertEquals(9, weapons);
@@ -59,11 +74,28 @@ public class GameSetupTests {
 	//Checks that there is a room, weapon, and person in deck
 	@Test
 	public void testHasCard() {
-
 		
-		assertEquals(CardType.PERSON, board.getPlayer());
-		assertEquals(CardType.WEAPON, board.getWeapon());
-		assertEquals(CardType.ROOM, board.getRoom());
+		Set<Card> cards = board.getCards();
+		
+		boolean player = false;
+		boolean weapon = false;
+		boolean room = false;
+
+		for(Card card : cards) {
+			if(card.getCardType() == CardType.PERSON) {
+				player = true;
+			}
+			if(card.getCardType() == CardType.WEAPON) {
+				weapon = true;
+			}
+			if(card.getCardType() == CardType.ROOM) {
+				room = true;
+			}
+		}
+		
+		assertTrue(player);
+		assertTrue(room);
+		assertTrue(weapon);		
 		
 	}
 	
@@ -71,6 +103,7 @@ public class GameSetupTests {
 	@Test
 	public void testDealingCards() { 
 		//Also test that same card not given to more than 1 player
+		Set<Card> cards = board.getCards();
 		
 	}
 	
