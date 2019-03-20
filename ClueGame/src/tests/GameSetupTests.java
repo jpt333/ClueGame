@@ -12,6 +12,7 @@ import org.junit.Test;
 import clueGame.BadConfigFormatException;
 import clueGame.Board;
 import clueGame.BoardCell;
+import clueGame.Card;
 import clueGame.CardType;
 
 //Test loading people, load/create deck of cards, and dealing cards
@@ -35,10 +36,13 @@ public class GameSetupTests {
 	//Checks correct total number of cards
 	@Test
 	public void testNumberOfCardsInDeck() {
-	int cards = 0;
+	int numCards = 0;
+	Set<Card> cards = board.getCards();
 	//Loop and count every card in deck
-	
-	assertEquals(24, cards);
+	for(Card card : cards) {
+		numCards++;
+	}
+	assertEquals(21, numCards);
 	}
 	
 	//Checks correct number of each type of card
@@ -50,20 +54,51 @@ public class GameSetupTests {
 		int person = 0;
 		int weapons = 0;
 		
+		Set<Card> cards = board.getCards();
+		
+		for(Card card : cards) {
+			if(card.getCardType() == CardType.PERSON) {
+				person++;
+			}
+			if(card.getCardType() == CardType.WEAPON) {
+				weapons++;
+			}
+			if(card.getCardType() == CardType.ROOM) {
+				rooms++;
+			}
+		}
+		
 		assertEquals(6, person);
-		assertEquals(6, rooms);
-		assertEquals(9, weapons);
+		assertEquals(6, weapons);
+		assertEquals(9, rooms);
 		
 	}
 	
 	//Checks that there is a room, weapon, and person in deck
 	@Test
 	public void testHasCard() {
-
 		
-		assertEquals(CardType.PERSON, );
-		assertEquals(CardType.WEAPON, );
-		assertEquals(CardType.ROOM, );
+		Set<Card> cards = board.getCards();
+		
+		boolean player = false;
+		boolean weapon = false;
+		boolean room = false;
+
+		for(Card card : cards) {
+			if(card.getCardType() == CardType.PERSON) {
+				player = true;
+			}
+			if(card.getCardType() == CardType.WEAPON) {
+				weapon = true;
+			}
+			if(card.getCardType() == CardType.ROOM) {
+				room = true;
+			}
+		}
+		
+		assertTrue(player);
+		assertTrue(room);
+		assertTrue(weapon);		
 		
 	}
 	
@@ -71,6 +106,9 @@ public class GameSetupTests {
 	@Test
 	public void testDealingCards() { 
 		//Also test that same card not given to more than 1 player
+		Set<Card> cards = board.getCards();
+		//board.dealCards();
+		
 		
 	}
 	
