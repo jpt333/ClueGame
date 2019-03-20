@@ -3,38 +3,54 @@ package tests;
 
 import static org.junit.Assert.*;
 
+import java.io.FileNotFoundException;
 import java.util.Set;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import clueGame.BadConfigFormatException;
 import clueGame.Board;
 import clueGame.BoardCell;
 import clueGame.CardType;
 
 //Test loading people, load/create deck of cards, and dealing cards
 public class GameSetupTests {
+	
+	private static Board board;
+	
 	public final int MAX_DECK_OF_CARDS = 21;
 	public final int MAX_ROOM_CARDS = 9;
 	public final int MAX_WEAPONS = 6;
 	public final int MAX_PERSON = 6;
 	
 	@BeforeClass
-	public static void setUp() {
+	public static void setUp(){
 		//load deck of cards
+		board = Board.getInstance();
+		board.setCardFiles("weapons.txt", "Person.txt");
+		try {
+			board.loadCards();
+		}catch(FileNotFoundException e) {
+			System.out.println("File not found");
+		}catch(BadConfigFormatException e) {
+			System.out.println("Format error.");
+		}
+		
 	}
 	
 	//Checks correct total number of cards
 	@Test
 	public void testNumberOfCardsInDeck() {
-		int cards = 0;
-		//Loop and count every card in deck
-		assertEquals(24, /*TBD*/);
+	int cards = 0;
+	//Loop and count every card in deck
+	
+	assertEquals(24, cards);
 	}
 	
 	//Checks correct number of each type of card
 	@Test
-	public void testTypeOfCard() {
+	public void testNumOfTypeOfCard() {
 		
 		//NEED FOR LOOP for checking the cards
 		int rooms = 0;
@@ -50,15 +66,11 @@ public class GameSetupTests {
 	//Checks that there is a room, weapon, and person in deck
 	@Test
 	public void testHasCard() {
-		boolean person = false;
-		boolean weapon = false;
-		boolean room = false;
+
 		
-		//for loop to check that there is at least 1
-		
-		assertTrue(person);
-		assertTrue(weapon);
-		assertTrue(room);
+		assertEquals(CardType.PERSON, );
+		assertEquals(CardType.WEAPON, );
+		assertEquals(CardType.ROOM, );
 		
 	}
 	
@@ -68,6 +80,5 @@ public class GameSetupTests {
 		//Also test that same card not given to more than 1 player
 		
 	}
-	
 	
 }
