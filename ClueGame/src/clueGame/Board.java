@@ -8,6 +8,7 @@ import java.lang.reflect.Field;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
+import java.util.Random;
 import java.util.Scanner;
 import java.util.Set;
 
@@ -25,6 +26,8 @@ public class Board {
 	private Map<Character, String> legend; //stores what is in legend
 
 	private Map<BoardCell, Set<BoardCell>> adjMatrix; //stores what is adjacent to a cell
+	
+	private Map<Player, Set<Card>> playerCards; //stores what is adjacent to a cell
 	
 	private Set<BoardCell> visited; //stores which cells were visited
 	private Set<BoardCell> targets; //stores which cells are targets
@@ -60,9 +63,12 @@ public class Board {
 	public void initialize(){
 		//initialize variables
 		adjMatrix = new HashMap<BoardCell, Set<BoardCell>>();
+		playerCards = new HashMap<Player, Set<Card>>();
 		
 		visited = new HashSet<>();
 		targets = new HashSet<>();
+		players = new HashSet<>();
+		cards = new HashSet<>();
 		
 		try {
 			loadRoomConfig();
@@ -260,6 +266,52 @@ public class Board {
 			numRows++;
 	    }
 	    scanner.close();
+	}
+	
+	public void dealCards() {
+		Card cardsLoc[] = new Card[cards.size()];
+		
+		Set<Integer> visitedAddresses = new HashSet<>();
+		
+		int numberOfCards = Math.floorDiv(cards.size() , players.size());
+		int extraCards = cards.size() - (numberOfCards * players.size());
+		
+		//load all the visited adresses
+		for(int a1 = 0; a1 < cards.size(); a1++) { visitedAddresses.add(a1);}
+		
+		boolean rejected = true;
+		int adress = 0;
+		
+		for(Card cardLoc: cards) {cardsLoc[adress] = cardLoc; adress++; }
+		
+		for(Player playerLoc: players) {
+			  Random rand = new Random();
+			  int randomNum = 0;
+			  
+			Set<Card> cardSet =  new HashSet<>();
+			for(int a1 = 0; a1 < numberOfCards; a1++) {
+				//choose random card
+				while(rejected) {
+					randomNum = rand.nextInt(cards.size() + 1);
+					rejected = visitedAddresses.contains(randomNum);
+				}
+				rejected = true;
+				visitedAddresses.add(randomNum);
+				cardSet.add(cardsLoc[randomNum]);
+			}
+			if(extraCards > 0) {
+				while(rejected) {
+					randomNum = rand.nextInt(cards.size() + 1);
+					rejected = visitedAddresses.contains(randomNum);
+				}
+				rejected = true;
+				visitedAddresses.add(randomNum);
+				cardSet.add(cardsLoc[randomNum]);
+				extraCards--;
+			}
+			playerCards.put(playerLoc, cardSet);
+		}
+		
 	}
 	
 	public void calcAdjacencies() {
