@@ -42,7 +42,7 @@ public class GameSetupTests {
 	for(Card card : cards) {
 		numCards++;
 	}
-	assertEquals(24, numCards);
+	assertEquals(21, numCards);
 	}
 	
 	//Checks correct number of each type of card
