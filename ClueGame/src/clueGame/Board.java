@@ -28,7 +28,8 @@ public class Board {
 	
 	private Set<BoardCell> visited; //stores which cells were visited
 	private Set<BoardCell> targets; //stores which cells are targets
-	private Set<BoardCell> cards; //deck of cards
+	private Set<Player> players; //deck of cards
+	private Set<Card> cards; //deck of cards
 	
 	private String boardConfigFile;
 	private String roomConfigFile;
@@ -98,8 +99,12 @@ public class Board {
 	        	if(!line[2].equals("Card") && !line[2].equals("Other")) {
 	        		scanner.close();
 	        		throw new BadConfigFormatException(line[2]);
-	        		}
-	        	
+	        	}
+	 
+	        	//loads the rooms into the card deck
+	        	if(line[2].equals("Card")) {
+	        		cards.add(new Card(line[1]));
+	        	}
 	        }else {
 	        	scanner.close();
 	        	throw new BadConfigFormatException();
@@ -146,7 +151,8 @@ public class Board {
 	        			scanner.close();
 		        		throw new BadConfigFormatException();
 	        		}
-	        		new Player(line[0] , (int)Double.parseDouble(line[2]), (int)Double.parseDouble(line[3]), locColor);
+	        		players.add(new Player(line[0] , (int)Double.parseDouble(line[2]), (int)Double.parseDouble(line[3]), locColor));
+	        		cards.add(new Card(line[0]));
 	        		//if not a number
 	        	}catch(NumberFormatException e){
 	        		scanner.close();
@@ -158,11 +164,17 @@ public class Board {
 	        }
 	    }	
 	    scanner.close();
-	    scanner = new Scanner(new File(characterFile)); 
+	    //load in the weaponFile
+	    scanner = new Scanner(new File(weaponFile)); 
 	    while (scanner.hasNextLine()) {
-	    	new Card(scanner.nextLine());
+	    	String line = scanner.nextLine();
+	    	if(line.length() == 0) {
+	    		scanner.close();
+        		throw new BadConfigFormatException();
+	    	}
+	    	cards.add(new Card(line));
 	    }
-	    
+	    scanner.close();
 	}
 	
 	public void loadBoardConfig() throws FileNotFoundException, BadConfigFormatException {
