@@ -10,6 +10,7 @@ import org.junit.Test;
 
 import clueGame.Board;
 import clueGame.BoardCell;
+import clueGame.CardType;
 
 //Test loading people, load/create deck of cards, and dealing cards
 public class GameSetupTests {
@@ -20,32 +21,44 @@ public class GameSetupTests {
 	
 	@BeforeClass
 	public static void setUp() {
-		
+		//load deck of cards
 	}
 	
 	//Checks correct total number of cards
 	@Test
 	public void testNumberOfCardsInDeck() {
+		int cards = 0;
+		//Loop and count every card in deck
 		assertEquals(24, /*TBD*/);
 	}
 	
 	//Checks correct number of each type of card
 	@Test
 	public void testTypeOfCard() {
-		if(/*PERSON*/) {
-			assertEquals(6, );
-		}
-		if(/*WEAPON*/) {
-			assertEquals(6, );
-		}
-		if(/*Room*/) {
-			assertEquals(9, );
-		}
+		
+		//NEED FOR LOOP for checking the cards
+		int rooms = 0;
+		int person = 0;
+		int weapons = 0;
+		
+		assertEquals(6, person);
+		assertEquals(6, rooms);
+		assertEquals(9, weapons);
+		
 	}
 	
 	//Checks that there is a room, weapon, and person in deck
 	@Test
 	public void testHasCard() {
+		boolean person = false;
+		boolean weapon = false;
+		boolean room = false;
+		
+		//for loop to check that there is at least 1
+		
+		assertTrue(person);
+		assertTrue(weapon);
+		assertTrue(room);
 		
 	}
 	
@@ -53,6 +66,7 @@ public class GameSetupTests {
 	@Test
 	public void testDealingCards() { 
 		//Also test that same card not given to more than 1 player
+		
 	}
 	
 	
