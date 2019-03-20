@@ -29,14 +29,7 @@ public class GameSetupTests {
 		//load deck of cards
 		board = Board.getInstance();
 		board.setCardFiles("weapons.txt", "Person.txt");
-		try {
-			board.loadCards();
-		}catch(FileNotFoundException e) {
-			System.out.println("File not found");
-		}catch(BadConfigFormatException e) {
-			System.out.println("Format error.");
-		}
-		
+		board.initialize();
 	}
 	
 	//Checks correct total number of cards
