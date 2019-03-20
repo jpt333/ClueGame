@@ -1,8 +1,10 @@
 //Authors: Michael Berg and Jennifer Phan
 package clueGame;
 
+import java.awt.Color;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.lang.reflect.Field;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -26,6 +28,7 @@ public class Board {
 	
 	private Set<BoardCell> visited; //stores which cells were visited
 	private Set<BoardCell> targets; //stores which cells are targets
+	private Set<BoardCell> cards; //deck of cards
 	
 	private String boardConfigFile;
 	private String roomConfigFile;
@@ -105,13 +108,61 @@ public class Board {
 	    scanner.close();
 	}
 	
+	//from https://stackoverflow.com/questions/2854043/converting-a-string-to-color-in-java user: ZZ Coder and Erick Robertson
+	private Color convertColor(String strColor) {
+		 Color color;
+		 try {
+		 // We can use reflection to convert the string to a color
+		 Field field = Class.forName("java.awt.Color").getField(strColor.trim());
+		 color = (Color)field.get(null);
+		 } catch (Exception e) {
+		 color = null; // Not defined
+		 }
+		 return color;
+	}
+	//-------------------------------------------------------------------------------------
+
 	public void setCardFiles(String weaponFile, String characterFile) {
 		this.weaponFile = weaponFile;
 		this.characterFile = characterFile;
 	}
 	
-	public void loadCards() {
-		
+	public void loadCards() throws BadConfigFormatException, FileNotFoundException {
+		Scanner scanner = new Scanner(new File(characterFile)); 
+	    while (scanner.hasNextLine()) {
+	    	String[] line = scanner.nextLine().split(", ");
+	        if(line.length == 4) {
+	        	//make sure there is no missing data
+	        	if(line[0].length() == 0 
+	        			|| line[1].length() == 0
+	        			|| line[2].length() == 0
+	        			|| line[3].length() == 0) {
+	        		scanner.close();
+	        		throw new BadConfigFormatException();
+	        	}
+	        	try {
+	        		Color locColor = convertColor(line[1]);
+	        		if (locColor == null) {
+	        			scanner.close();
+		        		throw new BadConfigFormatException();
+	        		}
+	        		new Player(line[0] , (int)Double.parseDouble(line[2]), (int)Double.parseDouble(line[3]), locColor);
+	        		//if not a number
+	        	}catch(NumberFormatException e){
+	        		scanner.close();
+	        		throw new BadConfigFormatException();
+	        	}
+	        }else {
+	        	scanner.close();
+	        	throw new BadConfigFormatException();
+	        }
+	    }	
+	    scanner.close();
+	    scanner = new Scanner(new File(characterFile)); 
+	    while (scanner.hasNextLine()) {
+	    	new Card(scanner.nextLine());
+	    }
+	    
 	}
 	
 	public void loadBoardConfig() throws FileNotFoundException, BadConfigFormatException {
