@@ -69,8 +69,8 @@ public class GameSetupTests {
 
 		
 		assertEquals(CardType.PERSON, board.getPlayer());
-		assertEquals(CardType.WEAPON, );
-		assertEquals(CardType.ROOM, );
+		assertEquals(CardType.WEAPON, board.getWeapon());
+		assertEquals(CardType.ROOM, board.getRoom());
 		
 	}
 	
