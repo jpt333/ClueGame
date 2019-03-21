@@ -21,6 +21,8 @@ public class Board {
 	
 	private static Board theInstance;
 	
+	private Solution solution;
+	
 	private BoardCell board [][];
 	
 	private Map<Character, String> legend; //stores what is in legend
@@ -153,7 +155,7 @@ public class Board {
 	        		throw new BadConfigFormatException();
 	        	}
 	        	try {
-	        		Color locColor = convertColor(line[1]);
+	        		Color locColor = convertColor(line[1].toLowerCase());
 	        		if (locColor == null) {
 	        			scanner.close();
 		        		throw new BadConfigFormatException();
@@ -271,13 +273,15 @@ public class Board {
 	public void dealCards() {
 		Card cardsLoc[] = new Card[cards.size()];
 		
+		solution = new Solution();
+		
 		Set<Integer> visitedAddresses = new HashSet<>();
 		
 		int numberOfCards = Math.floorDiv(cards.size() , players.size());
 		int extraCards = cards.size() - (numberOfCards * players.size());
 		
 		//load all the visited adresses
-		for(int a1 = 0; a1 < cards.size(); a1++) { visitedAddresses.add(a1);}
+		//for(int a1 = 0; a1 < cards.size(); a1++) { visitedAddresses.add(a1);}
 		
 		 Random rand = new Random();
 		boolean rejected = true;
@@ -285,33 +289,52 @@ public class Board {
 		
 		for(Card cardLoc: cards) {cardsLoc[adress] = cardLoc; adress++; }
 		
+		//take 3 cards for the solution
+		int randomNum = 0;
+		for(int a1 = 0; a1 < 3; a1++) {
+			while(rejected) {
+				randomNum = rand.nextInt(cards.size());
+				//find a person card
+				if(a1 == 0) {
+					if(cardsLoc[randomNum].getCardType() == CardType.PERSON) {
+						solution.person = cardsLoc[randomNum].getCardName();
+						break;
+					}
+				}
+				//find a weapon card
+				if(a1 == 1) {
+					if(cardsLoc[randomNum].getCardType() == CardType.WEAPON) {
+						solution.person = cardsLoc[randomNum].getCardName();
+						break;
+					}
+				}
+				//find a room card
+				if(a1 == 2) {
+					if(cardsLoc[randomNum].getCardType() == CardType.ROOM) {
+						solution.person = cardsLoc[randomNum].getCardName();
+						break;
+					}
+				}
+			}
+			visitedAddresses.add(randomNum);
+		}
+		
+		
 		for(Player playerLoc: players) {
-			  int randomNum = 0;
 			  
 			Set<Card> cardSet =  new HashSet<>();
 			for(int a1 = 0; a1 < numberOfCards; a1++) {
 				//choose random card
 				while(rejected) {
-					randomNum = rand.nextInt(cards.size() + 1);
+					randomNum = rand.nextInt(cards.size());
 					rejected = visitedAddresses.contains(randomNum);
 				}
 				rejected = true;
 				visitedAddresses.add(randomNum);
 				cardSet.add(cardsLoc[randomNum]);
-			}
-			if(extraCards > 0) {
-				while(rejected) {
-					randomNum = rand.nextInt(cards.size() + 1);
-					rejected = visitedAddresses.contains(randomNum);
-				}
-				rejected = true;
-				visitedAddresses.add(randomNum);
-				cardSet.add(cardsLoc[randomNum]);
-				extraCards--;
 			}
 			playerCards.put(playerLoc, cardSet);
 		}
-		
 	}
 	
 	public void calcAdjacencies() {
@@ -443,6 +466,10 @@ public class Board {
 
 	public Set<Card> getCards() {
 		return cards;
+	}
+	
+	public Map<Player, Set<Card>> getPlayerCards() {
+		return playerCards;
 	}
 
 	public Set<BoardCell> getAdjList(int row, int col) {

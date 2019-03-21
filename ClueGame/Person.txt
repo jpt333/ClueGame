@@ -3,4 +3,4 @@ Miss Scarlet, Red, 14, 0
 Mr. Green, Green, 24, 4
 Mrs. Peacock, Blue, 24, 9
 Mrs. White, White, 24, 15
-Professor Plum, Purple, 7, 16
+Professor Plum, Magenta, 7, 16

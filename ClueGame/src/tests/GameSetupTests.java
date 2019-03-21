@@ -4,6 +4,7 @@ package tests;
 import static org.junit.Assert.*;
 
 import java.io.FileNotFoundException;
+import java.util.Map;
 import java.util.Set;
 
 import org.junit.BeforeClass;
@@ -14,6 +15,7 @@ import clueGame.Board;
 import clueGame.BoardCell;
 import clueGame.Card;
 import clueGame.CardType;
+import clueGame.Player;
 
 //Test loading people, load/create deck of cards, and dealing cards
 public class GameSetupTests {
@@ -40,10 +42,7 @@ public class GameSetupTests {
 	int numCards = 0;
 	Set<Card> cards = board.getCards();
 	//Loop and count every card in deck
-	for(Card card : cards) {
-		numCards++;
-	}
-	assertEquals(21, numCards);
+	assertEquals(21, cards.size());
 	}
 	
 	//Checks correct number of each type of card
@@ -107,9 +106,14 @@ public class GameSetupTests {
 	@Test
 	public void testDealingCards() { 
 		//Also test that same card not given to more than 1 player
-		Set<Card> cards = board.getCards();
-		//board.dealCards();
-		
+		Map<Player, Set<Card>> cards = board.getPlayerCards();
+		Set<Player> players = board.getPlayers();
+	    board.dealCards();
+	    //make sure everyone gets 3 cards
+	    for(Player iterator: players) {
+	    	assertEquals(3, cards.get(iterator).size());
+	    }
+		//make sure the solution isn't null
 		
 	}
 	
