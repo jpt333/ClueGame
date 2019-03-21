@@ -4,6 +4,7 @@ package tests;
 import static org.junit.Assert.*;
 
 import java.io.FileNotFoundException;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
@@ -16,6 +17,7 @@ import clueGame.BoardCell;
 import clueGame.Card;
 import clueGame.CardType;
 import clueGame.Player;
+import clueGame.Solution;
 
 //Test loading people, load/create deck of cards, and dealing cards
 public class GameSetupTests {
@@ -35,7 +37,7 @@ public class GameSetupTests {
 		board.setCardFiles("weapons.txt", "Person.txt");
 		board.initialize();
 	}
-	
+ 
 	//Checks correct total number of cards
 	@Test
 	public void testNumberOfCardsInDeck() {
@@ -108,12 +110,30 @@ public class GameSetupTests {
 		//Also test that same card not given to more than 1 player
 		Map<Player, Set<Card>> cards = board.getPlayerCards();
 		Set<Player> players = board.getPlayers();
+		Set<Card> deltCards = new HashSet<>();
 	    board.dealCards();
 	    //make sure everyone gets 3 cards
-	    for(Player iterator: players) {
-	    	assertEquals(3, cards.get(iterator).size());
+	    for(Player a1: players) {
+	    	Set<Card> playerCards = cards.get(a1);
+	    	assertEquals(3, playerCards.size());
+	    	for(Card a2: playerCards) {
+	    		assertFalse(deltCards.contains(a2));
+	    		deltCards.add(a2);
+	    	}
 	    }
-		//make sure the solution isn't null
+	    
+	    System.out.println(deltCards);
+	    
+		Solution solution = board.getSolution();
+		assertFalse(deltCards.contains(solution.person));
+		deltCards.add(solution.person);
+		assertFalse(deltCards.contains(solution.weapon));
+		deltCards.add(solution.weapon);
+		
+		System.out.println(solution.room);
+		
+		assertFalse(deltCards.contains(solution.room));
+		deltCards.add(solution.room);
 		
 	}
 	

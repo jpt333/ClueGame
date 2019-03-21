@@ -278,10 +278,6 @@ public class Board {
 		Set<Integer> visitedAddresses = new HashSet<>();
 		
 		int numberOfCards = Math.floorDiv(cards.size() , players.size());
-		int extraCards = cards.size() - (numberOfCards * players.size());
-		
-		//load all the visited adresses
-		//for(int a1 = 0; a1 < cards.size(); a1++) { visitedAddresses.add(a1);}
 		
 		 Random rand = new Random();
 		boolean rejected = true;
@@ -297,21 +293,21 @@ public class Board {
 				//find a person card
 				if(a1 == 0) {
 					if(cardsLoc[randomNum].getCardType() == CardType.PERSON) {
-						solution.person = cardsLoc[randomNum].getCardName();
+						solution.person = cardsLoc[randomNum];
 						break;
 					}
 				}
 				//find a weapon card
 				if(a1 == 1) {
 					if(cardsLoc[randomNum].getCardType() == CardType.WEAPON) {
-						solution.person = cardsLoc[randomNum].getCardName();
+						solution.weapon = cardsLoc[randomNum];
 						break;
 					}
 				}
 				//find a room card
 				if(a1 == 2) {
 					if(cardsLoc[randomNum].getCardType() == CardType.ROOM) {
-						solution.person = cardsLoc[randomNum].getCardName();
+						solution.room = cardsLoc[randomNum];
 						break;
 					}
 				}
@@ -454,6 +450,9 @@ public class Board {
 	public void setConfigFiles(String boardFile, String legendFile) {
 		boardConfigFile = boardFile;
 		roomConfigFile = legendFile;
+		//set the defaults
+		weaponFile = "weapons.txt";
+		characterFile = "Person.txt";
 	}
 
 	public BoardCell getCellAt(int row, int col) {
@@ -468,6 +467,10 @@ public class Board {
 		return cards;
 	}
 	
+	public Solution getSolution() {
+		return solution;
+	}
+
 	public Map<Player, Set<Card>> getPlayerCards() {
 		return playerCards;
 	}
