@@ -29,6 +29,7 @@ public class GameSetupTests {
 	public static void setUp(){
 		//load deck of cards
 		board = Board.getInstance();
+		board.setConfigFiles("ClueBoard.csv", "rooms.txt");
 		board.setCardFiles("weapons.txt", "Person.txt");
 		board.initialize();
 	}

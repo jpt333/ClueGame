@@ -279,13 +279,13 @@ public class Board {
 		//load all the visited adresses
 		for(int a1 = 0; a1 < cards.size(); a1++) { visitedAddresses.add(a1);}
 		
+		 Random rand = new Random();
 		boolean rejected = true;
 		int adress = 0;
 		
 		for(Card cardLoc: cards) {cardsLoc[adress] = cardLoc; adress++; }
 		
 		for(Player playerLoc: players) {
-			  Random rand = new Random();
 			  int randomNum = 0;
 			  
 			Set<Card> cardSet =  new HashSet<>();
