@@ -329,7 +329,12 @@ public class Board {
 				visitedAddresses.add(randomNum);
 				cardSet.add(cardsLoc[randomNum]);
 			}
+			
+			////////need to remove this////
 			playerCards.put(playerLoc, cardSet);
+			///////////////////////////////
+			
+			playerLoc.setCards(cardSet);
 		}
 	}
 	
