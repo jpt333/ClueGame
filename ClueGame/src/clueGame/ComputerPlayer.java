@@ -48,4 +48,23 @@ public class ComputerPlayer extends Player {
 	public void createSuggestion() {
 		
 	}
+	
+	public Card disproveSuggestion(Solution suggestion) {
+		Card carddArray[] = null;
+		Set<Card> cardsMatching = new HashSet<>();
+		for(Card cardsLoc: cards) {
+			if(suggestion.person == cardsLoc) { cardsMatching.add(cardsLoc); }
+			if(suggestion.room == cardsLoc)   { cardsMatching.add(cardsLoc); }
+			if(suggestion.weapon == cardsLoc) { cardsMatching.add(cardsLoc); }
+		}
+		if(cardsMatching.size() == 1) {
+			return cardsMatching.toArray(carddArray)[0];
+		}
+		else if(cardsMatching.size() > 1) {
+			Random rand = new Random();
+			int randomNum = rand.nextInt(cardsMatching.size());
+			return cardsMatching.toArray(carddArray)[randomNum];
+		}
+		return null;
+	}
 }

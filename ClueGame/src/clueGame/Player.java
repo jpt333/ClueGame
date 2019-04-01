@@ -9,7 +9,7 @@ public class Player {
 	private int row;
 	private int column;
 	private Color color;
-	private Set<Card> cards;
+	protected Set<Card> cards;
 	
 	public Player(String playerName, int row, int column, Color color) {
 		this.playerName = playerName;
@@ -20,14 +20,5 @@ public class Player {
 
 	public void setCards(Set<Card> cardSet) {
 		cards = cardSet;
-	}
-	
-	public Card disproveSuggestion(Solution suggestion) {
-		for(Card cardsLoc: cards) {
-			if(suggestion.person == cardsLoc) { return cardsLoc; }
-			if(suggestion.room == cardsLoc)   { return cardsLoc; }
-			if(suggestion.weapon == cardsLoc) { return cardsLoc; }
-		}
-		return null;
 	}
 }
