@@ -104,7 +104,7 @@ public class GameSetupTests {
 		
 	}
 	
-	//Test that all players have roughly same number of cards after dealing
+	//Test that all players have roughly same number of cards after dealing, test all cards dealt, test no cards dealt twice
 	@Test
 	public void testDealingCards() { 
 		//Also test that same card not given to more than 1 player
@@ -122,7 +122,7 @@ public class GameSetupTests {
 	    	}
 	    }
 	    
-	    System.out.println(deltCards);
+	    //System.out.println(deltCards);
 	    
 		Solution solution = board.getSolution();
 		assertFalse(deltCards.contains(solution.person));
@@ -130,7 +130,7 @@ public class GameSetupTests {
 		assertFalse(deltCards.contains(solution.weapon));
 		deltCards.add(solution.weapon);
 		
-		System.out.println(solution.room);
+		//System.out.println(solution.room);
 		
 		assertFalse(deltCards.contains(solution.room));
 		deltCards.add(solution.room);
