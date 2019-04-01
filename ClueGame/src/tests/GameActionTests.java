@@ -4,6 +4,7 @@ package tests;
 import static org.junit.Assert.*;
 
 import java.io.FileNotFoundException;
+import java.util.HashSet;
 import java.util.Set;
 
 import org.junit.BeforeClass;
@@ -14,6 +15,8 @@ import clueGame.Board;
 import clueGame.BoardCell;
 import clueGame.Card;
 import clueGame.CardType;
+import clueGame.ComputerPlayer;
+import clueGame.Solution;
 public class GameActionTests {
 	
 	private static Board board;
@@ -31,7 +34,14 @@ public class GameActionTests {
 	//Computer Player
 	@Test
 	public void testSelectATargetSelection() { 
+		Set<BoardCell> roomsVisited;
+		roomsVisited = new HashSet<>();
+		BoardCell target = pickLocation(targets);
+		
 		//if no rooms in list, select randomly
+		for(int i = 0; i < 1000; i++) {
+			
+		}
 		//if room in list not just visited, must select
 		//if room just visited in list, each target(including room) selected randomly
 		
@@ -40,6 +50,8 @@ public class GameActionTests {
 	//Board
 	@Test
 	public void testCheckAccusation() {
+		Solution answer = new Solution("Colonel Mustard", "Rope", "Kitchen");
+		
 		//solution that is correct
 		//solution with wrong person
 		//solution with wrong weapon
