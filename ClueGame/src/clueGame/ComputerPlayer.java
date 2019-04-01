@@ -2,6 +2,7 @@ package clueGame;
 
 import java.awt.Color;
 import java.util.HashSet;
+import java.util.Random;
 import java.util.Set;
 
 public class ComputerPlayer extends Player {
@@ -29,6 +30,15 @@ public class ComputerPlayer extends Player {
 			}
 		}
 		
+		BoardCell targetArray[] = new BoardCell[targets.size()];
+		
+		Random rand = new Random();
+		int adress = 0;
+		
+		for(BoardCell targetsLoc: targets) {targetArray[adress] = targetsLoc; adress++; }
+		int randomNum = rand.nextInt(targets.size());
+		
+		return targetArray[randomNum];
 	}
 	
 	public void makeAccusation() {
