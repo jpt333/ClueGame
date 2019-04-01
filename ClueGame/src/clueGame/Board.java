@@ -279,7 +279,7 @@ public class Board {
 		
 		int numberOfCards = Math.floorDiv(cards.size() , players.size());
 		
-		 Random rand = new Random();
+		Random rand = new Random();
 		boolean rejected = true;
 		int adress = 0;
 		
