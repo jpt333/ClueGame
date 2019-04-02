@@ -6,7 +6,7 @@ import static org.junit.Assert.*;
 import java.io.FileNotFoundException;
 import java.util.HashSet;
 import java.util.Set;
-
+import java.awt.Color;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -28,20 +28,31 @@ public class GameActionTests {
 		board.setConfigFiles("ClueBoard.csv", "rooms.txt");
 		board.setCardFiles("weapons.txt", "Person.txt");
 		board.initialize();
-		
 	}
 	
 	//Computer Player
 	@Test
 	public void testSelectATargetSelection() { 
-		Set<BoardCell> roomsVisited;
-		roomsVisited = new HashSet<>();
-		BoardCell target = pickLocation(targets);
-		
+		//NOT SURE IF COLOR WORKS THIS WAY
+		Color Yellow = Color.YELLOW;
+		ComputerPlayer player = new ComputerPlayer("Colonel Mustard",board.getCellAt(0, 3), Yellow);
 		//if no rooms in list, select randomly
-		for(int i = 0; i < 1000; i++) {
-			
+		board.calcTargets(0,3,1);
+		Set<BoardCell> targets = board.getTargets();
+		int location_1_3 = 0;
+		int location_0_4 = 0;
+		
+		for(int i = 0; i < 100; i++) {
+			BoardCell selected = player.pickLocation(targets);
+			if(selected.getInitial() == board.getCellAt(1, 3).getInitial()) {
+				location_1_3++;
+			}
+			if(selected.getInitial() == board.getCellAt(0, 4).getInitial()) {
+				location_0_4++;
+			}
 		}
+		assertNotEquals(location_1_3, location_0_4);
+		
 		//if room in list not just visited, must select
 		//if room just visited in list, each target(including room) selected randomly
 		
@@ -50,7 +61,10 @@ public class GameActionTests {
 	//Board
 	@Test
 	public void testCheckAccusation() {
-		Solution answer = new Solution("Colonel Mustard", "Rope", "Kitchen");
+		Solution answer = new Solution();
+		answer.person = "Colonel Mustard";
+		answer.room = "Kitchen";
+		answer.weapon = "Rope";
 		
 		//solution that is correct
 		//solution with wrong person
