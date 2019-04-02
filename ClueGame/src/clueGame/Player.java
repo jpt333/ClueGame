@@ -7,8 +7,8 @@ import java.util.Set;
 
 public class Player {
 	private String playerName;
-	private int row;
-	private int column;
+	protected int row;
+	protected int column;
 	private Color color;
 	protected Set<Card> cards;
 	

@@ -9,6 +9,7 @@ import java.util.Set;
 public class ComputerPlayer extends Player {
 
 	Set<BoardCell> roomsVisited;
+
 	
 	public ComputerPlayer(String playerName, int row, int column, Color color) {
 		super(playerName, row, column, color);
@@ -42,12 +43,35 @@ public class ComputerPlayer extends Player {
 		return targetArray[randomNum];
 	}
 	
-	public void makeAccusation() {
-		
+	//pass in all cards from the board
+	//does not have to be in room to make suggestion
+	public Solution makeAccusation(Set<Card> availableCards) {
+		//don't want to modify the available cards
+		Set<Card> locAvailableCards = availableCards;
+		return null;
 	}
 	
-	public void createSuggestion() {
+	//pass in all cards from the board 
+	//has to be in a room to make suggestion
+	public Solution createSuggestion(CardDeck availableCards) {
+		//don't want to modify the available cards
+		CardDeck locAvailableCards = availableCards;
 		
+		//todo create test if in a room
+		if(/*inroom*/true) {
+			for(Card locCards: cards) {
+				if(locAvailableCards.people.contains(locCards)) {
+					locAvailableCards.people.remove(locCards);
+				}
+				if(locAvailableCards.weapons.contains(locCards)) {
+					locAvailableCards.weapons.remove(locCards);
+				}
+				if(locAvailableCards.rooms.contains(locCards)) {
+					locAvailableCards.rooms.remove(locCards);
+				}
+			}
+		}
+		return null;
 	}
 	
 	public Card disproveSuggestion(Solution suggestion) {

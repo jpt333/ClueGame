@@ -29,12 +29,12 @@ public class Board {
 
 	private Map<BoardCell, Set<BoardCell>> adjMatrix; //stores what is adjacent to a cell
 	
-	private Map<Player, Set<Card>> playerCards; //stores what is adjacent to a cell
-	
 	private Set<BoardCell> visited; //stores which cells were visited
 	private Set<BoardCell> targets; //stores which cells are targets
 	private Set<Player> players; //deck of cards
+	
 	private Set<Card> cards; //deck of cards
+	private CardDeck cardDeck; //sorted deck of cards
 	
 	private String boardConfigFile;
 	private String roomConfigFile;
@@ -65,7 +65,6 @@ public class Board {
 	public void initialize(){
 		//initialize variables
 		adjMatrix = new HashMap<BoardCell, Set<BoardCell>>();
-		playerCards = new HashMap<Player, Set<Card>>();
 		
 		visited = new HashSet<>();
 		targets = new HashSet<>();
@@ -112,6 +111,7 @@ public class Board {
 	 
 	        	//loads the rooms into the card deck
 	        	if(line[2].equals("Card")) {
+	        		cardDeck.rooms.add(new Card(line[1], CardType.ROOM));
 	        		cards.add(new Card(line[1], CardType.ROOM));
 	        	}
 	        }else {
@@ -161,6 +161,7 @@ public class Board {
 		        		throw new BadConfigFormatException();
 	        		}
 	        		players.add(new Player(line[0] , (int)Double.parseDouble(line[2]), (int)Double.parseDouble(line[3]), locColor));
+	        		cardDeck.people.add(new Card(line[0], CardType.PERSON));
 	        		cards.add(new Card(line[0], CardType.PERSON));
 	        		//if not a number
 	        	}catch(NumberFormatException e){
@@ -181,6 +182,7 @@ public class Board {
 	    		scanner.close();
         		throw new BadConfigFormatException();
 	    	}
+	    	cardDeck.weapons.add(new Card(line, CardType.WEAPON));
 	    	cards.add(new Card(line, CardType.WEAPON));
 	    }
 	    scanner.close();
@@ -330,9 +332,7 @@ public class Board {
 				cardSet.add(cardsLoc[randomNum]);
 			}
 			
-			////////need to remove this////
-			playerCards.put(playerLoc, cardSet);
-			///////////////////////////////
+			
 			
 			playerLoc.setCards(cardSet);
 		}
@@ -474,10 +474,6 @@ public class Board {
 	
 	public Solution getSolution() {
 		return solution;
-	}
-
-	public Map<Player, Set<Card>> getPlayerCards() {
-		return playerCards;
 	}
 
 	public Set<BoardCell> getAdjList(int row, int col) {
