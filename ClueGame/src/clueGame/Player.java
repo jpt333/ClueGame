@@ -7,15 +7,13 @@ import java.util.Set;
 
 public class Player {
 	private String playerName;
-	protected int row;
-	protected int column;
+	BoardCell currentLocation;
 	private Color color;
 	protected Set<Card> cards;
 	
-	public Player(String playerName, int row, int column, Color color) {
+	public Player(String playerName, BoardCell currentLocation, Color color) {
 		this.playerName = playerName;
-		this.row = row;
-		this.column = column;
+		this.currentLocation = currentLocation;
 		this.color = color;
 	}
 

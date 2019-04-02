@@ -160,7 +160,8 @@ public class Board {
 	        			scanner.close();
 		        		throw new BadConfigFormatException();
 	        		}
-	        		players.add(new Player(line[0] , (int)Double.parseDouble(line[2]), (int)Double.parseDouble(line[3]), locColor));
+	        		// might want to refactor the second argument it is really wordy
+	        		players.add(new Player(line[0] , board[(int)Double.parseDouble(line[2])][(int)Double.parseDouble(line[3])], locColor));
 	        		cardDeck.people.add(new Card(line[0], CardType.PERSON));
 	        		cards.add(new Card(line[0], CardType.PERSON));
 	        		//if not a number

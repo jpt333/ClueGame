@@ -11,8 +11,8 @@ public class ComputerPlayer extends Player {
 	Set<BoardCell> roomsVisited;
 
 	
-	public ComputerPlayer(String playerName, int row, int column, Color color) {
-		super(playerName, row, column, color);
+	public ComputerPlayer(String playerName, BoardCell currentLocation, Color color) {
+		super(playerName, currentLocation, color);
 		roomsVisited = new HashSet<>();
 	}
 
@@ -28,6 +28,7 @@ public class ComputerPlayer extends Player {
 				}
 				//add to visited room and return
 				roomsVisited.add(targetsLoc);
+				
 				return targetsLoc;
 			}
 		}
