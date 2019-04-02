@@ -71,7 +71,7 @@ public class Board {
 		players = new HashSet<>();
 		cards = new HashSet<>();
 		
-		cardDeck = new cardDeck();
+		cardDeck = new CardDeck();
 		try {
 			loadRoomConfig();
 			loadBoardConfig();
@@ -112,7 +112,7 @@ public class Board {
 	 
 	        	//loads the rooms into the card deck
 	        	if(line[2].equals("Card")) {
-	        		cardDeck.rooms.add(new Card(line[1], CardType.ROOM));
+	        		cardDeck.rooms.add(new Card(line[1], CardType.ROOM, symbol.toString()));
 	        		cards.add(new Card(line[1], CardType.ROOM));
 	        	}
 	        }else {
