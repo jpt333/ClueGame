@@ -10,6 +10,7 @@ public class Card {
 		this.cardType = cardType;
 	}
 
+	//fix this
 	public boolean equals() {
 		return false;
 	}

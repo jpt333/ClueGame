@@ -59,7 +59,8 @@ public class ComputerPlayer extends Player {
 		CardDeck locAvailableCards = availableCards;
 		
 		//todo create test if in a room
-		if(/*inroom*/true) {
+		if(currentLocation.isRoom()) {
+			Solution suggestion;
 			for(Card locCards: cards) {
 				if(locAvailableCards.people.contains(locCards)) {
 					locAvailableCards.people.remove(locCards);
@@ -70,6 +71,11 @@ public class ComputerPlayer extends Player {
 				if(locAvailableCards.rooms.contains(locCards)) {
 					locAvailableCards.rooms.remove(locCards);
 				}
+				//this is the key 
+				currentLocation.getInitial();
+				
+				//this is what needs to be compared to 
+				suggestion.room.getCardName();
 			}
 		}
 		return null;
