@@ -71,6 +71,7 @@ public class Board {
 		players = new HashSet<>();
 		cards = new HashSet<>();
 		
+		cardDeck = new cardDeck();
 		try {
 			loadRoomConfig();
 			loadBoardConfig();

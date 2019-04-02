@@ -60,7 +60,7 @@ public class ComputerPlayer extends Player {
 		
 		//todo create test if in a room
 		if(currentLocation.isRoom()) {
-			Solution suggestion;
+			Solution suggestion = new Solution();
 			for(Card locCards: cards) {
 				if(locAvailableCards.people.contains(locCards)) {
 					locAvailableCards.people.remove(locCards);
