@@ -2,18 +2,23 @@
 package clueGame;
 
 import java.awt.Color;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
 
 public class ComputerPlayer extends Player {
 
-	Set<BoardCell> roomsVisited;
-
+	ArrayList<Character> roomsVisited;
 	
 	public ComputerPlayer(String playerName, BoardCell currentLocation, Color color) {
 		super(playerName, currentLocation, color);
-		roomsVisited = new HashSet<>();
+		roomsVisited = new ArrayList<>();
+		for(Card cardsLoc : cards) {
+			if(cardsLoc.getCardType() == CardType.ROOM) {
+				roomsVisited.add(cardsLoc.getInitial());
+			}
+		}
 	}
 
 	public BoardCell pickLocation(Set<BoardCell> targets) {
@@ -21,13 +26,13 @@ public class ComputerPlayer extends Player {
 			//check if it is a room
 			if(targetsLoc.isRoom()) {
 				//check to see if it has been visited
-				for(BoardCell roomsVisitedLoc: roomsVisited) {
-					if(targetsLoc.getInitial() == roomsVisitedLoc.getInitial()) {
+				for(Character roomsVisitedLoc: roomsVisited) {
+					if(targetsLoc.getInitial() == roomsVisitedLoc) {
 						continue;
 					}
 				}
 				//add to visited room and return
-				roomsVisited.add(targetsLoc);
+				roomsVisited.add(targetsLoc.getInitial());
 				
 				return targetsLoc;
 			}
@@ -72,10 +77,9 @@ public class ComputerPlayer extends Player {
 					locAvailableCards.rooms.remove(locCards);
 				}
 				//this is the key 
-				currentLocation.getInitial();
-				
-				//this is what needs to be compared to 
-				suggestion.room.getCardName();
+				if(currentLocation.getInitial() == suggestion.room.getInitial(){
+					
+				}
 			}
 		}
 		return null;
@@ -99,4 +103,9 @@ public class ComputerPlayer extends Player {
 		}
 		return null;
 	}
+
+	public ArrayList<Character> getRoomsVisited() {
+		return roomsVisited;
+	}
+	
 }
