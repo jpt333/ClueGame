@@ -58,13 +58,21 @@ public class GameActionTests {
 		board.calcTargets(8,3,1);
 		Set<BoardCell> targetss = board.getTargets();
 		boolean hasRoomInList = false;
+		BoardCell targ;
 		for(BoardCell targetz : targetss) {
 			//check if target is a room
 			if(targetz.isRoom()) {
+				targ  = targetz;
 				hasRoomInList = true;
 			}
 		}
 		//HOW TO ACCESS VISITED LIST
+		Set<BoardCell> visited;
+		for(BoardCell visit : visited) {
+			if(visit == targ) {
+				//NOT SURE HOW TO TEST
+			}
+		}
 		
 		//if room just visited in list, each target(including room) selected randomly
 		
@@ -74,9 +82,12 @@ public class GameActionTests {
 	@Test
 	public void testCheckAccusation() {
 		Solution answer = new Solution();
-		answer.person = "Colonel Mustard";
-		answer.room = "Kitchen";
-		answer.weapon = "Rope";
+		Card mustard = new Card("Colonel Mustard", CardType.PERSON);
+		Card weaponn = new Card("Rope", CardType.WEAPON);
+		Card rooom = new Card("Kitchen", CardType.ROOM, "K");
+		answer.person = mustard;
+		answer.room = weaponn;
+		answer.weapon = weaponn;
 		
 		//solution that is correct
 		//solution with wrong person
