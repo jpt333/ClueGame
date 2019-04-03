@@ -31,7 +31,9 @@ public class Board {
 	
 	private Set<BoardCell> visited; //stores which cells were visited
 	private Set<BoardCell> targets; //stores which cells are targets
-	private Set<Player> players; //deck of cards
+	
+	private Set<ComputerPlayer> computerPlayers;
+	private Set<Player> players; 
 	
 	private Set<Card> cards; //deck of cards
 	private CardDeck cardDeck; //sorted deck of cards
@@ -69,6 +71,7 @@ public class Board {
 		visited = new HashSet<>();
 		targets = new HashSet<>();
 		players = new HashSet<>();
+		computerPlayers = new HashSet<>();
 		cards = new HashSet<>();
 		
 		cardDeck = new CardDeck();
@@ -446,6 +449,38 @@ public class Board {
 			visited.remove(cell);
 		}
 		
+	}
+	
+	
+	public Card handleSuggestion(Player player) {
+		players.remove(player);
+		Card answer = handleSuggestionTech(player.createSuggestion(cardDeck));
+		players.add(player);
+		return answer;
+	}
+	
+	public Card handleSuggestion(ComputerPlayer player) {
+		computerPlayers.remove(player);
+		Card answer = handleSuggestionTech(player.createSuggestion(cardDeck));
+		computerPlayers.add(player);
+		return answer;
+	}
+	
+	public Card handleSuggestionTech(Solution suggestion) {
+		Card answer;
+		for(Player locPlayers: players) {
+			answer = locPlayers.disproveSuggestion(suggestion);
+			if(answer != null) {
+				return answer;
+			}
+		}
+		for(ComputerPlayer locComputerPlayers: computerPlayers) {
+			answer = locComputerPlayers.disproveSuggestion(suggestion);
+			if(answer != null) {
+				return answer;
+			}
+		}
+		return null;
 	}
 	
 	public void calcTargets(int row, int col, int steps) {
