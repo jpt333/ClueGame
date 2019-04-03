@@ -102,7 +102,7 @@ public class GameActionTests {
 		//solution with wrong person
 		Card wrongPerson = new Card("Professor Plum", CardType.PERSON);
 		suggestion.person = wrongPerson;
-		assertNotEquals(answer.person, suggestion.person);
+		assertNotEquals(answer.person, suggestion.person); 
 		
 		//solution with wrong weapon
 		Card wrongWeapon = new Card("Knife", CardType.WEAPON);
