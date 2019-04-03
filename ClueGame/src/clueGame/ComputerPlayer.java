@@ -51,10 +51,48 @@ public class ComputerPlayer extends Player {
 	
 	//pass in all cards from the board
 	//does not have to be in room to make suggestion
-	public Solution makeAccusation(Set<Card> availableCards) {
+	public Solution makeAccusation(CardDeck availableCards) {
 		//don't want to modify the available cards
-		Set<Card> locAvailableCards = availableCards;
-		return null;
+				CardDeck locAvailableCards = availableCards;
+				Solution answer = new Solution();
+				/*
+				 * When a computer player is constructed the room cards that 
+				 *they have are added to the visited list to prevent bad 
+				 *suggestions
+				 */
+				if(currentLocation.isRoom()) {
+					for(Card locCards: cards) {
+						if(locAvailableCards.people.contains(locCards)) {
+							locAvailableCards.people.remove(locCards);
+						}
+						if(locAvailableCards.weapons.contains(locCards)) {
+							locAvailableCards.weapons.remove(locCards);
+						}
+						if(locAvailableCards.rooms.contains(locCards)) {
+							locAvailableCards.rooms.remove(locCards);
+						}
+					}
+				}
+				Random rand = new Random();
+				
+				Card carddArray[] = new Card[locAvailableCards.rooms.size()];
+				//randomly select a person card
+				locAvailableCards.rooms.toArray(carddArray);
+				int randomNum = rand.nextInt(locAvailableCards.rooms.size());
+				answer.person = carddArray[randomNum];
+				
+				carddArray = new Card[locAvailableCards.people.size()];
+				//randomly select a person card
+				locAvailableCards.people.toArray(carddArray);
+				randomNum = rand.nextInt(locAvailableCards.people.size());
+				answer.person = carddArray[randomNum];
+				
+				carddArray = new Card[locAvailableCards.weapons.size()];
+				//randomly select a weapon card
+				locAvailableCards.weapons.toArray(carddArray);
+				randomNum = rand.nextInt(locAvailableCards.weapons.size());
+				answer.weapon = carddArray[randomNum];
+				return answer;
 	}
 	
 	//pass in all cards from the board 
@@ -62,10 +100,13 @@ public class ComputerPlayer extends Player {
 	public Solution createSuggestion(CardDeck availableCards) {
 		//don't want to modify the available cards
 		CardDeck locAvailableCards = availableCards;
-		
-		//todo create test if in a room
+		Solution answer = new Solution();
+		/*
+		 * When a computer player is constructed the room cards that 
+		 *they have are added to the visited list to prevent bad 
+		 *suggestions
+		 */
 		if(currentLocation.isRoom()) {
-			Solution suggestion = new Solution();
 			for(Card locCards: cards) {
 				if(locAvailableCards.people.contains(locCards)) {
 					locAvailableCards.people.remove(locCards);
@@ -76,13 +117,27 @@ public class ComputerPlayer extends Player {
 				if(locAvailableCards.rooms.contains(locCards)) {
 					locAvailableCards.rooms.remove(locCards);
 				}
-				//this is the key 
-				if(currentLocation.getInitial() == suggestion.room.getInitial(){
-					
-				}
+				
+				//add the room card
+				if(currentLocation.getInitial() == locCards.getInitial()){
+					answer.room = locCards;
+				}	
 			}
 		}
-		return null;
+		Random rand = new Random();
+		
+		Card carddArray[] = new Card[locAvailableCards.people.size()];
+		//randomly select a person card
+		locAvailableCards.people.toArray(carddArray);
+		int randomNum = rand.nextInt(locAvailableCards.people.size());
+		answer.person = carddArray[randomNum];
+		
+		carddArray = new Card[locAvailableCards.weapons.size()];
+		//randomly select a weapon card
+		locAvailableCards.weapons.toArray(carddArray);
+		randomNum = rand.nextInt(locAvailableCards.weapons.size());
+		answer.weapon = carddArray[randomNum];
+		return answer;
 	}
 	
 	public Card disproveSuggestion(Solution suggestion) {
