@@ -33,27 +33,28 @@ public class GameActionTests {
 	//Computer Player
 	@Test
 	public void testSelectATargetSelection() { 
-		//NOT SURE IF COLOR WORKS THIS WAY
 		Color Yellow = Color.YELLOW;
 		ComputerPlayer player = new ComputerPlayer("Colonel Mustard",board.getCellAt(0, 3), Yellow);
 		//if no rooms in list, select randomly
 		board.calcTargets(0,3,1);
 		Set<BoardCell> targets = board.getTargets();
-		int location_1_3 = 0;
-		int location_0_4 = 0;
+		boolean location_1_3 = false;
+		boolean location_0_4 = false;
 		
 		for(int i = 0; i < 100; i++) {
 			BoardCell selected = player.pickLocation(targets);
 			if(selected.getInitial() == board.getCellAt(1, 3).getInitial()) {
-				location_1_3++;
+				location_1_3=true;
 			}
 			if(selected.getInitial() == board.getCellAt(0, 4).getInitial()) {
-				location_0_4++;
+				location_0_4=true;
 			}
 		}
-		assertNotEquals(location_1_3, location_0_4);
+		assertTrue(location_1_3);
+		assertTrue(location_0_4);
 		
 		//if room in list not just visited, must select
+		
 		//if room just visited in list, each target(including room) selected randomly
 		
 	}
@@ -61,10 +62,10 @@ public class GameActionTests {
 	//Board
 	@Test
 	public void testCheckAccusation() {
-		Solution answer = new Solution();
-		answer.person = "Colonel Mustard";
-		answer.room = "Kitchen";
-		answer.weapon = "Rope";
+//		Solution answer = new Solution();
+//		answer.person = "Colonel Mustard";
+//		answer.room = "Kitchen";
+//		answer.weapon = "Rope";
 		
 		//solution that is correct
 		//solution with wrong person
