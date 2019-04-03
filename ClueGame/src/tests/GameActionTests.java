@@ -86,13 +86,33 @@ public class GameActionTests {
 		Card weaponn = new Card("Rope", CardType.WEAPON);
 		Card rooom = new Card("Kitchen", CardType.ROOM, "K");
 		answer.person = mustard;
-		answer.room = weaponn;
+		answer.room = rooom;
 		answer.weapon = weaponn;
 		
 		//solution that is correct
+		Solution suggestion = new Solution();
+		suggestion.person = mustard;
+		suggestion.room = rooom;
+		suggestion.weapon = weaponn;
+		
+		assertEquals(answer.person, suggestion.person);
+		assertEquals(answer.room, suggestion.room);
+		assertEquals(answer.weapon, suggestion.weapon);
+		
 		//solution with wrong person
+		Card wrongPerson = new Card("Professor Plum", CardType.PERSON);
+		suggestion.person = wrongPerson;
+		assertNotEquals(answer.person, suggestion.person);
+		
 		//solution with wrong weapon
+		Card wrongWeapon = new Card("Knife", CardType.WEAPON);
+		suggestion.weapon = wrongWeapon;
+		assertNotEquals(answer.weapon, suggestion.weapon);
+		
 		//solution with wrong room
+		Card wrongRoom = new Card("Bedroom", CardType.ROOM, "B" );
+		suggestion.room = wrongRoom;
+		assertNotEquals(answer.room, suggestion.room);
 	}
 	
 	//Player
