@@ -44,16 +44,27 @@ public class GameActionTests {
 		for(int i = 0; i < 100; i++) {
 			BoardCell selected = player.pickLocation(targets);
 			if(selected.getInitial() == board.getCellAt(1, 3).getInitial()) {
-				location_1_3=true;
+				location_1_3 = true;
 			}
 			if(selected.getInitial() == board.getCellAt(0, 4).getInitial()) {
-				location_0_4=true;
+				location_0_4 = true;
 			}
 		}
 		assertTrue(location_1_3);
 		assertTrue(location_0_4);
 		
 		//if room in list not just visited, must select
+		player = new ComputerPlayer("Colonel Mustard", board.getCellAt(8, 3), Yellow);
+		board.calcTargets(8,3,1);
+		Set<BoardCell> targetss = board.getTargets();
+		boolean hasRoomInList = false;
+		for(BoardCell targetz : targetss) {
+			//check if target is a room
+			if(targetz.isRoom()) {
+				hasRoomInList = true;
+			}
+		}
+		//HOW TO ACCESS VISITED LIST
 		
 		//if room just visited in list, each target(including room) selected randomly
 		
@@ -62,10 +73,10 @@ public class GameActionTests {
 	//Board
 	@Test
 	public void testCheckAccusation() {
-//		Solution answer = new Solution();
-//		answer.person = "Colonel Mustard";
-//		answer.room = "Kitchen";
-//		answer.weapon = "Rope";
+		Solution answer = new Solution();
+		answer.person = "Colonel Mustard";
+		answer.room = "Kitchen";
+		answer.weapon = "Rope";
 		
 		//solution that is correct
 		//solution with wrong person
