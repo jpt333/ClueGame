@@ -4,6 +4,7 @@ package tests;
 import static org.junit.Assert.*;
 
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 import java.awt.Color;
@@ -16,6 +17,7 @@ import clueGame.BoardCell;
 import clueGame.Card;
 import clueGame.CardType;
 import clueGame.ComputerPlayer;
+import clueGame.Player;
 import clueGame.Solution;
 public class GameActionTests {
 	
@@ -66,15 +68,16 @@ public class GameActionTests {
 				hasRoomInList = true;
 			}
 		}
-		//HOW TO ACCESS VISITED LIST
-		Set<BoardCell> visited;
-		for(BoardCell visit : visited) {
-			if(visit == targ) {
+		
+		ArrayList<Character> visited = new ArrayList<>();
+		for(Character visit : visited) {
+			if(visit == targ.getInitial()) {
 				//NOT SURE HOW TO TEST
 			}
 		}
 		
 		//if room just visited in list, each target(including room) selected randomly
+		
 		
 	}
 	
@@ -118,8 +121,21 @@ public class GameActionTests {
 	//Player
 	@Test
 	public void testDisprovingSuggestion() {
+		BoardCell playerloc = board.getCellAt(7, 3);
+		Color yellow = Color.YELLOW;
+		Player playerOne = new Player("Player One", playerloc, yellow);
+		Solution answer = new Solution();
+		Card mustard = new Card("Colonel Mustard", CardType.PERSON);
+		Card weaponn = new Card("Rope", CardType.WEAPON);
+		Card rooom = new Card("Kitchen", CardType.ROOM, "K");
+		answer.person = mustard;
+		answer.room = rooom;
+		answer.weapon = weaponn;
+		
 		//if player has only one matching card, it should be returned
+		
 		//if player has >1 matching card, returned card is random. selec.
+		
 		//if player has no matching cards, null is returned
 	}
 	
