@@ -19,8 +19,6 @@ public class Board {
 	private int numColumns;
 	public static final int MAX_BOARD_SIZE = 50;
 	
-	private Solution answerKey;
-	
 	private static Board theInstance;
 	
 	private Solution solution;
@@ -70,7 +68,6 @@ public class Board {
 		//initialize variables
 		adjMatrix = new HashMap<BoardCell, Set<BoardCell>>();
 		
-		answerKey = new Solution();
 		visited = new HashSet<>();
 		targets = new HashSet<>();
 		players = new HashSet<>();
