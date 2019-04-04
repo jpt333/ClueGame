@@ -18,7 +18,7 @@ public class ComputerPlayer extends Player {
 			if(cardsLoc.getCardType() == CardType.ROOM) {
 				roomsVisited.add(cardsLoc.getInitial());
 			}
-		}
+		} 
 	}
 
 	
