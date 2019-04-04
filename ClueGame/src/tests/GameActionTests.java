@@ -37,7 +37,7 @@ public class GameActionTests {
 	public void testSelectATargetSelection() { 
 		Color Yellow = Color.YELLOW;
 		//Room 1 distance away
-		ComputerPlayer player = new ComputerPlayer("Colonel Mustard",board.getCellAt(0, 3), Yellow);
+		ComputerPlayer player = new ComputerPlayer("Colonel Mustard", board.getCellAt(0, 3), Yellow);
 		//if no rooms in list, select randomly
 		board.calcTargets(0,3,1);
 		Set<BoardCell> targets = board.getTargets();
@@ -70,12 +70,12 @@ public class GameActionTests {
 			}
 		}
 		
-		ArrayList<Character> visited = new ArrayList<>();
-		for(Character visit : visited) {
-			if(visit == targ.getInitial()) {
-				//NOT SURE HOW TO TEST
-			}
-		}
+//		ArrayList<Character> visited = new ArrayList<>();
+//		for(Character visit : visited) {
+//			if(visit == targ.getInitial()) {
+//				//NOT SURE HOW TO TEST
+//			}
+//		}
 		
 		//if room just visited in list, each target(including room) selected randomly
 		
@@ -89,15 +89,20 @@ public class GameActionTests {
 		Card mustard = new Card("Colonel Mustard", CardType.PERSON);
 		Card weaponn = new Card("Rope", CardType.WEAPON);
 		Card rooom = new Card("Kitchen", CardType.ROOM, "K");
-		answer.person = mustard;
-		answer.room = rooom;
-		answer.weapon = weaponn;
+		answer.setAnsPerson(mustard);
+		answer.setAnsRoom(rooom);
+		answer.setAnsWeapon(weaponn);
 		
 		//solution that is correct
 		Solution suggestion = new Solution();
 		suggestion.person = mustard;
 		suggestion.room = rooom;
 		suggestion.weapon = weaponn;
+//		suggestion.setAnsPerson(mustard);
+//		suggestion.setAnsRoom(rooom);
+//		suggestion.setAnsWeapon(weaponn);
+		
+//		assertTrue(board.checkAccusation(suggestion));
 		
 		assertEquals(answer.person, suggestion.person);
 		assertEquals(answer.room, suggestion.room);
