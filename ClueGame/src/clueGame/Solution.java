@@ -9,14 +9,22 @@ public class Solution {
 	public Card getPerson() {
 		return person;
 	}
-	
 	public Card getRoom() {
 		return room;
 	}
-	
 	public Card getWeapon() {
 		return weapon;
 	}
+	 public void setAnsPerson(Card personn) {
+		 person = personn;
+	 }
+	 public void setAnsRoom(Card rooom) {
+		 room = rooom;
+	 }
+	 public void setAnsWeapon(Card weaponn) {
+		 weapon = weaponn;
+	 }
+	 
 	
 	
 }
