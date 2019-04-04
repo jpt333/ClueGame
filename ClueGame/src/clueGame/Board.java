@@ -512,6 +512,10 @@ public class Board {
 		return cards;
 	}
 	
+	public CardDeck getDeck() {
+		return cardDeck;
+	}
+	
 	public Solution getSolution() {
 		return solution;
 	}
