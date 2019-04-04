@@ -8,9 +8,10 @@ import java.util.Set;
 
 public class Player {
 	private String playerName;
-	BoardCell currentLocation;
 	private Color color;
 	protected Set<Card> cards;
+	protected BoardCell currentLocation;
+	
 	
 	public Player(String playerName, BoardCell currentLocation, Color color) {
 		this.playerName = playerName;
@@ -85,6 +86,11 @@ public class Player {
 		answer.weapon = carddArray[randomNum];
 		return answer;
 	}
+	
+	public void setCurrentLocation(BoardCell currentLocation){
+		this.currentLocation = currentLocation;
+	}
+	
 	
 	public void setCards(Set<Card> cardSet) {
 		cards = cardSet;

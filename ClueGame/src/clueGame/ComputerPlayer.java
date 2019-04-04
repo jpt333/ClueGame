@@ -21,6 +21,7 @@ public class ComputerPlayer extends Player {
 		}
 	}
 
+	
 	public BoardCell pickLocation(Set<BoardCell> targets) {
 		for(BoardCell targetsLoc: targets) {
 			//check if it is a room
@@ -97,6 +98,7 @@ public class ComputerPlayer extends Player {
 	
 	//pass in all cards from the board 
 	//has to be in a room to make suggestion
+	@Override
 	public Solution createSuggestion(CardDeck availableCards) {
 		//don't want to modify the available cards
 		CardDeck locAvailableCards = availableCards;
@@ -140,6 +142,7 @@ public class ComputerPlayer extends Player {
 		return answer;
 	}
 	
+	@Override
 	public Card disproveSuggestion(Solution suggestion) {
 		Card carddArray[] = null;
 		Set<Card> cardsMatching = new HashSet<>();
