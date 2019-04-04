@@ -10,10 +10,12 @@ import java.util.Set;
 public class ComputerPlayer extends Player {
 
 	ArrayList<Character> roomsVisited;
+	String justVisited;
 	
 	public ComputerPlayer(String playerName, BoardCell currentLocation, Color color) {
 		super(playerName, currentLocation, color);
 		roomsVisited = new ArrayList<>();
+		justVisited = "";
 	}
 
 	
@@ -29,6 +31,8 @@ public class ComputerPlayer extends Player {
 				}
 				//add to visited room and return
 				roomsVisited.add(targetsLoc.getInitial());
+				
+				
 				
 				return targetsLoc;
 			}
