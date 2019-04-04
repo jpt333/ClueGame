@@ -154,14 +154,71 @@ public class GameActionTests {
 	//ComputerPlayer
 	@Test
 	public void testCreatingSuggestion() {
-		//room matches current location
-		Player playerOne = new Player("Player One", playerloc, yellow);
 		
+		//room B
+		BoardCell playerLoc = board.getCellAt(8, 2);
+		Color yellow = Color.YELLOW;
+		ComputerPlayer playerOne = new ComputerPlayer("Player One", playerLoc, yellow);
+		
+		Card weapon1 = new Card("Wrench", CardType.WEAPON);
+		Card weapon2 = new Card("Candlestick", CardType.WEAPON);
+		Card weapon3 = new Card("Lead Pipe", CardType.WEAPON);
+		Card weapon4 = new Card("Rope", CardType.WEAPON);
+		Card weapon5 = new Card("Knife", CardType.WEAPON);
+		
+		Set<Card> cardSet = new HashSet<>();
+		cardSet.add(weapon1);
+		cardSet.add(weapon2);
+		cardSet.add(weapon3);
+		cardSet.add(weapon4);
+		cardSet.add(weapon5);
+		
+		playerOne.setCards(cardSet);
+		
+		Solution testSuggestion = playerOne.createSuggestion(board.getDeck());
+		//room matches current location
+		assertTrue(testSuggestion.room.getInitial() == playerLoc.getInitial());
 		//if only one weapon not seen, it's selected
+		assertTrue(testSuggestion.weapon.getCardName() == "Revolver");
+		cardSet.clear();
+		
+		Card person1 = new Card("Miss Scarlet", CardType.PERSON);
+		Card person2 = new Card("Mr. Green", CardType.PERSON);
+		Card person3 = new Card("Mrs. Peacock", CardType.PERSON);
+		Card person4 = new Card("Mrs. White", CardType.PERSON);
+		Card person5 = new Card("Professor Plum", CardType.PERSON);
+		
+		cardSet.add(person1);
+		cardSet.add(person2);
+		cardSet.add(person3);
+		cardSet.add(person4);
+		cardSet.add(person5);
+		
 		//if only one person not seen, it's selected
+		assertTrue(testSuggestion.person.getCardName() == "Colonel Mustard");
+		cardSet.clear();
 		//if multiple weapons not seen, one of them random select.
+		
+		int colonelMustard = 0;
+		int missScarlet = 0;
+		int mrGreen = 0;
+		int mrsPeacock = 0;
+		int mrsWhite = 0;
+		int professorPlum = 0;
+		
+		int wrench = 0;
+		int candlestick = 0;
+		int pipe = 0;
+		int rope = 0;
+		int revolver = 0;
+		int knife = 0;
+		
+		for(int a1 = 0; a1 < 100; a1++){
+			testSuggestion = playerOne.createSuggestion(board.getDeck());
+			if(testSuggestion.person.getCardName() == "Colonel Mustard"){ ;}
+		}
 		//if multiple people not seem, one of them random. select.
-
+		
 	}
 	
 	
