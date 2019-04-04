@@ -30,6 +30,7 @@ public class GameActionTests {
 		board.setConfigFiles("ClueBoard.csv", "rooms.txt");
 		board.setCardFiles("weapons.txt", "Person.txt");
 		board.initialize();
+		board.dealCards();
 	}
 	
 	//Computer Player
@@ -37,7 +38,7 @@ public class GameActionTests {
 	public void testSelectATargetSelection() { 
 		Color Yellow = Color.YELLOW;
 		//Room 1 distance away
-		ComputerPlayer player = new ComputerPlayer("Colonel Mustard",board.getCellAt(0, 3), Yellow);
+		ComputerPlayer player = new ComputerPlayer("Colonel Mustard", board.getCellAt(0, 3), Yellow);
 		//if no rooms in list, select randomly
 		board.calcTargets(0,3,1);
 		Set<BoardCell> targets = board.getTargets();
@@ -70,12 +71,12 @@ public class GameActionTests {
 			}
 		}
 		
-		ArrayList<Character> visited = new ArrayList<>();
-		for(Character visit : visited) {
-			if(visit == targ.getInitial()) {
-				//NOT SURE HOW TO TEST
-			}
-		}
+//		ArrayList<Character> visited = new ArrayList<>();
+//		for(Character visit : visited) {
+//			if(visit == targ.getInitial()) {
+//				//NOT SURE HOW TO TEST
+//			}
+//		}
 		
 		//if room just visited in list, each target(including room) selected randomly
 		
@@ -85,19 +86,28 @@ public class GameActionTests {
 	//Board
 	@Test
 	public void testCheckAccusation() {
-		Solution answer = new Solution();
+		Solution answer = board.getSolution();
+		Solution suggestion = new Solution();
 		Card mustard = new Card("Colonel Mustard", CardType.PERSON);
 		Card weaponn = new Card("Rope", CardType.WEAPON);
 		Card rooom = new Card("Kitchen", CardType.ROOM, "K");
-		answer.person = mustard;
-		answer.room = rooom;
-		answer.weapon = weaponn;
+		
+		
+//		suggestion.setAnsPerson(answer.getPerson());
+//		suggestion.setAnsRoom(answer.getRoom());
+//		suggestion.setAnsWeapon(answer.getWeapon());
 		
 		//solution that is correct
-		Solution suggestion = new Solution();
-		suggestion.person = mustard;
-		suggestion.room = rooom;
-		suggestion.weapon = weaponn;
+		
+		suggestion.person = answer.getPerson();
+		suggestion.room = answer.getRoom();
+		suggestion.weapon = answer.getWeapon();
+//		suggestion.setAnsPerson(mustard);
+//		suggestion.setAnsRoom(rooom);
+//		suggestion.setAnsWeapon(weaponn);
+		
+		//NULL POINT ERROR
+		assertTrue(board.checkAccusation(suggestion));
 		
 		assertEquals(answer.person, suggestion.person);
 		assertEquals(answer.room, suggestion.room);
@@ -106,17 +116,20 @@ public class GameActionTests {
 		//solution with wrong person
 		Card wrongPerson = new Card("Professor Plum", CardType.PERSON);
 		suggestion.person = wrongPerson;
-		assertNotEquals(answer.person, suggestion.person); 
+		//assertNotEquals(answer.person, suggestion.person);
+		assertFalse(board.checkAccusation(suggestion));
 		
 		//solution with wrong weapon
 		Card wrongWeapon = new Card("Knife", CardType.WEAPON);
 		suggestion.weapon = wrongWeapon;
-		assertNotEquals(answer.weapon, suggestion.weapon);
+		//assertNotEquals(answer.weapon, suggestion.weapon);
+		assertFalse(board.checkAccusation(suggestion));
 		
 		//solution with wrong room
 		Card wrongRoom = new Card("Bedroom", CardType.ROOM, "B" );
 		suggestion.room = wrongRoom;
-		assertNotEquals(answer.room, suggestion.room);
+		//assertNotEquals(answer.room, suggestion.room);
+		assertFalse(board.checkAccusation(suggestion));
 	}
 	
 	//Player

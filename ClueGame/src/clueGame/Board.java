@@ -19,6 +19,8 @@ public class Board {
 	private int numColumns;
 	public static final int MAX_BOARD_SIZE = 50;
 	
+	private Solution answerKey;
+	
 	private static Board theInstance;
 	
 	private Solution solution;
@@ -68,6 +70,7 @@ public class Board {
 		//initialize variables
 		adjMatrix = new HashMap<BoardCell, Set<BoardCell>>();
 		
+		answerKey = new Solution();
 		visited = new HashSet<>();
 		targets = new HashSet<>();
 		players = new HashSet<>();
@@ -526,10 +529,17 @@ public class Board {
 	}
 	
 	public Boolean checkAccusation(Solution accusation) {
-		if((accusation.person == getSolution().person)&&(accusation.room == getSolution().room)&&(accusation.weapon == getSolution().weapon) ) {
-			return true;
+		if(!getSolution().getPerson().equals(accusation.getPerson())) {
+			return false;
 		}
-		return false;
+		if(!getSolution().getRoom().equals(accusation.getRoom())) {
+			return false;
+		}
+		if(!getSolution().getWeapon().equals(accusation.getWeapon())) {
+			return false;
+		}
+		
+		return true;
 	}
 	
 }
