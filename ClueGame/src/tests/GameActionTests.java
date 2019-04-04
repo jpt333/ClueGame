@@ -226,14 +226,37 @@ public class GameActionTests {
 		int revolver = 0;
 		int knife = 0;
 		
-		for(int a1 = 0; a1 < 100; a1++){
+		for(int a1 = 0; a1 < 200; a1++){
 			testSuggestion = playerOne.createSuggestion(board.getDeck());
-			if(testSuggestion.person.getCardName() == "Colonel Mustard"){ ;}
+			if(testSuggestion.person.getCardName() == "Colonel Mustard"){ colonelMustard++;}
+			if(testSuggestion.person.getCardName() == "Miss Scarlet"){ missScarlet++;}
+			if(testSuggestion.person.getCardName() == "Mr. Green"){ mrGreen++;}
+			if(testSuggestion.person.getCardName() == "Mrs. Peacock"){ mrsPeacock++;}
+			if(testSuggestion.person.getCardName() == "Mrs. White"){ mrsWhite++;}
+			if(testSuggestion.person.getCardName() == "Professor Plum"){ professorPlum++;}
+			
+			if(testSuggestion.weapon.getCardName() == "Wrench"){ wrench++;}
+			if(testSuggestion.weapon.getCardName() == "Candlestick"){ candlestick++;}
+			if(testSuggestion.weapon.getCardName() == "Pipe"){ pipe++;}
+			if(testSuggestion.weapon.getCardName() == "Rope"){ rope++;}
+			if(testSuggestion.weapon.getCardName() == "Revolver"){ revolver++;}
+			if(testSuggestion.weapon.getCardName() == "Knife"){ knife++;}
 		}
-		//if multiple people not seem, one of them random. select.
 		
+		//if multiple people not seem, one of them random. select.
+		assertTrue(colonelMustard  > 20);
+		assertTrue(missScarlet  > 20);
+		assertTrue(mrGreen  > 20);
+		assertTrue(mrsPeacock  > 20);
+		assertTrue(mrsWhite  > 20);
+		assertTrue(professorPlum  > 20);
+		
+		//if multiple wepons not seem, one of them random. select.
+		assertTrue(wrench  > 20);
+		assertTrue(candlestick  > 20);
+		assertTrue(pipe  > 20);
+		assertTrue(rope  > 20);
+		assertTrue(revolver  > 20);
+		assertTrue(knife  > 20);
 	}
-	
-	
-	
 }

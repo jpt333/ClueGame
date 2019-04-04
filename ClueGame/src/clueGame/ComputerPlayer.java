@@ -14,11 +14,6 @@ public class ComputerPlayer extends Player {
 	public ComputerPlayer(String playerName, BoardCell currentLocation, Color color) {
 		super(playerName, currentLocation, color);
 		roomsVisited = new ArrayList<>();
-		for(Card cardsLoc : cards) {
-			if(cardsLoc.getCardType() == CardType.ROOM) {
-				roomsVisited.add(cardsLoc.getInitial());
-			}
-		} 
 	}
 
 	
@@ -164,6 +159,18 @@ public class ComputerPlayer extends Player {
 
 	public ArrayList<Character> getRoomsVisited() {
 		return roomsVisited;
+	}
+	
+	@Override
+	public void setCards(Set<Card> cardSet) {
+		roomsVisited.clear();
+		cards = cardSet;	
+		for(Card cardsLoc : cards) {
+			if(cardsLoc.getCardType() == CardType.ROOM) {
+				roomsVisited.add(cardsLoc.getInitial());
+			}
+		} 
+		
 	}
 	
 }

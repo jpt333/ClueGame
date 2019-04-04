@@ -91,8 +91,7 @@ public class Player {
 		this.currentLocation = currentLocation;
 	}
 	
-	
 	public void setCards(Set<Card> cardSet) {
-		cards = cardSet;
+		cards = cardSet;	
 	}
 }
