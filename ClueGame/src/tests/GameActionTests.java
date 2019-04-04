@@ -155,10 +155,12 @@ public class GameActionTests {
 	@Test
 	public void testCreatingSuggestion() {
 		//room matches current location
+		Player playerOne = new Player("Player One", playerloc, yellow);
+		
 		//if only one weapon not seen, it's selected
 		//if only one person not seen, it's selected
-		//if multiple weapons not seen, one of them random selec.
-		//if multiple people not seem, one of them random. selec.
+		//if multiple weapons not seen, one of them random select.
+		//if multiple people not seem, one of them random. select.
 
 	}
 	
