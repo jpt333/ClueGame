@@ -89,7 +89,7 @@ public class GameActionTests {
 		Solution answer = board.getSolution();
 		Solution suggestion = new Solution();
 		
-		//solution that is correct
+		//solution that is correct 
 		
 		suggestion.person = answer.getPerson();
 		suggestion.room = answer.getRoom();
