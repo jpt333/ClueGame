@@ -88,25 +88,13 @@ public class GameActionTests {
 	public void testCheckAccusation() {
 		Solution answer = board.getSolution();
 		Solution suggestion = new Solution();
-		Card mustard = new Card("Colonel Mustard", CardType.PERSON);
-		Card weaponn = new Card("Rope", CardType.WEAPON);
-		Card rooom = new Card("Kitchen", CardType.ROOM, "K");
-		
-		
-//		suggestion.setAnsPerson(answer.getPerson());
-//		suggestion.setAnsRoom(answer.getRoom());
-//		suggestion.setAnsWeapon(answer.getWeapon());
 		
 		//solution that is correct
 		
 		suggestion.person = answer.getPerson();
 		suggestion.room = answer.getRoom();
 		suggestion.weapon = answer.getWeapon();
-//		suggestion.setAnsPerson(mustard);
-//		suggestion.setAnsRoom(rooom);
-//		suggestion.setAnsWeapon(weaponn);
 		
-		//NULL POINT ERROR
 		assertTrue(board.checkAccusation(suggestion));
 		
 		assertEquals(answer.person, suggestion.person);
@@ -114,19 +102,19 @@ public class GameActionTests {
 		assertEquals(answer.weapon, suggestion.weapon);
 		
 		//solution with wrong person
-		Card wrongPerson = new Card("Professor Plum", CardType.PERSON);
+		Card wrongPerson = new Card("Professor P", CardType.PERSON);
 		suggestion.person = wrongPerson;
 		//assertNotEquals(answer.person, suggestion.person);
 		assertFalse(board.checkAccusation(suggestion));
 		
 		//solution with wrong weapon
-		Card wrongWeapon = new Card("Knife", CardType.WEAPON);
+		Card wrongWeapon = new Card("Wrong", CardType.WEAPON);
 		suggestion.weapon = wrongWeapon;
 		//assertNotEquals(answer.weapon, suggestion.weapon);
 		assertFalse(board.checkAccusation(suggestion));
 		
 		//solution with wrong room
-		Card wrongRoom = new Card("Bedroom", CardType.ROOM, "B" );
+		Card wrongRoom = new Card("BedRoom", CardType.ROOM, "B" );
 		suggestion.room = wrongRoom;
 		//assertNotEquals(answer.room, suggestion.room);
 		assertFalse(board.checkAccusation(suggestion));
