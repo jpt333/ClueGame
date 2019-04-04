@@ -525,13 +525,13 @@ public class Board {
 	}
 	
 	public Boolean checkAccusation(Solution accusation) {
-		if(!solution.getPerson().equals(accusation.getPerson())) {
+		if(!getSolution().getPerson().equals(accusation.getPerson())) {
 			return false;
 		}
-		if(!solution.getRoom().equals(accusation.getRoom())) {
+		if(!getSolution().getRoom().equals(accusation.getRoom())) {
 			return false;
 		}
-		if(!solution.getWeapon().equals(accusation.getWeapon())) {
+		if(!getSolution().getWeapon().equals(accusation.getWeapon())) {
 			return false;
 		}
 		

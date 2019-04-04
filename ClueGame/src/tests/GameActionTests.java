@@ -30,6 +30,7 @@ public class GameActionTests {
 		board.setConfigFiles("ClueBoard.csv", "rooms.txt");
 		board.setCardFiles("weapons.txt", "Person.txt");
 		board.initialize();
+		board.dealCards();
 	}
 	
 	//Computer Player
@@ -85,24 +86,28 @@ public class GameActionTests {
 	//Board
 	@Test
 	public void testCheckAccusation() {
-		Solution answer = new Solution();
+		Solution answer = board.getSolution();
+		Solution suggestion = new Solution();
 		Card mustard = new Card("Colonel Mustard", CardType.PERSON);
 		Card weaponn = new Card("Rope", CardType.WEAPON);
 		Card rooom = new Card("Kitchen", CardType.ROOM, "K");
-		answer.setAnsPerson(mustard);
-		answer.setAnsRoom(rooom);
-		answer.setAnsWeapon(weaponn);
+		
+		
+//		suggestion.setAnsPerson(answer.getPerson());
+//		suggestion.setAnsRoom(answer.getRoom());
+//		suggestion.setAnsWeapon(answer.getWeapon());
 		
 		//solution that is correct
-		Solution suggestion = new Solution();
-		suggestion.person = mustard;
-		suggestion.room = rooom;
-		suggestion.weapon = weaponn;
+		
+		suggestion.person = answer.getPerson();
+		suggestion.room = answer.getRoom();
+		suggestion.weapon = answer.getWeapon();
 //		suggestion.setAnsPerson(mustard);
 //		suggestion.setAnsRoom(rooom);
 //		suggestion.setAnsWeapon(weaponn);
 		
-//		assertTrue(board.checkAccusation(suggestion));
+		//NULL POINT ERROR
+		assertTrue(board.checkAccusation(suggestion));
 		
 		assertEquals(answer.person, suggestion.person);
 		assertEquals(answer.room, suggestion.room);
@@ -111,17 +116,20 @@ public class GameActionTests {
 		//solution with wrong person
 		Card wrongPerson = new Card("Professor Plum", CardType.PERSON);
 		suggestion.person = wrongPerson;
-		assertNotEquals(answer.person, suggestion.person); 
+		//assertNotEquals(answer.person, suggestion.person);
+		assertFalse(board.checkAccusation(suggestion));
 		
 		//solution with wrong weapon
 		Card wrongWeapon = new Card("Knife", CardType.WEAPON);
 		suggestion.weapon = wrongWeapon;
-		assertNotEquals(answer.weapon, suggestion.weapon);
+		//assertNotEquals(answer.weapon, suggestion.weapon);
+		assertFalse(board.checkAccusation(suggestion));
 		
 		//solution with wrong room
 		Card wrongRoom = new Card("Bedroom", CardType.ROOM, "B" );
 		suggestion.room = wrongRoom;
-		assertNotEquals(answer.room, suggestion.room);
+		//assertNotEquals(answer.room, suggestion.room);
+		assertFalse(board.checkAccusation(suggestion));
 	}
 	
 	//Player
