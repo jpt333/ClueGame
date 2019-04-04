@@ -36,6 +36,7 @@ public class GameActionTests {
 	@Test
 	public void testSelectATargetSelection() { 
 		Color Yellow = Color.YELLOW;
+		//Room 1 distance away
 		ComputerPlayer player = new ComputerPlayer("Colonel Mustard",board.getCellAt(0, 3), Yellow);
 		//if no rooms in list, select randomly
 		board.calcTargets(0,3,1);

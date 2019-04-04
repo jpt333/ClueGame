@@ -521,4 +521,11 @@ public class Board {
 		return targets; 
 	}
 	
+	public Boolean checkAccusation(Solution accusation) {
+		if((accusation.person == getSolution().person)&&(accusation.room == getSolution().room)&&(accusation.weapon == getSolution().weapon) ) {
+			return true;
+		}
+		return false;
+	}
+	
 }
