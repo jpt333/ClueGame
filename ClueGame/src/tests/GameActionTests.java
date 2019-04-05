@@ -71,6 +71,7 @@ public class GameActionTests {
 		System.out.println();
 		System.out.print(selected.isRoom());
 		//OR ISROOM() ISN"T WORKING!!!!!!!
+		//should initial be a char?
 		
 		assertEquals(selected, board.getCellAt(8,2));
 		
