@@ -20,18 +20,60 @@ public class Player {
 	}
 
 	public Card disproveSuggestion(Solution suggestion) {
-		Card carddArray[] = null;
+		
+//		Set<Card> cardsMatching = new HashSet<>();
+//		for(Card cardsLoc: cards) {
+//			if(suggestion.person == cardsLoc) { cardsMatching.add(cardsLoc); }
+//			if(suggestion.room == cardsLoc)   { cardsMatching.add(cardsLoc); }
+//			if(suggestion.weapon == cardsLoc) { cardsMatching.add(cardsLoc); }
+//		}
+//		
+//		int cardSize = cardsMatching.size();
+//		Card carddArray[] = null;
+//		//Card cardArray[] = new Card[cardSize];
+//		if(cardsMatching.size() == 1) {
+//			
+//			//notify player that he must disprove and its that card
+//			System.out.print(cardsMatching.toArray(carddArray)[0]);
+//			return cardsMatching.toArray(carddArray)[0];
+//		}
+//		else if(cardsMatching.size() > 1) {
+//			
+//			//notify player that he must disprove and choose of the cards from the array
+//			
+//			Random rand = new Random();
+//			int randomNum = rand.nextInt(cardsMatching.size());
+//			return cardsMatching.toArray(carddArray)[randomNum];
+//		}
+//		return null;
 		Set<Card> cardsMatching = new HashSet<>();
+		System.out.println(cards);
+		System.out.println(suggestion.getPerson());
+		System.out.println(suggestion.getRoom());
+		System.out.println(suggestion.getWeapon());
 		for(Card cardsLoc: cards) {
-			if(suggestion.person == cardsLoc) { cardsMatching.add(cardsLoc); }
-			if(suggestion.room == cardsLoc)   { cardsMatching.add(cardsLoc); }
-			if(suggestion.weapon == cardsLoc) { cardsMatching.add(cardsLoc); }
+			System.out.println();
+			System.out.println(cardsLoc);
+			
+			if(suggestion.getPerson().equals(cardsLoc)) { 
+				System.out.println("HERE");
+				cardsMatching.add(cardsLoc); }
+			if(suggestion.getRoom().equals(cardsLoc))   { 
+				System.out.println("HERE");
+				cardsMatching.add(cardsLoc); }
+			if(suggestion.getWeapon().equals(cardsLoc)) { 
+				System.out.println("HERE");
+				cardsMatching.add(cardsLoc); }
 		}
+		System.out.print("HERRREEEE");
+		int cardSize = cardsMatching.size();
+		//Card carddArray[] = null;
+		Card cardArray[] = new Card[cardSize];
+		cardArray = cardsMatching.toArray(cardArray);
 		if(cardsMatching.size() == 1) {
-			
 			//notify player that he must disprove and its that card
-			
-			return cardsMatching.toArray(carddArray)[0];
+			System.out.print(cardArray[0]);
+			return cardArray[0];
 		}
 		else if(cardsMatching.size() > 1) {
 			
@@ -39,7 +81,7 @@ public class Player {
 			
 			Random rand = new Random();
 			int randomNum = rand.nextInt(cardsMatching.size());
-			return cardsMatching.toArray(carddArray)[randomNum];
+			return cardArray[randomNum];
 		}
 		return null;
 	}
