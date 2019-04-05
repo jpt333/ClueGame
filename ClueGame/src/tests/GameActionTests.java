@@ -74,8 +74,6 @@ public class GameActionTests {
 		
 		assertEquals(selected, board.getCellAt(8,2));
 		
-
-		
 		//if room just visited in list, each target(including room) selected randomly
 		
 		
@@ -124,17 +122,60 @@ public class GameActionTests {
 		BoardCell playerloc = board.getCellAt(7, 3);
 		Color yellow = Color.YELLOW;
 		Player playerOne = new Player("Player One", playerloc, yellow);
-		Solution answer = new Solution();
+		Solution suggestion = new Solution();
 		Card mustard = new Card("Colonel Mustard", CardType.PERSON);
 		Card weaponn = new Card("Rope", CardType.WEAPON);
 		Card rooom = new Card("Kitchen", CardType.ROOM, "K");
-		answer.person = mustard;
-		answer.room = rooom;
-		answer.weapon = weaponn;
+		suggestion.person = mustard;
+		suggestion.room = rooom;
+		suggestion.weapon = weaponn;
 		
 		//if player has only one matching card, it should be returned
 		
-		//if player has >1 matching card, returned card is random. selec.
+		Set<Card> cardSet = new HashSet<>();
+		Card mustardd = new Card("Colonel Mustard", CardType.PERSON);
+		Card weapon2 = new Card("Candlestick", CardType.WEAPON);
+		Card rooom2 = new Card("Parlor", CardType.ROOM, "K");
+		cardSet.add(mustardd);
+		cardSet.add(weapon2);
+		cardSet.add(rooom2);
+		playerOne.setCards(cardSet); //Set Cards
+		
+//		assertEquals(mustardd, playerOne.disproveSuggestion(suggestion));
+		//RETURNING NULL BUT NOT RETURNING MATCHING CARD
+		
+		//if player has >1 matching card, returned card is random selec.
+		//In this case, 2 matching cards, mustard and weapon
+		Set<Card> cardSet2 = new HashSet<>();
+		weapon2 = new Card("Rope", CardType.WEAPON);
+		cardSet2.add(weapon2);
+		cardSet2.add(mustardd);
+		cardSet2.add(rooom2);
+		playerOne.setCards(cardSet2);
+		
+		int weapNum = 0;
+		int mustNum = 0;
+		int roomNum = 0;
+		
+		for(int i = 0; i < 100; i++) {
+			if(playerOne.disproveSuggestion(suggestion) == weapon2) {
+				weapNum++;
+			}
+			if(playerOne.disproveSuggestion(suggestion) == mustardd) {
+				mustNum++;
+			}
+			if(playerOne.disproveSuggestion(suggestion) == rooom2) {
+				roomNum++;
+			}
+		}
+		
+		System.out.println();
+		System.out.print(weapNum);
+		assertTrue(weapNum > 0);
+		assertTrue(mustNum > 0);
+		assertTrue(roomNum > 0);
+		//THINK SOMETHING IS WRONG WITH disproveSuggestion
+		
 		
 		//if player has no matching cards, null is returned
 	}
