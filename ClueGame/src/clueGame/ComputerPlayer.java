@@ -38,9 +38,11 @@ public class ComputerPlayer extends Player {
 				//return if just visited
 				if(justVisited) {
 					return targetsLoc;
+				}else {
+					break; //go out of for loop and select random loc.
 				}
 				
-				return targetsLoc;
+				//return targetsLoc;
 			}
 		}
 		
