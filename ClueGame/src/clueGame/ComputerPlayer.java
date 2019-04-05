@@ -4,6 +4,7 @@ package clueGame;
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Random;
 import java.util.Set;
 
@@ -68,19 +69,19 @@ public class ComputerPlayer extends Player {
 				 *they have are added to the visited list to prevent bad 
 				 *suggestions
 				 */
-				if(currentLocation.isRoom()) {
-					for(Card locCards: cards) {
-						if(locAvailableCards.people.contains(locCards)) {
-							locAvailableCards.people.remove(locCards);
-						}
-						if(locAvailableCards.weapons.contains(locCards)) {
-							locAvailableCards.weapons.remove(locCards);
-						}
-						if(locAvailableCards.rooms.contains(locCards)) {
-							locAvailableCards.rooms.remove(locCards);
-						}
+				
+				for(Card locCards: cards) {
+					if(locAvailableCards.people.contains(locCards)) {
+						locAvailableCards.people.remove(locCards);
+					}
+					if(locAvailableCards.weapons.contains(locCards)) {
+						locAvailableCards.weapons.remove(locCards);
+					}
+					if(locAvailableCards.rooms.contains(locCards)) {
+						locAvailableCards.rooms.remove(locCards);
 					}
 				}
+				
 				Random rand = new Random();
 				
 				Card carddArray[] = new Card[locAvailableCards.rooms.size()];
@@ -108,23 +109,45 @@ public class ComputerPlayer extends Player {
 	@Override
 	public Solution createSuggestion(CardDeck availableCards) {
 		//don't want to modify the available cards
-		CardDeck locAvailableCards = availableCards;
+		CardDeck locAvailableCards = new CardDeck(availableCards);
+		
 		Solution answer = new Solution();
+		
 		/*
 		 * When a computer player is constructed the room cards that 
 		 *they have are added to the visited list to prevent bad 
 		 *suggestions
 		 */
-		if(currentLocation.isRoom()) {
-			for(Card locCards: cards) {
-				if(locAvailableCards.people.contains(locCards)) {
-					locAvailableCards.people.remove(locCards);
+		for(Card locCards: cards) {
+			Iterator<Card> pwrCardsAvailable;
+			//check if people are equal
+			if(locCards.getCardType() == CardType.PERSON){
+				pwrCardsAvailable = locAvailableCards.people.iterator();
+				while(pwrCardsAvailable.hasNext()){
+					Card next = pwrCardsAvailable.next();
+					if(next.getCardName().equals(locCards.getCardName())) {
+						pwrCardsAvailable.remove();
+					}
 				}
-				if(locAvailableCards.weapons.contains(locCards)) {
-					locAvailableCards.weapons.remove(locCards);
+			}
+			//check if weapons are equal
+			if(locCards.getCardType() == CardType.WEAPON){		
+				pwrCardsAvailable = locAvailableCards.weapons.iterator();
+				while(pwrCardsAvailable.hasNext()){
+					Card next = pwrCardsAvailable.next();
+					if(next.getCardName().equals(locCards.getCardName())) {
+						pwrCardsAvailable.remove();
+					}
 				}
-				if(locAvailableCards.rooms.contains(locCards)) {
-					locAvailableCards.rooms.remove(locCards);
+			}
+			//check if rooms are equal
+			if(locCards.getCardType() == CardType.ROOM){
+				pwrCardsAvailable = locAvailableCards.rooms.iterator();
+				while(pwrCardsAvailable.hasNext()){
+					Card next = pwrCardsAvailable.next();
+					if(next.getCardName().equals(locCards.getCardName())) {
+						pwrCardsAvailable.remove();
+					}
 				}
 			}
 		}
@@ -137,6 +160,10 @@ public class ComputerPlayer extends Player {
 					answer.room = locCards;
 				}	
 			}
+		}
+		
+		if(answer.room == null){
+			return null;
 		}
 		
 		Card carddArray[] = new Card[locAvailableCards.people.size()];
