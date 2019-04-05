@@ -11,39 +11,44 @@ import java.util.Set;
 public class ComputerPlayer extends Player {
 
 	ArrayList<Character> roomsVisited;
-	String justVisited;
+	BoardCell justVisited;
 	
 	public ComputerPlayer(String playerName, BoardCell currentLocation, Color color) {
 		super(playerName, currentLocation, color);
 		roomsVisited = new ArrayList<>();
-		justVisited = "";
+		
 	}
 
 	
 	public BoardCell pickLocation(Set<BoardCell> targets) {
 		for(BoardCell targetsLoc: targets) {
+			
 			//check if it is a room
 			if(targetsLoc.isRoom()) {
+				//check to see in not just visited
+				if(targetsLoc != justVisited) {
+					justVisited = targetsLoc;
+					return targetsLoc;
+				}
 				//check to see if it has been visited
-				Boolean justVisited = false;
+				Boolean notvisited = false;
 				for(Character roomsVisitedLoc: roomsVisited) {
 					if(targetsLoc.getInitial() == roomsVisitedLoc) {
 						continue;
-					}else {
-						justVisited = true;
 					}
 				}
 				
 				//add to visited room and return
 				roomsVisited.add(targetsLoc.getInitial());
 				//return if just visited
-				if(justVisited) {
-					return targetsLoc;
-				}else {
-					break; //go out of for loop and select random loc.
-				}
 				
-				//return targetsLoc;
+				//if(justVisited) {
+				//	return targetsLoc;
+				//}else {
+				//	break; //go out of for loop and select random loc.
+				//}
+				justVisited = targetsLoc;
+				return targetsLoc;
 			}
 		}
 		

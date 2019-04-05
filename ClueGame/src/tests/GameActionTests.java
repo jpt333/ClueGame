@@ -64,22 +64,28 @@ public class GameActionTests {
 		Set<BoardCell> targetss = board.getTargets();
 		
 		//TESTING!!!!!!!!!!!!!!!!!
+		//Bedroom exists in list
 		System.out.print(targetss.contains(board.getCellAt(8, 2)));
 		System.out.println();
-		BoardCell selected = player.pickLocation(targetss);
-		System.out.print(selected.getInitial()); //IT"S NOT SELECTING ROOM
+		BoardCell select = player.pickLocation(targetss);
+		System.out.println(select.getInitial()); //IT"S NOT SELECTING ROOM
+		System.out.println(select);
+		System.out.println(select);
+		System.out.println(select);
+		System.out.print(select.isWalkway());
+		System.out.print(select.isRoom());
 		System.out.println();
-		System.out.print(selected.isRoom());
+		System.out.print(select);
 		//OR ISROOM() ISN"T WORKING!!!!!!!
 		//should initial be a char?
 		
-		assertEquals(selected, board.getCellAt(8,2));
+		assertEquals(select, board.getCellAt(8,2));
 		
 		//if room just visited in list, each target(including room) selected randomly
-		selected = player.pickLocation(targetss);
+		select = player.pickLocation(targetss);
 		board.calcTargets(8,4,2);
 		Set<BoardCell> targets2 = board.getTargets();
-		System.out.print(selected);
+		System.out.print(select);
 		
 	}
 	
@@ -145,7 +151,7 @@ public class GameActionTests {
 		cardSet.add(rooom2);
 		playerOne.setCards(cardSet); //Set Cards
 		
-//		assertEquals(mustardd, playerOne.disproveSuggestion(suggestion));
+		assertEquals(mustardd, playerOne.disproveSuggestion(suggestion));
 		//RETURNING NULL BUT NOT RETURNING MATCHING CARD
 		
 		//if player has >1 matching card, returned card is random selec.
@@ -155,6 +161,7 @@ public class GameActionTests {
 		cardSet2.add(weapon2);
 		cardSet2.add(mustardd);
 		cardSet2.add(rooom2);
+		System.out.print(cardSet2);
 		playerOne.setCards(cardSet2);
 		
 		int weapNum = 0;
@@ -195,7 +202,7 @@ public class GameActionTests {
 		//sugg. human and another player can disprove, other player is next in list, ensure other player returns answer
 	}
 	
-	//ComputerPlayer
+	//ComputerPlayer     //DONE
 	@Test
 	public void testCreatingSuggestion() {
 		
