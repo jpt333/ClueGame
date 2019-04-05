@@ -65,16 +65,14 @@ public class GameActionTests {
 		
 		//TESTING!!!!!!!!!!!!!!!!!
 		//Bedroom exists in list
-		System.out.print(targetss.contains(board.getCellAt(8, 2)));
-		System.out.println();
+		System.out.println(targetss.contains(board.getCellAt(8, 2)));
+
 		BoardCell select = player.pickLocation(targetss);
-		System.out.println(select.getInitial()); //IT"S NOT SELECTING ROOM
+		//System.out.println(select.getInitial()); //IT"S NOT SELECTING ROOM
 		System.out.println(select);
-		System.out.println(select);
-		System.out.println(select);
-		System.out.print(select.isWalkway());
-		System.out.print(select.isRoom());
-		System.out.println();
+
+		//System.out.print(select.isWalkway());
+		//System.out.print(select.isRoom());
 		System.out.print(select);
 		//OR ISROOM() ISN"T WORKING!!!!!!!
 		//should initial be a char?
@@ -85,7 +83,7 @@ public class GameActionTests {
 		select = player.pickLocation(targetss);
 		board.calcTargets(8,4,2);
 		Set<BoardCell> targets2 = board.getTargets();
-		System.out.print(select);
+		System.out.println(select);
 		
 	}
 	

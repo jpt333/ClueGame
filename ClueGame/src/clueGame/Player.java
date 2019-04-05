@@ -20,7 +20,6 @@ public class Player {
 	}
 
 	public Card disproveSuggestion(Solution suggestion) {
-		
 //		Set<Card> cardsMatching = new HashSet<>();
 //		for(Card cardsLoc: cards) {
 //			if(suggestion.person == cardsLoc) { cardsMatching.add(cardsLoc); }
