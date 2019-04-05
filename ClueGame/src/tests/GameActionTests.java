@@ -126,7 +126,7 @@ public class GameActionTests {
 		assertFalse(board.checkAccusation(suggestion));
 	}
 	
-	//Player
+	//Player      //DONE
 	@Test
 	public void testDisprovingSuggestion() {
 		BoardCell playerloc = board.getCellAt(7, 3);
@@ -160,7 +160,6 @@ public class GameActionTests {
 		cardSet2.add(weapon2);
 		cardSet2.add(mustardd);
 		cardSet2.add(rooom2);
-		System.out.print(cardSet2);
 		playerOne.setCards(cardSet2);
 		
 		boolean weapNum = false;
@@ -185,6 +184,16 @@ public class GameActionTests {
 		assertTrue(roomNum);
 		
 		//if player has no matching cards, null is returned
+		Set<Card> cardSet3 = new HashSet<>();
+		Card weapon3 = new Card("Candlestick", CardType.WEAPON);
+		Card scarlet = new Card("Miss Scarlet", CardType.PERSON);
+		Card room3 = new Card("Game room", CardType.ROOM);
+		cardSet3.add(weapon3);
+		cardSet3.add(scarlet);
+		cardSet3.add(room3);
+		playerOne.setCards(cardSet3);
+		
+		assertEquals(null, playerOne.disproveSuggestion(suggestion));
 	}
 	
 	//Board
