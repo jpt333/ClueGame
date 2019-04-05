@@ -22,21 +22,21 @@ public class BoardCell {
 		this.direction = null;
 	}
 
-	public boolean isWalkway() {
+	public Boolean isWalkway() {
 		if(initital == "W"){
 			return true;
 		}
 		return false;
 	}
 	
-	public boolean isRoom() {
+	public Boolean isRoom() {
 		if(initital != "W"){
 			return true;
 		}
 		return false;
 	}
 	
-	public boolean isDoorway() {
+	public Boolean isDoorway() {
 		if(direction ==  null || direction == DoorDirection.NONE){
 			return false; 
 		}
