@@ -126,16 +126,18 @@ public class ComputerPlayer extends Player {
 				if(locAvailableCards.rooms.contains(locCards)) {
 					locAvailableCards.rooms.remove(locCards);
 				}
-				
-				//add the room card
-				if(locCards.getCardType() == CardType.ROOM){
-					if(currentLocation.getInitial() == locCards.getInitial()){
-						answer.room = locCards;
-					}	
-				}
 			}
 		}
 		Random rand = new Random();
+		
+		for(Card locCards: availableCards.rooms) {
+			//add the room card
+			if(locCards.getCardType() == CardType.ROOM){
+				if(currentLocation.getInitial() == locCards.getInitial()){
+					answer.room = locCards;
+				}	
+			}
+		}
 		
 		Card carddArray[] = new Card[locAvailableCards.people.size()];
 		//randomly select a person card
@@ -148,6 +150,8 @@ public class ComputerPlayer extends Player {
 		locAvailableCards.weapons.toArray(carddArray);
 		randomNum = rand.nextInt(locAvailableCards.weapons.size());
 		answer.weapon = carddArray[randomNum];
+		
+		
 		return answer;
 	}
 	
