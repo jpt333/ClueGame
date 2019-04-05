@@ -17,6 +17,7 @@ import clueGame.BoardCell;
 import clueGame.Card;
 import clueGame.CardType;
 import clueGame.ComputerPlayer;
+import clueGame.DoorDirection;
 import clueGame.Player;
 import clueGame.Solution;
 public class GameActionTests {
@@ -59,31 +60,29 @@ public class GameActionTests {
 		
 		//if room in list not just visited, must select
 		player = new ComputerPlayer("Colonel Mustard", board.getCellAt(8, 3), Yellow);
-		board.calcTargets(8,3,1);
+		board.calcTargets(8,3,1); //has distance of 1
 		Set<BoardCell> targetss = board.getTargets();
-		boolean hasRoomInList = false;
-		BoardCell targ;
-		for(BoardCell targetz : targetss) {
-			//check if target is a room
-			if(targetz.isRoom()) {
-				targ  = targetz;
-				hasRoomInList = true;
-			}
-		}
 		
-//		ArrayList<Character> visited = new ArrayList<>();
-//		for(Character visit : visited) {
-//			if(visit == targ.getInitial()) {
-//				//NOT SURE HOW TO TEST
-//			}
-//		}
+		//TESTING!!!!!!!!!!!!!!!!!
+		System.out.print(targetss.contains(board.getCellAt(8, 2)));
+		System.out.println();
+		BoardCell selected = player.pickLocation(targetss);
+		System.out.print(selected.getInitial()); //IT"S NOT SELECTING ROOM
+		System.out.println();
+		System.out.print(selected.isRoom());
+		//PICKLOCATION NOT WORKING CORRECTLY
+		//OR ISROOM() ISN"T WORKING
+		
+		assertEquals(selected, board.getCellAt(8,2));
+		
+
 		
 		//if room just visited in list, each target(including room) selected randomly
 		
 		
 	}
 	
-	//Board
+	//Board			//DONE
 	@Test
 	public void testCheckAccusation() {
 		Solution answer = board.getSolution();
@@ -239,7 +238,7 @@ public class GameActionTests {
 		assertTrue(mrsWhite  > 20);
 		assertTrue(professorPlum  > 20);
 		
-		//if multiple wepons not seem, one of them random. select.
+		//if multiple weapons not seem, one of them random. select.
 		assertTrue(wrench  > 20);
 		assertTrue(candlestick  > 20);
 		assertTrue(pipe  > 20);
