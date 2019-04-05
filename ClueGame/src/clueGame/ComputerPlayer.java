@@ -128,9 +128,11 @@ public class ComputerPlayer extends Player {
 				}
 				
 				//add the room card
-				if(currentLocation.getInitial() == locCards.getInitial()){
-					answer.room = locCards;
-				}	
+				if(locCards.getCardType() == CardType.ROOM){
+					if(currentLocation.getInitial() == locCards.getInitial()){
+						answer.room = locCards;
+					}	
+				}
 			}
 		}
 		Random rand = new Random();
