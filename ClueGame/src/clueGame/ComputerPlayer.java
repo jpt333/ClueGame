@@ -24,15 +24,21 @@ public class ComputerPlayer extends Player {
 			//check if it is a room
 			if(targetsLoc.isRoom()) {
 				//check to see if it has been visited
+				Boolean justVisited = false;
 				for(Character roomsVisitedLoc: roomsVisited) {
 					if(targetsLoc.getInitial() == roomsVisitedLoc) {
 						continue;
+					}else {
+						justVisited = true;
 					}
 				}
+				
 				//add to visited room and return
 				roomsVisited.add(targetsLoc.getInitial());
-				
-				
+				//return if just visited
+				if(justVisited) {
+					return targetsLoc;
+				}
 				
 				return targetsLoc;
 			}
