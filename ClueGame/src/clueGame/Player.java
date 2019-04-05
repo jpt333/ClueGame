@@ -47,25 +47,15 @@ public class Player {
 //		}
 //		return null;
 		Set<Card> cardsMatching = new HashSet<>();
-		System.out.println(cards);
-		System.out.println(suggestion.getPerson());
-		System.out.println(suggestion.getRoom());
-		System.out.println(suggestion.getWeapon());
+
 		for(Card cardsLoc: cards) {
-			System.out.println();
-			System.out.println(cardsLoc);
-			
-			if(suggestion.getPerson().equals(cardsLoc)) { 
-				System.out.println("HERE");
+			if(suggestion.getPerson().getCardName().equals(cardsLoc.getCardName())) { 
 				cardsMatching.add(cardsLoc); }
-			if(suggestion.getRoom().equals(cardsLoc))   { 
-				System.out.println("HERE");
+			if(suggestion.getRoom().getCardName().equals(cardsLoc.getCardName()))   { 
 				cardsMatching.add(cardsLoc); }
-			if(suggestion.getWeapon().equals(cardsLoc)) { 
-				System.out.println("HERE");
+			if(suggestion.getWeapon().getCardName().equals(cardsLoc.getCardName())) { 
 				cardsMatching.add(cardsLoc); }
 		}
-		System.out.print("HERRREEEE");
 		int cardSize = cardsMatching.size();
 		//Card carddArray[] = null;
 		Card cardArray[] = new Card[cardSize];
