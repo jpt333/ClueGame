@@ -76,7 +76,10 @@ public class GameActionTests {
 		assertEquals(selected, board.getCellAt(8,2));
 		
 		//if room just visited in list, each target(including room) selected randomly
-		
+		selected = player.pickLocation(targetss);
+		board.calcTargets(8,4,2);
+		Set<BoardCell> targets2 = board.getTargets();
+		System.out.print(selected);
 		
 	}
 	
