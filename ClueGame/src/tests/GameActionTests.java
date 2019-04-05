@@ -70,8 +70,7 @@ public class GameActionTests {
 		System.out.print(selected.getInitial()); //IT"S NOT SELECTING ROOM
 		System.out.println();
 		System.out.print(selected.isRoom());
-		//PICKLOCATION NOT WORKING CORRECTLY
-		//OR ISROOM() ISN"T WORKING
+		//OR ISROOM() ISN"T WORKING!!!!!!!
 		
 		assertEquals(selected, board.getCellAt(8,2));
 		
