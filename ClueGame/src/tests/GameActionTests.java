@@ -197,7 +197,14 @@ public class GameActionTests {
 	//Board
 	@Test
 	public void testHandlingSuggestion() {
+		Solution suggestion = new Solution();
+		Player playerHuman = new Player();
+		ComputerPlayer player1 = new ComputerPlayer("player1", );
+		ComputerPlayer player2 = new ComputerPlayer("player2", );
+		ComputerPlayer player3 = new ComputerPlayer("player3",);
+		ComputerPlayer player4 = new ComputerPlayer("player4",);
 		//suggestion no one can disprove returns null
+		
 		//suggestion only accusing player can disprove returns null
 		//suggestion only human can disprove returns answer
 		//sugg. only human can disprove, but human accuser, return null
