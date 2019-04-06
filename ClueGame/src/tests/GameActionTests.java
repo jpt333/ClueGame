@@ -198,11 +198,21 @@ public class GameActionTests {
 	@Test
 	public void testHandlingSuggestion() {
 		Solution suggestion = new Solution();
-		Player playerHuman = new Player();
-		ComputerPlayer player1 = new ComputerPlayer("player1", );
-		ComputerPlayer player2 = new ComputerPlayer("player2", );
-		ComputerPlayer player3 = new ComputerPlayer("player3",);
-		ComputerPlayer player4 = new ComputerPlayer("player4",);
+		Color yellow = Color.YELLOW;
+		Color magenta = Color.MAGENTA;
+		Color blue = Color.BLUE;
+		Color green = Color.GREEN;
+		Color black = Color.BLACK;
+		BoardCell currentLoc = board.getCellAt(9, 4);
+		Player playerHuman = new Player("playerHuman", currentLoc , black);
+		currentLoc = board.getCellAt(10, 11);
+		ComputerPlayer player1 = new ComputerPlayer("player1", currentLoc, yellow );
+		currentLoc = board.getCellAt(22, 4);
+		ComputerPlayer player2 = new ComputerPlayer("player2", currentLoc, magenta);
+		currentLoc = board.getCellAt(0, 11);
+		ComputerPlayer player3 = new ComputerPlayer("player3", currentLoc, blue );
+		currentLoc = board.getCellAt(12, 14);
+		ComputerPlayer player4 = new ComputerPlayer("player4", currentLoc, green);
 		//suggestion no one can disprove returns null
 		
 		//suggestion only accusing player can disprove returns null
