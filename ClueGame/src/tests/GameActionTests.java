@@ -197,7 +197,6 @@ public class GameActionTests {
 	//Board
 	@Test
 	public void testHandlingSuggestion() {
-		Solution suggestion = new Solution();
 		Color yellow = Color.YELLOW;
 		Color magenta = Color.MAGENTA;
 		Color blue = Color.BLUE;
@@ -215,13 +214,30 @@ public class GameActionTests {
 		ComputerPlayer player4 = new ComputerPlayer("player4", currentLoc, green);
 		//suggestion no one can disprove returns null
 		Card answer = board.handleSuggestion(playerHuman);
-		assertEquals(null, answer);
+		
+		assertNull(answer);
+		
+		
+		
+		
+		
+		
 		//suggestion only accusing player can disprove returns null
 		
 		
 		assertEquals(null, answer);
 		
 		//suggestion only human can disprove returns answer
+		Set<Card> cardSet = new HashSet<Card>();
+		Card kPerson = new Card("card", CardType.PERSON);
+		Card kWeapon = new Card("card", CardType.WEAPON);
+		Card kRoom = new Card("card", CardType.ROOM);
+		cardSet.add(kPerson);
+		cardSet.add(kWeapon);
+		cardSet.add(kRoom);
+		playerHuman.setCards(cardSet);
+		
+		
 		answer = board.handleSuggestion(playerHuman);
 		
 		//sugg. only human can disprove, but human accuser, return null
