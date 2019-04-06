@@ -45,7 +45,7 @@ public class GameActionTests {
 		Set<BoardCell> targets = board.getTargets();
 		boolean location_1_3 = false;
 		boolean location_0_4 = false;
-		
+		  //check that it chose each of them at least once
 		for(int i = 0; i < 100; i++) {
 			BoardCell selected = player.pickLocation(targets);
 			if(selected.getInitial() == board.getCellAt(1, 3).getInitial()) {
