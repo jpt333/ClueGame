@@ -129,7 +129,7 @@ public class GameActionTests {
 	public void testDisprovingSuggestion() {
 		BoardCell playerloc = board.getCellAt(7, 3);
 		Color yellow = Color.YELLOW;
-		Player playerOne = new Player("Player One", playerloc, yellow);
+		ComputerPlayer playerOne = new ComputerPlayer("Player One", playerloc, yellow);
 		Solution suggestion = new Solution();
 		Card mustard = new Card("Colonel Mustard", CardType.PERSON);
 		Card weaponn = new Card("Rope", CardType.WEAPON);
@@ -143,13 +143,13 @@ public class GameActionTests {
 		Set<Card> cardSet = new HashSet<>();
 		Card mustardd = new Card("Colonel Mustard", CardType.PERSON);
 		Card weapon1 = new Card("Candlestick", CardType.WEAPON);
-		Card rooom2 = new Card("Parlor", CardType.ROOM, "K");
+		Card rooom2 = new Card("Parlor", CardType.ROOM, "P");
 		cardSet.add(mustardd);
 		cardSet.add(weapon1);
 		cardSet.add(rooom2);
 		playerOne.setCards(cardSet); //Set Cards
 		
-		assertEquals(mustardd, playerOne.disproveSuggestion(suggestion));
+		assertEquals("Colonel Mustard" , playerOne.disproveSuggestion(suggestion).toString());
 		
 		//if player has >1 matching card, returned card is random selec.
 		//In this case, 2 matching cards, mustard and weapon
@@ -184,7 +184,7 @@ public class GameActionTests {
 		Set<Card> cardSet3 = new HashSet<>();
 		Card weapon3 = new Card("Candlestick", CardType.WEAPON);
 		Card scarlet = new Card("Miss Scarlet", CardType.PERSON);
-		Card room3 = new Card("Game room", CardType.ROOM);
+		Card room3 = new Card("Game room", CardType.ROOM, "G");
 		cardSet3.add(weapon3);
 		cardSet3.add(scarlet);
 		cardSet3.add(room3);
