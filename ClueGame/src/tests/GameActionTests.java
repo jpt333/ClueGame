@@ -214,8 +214,13 @@ public class GameActionTests {
 		currentLoc = board.getCellAt(12, 14);
 		ComputerPlayer player4 = new ComputerPlayer("player4", currentLoc, green);
 		//suggestion no one can disprove returns null
-		
+		Card answer = handleSuggestion(playerHuman);
+		assertEquals(null, answer);
 		//suggestion only accusing player can disprove returns null
+		
+		
+		assertEquals(null, );
+		
 		//suggestion only human can disprove returns answer
 		//sugg. only human can disprove, but human accuser, return null
 		//sugg. that 2 players disprove, correct player (based on starting with next player in list) return answer
