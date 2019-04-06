@@ -219,7 +219,7 @@ public class GameActionTests {
 		//suggestion only accusing player can disprove returns null
 		
 		
-		assertEquals(null, );
+		assertEquals(null, answer);
 		
 		//suggestion only human can disprove returns answer
 		answer = board.handleSuggestion(playerHuman);
