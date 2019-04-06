@@ -271,7 +271,7 @@ public class GameActionTests {
 		//assertNotNull(board.handleSuggestion(player2));
 		//sugg. human and another player can disprove, other player is next in list, ensure other player returns answer
 		//assertNotNull(board.handleSuggestion(player3));
-		//NOTE: reason why there is no test for these two is because we were able to check with all the players at once
+		
 	}
 	
 	//ComputerPlayer     //DONE
