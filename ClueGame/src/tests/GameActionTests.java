@@ -212,38 +212,52 @@ public class GameActionTests {
 		ComputerPlayer player3 = new ComputerPlayer("player3", currentLoc, blue );
 		currentLoc = board.getCellAt(12, 14);
 		ComputerPlayer player4 = new ComputerPlayer("player4", currentLoc, green);
+		
+		
 		//suggestion no one can disprove returns null
-		Card answer = board.handleSuggestion(playerHuman);
 		
-		assertNull(answer);
+		Set<Card> cardSet = new HashSet<Card>();
+		Card kPerson = new Card("Person", CardType.PERSON);
+		Card kWeapon = new Card("Weapon", CardType.WEAPON);
+		Card kRoom = new Card("Room", CardType.ROOM);
 		
+		player1.setCards(cardSet);
 		
-		
-		
-		
+		assertNull(board.handleSuggestion(player1));
 		
 		//suggestion only accusing player can disprove returns null
 		
 		
-		assertEquals(null, answer);
 		
 		//suggestion only human can disprove returns answer
-		Set<Card> cardSet = new HashSet<Card>();
-		Card kPerson = new Card("card", CardType.PERSON);
-		Card kWeapon = new Card("card", CardType.WEAPON);
-		Card kRoom = new Card("card", CardType.ROOM);
+		cardSet = new HashSet<Card>();
+		kPerson = new Card("card", CardType.PERSON);
+		kWeapon = new Card("card", CardType.WEAPON);
+		kRoom = new Card("card", CardType.ROOM);
 		cardSet.add(kPerson);
 		cardSet.add(kWeapon);
 		cardSet.add(kRoom);
-		playerHuman.setCards(cardSet);
+		player1.setCards(cardSet);
 		
-		
-		answer = board.handleSuggestion(playerHuman);
+		assertNotNull(board.handleSuggestion(player1));
+	
 		
 		//sugg. only human can disprove, but human accuser, return null
 		
+		cardSet = new HashSet<Card>();
+		kPerson = new Card("Miss Scarlet", CardType.PERSON);
+		kWeapon = new Card("Rope", CardType.WEAPON);
+		kRoom = new Card("Library", CardType.ROOM);
+		cardSet.add(kPerson);
+		cardSet.add(kWeapon);
+		cardSet.add(kRoom);
+		player1.setCards(cardSet);
+		
+		assertNull(board.handleSuggestion(player1));
+		
 		//sugg. that 2 players disprove, correct player (based on starting with next player in list) return answer
 		//sugg. human and another player can disprove, other player is next in list, ensure other player returns answer
+		//NOTE: reason why there is no test for these two is because we were able to check with all the players at once
 	}
 	
 	//ComputerPlayer     //DONE
