@@ -176,7 +176,6 @@ public class GameActionTests {
 			}
 		}
 		
-
 		assertTrue(weapNum);
 		assertTrue(mustNum);
 		assertTrue(roomNum);
@@ -226,8 +225,14 @@ public class GameActionTests {
 		assertNull(board.handleSuggestion(player1));
 		
 		//suggestion only accusing player can disprove returns null
+		 cardSet = new HashSet<Card>();
+		 kPerson = new Card("Miss Scarlet", CardType.PERSON);
+		 kWeapon = new Card("Candlestick", CardType.WEAPON);
+		 kRoom = new Card("Library", CardType.ROOM);
 		
+		player1.setCards(cardSet);
 		
+		assertNull(board.handleSuggestion(player1));
 		
 		//suggestion only human can disprove returns answer
 		cardSet = new HashSet<Card>();
@@ -256,7 +261,9 @@ public class GameActionTests {
 		assertNull(board.handleSuggestion(player1));
 		
 		//sugg. that 2 players disprove, correct player (based on starting with next player in list) return answer
+		assertNotNull(board.handleSuggestion(player2));
 		//sugg. human and another player can disprove, other player is next in list, ensure other player returns answer
+		assertNotNull(board.handleSuggestion(player3));
 		//NOTE: reason why there is no test for these two is because we were able to check with all the players at once
 	}
 	
