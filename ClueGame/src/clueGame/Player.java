@@ -21,13 +21,13 @@ public class Player {
 	}
 
 	public Card disproveSuggestion(Solution suggestion) {
-		Card carddArray[] = null;
 		Set<Card> cardsMatching = new HashSet<>();
 		for(Card cardsLoc: cards) {
 			if(suggestion.person == cardsLoc) { cardsMatching.add(cardsLoc); }
 			if(suggestion.room == cardsLoc)   { cardsMatching.add(cardsLoc); }
 			if(suggestion.weapon == cardsLoc) { cardsMatching.add(cardsLoc); }
 		}
+		Card carddArray[] = new Card[cardsMatching.size()];
 		if(cardsMatching.size() == 1) {
 			return cardsMatching.toArray(carddArray)[0];
 		}

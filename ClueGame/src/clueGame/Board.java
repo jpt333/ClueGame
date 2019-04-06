@@ -467,7 +467,6 @@ public class Board {
 	}
 	
 	public Card handleSuggestionTech(Solution suggestion) {
-		
 		Card answer;
 		for(Player locPlayers: players) {
 			answer = locPlayers.disproveSuggestion(suggestion);
@@ -497,7 +496,29 @@ public class Board {
 		weaponFile = "weapons.txt";
 		characterFile = "Person.txt";
 	}
+	
+	
+	
+	
+	
+	
+	
+	//--------------For tests only remove for final submission-------------
+	public void setComputerPlayers(Set<ComputerPlayer> computerPlayers) {
+		this.computerPlayers = computerPlayers;
+	}
 
+	public void setPlayers(Set<Player> players) {
+		this.players = players;
+	}
+	//----------------------------------------------------------------------
+	
+	
+	
+	
+	
+	
+	
 	public BoardCell getCellAt(int row, int col) {
 		return board[row][col];
 	}
