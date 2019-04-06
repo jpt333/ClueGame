@@ -3,6 +3,7 @@ package clueGame;
 
 import java.awt.Color;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Random;
 import java.util.Set;
 
@@ -20,89 +21,82 @@ public class Player {
 	}
 
 	public Card disproveSuggestion(Solution suggestion) {
-//		Set<Card> cardsMatching = new HashSet<>();
-//		for(Card cardsLoc: cards) {
-//			if(suggestion.person == cardsLoc) { cardsMatching.add(cardsLoc); }
-//			if(suggestion.room == cardsLoc)   { cardsMatching.add(cardsLoc); }
-//			if(suggestion.weapon == cardsLoc) { cardsMatching.add(cardsLoc); }
-//		}
-//		
-//		int cardSize = cardsMatching.size();
-//		Card carddArray[] = null;
-//		//Card cardArray[] = new Card[cardSize];
-//		if(cardsMatching.size() == 1) {
-//			
-//			//notify player that he must disprove and its that card
-//			System.out.print(cardsMatching.toArray(carddArray)[0]);
-//			return cardsMatching.toArray(carddArray)[0];
-//		}
-//		else if(cardsMatching.size() > 1) {
-//			
-//			//notify player that he must disprove and choose of the cards from the array
-//			
-//			Random rand = new Random();
-//			int randomNum = rand.nextInt(cardsMatching.size());
-//			return cardsMatching.toArray(carddArray)[randomNum];
-//		}
-//		return null;
+		Card carddArray[] = null;
 		Set<Card> cardsMatching = new HashSet<>();
-
 		for(Card cardsLoc: cards) {
-			if(suggestion.getPerson().getCardName().equals(cardsLoc.getCardName())) { 
-				cardsMatching.add(cardsLoc); }
-			if(suggestion.getRoom().getCardName().equals(cardsLoc.getCardName()))   { 
-				cardsMatching.add(cardsLoc); }
-			if(suggestion.getWeapon().getCardName().equals(cardsLoc.getCardName())) { 
-				cardsMatching.add(cardsLoc); }
+			if(suggestion.person == cardsLoc) { cardsMatching.add(cardsLoc); }
+			if(suggestion.room == cardsLoc)   { cardsMatching.add(cardsLoc); }
+			if(suggestion.weapon == cardsLoc) { cardsMatching.add(cardsLoc); }
 		}
-		int cardSize = cardsMatching.size();
-		//Card carddArray[] = null;
-		Card cardArray[] = new Card[cardSize];
-		cardArray = cardsMatching.toArray(cardArray);
 		if(cardsMatching.size() == 1) {
-			//notify player that he must disprove and its that card
-			System.out.print(cardArray[0]);
-			return cardArray[0];
+			return cardsMatching.toArray(carddArray)[0];
 		}
 		else if(cardsMatching.size() > 1) {
-			
-			//notify player that he must disprove and choose of the cards from the array
-			
 			Random rand = new Random();
 			int randomNum = rand.nextInt(cardsMatching.size());
-			return cardArray[randomNum];
+			return cardsMatching.toArray(carddArray)[randomNum];
 		}
 		return null;
 	}
 	
 	public Solution createSuggestion(CardDeck availableCards) {
 		//don't want to modify the available cards
-		CardDeck locAvailableCards = availableCards;
+		CardDeck locAvailableCards = new CardDeck(availableCards);
+		
 		Solution answer = new Solution();
 		
-		if(currentLocation.isRoom()) {
-			for(Card locCards: cards) {
-				if(locAvailableCards.people.contains(locCards)) {
-					locAvailableCards.people.remove(locCards);
+		/*
+		 * When a computer player is constructed the room cards that 
+		 *they have are added to the visited list to prevent bad 
+		 *suggestions
+		 */
+		for(Card locCards: cards) {
+			Iterator<Card> pwrCardsAvailable;
+			//check if people are equal
+			if(locCards.getCardType() == CardType.PERSON){
+				pwrCardsAvailable = locAvailableCards.people.iterator();
+				while(pwrCardsAvailable.hasNext()){
+					Card next = pwrCardsAvailable.next();
+					if(next.getCardName().equals(locCards.getCardName())) {
+						pwrCardsAvailable.remove();
+					}
 				}
-				if(locAvailableCards.weapons.contains(locCards)) {
-					locAvailableCards.weapons.remove(locCards);
+			}
+			//check if weapons are equal
+			if(locCards.getCardType() == CardType.WEAPON){		
+				pwrCardsAvailable = locAvailableCards.weapons.iterator();
+				while(pwrCardsAvailable.hasNext()){
+					Card next = pwrCardsAvailable.next();
+					if(next.getCardName().equals(locCards.getCardName())) {
+						pwrCardsAvailable.remove();
+					}
 				}
-				if(locAvailableCards.rooms.contains(locCards)) {
-					locAvailableCards.rooms.remove(locCards);
+			}
+			//check if rooms are equal
+			if(locCards.getCardType() == CardType.ROOM){
+				pwrCardsAvailable = locAvailableCards.rooms.iterator();
+				while(pwrCardsAvailable.hasNext()){
+					Card next = pwrCardsAvailable.next();
+					if(next.getCardName().equals(locCards.getCardName())) {
+						pwrCardsAvailable.remove();
+					}
 				}
-				
-				//add the room card
+			}
+		}
+		Random rand = new Random();
+		
+		for(Card locCards: availableCards.rooms) {
+			//add the room card
+			if(locCards.getCardType() == CardType.ROOM){
 				if(currentLocation.getInitial() == locCards.getInitial()){
 					answer.room = locCards;
 				}	
 			}
 		}
 		
-		//same behavior as the ai for now when gui is implemented
-		//the random choices will be replaced by a drop down or
-		//tile select screen
-		Random rand = new Random();
+		if(answer.room == null){
+			return null;
+		}
 		
 		Card carddArray[] = new Card[locAvailableCards.people.size()];
 		//randomly select a person card
@@ -115,6 +109,8 @@ public class Player {
 		locAvailableCards.weapons.toArray(carddArray);
 		randomNum = rand.nextInt(locAvailableCards.weapons.size());
 		answer.weapon = carddArray[randomNum];
+		
+		
 		return answer;
 	}
 	

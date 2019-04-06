@@ -201,9 +201,9 @@ public class GameActionTests {
 		Color blue = Color.BLUE;
 		Color green = Color.GREEN;
 		Color black = Color.BLACK;
-		BoardCell currentLoc = board.getCellAt(9, 4);
+		BoardCell currentLoc = board.getCellAt(8, 2);
 		Player playerHuman = new Player("playerHuman", currentLoc , black);
-		currentLoc = board.getCellAt(10, 11);
+		currentLoc = board.getCellAt(8, 2);
 		ComputerPlayer player1 = new ComputerPlayer("player1", currentLoc, yellow );
 		currentLoc = board.getCellAt(22, 4);
 		ComputerPlayer player2 = new ComputerPlayer("player2", currentLoc, magenta);

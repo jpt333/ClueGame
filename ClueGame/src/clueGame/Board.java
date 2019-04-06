@@ -467,6 +467,7 @@ public class Board {
 	}
 	
 	public Card handleSuggestionTech(Solution suggestion) {
+		
 		Card answer;
 		for(Player locPlayers: players) {
 			answer = locPlayers.disproveSuggestion(suggestion);
