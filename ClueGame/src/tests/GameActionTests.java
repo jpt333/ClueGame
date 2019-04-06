@@ -212,6 +212,7 @@ public class GameActionTests {
 		currentLoc = board.getCellAt(12, 14);
 		ComputerPlayer player4 = new ComputerPlayer("player4", currentLoc, green);
 		
+		
 		//suggestion no one can disprove returns null
 		
 		Set<Card> cardSet = new HashSet<Card>();
@@ -245,6 +246,7 @@ public class GameActionTests {
 		
 		assertNotNull(board.handleSuggestion(player1));
 	
+		
 		//sugg. only human can disprove, but human accuser, return null
 		
 		cardSet = new HashSet<Card>();
@@ -262,7 +264,7 @@ public class GameActionTests {
 		assertNotNull(board.handleSuggestion(player2));
 		//sugg. human and another player can disprove, other player is next in list, ensure other player returns answer
 		assertNotNull(board.handleSuggestion(player3));
-		
+		//NOTE: reason why there is no test for these two is because we were able to check with all the players at once
 	}
 	
 	//ComputerPlayer     //DONE
