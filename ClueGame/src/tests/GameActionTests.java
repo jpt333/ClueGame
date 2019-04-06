@@ -228,7 +228,7 @@ public class GameActionTests {
 		 cardSet = new HashSet<Card>();
 		 kPerson = new Card("Miss Scarlet", CardType.PERSON);
 		 kWeapon = new Card("Candlestick", CardType.WEAPON);
-		 kRoom = new Card("Library", CardType.ROOM);
+		 kRoom = new Card("Library", CardType.ROOM, "L");
 		
 		player1.setCards(cardSet);
 		
@@ -238,7 +238,7 @@ public class GameActionTests {
 		cardSet = new HashSet<Card>();
 		kPerson = new Card("card", CardType.PERSON);
 		kWeapon = new Card("card", CardType.WEAPON);
-		kRoom = new Card("card", CardType.ROOM);
+		kRoom = new Card("card", CardType.ROOM, "C");
 		cardSet.add(kPerson);
 		cardSet.add(kWeapon);
 		cardSet.add(kRoom);
@@ -252,7 +252,7 @@ public class GameActionTests {
 		cardSet = new HashSet<Card>();
 		kPerson = new Card("Miss Scarlet", CardType.PERSON);
 		kWeapon = new Card("Rope", CardType.WEAPON);
-		kRoom = new Card("Library", CardType.ROOM);
+		kRoom = new Card("Library", CardType.ROOM, "L");
 		cardSet.add(kPerson);
 		cardSet.add(kWeapon);
 		cardSet.add(kRoom);
