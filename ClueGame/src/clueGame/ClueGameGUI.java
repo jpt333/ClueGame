@@ -52,6 +52,21 @@ public class ClueGameGUI extends JPanel{
 		return content;
 	}
 	
+	private JPanel createTurnAndButtons() {
+
+		JPanel panel = new JPanel();
+
+		JLabel whoseTurn = new JLabel("Whose turn?");
+		panel.add(whoseTurn);
+		JTextField cardNamePlayer = new JTextField(20);
+		panel.add(cardNamePlayer);
+		JButton nextPlayer = new JButton("Next Player");
+		JButton makeAccusation = new JButton("Make an accusation");
+		panel.add(nextPlayer);
+		panel.add(makeAccusation);
+		return panel;
+	}
+	
 	private JPanel createRollAndGuessAndResult() {
 		JPanel panel1 = new JPanel();
 		JLabel roll = new JLabel("Roll");
