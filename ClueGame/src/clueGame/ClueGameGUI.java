@@ -51,4 +51,37 @@ public class ClueGameGUI extends JPanel{
 		content.add(panel);
 		return content;
 	}
+	
+	private JPanel createRollAndGuessAndResult() {
+		JPanel panel1 = new JPanel();
+		JLabel roll = new JLabel("Roll");
+		panel1.setLayout(new GridLayout(1, 3));
+		
+		JPanel panel = new JPanel();
+		panel.setBorder(new TitledBorder(new EtchedBorder(), "Die"));
+		panel.add(roll);
+		JTextField rollNum = new JTextField(20);
+		panel.add(rollNum);
+		panel1.add(panel);
+		
+		panel = new JPanel();
+		panel.setBorder(new TitledBorder(new EtchedBorder(), "Guess"));
+		JLabel guess = new JLabel("Guess");
+		panel.add(guess);
+		JTextField guessPersonRoomWeapon = new JTextField(20);
+		panel.add(guessPersonRoomWeapon);
+		panel1.add(panel);
+		
+		panel = new JPanel();
+		panel.setBorder(new TitledBorder(new EtchedBorder(), "Guess Result"));
+		JLabel response = new JLabel("Response");
+		panel.add(response);
+		JTextField responseText = new JTextField(20);
+		panel.add(responseText);
+		panel1.add(panel);
+		
+		return panel1;
+	}
+	
+	
 }
