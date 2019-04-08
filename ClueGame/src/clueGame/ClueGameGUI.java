@@ -36,7 +36,7 @@ public class ClueGameGUI extends JPanel{
 		JPanel content = new JPanel();
 		JPanel panel = new JPanel();
 		//Grid Layout, 1 row, 2 columns
-		panel.setLayout(new GridLayout(1,2));
+		panel.setLayout(new GridLayout(1,3));
 		JLabel nameBoard = new JLabel("Board");
 		panel.add(nameBoard);
 		content.add(panel);
@@ -55,7 +55,7 @@ public class ClueGameGUI extends JPanel{
 		panel2.add(people, BorderLayout.NORTH);
 		panel2.add(rooms, BorderLayout.CENTER);
 		panel2.add(weapons, BorderLayout.SOUTH);
-		content.add(panel2);
+		content.add(panel2, BorderLayout.EAST);
 		return content;
 	}
 	
@@ -121,9 +121,9 @@ public class ClueGameGUI extends JPanel{
 		JFrame frame = new JFrame();
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setTitle("Clue Game GUI");
-		frame.setSize(1500,900);
+		frame.setSize(1500, 900);
 		ClueGameGUI gui = new ClueGameGUI();
-		frame.add(gui, BorderLayout.CENTER);
+		frame.add(gui, BorderLayout.SOUTH);
 		frame.setVisible(true);
 		
 	}
