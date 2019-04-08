@@ -1,6 +1,7 @@
 package clueGame;
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.GridLayout;
 
 import javax.swing.BorderFactory;
@@ -53,18 +54,26 @@ public class ClueGameGUI extends JPanel{
 	}
 	
 	private JPanel createTurnAndButtons() {
-
+		JPanel panel1 = new JPanel();
+		//1 row, 3 columns
+		panel1.setLayout(new GridLayout(1, 3));
+		
 		JPanel panel = new JPanel();
-
 		JLabel whoseTurn = new JLabel("Whose turn?");
 		panel.add(whoseTurn);
 		JTextField cardNamePlayer = new JTextField(20);
 		panel.add(cardNamePlayer);
+		panel1.add(panel);
+		panel = new JPanel();
 		JButton nextPlayer = new JButton("Next Player");
 		JButton makeAccusation = new JButton("Make an accusation");
+//		nextPlayer.setPreferredSize(new Dimension(50, 500));
 		panel.add(nextPlayer);
+		panel1.add(panel);
+		panel = new JPanel();
 		panel.add(makeAccusation);
-		return panel;
+		panel1.add(panel);
+		return panel1;
 	}
 	
 	private JPanel createRollAndGuessAndResult() {
