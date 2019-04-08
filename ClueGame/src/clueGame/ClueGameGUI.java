@@ -51,7 +51,6 @@ public class ClueGameGUI extends JPanel{
 		people.setBorder(new CompoundBorder(BorderFactory.createTitledBorder("People"), people.getBorder()));
 		rooms.setBorder(new CompoundBorder(BorderFactory.createTitledBorder("Room"), rooms.getBorder()));
 		weapons.setBorder(new CompoundBorder(BorderFactory.createTitledBorder("Weapon"), weapons.getBorder()));
-		
 		panel2.add(people, BorderLayout.NORTH);
 		panel2.add(rooms, BorderLayout.CENTER);
 		panel2.add(weapons, BorderLayout.SOUTH);
@@ -72,8 +71,9 @@ public class ClueGameGUI extends JPanel{
 		panel1.add(panel);
 		panel = new JPanel();
 		JButton nextPlayer = new JButton("Next Player");
+		nextPlayer.setPreferredSize(new Dimension(250, 100));
 		JButton makeAccusation = new JButton("Make an accusation");
-		nextPlayer.setPreferredSize(new Dimension(500, 100));
+		makeAccusation.setPreferredSize(new Dimension(250, 100));
 		panel.add(nextPlayer);
 		panel1.add(panel);
 		panel = new JPanel();
@@ -113,7 +113,7 @@ public class ClueGameGUI extends JPanel{
 		JTextField responseText = new JTextField(20);
 		panel.add(responseText);
 		panel1.add(panel);
-		
+		panel1.setPreferredSize(new Dimension(900, 100));
 		return panel1;
 	}
 	
@@ -121,7 +121,7 @@ public class ClueGameGUI extends JPanel{
 		JFrame frame = new JFrame();
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setTitle("Clue Game GUI");
-		frame.setSize(1500,900);
+		frame.setSize(900,800);
 		ClueGameGUI gui = new ClueGameGUI();
 		frame.add(gui, BorderLayout.CENTER);
 		frame.setVisible(true);
