@@ -2,6 +2,7 @@
 package clueGame;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 
@@ -12,6 +13,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.Border;
+import javax.swing.border.CompoundBorder;
 import javax.swing.border.EtchedBorder;
 import javax.swing.border.TitledBorder;
 
@@ -31,7 +33,6 @@ public class ClueGameGUI extends JPanel{
 	}
 	
 	private JPanel createBoardAndCards() {
-		//Border compound;
 		JPanel content = new JPanel();
 		JPanel panel = new JPanel();
 		//Grid Layout, 1 row, 2 columns
@@ -45,8 +46,12 @@ public class ClueGameGUI extends JPanel{
 		
 		JPanel panel2 = new JPanel();
 		panel2.setBorder(new TitledBorder(new EtchedBorder(), "My Cards"));
-		//compound = BorderFactory.createTitledBorder("People");
-		//Don't know how to add border inside border
+		panel2.setLayout(new GridLayout(3,0));
+
+		people.setBorder(new CompoundBorder(BorderFactory.createTitledBorder("People"), people.getBorder()));
+		rooms.setBorder(new CompoundBorder(BorderFactory.createTitledBorder("Room"), rooms.getBorder()));
+		weapons.setBorder(new CompoundBorder(BorderFactory.createTitledBorder("Weapon"), weapons.getBorder()));
+		
 		panel2.add(people, BorderLayout.NORTH);
 		panel2.add(rooms, BorderLayout.CENTER);
 		panel2.add(weapons, BorderLayout.SOUTH);
