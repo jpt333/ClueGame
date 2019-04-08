@@ -98,5 +98,15 @@ public class ClueGameGUI extends JPanel{
 		return panel1;
 	}
 	
+	public static void main(String[] args) {
+		JFrame frame = new JFrame();
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setTitle("Clue Game GUI");
+		frame.setSize(1500,900);
+		ClueGameGUI gui = new ClueGameGUI();
+		frame.add(gui, BorderLayout.CENTER);
+		frame.setVisible(true);
+		
+	}
 	
 }
