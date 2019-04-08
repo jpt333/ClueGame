@@ -13,6 +13,14 @@ import javax.swing.border.Border;
 import javax.swing.border.EtchedBorder;
 import javax.swing.border.TitledBorder;
 
-public class GUI {
-
+public class ClueGameGUI extends JPanel{
+	private JTextField name;
+	
+	public ClueGameGUI() {
+		setLayout(new GridLayout(2,0));
+		JPanel panel = createNamePanel();
+		add(panel);
+		panel = createButtonPanel();
+		add(panel);
+	}
 }
