@@ -1,3 +1,4 @@
+//Authors: Michael Berg and Jennifer Phan
 package clueGame;
 
 import java.awt.BorderLayout;
@@ -20,7 +21,7 @@ public class ClueGameGUI extends JPanel{
 	private JTextField weapons;
 	
 	public ClueGameGUI() {
-		setLayout(new GridLayout(3,0));
+		setLayout(new GridLayout(3,1));
 		JPanel panel = createBoardAndCards();
 		add(panel);
 		panel = createTurnAndButtons();
@@ -30,7 +31,7 @@ public class ClueGameGUI extends JPanel{
 	}
 	
 	private JPanel createBoardAndCards() {
-		Border compound;
+		//Border compound;
 		JPanel content = new JPanel();
 		JPanel panel = new JPanel();
 		//Grid Layout, 1 row, 2 columns
@@ -42,14 +43,14 @@ public class ClueGameGUI extends JPanel{
 		rooms = new JTextField(20);
 		weapons = new JTextField(20);
 		
-		panel = new JPanel();
-		panel.setBorder(new TitledBorder(new EtchedBorder(), "My Cards"));
-		compound = BorderFactory.createTitledBorder("People");
+		JPanel panel2 = new JPanel();
+		panel2.setBorder(new TitledBorder(new EtchedBorder(), "My Cards"));
+		//compound = BorderFactory.createTitledBorder("People");
 		//Don't know how to add border inside border
-		panel.add(people);
-		panel.add(rooms);
-		panel.add(weapons);
-		content.add(panel);
+		panel2.add(people, BorderLayout.NORTH);
+		panel2.add(rooms, BorderLayout.CENTER);
+		panel2.add(weapons, BorderLayout.SOUTH);
+		content.add(panel2);
 		return content;
 	}
 	
@@ -67,7 +68,7 @@ public class ClueGameGUI extends JPanel{
 		panel = new JPanel();
 		JButton nextPlayer = new JButton("Next Player");
 		JButton makeAccusation = new JButton("Make an accusation");
-//		nextPlayer.setPreferredSize(new Dimension(50, 500));
+		nextPlayer.setPreferredSize(new Dimension(500, 100));
 		panel.add(nextPlayer);
 		panel1.add(panel);
 		panel = new JPanel();
@@ -81,6 +82,8 @@ public class ClueGameGUI extends JPanel{
 		JLabel roll = new JLabel("Roll");
 		panel1.setLayout(new GridLayout(1, 3));
 		
+		
+		//Die Roll
 		JPanel panel = new JPanel();
 		panel.setBorder(new TitledBorder(new EtchedBorder(), "Die"));
 		panel.add(roll);
@@ -88,6 +91,7 @@ public class ClueGameGUI extends JPanel{
 		panel.add(rollNum);
 		panel1.add(panel);
 		
+		//Guess
 		panel = new JPanel();
 		panel.setBorder(new TitledBorder(new EtchedBorder(), "Guess"));
 		JLabel guess = new JLabel("Guess");
@@ -96,6 +100,7 @@ public class ClueGameGUI extends JPanel{
 		panel.add(guessPersonRoomWeapon);
 		panel1.add(panel);
 		
+		//Guess Result Response
 		panel = new JPanel();
 		panel.setBorder(new TitledBorder(new EtchedBorder(), "Guess Result"));
 		JLabel response = new JLabel("Response");
