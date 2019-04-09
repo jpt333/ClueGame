@@ -126,7 +126,7 @@ public class ClueGameGUI extends JPanel{
 		ClueGameGUI gui = new ClueGameGUI();
 		frame.add(gui, BorderLayout.SOUTH);
 		frame.setVisible(true);
-		
+		frame.setResizable(false);
 	}
 	
 }
