@@ -53,6 +53,6 @@ public class BoardCell {
 	}
 	
 	public void draw(Graphics g) {
-		//Draw rectangles and other things for board.
+		//Draw rectangles and other things for board
 	}
 }
