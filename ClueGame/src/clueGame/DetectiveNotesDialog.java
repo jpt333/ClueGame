@@ -26,7 +26,6 @@ public class DetectiveNotesDialog extends JDialog{
 	
 	public static void main(String[] args) {
 		DetectiveNotesDialog dialog = new DetectiveNotesDialog();
-		
 		dialog.setVisible(true);
 	}
 }
