@@ -1,7 +1,11 @@
 //Authors: Michael Berg and Jennifer Phan
 package clueGame;
 
+import java.awt.Point;
+import java.awt.BorderLayout;
+import java.awt.GridLayout;
 import java.awt.Color;
+import java.awt.Graphics;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.lang.reflect.Field;
@@ -12,9 +16,11 @@ import java.util.Random;
 import java.util.Scanner;
 import java.util.Set;
 
+import javax.swing.JPanel;
+
 import clueGame.BoardCell;
 
-public class Board {
+public class Board extends JPanel{
 	private int numRows;
 	private int numColumns;
 	public static final int MAX_BOARD_SIZE = 50;
@@ -560,5 +566,19 @@ public class Board {
 		
 		return true;
 	}
+	
+	
+	public void paintComponent(Graphics g) {
+		super.paintComponent(g);
+		setLayout(new GridLayout(25,17));
+		for(int i = 0; i < 25; i++){
+			for(int j = 0; j < 23; j++){
+				getCellAt(i, j).draw(g);
+			}
+		}
+	}
+	
+	
+	
 	
 }
