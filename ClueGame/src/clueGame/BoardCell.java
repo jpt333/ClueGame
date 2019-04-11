@@ -51,4 +51,8 @@ public class BoardCell {
 	public DoorDirection getDoorDirection() {
 		return direction;
 	}
+	
+	public void draw(Graphics g) {
+		//Draw rectangles and other things for board.
+	}
 }
