@@ -111,7 +111,7 @@ public class BoardCell {
 					g.setColor(color);
 					g.fillRect(pix.x, pix.y, WIDTH, HEIGHT);
 					g.setColor(Color.BLUE);
-					g.fillRect(pix.x + 20, pix.y, 6, HEIGHT);
+					g.fillRect(pix.x + 23, pix.y, 6, HEIGHT);
 				}
 				else if(direction == DoorDirection.RIGHT) {
 					color = Color.MAGENTA;
