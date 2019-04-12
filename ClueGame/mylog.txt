@@ -1,3 +1,586 @@
+commit 203b566434e62bc05e544f6fd884ce5bb780786c
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Fri Apr 12 05:44:30 2019 -0600
+
+    all text kinda working is slightly off will need to do more math
+
+commit 7a372c04e6834f0915d7ebbbce6f1b2273087a2b
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Fri Apr 12 05:37:06 2019 -0600
+
+    text rendering correctly except the parlor
+
+commit 92f8e69555a47006fa4e738af2160494c2beaac6
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Fri Apr 12 04:42:21 2019 -0600
+
+    first text rendered
+
+commit 26c132aa9700942d9bbc193c5d01afc5b447d3e8
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Fri Apr 12 04:29:13 2019 -0600
+
+    Implimented text display algorithm
+
+commit 1bba70c8f6c107163b2d9f0187056f1a8968f846
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Fri Apr 12 01:26:51 2019 -0600
+
+    Attempt to fix printing room names
+
+commit daa25991348e724fb957cca14906fcaa2ecd1eef
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Fri Apr 12 01:19:12 2019 -0600
+
+    Added a curly brace
+
+commit 72c426e9ff7a4e59d698284c72055bdf1fbea4e0
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Fri Apr 12 01:13:10 2019 -0600
+
+    .
+
+commit 94e51751fc9aa9fba66ecbb62b62e47da18714a2
+Merge: 02147c9 89ef178
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Fri Apr 12 01:13:00 2019 -0600
+
+    Merge branch 'master' of https://github.com/michaelberg12/ClueGame.git
+
+commit 02147c9d7923cff96f06b8d85d49677ee0697b24
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Fri Apr 12 01:12:54 2019 -0600
+
+    Tried to print room names procedurely
+
+commit 89ef17845432cac55028f7aac1f3276814e233d5
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Fri Apr 12 01:01:59 2019 -0600
+
+    Fixed Player Rendering In
+
+commit 65bbfe251c56e9734d2c2fdb6e1d3ecf29952b71
+Merge: 3d29e6d a3ff0c2
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Fri Apr 12 00:46:46 2019 -0600
+
+    Merge branch 'master' of https://github.com/michaelberg12/ClueGame.git
+
+commit 3d29e6d1c50d481743e384a9b78ce2443fbeeab9
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Fri Apr 12 00:46:43 2019 -0600
+
+    edited board ratios
+
+commit a3ff0c2900ff3406790c98d7a25f3285af7bc4bf
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Fri Apr 12 00:44:53 2019 -0600
+
+    Changed font color to white
+
+commit d49ff3ffa4321caff00cec4eab320e585ca7f9d8
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Fri Apr 12 00:43:45 2019 -0600
+
+    .
+
+commit 62d130306ae21d55f9c9313fa683a25370315a42
+Merge: 06dde0c 0592514
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Fri Apr 12 00:43:39 2019 -0600
+
+    Merge branch 'master' of https://github.com/michaelberg12/ClueGame.git
+
+commit 06dde0ce98236011cfbd603bfcd415ae98dbdfe6
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Fri Apr 12 00:43:20 2019 -0600
+
+    Finished printing the Room names on board
+
+commit 0592514c0b6ea73e1ce4d5542620b9e41037f33b
+Merge: 8908b42 206f08d
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Fri Apr 12 00:23:18 2019 -0600
+
+    fully working
+
+commit 8908b42f96b80cce763d4b8a37063253ce8fbaa1
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Fri Apr 12 00:21:53 2019 -0600
+
+    Board Working
+
+commit 206f08dfc011a7c2aa339343a039b69c601c3bcf
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Fri Apr 12 00:12:06 2019 -0600
+
+    Walkway now shows as Red
+
+commit 492ddd6b016fb0a8d353963c237a584c8d11925e
+Merge: 26711e0 065e812
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Thu Apr 11 23:58:05 2019 -0600
+
+    Merge remote-tracking branch 'origin/master'
+    
+    Conflicts:
+            ClueGame/src/clueGame/BoardCell.java
+
+commit 26711e0ea8a0bb85b942ea817bd0a10771606b23
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Thu Apr 11 23:57:46 2019 -0600
+
+    .
+
+commit 065e81289f6f9add98010360fe7978593318542b
+Merge: a7b4185 67af55e
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Thu Apr 11 23:56:20 2019 -0600
+
+    door rendering fix
+
+commit a7b4185c4b9bbe1b258111c156b98e258a46ccdf
+Merge: f60c6ae 79de402
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Thu Apr 11 23:54:50 2019 -0600
+
+    player rendering
+
+commit 67af55ea97878ec011c12b9858da81a2d7f231e5
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Thu Apr 11 23:51:56 2019 -0600
+
+    All board cells are pink
+
+commit f60c6ae440061ee4291a1afa53de04ba8eea46a7
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Thu Apr 11 23:51:13 2019 -0600
+
+    some players drawn
+
+commit 79de4022877ee8be368d8f9386ed155f7ecc02c3
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Thu Apr 11 23:49:49 2019 -0600
+
+    Something wrong with brackets...
+
+commit 6c1ca8bc890f548f9516317884b0afa37edfb523
+Merge: 12267f3 207809c
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Thu Apr 11 23:46:38 2019 -0600
+
+    Merge branch 'master' of https://github.com/michaelberg12/ClueGame.git
+    
+    Conflicts:
+            ClueGame/src/clueGame/BoardCell.java
+
+commit 12267f35c08d37c923b73b165192c5833f63cc79
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Thu Apr 11 23:46:17 2019 -0600
+
+    Still not working
+
+commit 207809ccab18cc156dc75b2906d8db0e373a3453
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Thu Apr 11 23:45:06 2019 -0600
+
+    rendering but wrong
+
+commit 75c448598627ca90d775fb13f11780ba40c3ea17
+Merge: e717a4e 3504bae
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Thu Apr 11 23:41:22 2019 -0600
+
+    Merge remote-tracking branch 'origin/master'
+
+commit e717a4e691efbd8d2e9f44293b3a9450057eeea5
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Thu Apr 11 23:41:15 2019 -0600
+
+    Tried printing other boardcells
+
+commit 3504bae5c082a5b8cdb8086184d970d5d6278a3f
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Thu Apr 11 23:39:44 2019 -0600
+
+    fixed board ratio
+
+commit bb95a70cad1ea266a284bc49c1fa6a81da5d9fa0
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Thu Apr 11 23:29:02 2019 -0600
+
+    .
+
+commit 898bace25975e8012626bbd4625710ec8d9f8821
+Merge: 5a5b9c1 ae658ac
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Thu Apr 11 23:28:52 2019 -0600
+
+    Merge branch 'master' of https://github.com/michaelberg12/ClueGame.git
+
+commit 5a5b9c126fb19c612ced374640fd0750878b27ae
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Thu Apr 11 23:28:46 2019 -0600
+
+    Now all door directions show on board
+
+commit ae658acbe6a33cfd48c7f36ddf80275b86769fee
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Thu Apr 11 23:27:12 2019 -0600
+
+    fixed right door
+
+commit 1eb9ef198e97eb9f8963792d99493e40c65c7daf
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Thu Apr 11 23:23:50 2019 -0600
+
+    doors fixed pixel counting error
+
+commit f267860a62826ffa960ed1529e36bb49873d9ecf
+Merge: 05d7d8b 622a979
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Thu Apr 11 23:20:48 2019 -0600
+
+    Merge branch 'master' of https://github.com/michaelberg12/ClueGame.git
+
+commit 05d7d8bf8dcba58ea7ba3fa605e030fbaac87123
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Thu Apr 11 23:20:14 2019 -0600
+
+    first board draw
+
+commit 622a9794550ba12718400dd11f0dd13b1a919a25
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Thu Apr 11 23:19:58 2019 -0600
+
+    Not sure why board not displaying
+
+commit f71e368321d51f8175e8643f5cd348ff13ae99ca
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Thu Apr 11 23:18:24 2019 -0600
+
+    .
+
+commit 7688244d6966fcd08cc7b75c8b52a25800f912dc
+Merge: 13ef7de 137d5f8
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Thu Apr 11 23:18:05 2019 -0600
+
+    Merge branch 'master' of https://github.com/michaelberg12/ClueGame.git
+
+commit 13ef7de89b4a42b42b5bbd886d28bb21874f3ba9
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Thu Apr 11 23:17:59 2019 -0600
+
+    Fixed nullpointer error
+
+commit 137d5f8208d386ae20099f05445c0ef4bb62b506
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Thu Apr 11 23:16:07 2019 -0600
+
+    Fixed pixel counrts again
+
+commit 752f17b44ce40d7e07ab538483403c64be9f771f
+Merge: 500781c fc23936
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Thu Apr 11 23:15:40 2019 -0600
+
+    Merge branch 'master' of https://github.com/michaelberg12/ClueGame.git
+
+commit 500781cf3823fa6b3865bbb82d94ce2cf24251e8
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Thu Apr 11 23:15:35 2019 -0600
+
+    Fixed pixel counts
+
+commit fc23936bc37c67ec5b90eb4ceff6cab876209e3e
+Merge: 7b4a7e3 3a1cd7c
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Thu Apr 11 23:11:24 2019 -0600
+
+    Merge remote-tracking branch 'origin/master'
+    
+    Conflicts:
+            ClueGame/src/clueGame/Board.java
+
+commit 7b4a7e3b4fe8cfa7a335f3dda5258d1f923a3c62
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Thu Apr 11 23:11:08 2019 -0600
+
+    Figuring out how to show
+
+commit 3a1cd7ce89e790e380adbf6d3bae86e574337be4
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Thu Apr 11 23:09:36 2019 -0600
+
+    board drawing implimented but broken
+
+commit dfbea61d6288d7caa328b565f206a1e7c5a7f8dd
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Thu Apr 11 23:00:29 2019 -0600
+
+    Player Drawing
+
+commit 966fca2758dc1f4620bb2479596dac9c4cb3f8ca
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Thu Apr 11 22:58:35 2019 -0600
+
+    pix fixed
+
+commit 2887fc50f15694bc6dc3c446b935bd016cf33e09
+Merge: 6d1f5cc 6e81359
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Thu Apr 11 22:51:56 2019 -0600
+
+    Merge branch 'master' of https://github.com/michaelberg12/ClueGame.git
+
+commit 6d1f5cce15627047767940cf35c30aac30b5b028
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Thu Apr 11 22:51:53 2019 -0600
+
+    added draw to player
+
+commit 6e813597d44f83ccab573443da27cfb2996de2b7
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Thu Apr 11 22:49:09 2019 -0600
+
+    Think finished with draw method
+
+commit 2f6e54a075879d8a213100c3e9f7bf90e4cfa347
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Thu Apr 11 22:42:31 2019 -0600
+
+    Added more code
+
+commit 2f4350390a5d50125b8df69c6bc062dfb7bd62dd
+Merge: 7c10832 65dbaa0
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Thu Apr 11 22:42:00 2019 -0600
+
+    Merge branch 'master' of https://github.com/michaelberg12/ClueGame.git
+
+commit 7c10832a21d805156c70c49e2c653ed088210d9b
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Thu Apr 11 22:41:54 2019 -0600
+
+    Added more code for draw method
+
+commit 65dbaa0dad505762b0a9fd4aefb8b91afb679ce9
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Thu Apr 11 22:38:41 2019 -0600
+
+    added rows and col to boardcell constructor
+
+commit 9aface01b7a91481e4d77e094f524cb6638b7eb0
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Thu Apr 11 22:28:10 2019 -0600
+
+    Worked on drawing board
+
+commit b8b6ee31fd4bbec4158f4acc475d55a59c2941d5
+Merge: 1505bb0 d3b20ee
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Thu Apr 11 22:27:52 2019 -0600
+
+    Merge branch 'master' of https://github.com/michaelberg12/ClueGame.git
+
+commit 1505bb06273b91941eb76c6662c69dfbbd344eab
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Thu Apr 11 22:27:45 2019 -0600
+
+    Started drawing the board
+
+commit d3b20ee41091fd2624842fd6662c5400d223de92
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Thu Apr 11 22:06:46 2019 -0600
+
+    more refactoring
+
+commit fa4d074942711e1e76e0a0d3d91640fbe9168541
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Thu Apr 11 22:04:08 2019 -0600
+
+    Refactoring
+
+commit 0da29ab4b97af3fc747973ecb6e4065a039abf44
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Thu Apr 11 21:56:01 2019 -0600
+
+    Quit and detective notes now work
+
+commit c0440f9f65140a4328a9d9e01280b12f62b29c67
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Thu Apr 11 21:23:10 2019 -0600
+
+    added dice assests
+
+commit 2ef7f997acfdc0ca20d367c964fe80755ec77e24
+Merge: d06ad6a d9a4c39
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Thu Apr 11 20:51:50 2019 -0600
+
+    Merge branch 'master' of https://github.com/michaelberg12/ClueGame.git
+
+commit d06ad6a2b4336ea91e073ce29ddfa46308492bb2
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Thu Apr 11 20:51:44 2019 -0600
+
+    Added assets and modified the window code
+
+commit d9a4c39d9da2104b7ab3ab35de46b82edd7e88a5
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Thu Apr 11 18:39:20 2019 -0600
+
+    Added some comments
+
+commit ebf20e93165723e8d8e5b5a093a977ae90ced9d8
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Thu Apr 11 18:36:04 2019 -0600
+
+    Changed sizes of the JComboBoxes
+
+commit 003797252eb276dea181d14eeb2698e640dad6ae
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Thu Apr 11 18:26:14 2019 -0600
+
+    Added unsure to list
+
+commit 21759ac264597437f9030bbb25115702fd039ed3
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Thu Apr 11 18:23:55 2019 -0600
+
+    Finished with DetectiveNotesDialog!
+
+commit 1745c11872a20074346deb4c3a33bcbe0101cfbe
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Thu Apr 11 18:20:22 2019 -0600
+
+    Finished most code for DetectiveNotesDialog
+
+commit 0d79be7844a4c1d4ee43a151fb4f208e422337e6
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Thu Apr 11 17:53:54 2019 -0600
+
+    Finished People, Rooms, and Weapons with checkboxes for Detective notes
+
+commit 532feb66627d798b11959d64eb2bd73ebf0f760c
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Thu Apr 11 15:00:24 2019 -0600
+
+    People have checkboxes
+
+commit ea98f14d4304ef503d668b6882ff3c0309ec706d
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Thu Apr 11 14:59:50 2019 -0600
+
+    Has checkboxes for each person
+
+commit 88e9abada465823b7d67caccd132c22f06350cc4
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Thu Apr 11 14:23:34 2019 -0600
+
+    .
+
+commit 4b939a5bdf0d53f612c66731f8ab189f3430d969
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Thu Apr 11 13:26:56 2019 -0600
+
+    Created DetectiveNotesDialog class
+
+commit 3dce874812646cc8d17981625f0bd5fde8c11108
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Thu Apr 11 13:01:35 2019 -0600
+
+    Declared draw method for drawing the board
+
+commit f5fa710410e9082501cb72802c983226beaf98e8
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Thu Apr 11 12:50:52 2019 -0600
+
+    Started working on drawing the board. Board now extends JPanel
+
+commit faa618e2ffbf08b51b211c7432dcea74c3165d77
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Tue Apr 9 14:46:19 2019 -0600
+
+    Frame not re-sizable anymore
+
+commit e02abdc0be7d69ecda597fd3dc6ddbb6255f67bb
+Merge: e3fece3 f451de6
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Mon Apr 8 14:41:12 2019 -0600
+
+    Merge remote-tracking branch 'origin/master'
+    
+    Conflicts:
+            ClueGame/src/clueGame/ClueGameGUI.java
+
+commit e3fece30d1d84f3f09db45b31e5352ce8a5f4a46
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Mon Apr 8 14:39:14 2019 -0600
+
+    .
+
+commit f451de60efee4c5ce34b5937550b0608f9b4cd11
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Mon Apr 8 14:33:43 2019 -0600
+
+    button adj
+
+commit 21949dda882f5026e77bf1c945fc2840aeb8270e
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Mon Apr 8 14:11:09 2019 -0600
+
+    The format for myCards are correctly formatted now
+
+commit 1ce13b1bc53043a4f2229114f325b05fe6c6c962
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Mon Apr 8 13:53:48 2019 -0600
+
+    Trying to reformat GUI
+
+commit 22a1fb1012bc71dd166fff90310afc37cc3bd2d9
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Sun Apr 7 22:19:26 2019 -0600
+
+    Tried to fix button sizes
+
+commit 57330460a094320c74c3a54b5ee09de94b35f149
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Sun Apr 7 22:05:25 2019 -0600
+
+    Added Main for ClueGameGUI
+
+commit 355c6b022c1ffab9c506789b15f9a67961dd2693
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Sun Apr 7 22:03:58 2019 -0600
+
+    Added createTurnButtonAndCards
+
+commit e00a8bbb8cd1f720c9169eb7e8d2a86307a17680
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Sun Apr 7 22:02:45 2019 -0600
+
+    Created the roll, guess, and result
+
+commit a0fd83f58d88e6e4b82a8f7ed2daa55ce2347ad1
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Sun Apr 7 22:01:55 2019 -0600
+
+    Created Janel fore createBoard and Cards
+
+commit 1e9f81b07d09b5214e09d0c5e447ad35bc1c18e8
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Sun Apr 7 21:59:07 2019 -0600
+
+    Renamed class and added function
+
+commit 9712f7c393f210684d8581740179987043b5d357
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Sun Apr 7 21:57:05 2019 -0600
+
+    Created Gui class and imported necessary libraries
+
 commit 74613e0361b7e3a790b345bc4af2d4e1e78c8318
 Author: Michael Berg <urberg@yahoo.com>
 Date:   Sat Apr 6 01:38:43 2019 -0600
