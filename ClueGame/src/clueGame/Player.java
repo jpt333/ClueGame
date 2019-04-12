@@ -20,6 +20,8 @@ public class Player {
 		this.color = color;
 	}
 
+	
+	
 	public Card disproveSuggestion(Solution suggestion) {
 		Set<Card> cardsMatching = new HashSet<>();
 		for(Card cardsLoc: cards) {

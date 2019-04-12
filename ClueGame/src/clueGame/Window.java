@@ -37,6 +37,9 @@ import javax.swing.Action;
 public class Window {
 
 	private JFrame clueWindow;
+	
+	//generated using window builder
+	
 	/**
 	 * Launch the application.
 	 */
