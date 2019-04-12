@@ -77,12 +77,13 @@ public class BoardCell {
 	
 	public void draw(Graphics g) {
 		//Draw rectangles and other things for board
-		if(initital == "W") {
+		if(isWalkway()) {
+			System.out.print("HERE");
 			color = Color.DARK_GRAY;
 			g.setColor(color);
 			g.fillRect(pix.x, pix.y, WIDTH, HEIGHT);
 		}
-		if(this.isRoom()) {
+		if(isRoom()) {
 			//Paints the doorways and rooms
 			if(isDoorway()) {
 				if (direction == DoorDirection.UP){
@@ -121,12 +122,12 @@ public class BoardCell {
 					g.fillRect(pix.x + 20, pix.y, 5, HEIGHT);
 				}
 				else {
-					//colors the rooms
 					color = Color.MAGENTA;
 					g.setColor(color);
 					g.fillRect(pix.x, pix.y, WIDTH, HEIGHT);
 				}
 			}
+			
 		}
 	} 
 }
