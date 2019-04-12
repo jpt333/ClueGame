@@ -197,13 +197,13 @@ public class Window {
 		card3.setBackground(Color.WHITE);
 		card3.setBounds(705, 447, 100, 150);
 		clueWindow.getContentPane().add(card3);
+	
 		
-
 		Board gameBoard = Board.getInstance();
 		gameBoard.setConfigFiles("ClueBoard.csv", "rooms.txt");
 		gameBoard.setCardFiles("weapons.txt", "Person.txt");
 		gameBoard.initialize();
-		gameBoard.setBounds(0, 25, 702, 624);
+		gameBoard.setBounds(0, 25, 702, 676);
 		clueWindow.getContentPane().add(gameBoard);
 		
 		JTextArea diceText = new JTextArea();
