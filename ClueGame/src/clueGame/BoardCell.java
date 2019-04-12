@@ -22,7 +22,6 @@ public class BoardCell {
 	public final int WIDTH = 30;
 	public final int HEIGHT = 30;
 	public final int SCALE = 32;
-	private DoorDirection doorDir;
 	
 	public BoardCell(String initital, DoorDirection direction) {
 		this.initital = initital;
@@ -72,29 +71,41 @@ public class BoardCell {
 			g.fillRect(pixel.x, pixel.y, WIDTH, HEIGHT);
 		}
 		if(this.isRoom()) {
+			//Paints the doorways
 			if(isDoorway()) {
-				if (doorDir == DoorDirection.UP)
-				{
-					color = Color.WHITE;
+				if (direction == DoorDirection.UP){
+					color = Color.MAGENTA;
 					g.setColor(color);
 					g.fillRect(pixel.x, pixel.y, WIDTH, HEIGHT);
 					g.setColor(Color.BLUE);
-					g.fillRect(pixel.x, pixel.y, WIDTH, 5);
+					g.fillRect(pixel.x, pixel.y, WIDTH, 6);
 				}
-				else if (doorDir == DoorDirection.DOWN)
+				else if (direction == DoorDirection.DOWN){
+					color = Color.MAGENTA;
+					g.setColor(color);
+					g.fillRect(pixel.x, pixel.y, WIDTH, HEIGHT);
+					g.setColor(Color.BLUE);
+					g.fillRect(pixel.x, pixel.y + 20, WIDTH, 6);
+				}
+				else if (direction == DoorDirection.LEFT){
+					color = Color.MAGENTA;
+					g.setColor(color);
+					g.fillRect(pixel.x, pixel.y, WIDTH, HEIGHT);
+					g.setColor(Color.BLUE);
+					g.fillRect(pixel.x, pixel.y, 6, HEIGHT);
+				}else if (direction == DoorDirection.RIGHT)
 				{
-					
-				}
-				else if (doorDir == DoorDirection.LEFT)
-				{
-					
-				}
-				else if (doorDir == DoorDirection.RIGHT)
-				{
-					
-				}
-				else if(doorDir == DoorDirection.RIGHT) {
-					
+					color = Color.MAGENTA;
+					g.setColor(color);
+					g.fillRect(pixel.x, pixel.y, WIDTH, HEIGHT);
+					g.setColor(Color.BLUE);
+					g.fillRect(pixel.x + 20, pixel.y, 6, HEIGHT);
+				}else if(direction == DoorDirection.RIGHT) {
+					color = Color.MAGENTA;
+					g.setColor(color);
+					g.fillRect(pixel.x, pixel.y, WIDTH, HEIGHT);
+					g.setColor(Color.BLUE);
+					g.fillRect(pixel.x + 20, pixel.y, 5, HEIGHT);
 				}
 			}
 		}
