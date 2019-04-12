@@ -2,11 +2,13 @@
 package clueGame;
 
 import java.awt.Point;
+import java.awt.geom.AffineTransform;
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.lang.reflect.Field;
@@ -605,8 +607,9 @@ public class Board extends JPanel{
 		
 		
 		//algorithm for centering names in room it is very inefficient 
+		//this needs to be refactored
 		for(Map.Entry<Character,String> entry : legend.entrySet()) {
-			
+			if(entry.getKey().equals('W')) {continue;}
 			//obtain the width of the string 
 			int width = g.getFontMetrics().stringWidth(entry.getValue());
 			Set<Integer> maxRowCol = new HashSet<>();
@@ -634,33 +637,70 @@ public class Board extends JPanel{
 				}
 			}
 			//finished going through the rows
-			if(width < maxRowCol.size() * WIDTH) {
-				if(maxRowCol.size() % 2 == 1) {
-					//the number is odd get the center
-					int a1 = 0;
-					for(Integer rowLoc: maxRowCol) {
-						a1++;
-						if((maxRowCol.size() + 1)/2 == a1) {
-							//here is where the text will be rendered 
-							g.drawString(entry.getValue(), 25, rowLoc * HEIGHT);
+			
+			//-------to rotate text-------
+			Graphics2D g2 = (Graphics2D)g;
+			g2.setFont(new Font("TimesRoman", Font.PLAIN, 13));
+			g2.setColor(Color.WHITE);
+			//----------------------------
+			
+			int startingPioint = 0;
+			if(maxRowCol.size() % 2 == 1) {
+				//the number is odd get the center
+				int a1 = 0;
+				for(Integer rowLoc: maxRowCol) {
+					a1++;
+					if((maxRowCol.size() + 1)/2 == a1) {
+						for(int a2 = 0; true; a2++) {
+							//find the first occurance for centering
+							if(entry.getKey().equals(board[rowLoc][a2].getInitial())){
+								//starting point - half the width + half the length
+								startingPioint = (a2 * WIDTH) - width/2 + ((maxRowColInt/2)* WIDTH);
+								break;
+							}
+						}
+						//here is where the text will be rendered 
+						if((width*1.5) < maxRowColInt * WIDTH) {
+							g.drawString(entry.getValue(), startingPioint, (rowLoc + 1) * HEIGHT);
+							break;
+						}else {
+							AffineTransform orig = g2.getTransform();
+							g2.rotate(-Math.PI/2);
+							g2.drawString("Very Long Testing String", 0, 0 );
+							g2.setTransform(orig);
 							break;
 						}
 					}
-				}else {
-					//the number is even
-					int a1 = 0;
-					for(Integer rowLoc: maxRowCol) {
-						a1++;
-						if(maxRowCol.size()/2 == a1) {
-							//here is where the text will be rendered 
-							g.drawString(entry.getValue(), 25, 25);
+				}
+			}else {
+				//the number is even
+				int a1 = 0;
+				for(Integer rowLoc: maxRowCol) {
+					a1++;
+					if(maxRowCol.size()/2 == a1) {
+						//here is where the text will be rendered 
+						
+						for(int a2 = 0; true; a2++) {
+							//find the first occurance for centering
+							if(entry.getKey().equals(board[rowLoc][a2].getInitial())){
+								//starting point - half the width + half the length
+								startingPioint = (a2 * WIDTH) - width/2 + ((maxRowColInt/2)* WIDTH);
+								break;
+							}
+						}
+						if((width*1.5) < maxRowColInt * WIDTH) {
+							g.drawString(entry.getValue(), startingPioint,  (rowLoc + 1) * HEIGHT);
+							break;
+						}else {
+							AffineTransform orig = g2.getTransform();
+							g2.rotate(-Math.PI/2);
+							g2.drawString(entry.getValue(), 0, 0 );
+							g2.setTransform(orig);
 							break;
 						}
 					}
 				}
 			}
-			System.out.print(entry.getKey());
-			System.out.println(maxRowCol);
 		}
 		
 	}	
