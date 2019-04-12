@@ -84,29 +84,25 @@ public class BoardCell {
 	
 	public void draw(Graphics g) {
 		//Draw rectangles and other things for board
-<<<<<<< HEAD
-		
 		
 		if(isWalkway()) {
 			color = Color.DARK_GRAY;
-=======
-		if(this.isWalkway()) {
-			color = Color.YELLOW;
->>>>>>> branch 'master' of https://github.com/michaelberg12/ClueGame.git
-			g.setColor(color);
-			g.fillRect(pix.x, pix.y, WIDTH, HEIGHT);
-		}
-<<<<<<< HEAD
+
+			if(this.isWalkway()) {
+				color = Color.YELLOW;
+				g.setColor(color);
+				g.fillRect(pix.x, pix.y, WIDTH, HEIGHT);
+			}
+		
 		if(isRoom()) {
-=======
-		if(this.isRoom()) {
-			color = Color.MAGENTA;
-			g.setColor(color);
-			g.fillRect(pix.x, pix.y, WIDTH, HEIGHT);
-		}
+
+			if(this.isRoom()) {
+				color = Color.MAGENTA;
+				g.setColor(color);
+				g.fillRect(pix.x, pix.y, WIDTH, HEIGHT);
+			
 		
 		if(this.isRoom()) {
->>>>>>> branch 'master' of https://github.com/michaelberg12/ClueGame.git
 			//Paints the doorways and rooms
 			if(isDoorway()) {
 				if (direction == DoorDirection.UP){
