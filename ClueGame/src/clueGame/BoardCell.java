@@ -36,9 +36,16 @@ public class BoardCell {
 		pix.y = row * HEIGHT;
 	}
 
-	public BoardCell(String initital) {
+	public BoardCell(String initital, int row, int col) {
+		pix = new Point();
+		
+		this.row = row;
+		this.col = col;
 		this.initital = initital;
 		this.direction = null;
+		
+		pix.x = col * WIDTH;
+		pix.y = row * HEIGHT;
 	}
 
 	public Boolean isWalkway() {
@@ -77,11 +84,17 @@ public class BoardCell {
 	
 	public void draw(Graphics g) {
 		//Draw rectangles and other things for board
-		if(initital == "W") {
-			color = Color.DARK_GRAY;
+		if(this.isWalkway()) {
+			color = Color.YELLOW;
 			g.setColor(color);
 			g.fillRect(pix.x, pix.y, WIDTH, HEIGHT);
 		}
+		if(this.isRoom()) {
+			color = Color.MAGENTA;
+			g.setColor(color);
+			g.fillRect(pix.x, pix.y, WIDTH, HEIGHT);
+		}
+		
 		if(this.isRoom()) {
 			//Paints the doorways and rooms
 			if(isDoorway()) {
@@ -119,12 +132,6 @@ public class BoardCell {
 					g.fillRect(pix.x, pix.y, WIDTH, HEIGHT);
 					g.setColor(Color.BLUE);
 					g.fillRect(pix.x + 20, pix.y, 5, HEIGHT);
-				}
-				else {
-					//colors the rooms
-					color = Color.MAGENTA;
-					g.setColor(color);
-					g.fillRect(pix.x, pix.y, WIDTH, HEIGHT);
 				}
 			}
 		}
