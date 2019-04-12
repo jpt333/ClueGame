@@ -49,17 +49,11 @@ public class BoardCell {
 	}
 
 	public Boolean isWalkway() {
-		if(initital == "W"){
-			return true;
-		}
-		return false;
+		return(initital.equals("W"));
 	}
 	
 	public Boolean isRoom() {
-		if(initital != "W"){
-			return true;
-		}
-		return false;
+		return(!initital.equals("W"));
 	}
 	
 	public Boolean isDoorway() {
@@ -83,62 +77,38 @@ public class BoardCell {
 	}
 	
 	public void draw(Graphics g) {
-		if(this.isRoom()) {
-			//Paints the doorways and rooms
-			if(isDoorway()) {
-				if (direction == DoorDirection.UP){
-					color = Color.MAGENTA;
-					g.setColor(color);
-					g.fillRect(pix.x, pix.y, WIDTH, HEIGHT);
-					g.setColor(Color.BLUE);
-					g.fillRect(pix.x, pix.y, WIDTH, 6);
-				}
-				else if (direction == DoorDirection.DOWN){
-					color = Color.MAGENTA;
-					g.setColor(color);
-					g.fillRect(pix.x, pix.y, WIDTH, HEIGHT);
-					g.setColor(Color.BLUE);
-					g.fillRect(pix.x, pix.y + 20, WIDTH, 6);
-				}
-				else if (direction == DoorDirection.LEFT){
-					color = Color.MAGENTA;
-					g.setColor(color);
-					g.fillRect(pix.x, pix.y, WIDTH, HEIGHT);
-					g.setColor(Color.BLUE);
-					g.fillRect(pix.x, pix.y, 6, HEIGHT);
-				}
-				else if (direction == DoorDirection.RIGHT){
-					color = Color.MAGENTA;
-					g.setColor(color);
-					g.fillRect(pix.x, pix.y, WIDTH, HEIGHT);
-					g.setColor(Color.BLUE);
-					g.fillRect(pix.x + 23, pix.y, 6, HEIGHT);
-				}
-				else if(direction == DoorDirection.RIGHT) {
-					color = Color.MAGENTA;
-					g.setColor(color);
-					g.fillRect(pix.x, pix.y, WIDTH, HEIGHT);
-					g.setColor(Color.BLUE);
-					g.fillRect(pix.x + 20, pix.y, 5, HEIGHT);
-				}
-				else {
-					color = Color.MAGENTA;
-					g.setColor(color);
-					g.fillRect(pix.x, pix.y, WIDTH, HEIGHT);
-				}
-
-			}
-			
-		}
-		if(isRoom() && !isDoorway()) {
-			color = Color.MAGENTA;
-			g.setColor(color);
-			g.fillRect(pix.x, pix.y, WIDTH, HEIGHT);
-		}
 		if(isWalkway()) {
-			color = Color.RED;
+			color = Color.LIGHT_GRAY;
 			g.setColor(color);
 			g.fillRect(pix.x, pix.y, WIDTH, HEIGHT);
 		}
-	} 	
+		if(isRoom()) {
+			color = Color.BLACK;
+			g.setColor(color);
+			g.fillRect(pix.x, pix.y, WIDTH, HEIGHT);
+		}	
+		//Paints the doorways and rooms
+		if(isDoorway()) {
+			if (direction == DoorDirection.UP){
+				g.setColor(Color.CYAN);
+				g.fillRect(pix.x, pix.y, WIDTH, 6);
+			}
+			else if (direction == DoorDirection.DOWN){
+				g.setColor(Color.CYAN);
+				g.fillRect(pix.x, pix.y + 20, WIDTH, 6);
+			}
+			else if (direction == DoorDirection.LEFT){
+				g.setColor(Color.CYAN);
+				g.fillRect(pix.x, pix.y, 6, HEIGHT);
+			}
+			else if (direction == DoorDirection.RIGHT){
+				g.setColor(Color.CYAN);
+				g.fillRect(pix.x + 23, pix.y, 6, HEIGHT);
+			}
+			else if(direction == DoorDirection.RIGHT) {
+				g.setColor(Color.CYAN);
+				g.fillRect(pix.x + 20, pix.y, 5, HEIGHT);
+			}	
+		}
+	}
 }

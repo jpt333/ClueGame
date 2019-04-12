@@ -198,21 +198,13 @@ public class Window {
 		card3.setBounds(705, 445, 100, 150);
 		clueWindow.getContentPane().add(card3);
 		
-		
-		
-		
-		//doesnt work
+
 		Board gameBoard = Board.getInstance();
 		gameBoard.setConfigFiles("ClueBoard.csv", "rooms.txt");
 		gameBoard.setCardFiles("weapons.txt", "Person.txt");
 		gameBoard.initialize();
-		gameBoard.setBounds(0, 25, 486, 624);
+		gameBoard.setBounds(0, 25, 493, 624);
 		clueWindow.getContentPane().add(gameBoard);
-	
-		//works
-		//JPanel gameBoard = new JPanel();
-		//gameBoard.setBounds(0, 25, 725, 442);
-		//clueWindow.getContentPane().add(gameBoard);
 		
 		JTextArea diceText = new JTextArea();
 		diceText.setText("Dice Roll");

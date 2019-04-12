@@ -16,8 +16,8 @@ public class Player{
 	protected Set<Card> cards;
 	protected BoardCell currentLocation;
 	
-	public final int WIDTH = 29;
-	public final int HEIGHT = 27;
+	public final int WIDTH = 26;
+	public final int HEIGHT = 26;
 	
 	public Player(String playerName, BoardCell currentLocation, Color color) {
 		this.playerName = playerName;
