@@ -2,6 +2,7 @@
 
 package clueGame;
 
+import java.awt.Dimension;
 import java.awt.GridLayout;
 
 import javax.swing.JCheckBox;
@@ -86,6 +87,11 @@ public class DetectiveNotesDialog extends JDialog{
 		personGuess.addItem("Mrs. White");
 		personGuess.addItem("Mrs. Peacock");
 		personGuess.addItem("Professor Plum");
+		//Size height for JComboBox
+		Dimension preferredSize = personGuess.getPreferredSize();
+		preferredSize.height = 100;
+		preferredSize.width = 120;
+		personGuess.setPreferredSize(preferredSize);
 		panel.add(personGuess);
 		return panel;
 	}
@@ -99,6 +105,10 @@ public class DetectiveNotesDialog extends JDialog{
 		for(String room : rooms) {
 			roomGuess.addItem(room);
 		}
+		Dimension preferredSize = roomGuess.getPreferredSize();
+		preferredSize.height = 100;
+		preferredSize.width = 120;
+		roomGuess.setPreferredSize(preferredSize);
 		panel.add(roomGuess);
 		return panel;
 	}
@@ -112,6 +122,11 @@ public class DetectiveNotesDialog extends JDialog{
 		for(String weapon: weapons) {
 			weaponGuess.addItem(weapon);
 		}
+		//size of JComboBox
+		Dimension preferredSize = weaponGuess.getPreferredSize();
+		preferredSize.height = 100;
+		preferredSize.width = 120;
+		weaponGuess.setPreferredSize(preferredSize);
 		panel.add(weaponGuess);
 		return panel;
 	}
