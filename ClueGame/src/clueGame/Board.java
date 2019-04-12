@@ -634,7 +634,7 @@ public class Board extends JPanel{
 				}
 			}
 			//finished going through the rows
-			if(width > maxRowCol.size() * WIDTH) {
+			if(width < maxRowCol.size() * WIDTH) {
 				if(maxRowCol.size() % 2 == 1) {
 					//the number is odd get the center
 					int a1 = 0;
@@ -642,7 +642,7 @@ public class Board extends JPanel{
 						a1++;
 						if((maxRowCol.size() + 1)/2 == a1) {
 							//here is where the text will be rendered 
-							
+							g.drawString(entry.getValue(), 25, rowLoc * HEIGHT);
 							break;
 						}
 					}
@@ -653,7 +653,7 @@ public class Board extends JPanel{
 						a1++;
 						if(maxRowCol.size()/2 == a1) {
 							//here is where the text will be rendered 
-							
+							g.drawString(entry.getValue(), 25, 25);
 							break;
 						}
 					}
