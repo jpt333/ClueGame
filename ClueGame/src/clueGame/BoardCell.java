@@ -93,6 +93,7 @@ public class BoardCell {
 				g.setColor(color);
 				g.fillRect(pix.x, pix.y, WIDTH, HEIGHT);
 			}
+		}
 		
 		if(isRoom()) {
 
@@ -101,7 +102,8 @@ public class BoardCell {
 				g.setColor(color);
 				g.fillRect(pix.x, pix.y, WIDTH, HEIGHT);
 			
-		
+			}
+		}
 		if(this.isRoom()) {
 			//Paints the doorways and rooms
 			if(isDoorway()) {
@@ -149,5 +151,6 @@ public class BoardCell {
 			}
 			
 		}
-	} 
+	//} 
+	}
 }
