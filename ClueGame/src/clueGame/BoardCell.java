@@ -13,6 +13,9 @@ public class BoardCell {
 		return initital + ":" + direction;
 	}
 
+	private int row;
+	private int col;
+	
 	private String initital;
 	private DoorDirection direction;
 	
@@ -24,7 +27,9 @@ public class BoardCell {
 	public final int SCALE = 32;
 	private DoorDirection doorDir;
 	
-	public BoardCell(String initital, DoorDirection direction) {
+	public BoardCell(String initital, DoorDirection direction, int row, int col) {
+		this.row = row;
+		this.col = col;
 		this.initital = initital;
 		this.direction = direction;
 	}

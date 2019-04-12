@@ -244,19 +244,19 @@ public class Board extends JPanel{
 					//doorways
 		        	if(line[a1].length() == 2) {
 		        		if(line[a1].endsWith("U")) {
-		        			board[numRows][a1] = new BoardCell(line[a1], DoorDirection.UP);
+		        			board[numRows][a1] = new BoardCell(line[a1], DoorDirection.UP, numRows, a1);
 		        		}
 		        		else if(line[a1].endsWith("D")) {
-		        			board[numRows][a1] = new BoardCell(line[a1], DoorDirection.DOWN);
+		        			board[numRows][a1] = new BoardCell(line[a1], DoorDirection.DOWN, numRows, a1);
 		        		}
 		        		else if(line[a1].endsWith("L")) {
-		        			board[numRows][a1] = new BoardCell(line[a1], DoorDirection.LEFT);
+		        			board[numRows][a1] = new BoardCell(line[a1], DoorDirection.LEFT, numRows, a1);
 		        		}
 		        		else if(line[a1].endsWith("R")) {
-		        			board[numRows][a1] = new BoardCell(line[a1], DoorDirection.RIGHT);
+		        			board[numRows][a1] = new BoardCell(line[a1], DoorDirection.RIGHT, numRows, a1);
 		        		}
 		        		else if(line[a1].endsWith("N")) {
-		        			board[numRows][a1] = new BoardCell(line[a1], DoorDirection.NONE);
+		        			board[numRows][a1] = new BoardCell(line[a1], DoorDirection.NONE, numRows, a1);
 		        		}
 		        		else {
 		        			scanner.close();
