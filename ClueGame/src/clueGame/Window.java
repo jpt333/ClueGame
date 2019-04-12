@@ -31,11 +31,12 @@ import java.awt.Component;
 import javax.swing.JMenuItem;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
+import javax.swing.AbstractAction;
+import javax.swing.Action;
 
 public class Window {
 
 	private JFrame frmClue;
-
 	/**
 	 * Launch the application.
 	 */
@@ -52,6 +53,7 @@ public class Window {
 		});
 	}
 
+	
 	/**
 	 * Create the application.
 	 */
@@ -122,9 +124,20 @@ public class Window {
 		menuBar.add(mnFile);
 		
 		JMenuItem mntmNewMenuItem = new JMenuItem("Detective Notes");
+		mntmNewMenuItem.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				DetectiveNotesDialog dialog = new DetectiveNotesDialog();
+				dialog.setVisible(true);
+			}
+		});
 		mnFile.add(mntmNewMenuItem);
 		
 		JMenuItem mntmQuit = new JMenuItem("Quit");
+		mntmQuit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frmClue.dispose();
+			}
+		});
 		mnFile.add(mntmQuit);
 
 		JLabel label = new JLabel("");
@@ -201,4 +214,6 @@ public class Window {
 		frmClue.setBounds(100, 100, 1000, 700);
 		frmClue.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
+	
+
 }
