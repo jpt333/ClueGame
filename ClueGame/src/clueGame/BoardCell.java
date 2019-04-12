@@ -83,8 +83,7 @@ public class BoardCell {
 	}
 	
 	public void draw(Graphics g) {
-		//Draw rectangles and other things for board
-		if(isRoom()) {
+		if(this.isRoom()) {
 			//Paints the doorways and rooms
 			if(isDoorway()) {
 				if (direction == DoorDirection.UP){
@@ -141,5 +140,5 @@ public class BoardCell {
 			g.setColor(color);
 			g.fillRect(pix.x, pix.y, WIDTH, HEIGHT);
 		}
-	} 
+	} 	
 }
