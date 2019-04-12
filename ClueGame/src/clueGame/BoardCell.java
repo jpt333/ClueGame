@@ -23,7 +23,7 @@ public class BoardCell {
 	private Color color;
 	
 	public final int WIDTH = 29;
-	public final int HEIGHT = 26;
+	public final int HEIGHT = 16;
 	
 	public BoardCell(String initital, DoorDirection direction, int row, int col) {
 		pix = new Point();
