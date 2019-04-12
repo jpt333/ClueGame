@@ -2,6 +2,8 @@
 package clueGame;
 
 import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Point;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Random;
@@ -10,9 +12,11 @@ import java.util.Set;
 public class Player {
 	private String playerName;
 	private Color color;
+	private Point pixel;
 	protected Set<Card> cards;
 	protected BoardCell currentLocation;
 	
+	public final int RADIUS = 15;
 	
 	public Player(String playerName, BoardCell currentLocation, Color color) {
 		this.playerName = playerName;
@@ -20,7 +24,14 @@ public class Player {
 		this.color = color;
 	}
 
-	
+	public void draw(Graphics g) {
+		//Draw character
+		
+		g.setColor(color);
+		g.fillOval(pixel.x, pixel.y, RADIUS, RADIUS);
+		
+	}
+
 	
 	public Card disproveSuggestion(Solution suggestion) {
 		Set<Card> cardsMatching = new HashSet<>();
