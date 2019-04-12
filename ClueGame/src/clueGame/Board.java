@@ -607,7 +607,7 @@ public class Board extends JPanel{
 		g.drawString(rooms[6], 350, 325);
 		g.drawString(rooms[7], 145, 360);
 		g.drawString(rooms[8], 170, 550);
-		g.drawString("Closet", 30, 560);
+		g.drawString("Closet", 30, 560); 
 		
 	}	
 }
