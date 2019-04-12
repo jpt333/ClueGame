@@ -81,6 +81,8 @@ public class BoardCell {
 			color = Color.LIGHT_GRAY;
 			g.setColor(color);
 			g.fillRect(pix.x, pix.y, WIDTH, HEIGHT);
+			g.setColor(Color.BLACK);
+			g.drawRect(pix.x, pix.y, WIDTH, HEIGHT);
 		}
 		if(isRoom()) {
 			color = Color.BLACK;

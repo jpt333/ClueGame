@@ -10,8 +10,10 @@ import java.awt.Graphics;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.lang.reflect.Field;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Random;
 import java.util.Scanner;
@@ -52,6 +54,9 @@ public class Board extends JPanel{
 	
 	private int x;
 	private int y;
+	
+	public final int WIDTH = 39;
+	public final int HEIGHT = 26;
 	
 	private Board() {}
 	
@@ -593,39 +598,70 @@ public class Board extends JPanel{
 		}
 		
 		
-		//Printing out the Room names
-		String[] rooms = new String[] {"Butterfly Room", "Computer Room", "Kitchen", "Dining Room", "Bedroom", "Parlor","Music Room", "Game Room", "Living Room"};
-		
 		g.setFont(new Font("TimesRoman", Font.PLAIN, 13));
 		g.setColor(Color.WHITE);
 		
 		
-		Boolean butterfly = false;
-		Boolean computer = false;
 		
 		
-		for(int i = 0; i < getNumRows(); i++) {
-			for(int j = 0; j < getNumColumns(); j++) {
-				if(getCellAt(i,j).getInitial() == 'B' && (butterfly == false)) {
-					g.drawString(rooms[0], 15, 15);
-					butterfly = true;
-				}
-				if(getCellAt(i,j).getInitial() == 'C' && (butterfly == false)) {
-					g.drawString(rooms[0], 15, 15);
-					butterfly = true; 
+		//algorithm for centering names in room it is very inefficient 
+		for(Map.Entry<Character,String> entry : legend.entrySet()) {
+			
+			//obtain the width of the string 
+			int width = g.getFontMetrics().stringWidth(entry.getValue());
+			Set<Integer> maxRowCol = new HashSet<>();
+			int maxRowColInt = 0;
+			//check horizontal first then check vertical
+			for(int i = 0; i < getNumRows(); i++) {
+				//reset between col and row
+				int localMax = 0;
+				for(int j = 0; j < getNumColumns(); j++) {
+					
+					//for every entry in the row add one to locMax
+					if(entry.getKey().equals(board[i][j].getInitial())) {
+						localMax++;
+					}
+					//if localmax is reset it and add the row clear previous rows
+					if(localMax > maxRowColInt) {
+						//reset max
+						maxRowCol.clear();
+						maxRowColInt = localMax;
+					}
+					//last position and the local max is the sane the global max
+					if(localMax == maxRowColInt && j == getNumColumns()-1) {
+						maxRowCol.add(i);
+					}
 				}
 			}
+			//finished going through the rows
+			if(width > maxRowCol.size() * WIDTH) {
+				if(maxRowCol.size() % 2 == 1) {
+					//the number is odd get the center
+					int a1 = 0;
+					for(Integer rowLoc: maxRowCol) {
+						a1++;
+						if((maxRowCol.size() + 1)/2 == a1) {
+							//here is where the text will be rendered 
+							
+							break;
+						}
+					}
+				}else {
+					//the number is even
+					int a1 = 0;
+					for(Integer rowLoc: maxRowCol) {
+						a1++;
+						if(maxRowCol.size()/2 == a1) {
+							//here is where the text will be rendered 
+							
+							break;
+						}
+					}
+				}
+			}
+			System.out.print(entry.getKey());
+			System.out.println(maxRowCol);
 		}
-		
-		g.drawString(rooms[1], 215, 50);
-		g.drawString(rooms[2], 329, 590);
-		g.drawString(rooms[3], 415, 300);
-		g.drawString(rooms[4], 420, 15);
-		g.drawString(rooms[5], 5, 325);
-		g.drawString(rooms[6], 350, 325);
-		g.drawString(rooms[7], 145, 360);
-		g.drawString(rooms[8], 170, 550);
-		g.drawString("Closet", 30, 560); 
 		
 	}	
 }
