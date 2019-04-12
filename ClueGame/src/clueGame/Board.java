@@ -599,7 +599,24 @@ public class Board extends JPanel{
 		g.setFont(new Font("TimesRoman", Font.PLAIN, 13));
 		g.setColor(Color.WHITE);
 		
-		g.drawString(rooms[0], 15, 15);
+		
+		Boolean butterfly = false;
+		Boolean computer = false;
+		
+		
+		for(int i = 0; i < getNumRows(); i++) {
+			for(int j = 0; j < getNumColumns(); j++) {
+				if(getCellAt(i,j).getInitial() == 'B' && (butterfly == false)) {
+					g.drawString(rooms[0], 15, 15);
+					butterfly = true;
+				}
+				if(getCellAt(i,j).getInitial() == 'C' && (butterfly == false)) {
+					g.drawString(rooms[0], 15, 15);
+					butterfly = true;
+				}
+			}
+		}
+		
 		g.drawString(rooms[1], 215, 50);
 		g.drawString(rooms[2], 329, 590);
 		g.drawString(rooms[3], 415, 300);
