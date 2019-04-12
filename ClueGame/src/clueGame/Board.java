@@ -615,6 +615,7 @@ public class Board extends JPanel{
 					butterfly = true; 
 			}
 		}
+		}
 		
 		g.drawString(rooms[1], 215, 50);
 		g.drawString(rooms[2], 329, 590);
