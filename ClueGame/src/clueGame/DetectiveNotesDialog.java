@@ -95,7 +95,7 @@ public class DetectiveNotesDialog extends JDialog{
 		JPanel panel = new JPanel();
 		panel.setBorder(new TitledBorder(new EtchedBorder(), "Room Guess"));
 		JComboBox<String> roomGuess = new JComboBox<String>();
-		String[] rooms = new String[] {"Butterfly Room", "Computer Room", "Kitchen", "Dining Room", "Bedroom", "Parlor","Music Room", "Game Room", "Living Room"};
+		String[] rooms = new String[] {"Unsure","Butterfly Room", "Computer Room", "Kitchen", "Dining Room", "Bedroom", "Parlor","Music Room", "Game Room", "Living Room"};
 		for(String room : rooms) {
 			roomGuess.addItem(room);
 		}
@@ -108,7 +108,7 @@ public class DetectiveNotesDialog extends JDialog{
 		JPanel panel = new JPanel();
 		panel.setBorder(new TitledBorder(new EtchedBorder(), "Weapon Guess"));
 		JComboBox<String> weaponGuess = new JComboBox<String>();
-		String[] weapons = new String[] {"Wrench", "Candlestick", "Pipe", "Rope", "Revolver", "Knife"};
+		String[] weapons = new String[] {"Unsure", "Wrench", "Candlestick", "Pipe", "Rope", "Revolver", "Knife"};
 		for(String weapon: weapons) {
 			weaponGuess.addItem(weapon);
 		}
