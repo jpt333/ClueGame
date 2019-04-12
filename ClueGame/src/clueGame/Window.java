@@ -214,10 +214,6 @@ public class Window {
 		//gameBoard.setBounds(0, 25, 725, 442);
 		//clueWindow.getContentPane().add(gameBoard);
 		
-		
-		
-		
-		
 		JTextArea diceText = new JTextArea();
 		diceText.setText("Dice Roll");
 		diceText.setForeground(Color.WHITE);
