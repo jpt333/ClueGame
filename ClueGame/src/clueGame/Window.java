@@ -198,9 +198,22 @@ public class Window {
 		card3.setBounds(854, 283, 100, 150);
 		clueWindow.getContentPane().add(card3);
 		
-		JPanel gameBoard = new JPanel();
+		
+		
+		
+		//doesnt work
+		Board gameBoard = Board.getInstance();
 		gameBoard.setBounds(0, 25, 725, 445);
 		clueWindow.getContentPane().add(gameBoard);
+	
+		//works
+		//JPanel gameBoard = new JPanel();
+		//gameBoard.setBounds(0, 25, 725, 445);
+		//clueWindow.getContentPane().add(gameBoard);
+		
+		
+		
+		
 		
 		JTextArea diceText = new JTextArea();
 		diceText.setText("Dice Roll");

@@ -9,7 +9,7 @@ import java.util.Iterator;
 import java.util.Random;
 import java.util.Set;
 
-public class Player {
+public class Player{
 	private String playerName;
 	private Color color;
 	private Point pixel;
