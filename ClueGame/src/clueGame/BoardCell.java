@@ -19,7 +19,7 @@ public class BoardCell {
 	private String initital;
 	private DoorDirection direction;
 	
-	private Point pixel;
+	private Point pix;
 	private Color color;
 	
 	public final int WIDTH = 30;
@@ -73,44 +73,51 @@ public class BoardCell {
 		if(initital == "W") {
 			color = Color.DARK_GRAY;
 			g.setColor(color);
-			g.fillRect(pixel.x, pixel.y, WIDTH, HEIGHT);
+			g.fillRect(pix.x, pix.y, WIDTH, HEIGHT);
 		}
 		if(this.isRoom()) {
-			//Paints the doorways
+			//Paints the doorways and rooms
 			if(isDoorway()) {
 				if (direction == DoorDirection.UP){
 					color = Color.MAGENTA;
 					g.setColor(color);
-					g.fillRect(pixel.x, pixel.y, WIDTH, HEIGHT);
+					g.fillRect(pix.x, pix.y, WIDTH, HEIGHT);
 					g.setColor(Color.BLUE);
-					g.fillRect(pixel.x, pixel.y, WIDTH, 6);
+					g.fillRect(pix.x, pix.y, WIDTH, 6);
 				}
 				else if (direction == DoorDirection.DOWN){
 					color = Color.MAGENTA;
 					g.setColor(color);
-					g.fillRect(pixel.x, pixel.y, WIDTH, HEIGHT);
+					g.fillRect(pix.x, pix.y, WIDTH, HEIGHT);
 					g.setColor(Color.BLUE);
-					g.fillRect(pixel.x, pixel.y + 20, WIDTH, 6);
+					g.fillRect(pix.x, pix.y + 20, WIDTH, 6);
 				}
 				else if (direction == DoorDirection.LEFT){
 					color = Color.MAGENTA;
 					g.setColor(color);
-					g.fillRect(pixel.x, pixel.y, WIDTH, HEIGHT);
+					g.fillRect(pix.x, pix.y, WIDTH, HEIGHT);
 					g.setColor(Color.BLUE);
-					g.fillRect(pixel.x, pixel.y, 6, HEIGHT);
-				}else if (direction == DoorDirection.RIGHT)
-				{
+					g.fillRect(pix.x, pix.y, 6, HEIGHT);
+				}
+				else if (direction == DoorDirection.RIGHT){
 					color = Color.MAGENTA;
 					g.setColor(color);
-					g.fillRect(pixel.x, pixel.y, WIDTH, HEIGHT);
+					g.fillRect(pix.x, pix.y, WIDTH, HEIGHT);
 					g.setColor(Color.BLUE);
-					g.fillRect(pixel.x + 20, pixel.y, 6, HEIGHT);
-				}else if(direction == DoorDirection.RIGHT) {
+					g.fillRect(pix.x + 20, pix.y, 6, HEIGHT);
+				}
+				else if(direction == DoorDirection.RIGHT) {
 					color = Color.MAGENTA;
 					g.setColor(color);
-					g.fillRect(pixel.x, pixel.y, WIDTH, HEIGHT);
+					g.fillRect(pix.x, pix.y, WIDTH, HEIGHT);
 					g.setColor(Color.BLUE);
-					g.fillRect(pixel.x + 20, pixel.y, 5, HEIGHT);
+					g.fillRect(pix.x + 20, pix.y, 5, HEIGHT);
+				}
+				else {
+					//colors the rooms
+					color = Color.MAGENTA;
+					g.setColor(color);
+					g.fillRect(pix.x, pix.y, WIDTH, HEIGHT);
 				}
 			}
 		}
