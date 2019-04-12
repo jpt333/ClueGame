@@ -4,6 +4,7 @@ package clueGame;
 import java.awt.GridLayout;
 
 import javax.swing.JCheckBox;
+import javax.swing.JComboBox;
 import javax.swing.JDialog;
 import javax.swing.JPanel;
 import javax.swing.border.EtchedBorder;
@@ -16,15 +17,21 @@ public class DetectiveNotesDialog extends JDialog{
 	
 	public DetectiveNotesDialog() {
 		setTitle("Detective Dialog");
-		setSize(300,300);
+		setSize(500,700);
 		setLayout(new GridLayout(3,2));
 		JPanel panel = PeoplePanel();
 		add(panel);
+		panel = PersonGuessPanel();
+		add(panel);
 		panel = RoomsPanel();
+		add(panel);
+		panel = RoomGuessPanel();
 		add(panel);
 		panel = WeaponsPanel();
 		add(panel);
-		
+		panel = WeaponGuessPanel();
+		add(panel);
+		setResizable(false);
 	}
 	//People with checkboxes
 	private JPanel PeoplePanel() {
@@ -66,9 +73,46 @@ public class DetectiveNotesDialog extends JDialog{
 	}
 	
 	//Person Guess
+	private JPanel PersonGuessPanel() {
+		JPanel panel = new JPanel();
+		panel.setBorder(new TitledBorder(new EtchedBorder(), "Person Guess"));
+		JComboBox<String> personGuess = new JComboBox<String>();
+		personGuess.addItem("Unsure");
+		personGuess.addItem("Miss Scarlet");
+		personGuess.addItem("Colonel Mustard");
+		personGuess.addItem("Mr. Green");
+		personGuess.addItem("Mrs. White");
+		personGuess.addItem("Mrs. Peacock");
+		personGuess.addItem("Professor Plum");
+		panel.add(personGuess);
+		return panel;
+	}
 	
+	//Room Guess
+	private JPanel RoomGuessPanel() {
+		JPanel panel = new JPanel();
+		panel.setBorder(new TitledBorder(new EtchedBorder(), "Room Guess"));
+		JComboBox<String> roomGuess = new JComboBox<String>();
+		String[] rooms = new String[] {"Butterfly Room", "Computer Room", "Kitchen", "Dining Room", "Bedroom", "Parlor","Music Room", "Game Room", "Living Room"};
+		for(String room : rooms) {
+			roomGuess.addItem(room);
+		}
+		panel.add(roomGuess);
+		return panel;
+	}
 	
-	
+	//Weapon Guess
+	private JPanel WeaponGuessPanel() {
+		JPanel panel = new JPanel();
+		panel.setBorder(new TitledBorder(new EtchedBorder(), "Weapon Guess"));
+		JComboBox<String> weaponGuess = new JComboBox<String>();
+		String[] weapons = new String[] {"Wrench", "Candlestick", "Pipe", "Rope", "Revolver", "Knife"};
+		for(String weapon: weapons) {
+			weaponGuess.addItem(weapon);
+		}
+		panel.add(weaponGuess);
+		return panel;
+	}
 	
 	public static void main(String[] args) {
 		DetectiveNotesDialog dialog = new DetectiveNotesDialog();
