@@ -27,6 +27,8 @@ public class Player {
 	public void draw(Graphics g) {
 		//Draw character
 		
+		
+		
 		g.setColor(color);
 		g.fillOval(pixel.x, pixel.y, RADIUS, RADIUS);
 		

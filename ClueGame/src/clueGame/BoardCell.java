@@ -27,6 +27,9 @@ public class BoardCell {
 	public final int SCALE = 32;
 	
 	public BoardCell(String initital, DoorDirection direction, int row, int col) {
+		pix.x = row * WIDTH;
+		pix.y = row * HEIGHT;
+		
 		this.row = row;
 		this.col = col;
 		this.initital = initital;
@@ -60,6 +63,10 @@ public class BoardCell {
 		return true;
 	}
 
+	public Point getCord() {
+		return pix;
+	}
+	
 	public char getInitial() {
 		return initital.charAt(0);
 	}
