@@ -585,7 +585,7 @@ public class Board extends JPanel{
 				getCellAt(i, j).draw(g);
 			}
 		}
-		//draws the room names
+		//draws the room names 
 		
 	}
 	
