@@ -22,9 +22,8 @@ public class BoardCell {
 	private Point pix;
 	private Color color;
 	
-	public final int WIDTH = 30;
-	public final int HEIGHT = 30;
-	public final int SCALE = 32;
+	public final int WIDTH = 29;
+	public final int HEIGHT = 26;
 	
 	public BoardCell(String initital, DoorDirection direction, int row, int col) {
 		pix = new Point();
@@ -33,7 +32,7 @@ public class BoardCell {
 		this.col = col;
 		this.initital = initital;
 		this.direction = direction;
-		pix.x = row * WIDTH;
+		pix.x = col * WIDTH;
 		pix.y = row * HEIGHT;
 	}
 
