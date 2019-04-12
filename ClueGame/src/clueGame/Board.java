@@ -49,6 +49,9 @@ public class Board extends JPanel{
 	private String weaponFile;
 	private String characterFile;
 	
+	private int x;
+	private int y;
+	
 	private Board() {}
 	
 	public Map<Character, String> getLegend() {
@@ -567,16 +570,23 @@ public class Board extends JPanel{
 		return true;
 	}
 	
+
+		
+	
 	
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		setLayout(new GridLayout(25,17));
+		//draws the cells/rooms
 		for(int i = 0; i < 25; i++){
 			for(int j = 0; j < 23; j++){
 				getCellAt(i, j).draw(g);
 			}
 		}
+		//draws the room names
+		
 	}
+	
 	
 	
 	
