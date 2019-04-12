@@ -16,7 +16,8 @@ public class Player{
 	protected Set<Card> cards;
 	protected BoardCell currentLocation;
 	
-	public final int RADIUS = 15;
+	public final int WIDTH = 29;
+	public final int HEIGHT = 27;
 	
 	public Player(String playerName, BoardCell currentLocation, Color color) {
 		this.playerName = playerName;
@@ -28,7 +29,7 @@ public class Player{
 		//Draw character
 		pixel = currentLocation.getCord();
 		g.setColor(color);
-		g.fillOval(pixel.x, pixel.y, RADIUS, RADIUS);
+		g.fillOval(pixel.x, pixel.y, WIDTH, HEIGHT);
 	}
 
 	

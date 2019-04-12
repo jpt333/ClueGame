@@ -203,12 +203,12 @@ public class Window {
 		
 		//doesnt work
 		Board gameBoard = Board.getInstance();
-		gameBoard.setBounds(0, 25, 725, 445);
+		gameBoard.setBounds(0, 25, 725, 442);
 		clueWindow.getContentPane().add(gameBoard);
 	
 		//works
 		//JPanel gameBoard = new JPanel();
-		//gameBoard.setBounds(0, 25, 725, 445);
+		//gameBoard.setBounds(0, 25, 725, 442);
 		//clueWindow.getContentPane().add(gameBoard);
 		
 		
