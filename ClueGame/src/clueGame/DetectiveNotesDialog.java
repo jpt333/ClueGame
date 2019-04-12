@@ -92,6 +92,7 @@ public class DetectiveNotesDialog extends JDialog{
 		preferredSize.height = 100;
 		preferredSize.width = 120;
 		personGuess.setPreferredSize(preferredSize);
+		
 		panel.add(personGuess);
 		return panel;
 	}
@@ -105,10 +106,12 @@ public class DetectiveNotesDialog extends JDialog{
 		for(String room : rooms) {
 			roomGuess.addItem(room);
 		}
+		//Size height for JComboBox
 		Dimension preferredSize = roomGuess.getPreferredSize();
 		preferredSize.height = 100;
 		preferredSize.width = 120;
 		roomGuess.setPreferredSize(preferredSize);
+		
 		panel.add(roomGuess);
 		return panel;
 	}
@@ -127,6 +130,7 @@ public class DetectiveNotesDialog extends JDialog{
 		preferredSize.height = 100;
 		preferredSize.width = 120;
 		weaponGuess.setPreferredSize(preferredSize);
+		
 		panel.add(weaponGuess);
 		return panel;
 	}
