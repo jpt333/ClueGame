@@ -612,8 +612,7 @@ public class Board extends JPanel{
 				}
 				if(getCellAt(i,j).getInitial() == 'C' && (butterfly == false)) {
 					g.drawString(rooms[0], 15, 15);
-					butterfly = true;
-				}
+					butterfly = true; 
 			}
 		}
 		
