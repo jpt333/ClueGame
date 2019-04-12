@@ -30,7 +30,7 @@ public class BoardCell {
 		
 		this.row = row;
 		this.col = col;
-		this.initital = initital;
+		this.initital = initital; 
 		this.direction = direction;
 		pix.x = col * WIDTH;
 		pix.y = row * HEIGHT;
