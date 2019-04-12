@@ -268,7 +268,7 @@ public class Board extends JPanel{
 		        	}
 		        	else {
 		        		//everything else
-		        		board[numRows][a1] = new BoardCell(line[a1]);
+		        		board[numRows][a1] = new BoardCell(line[a1], numRows, a1);
 		        	}
 		        	//always take the max length
 		        	if(a1 == 0 && line.length > numColumns) {
