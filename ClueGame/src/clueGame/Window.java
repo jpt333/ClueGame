@@ -83,39 +83,39 @@ public class Window {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		accusationButton.setBounds(774, 595, 158, 38);
+		accusationButton.setBounds(673, 822, 158, 38);
 		clueWindow.getContentPane().add(accusationButton);
 		
 		JButton nextPlayer = new JButton("Next Player");
-		nextPlayer.setBounds(774, 525, 158, 38);
+		nextPlayer.setBounds(673, 758, 158, 38);
 		clueWindow.getContentPane().add(nextPlayer);
 		
 		JTextArea guessResult = new JTextArea();
 		guessResult.setForeground(Color.WHITE);
 		guessResult.setBackground(Color.DARK_GRAY);
 		guessResult.setText("Guess Result");
-		guessResult.setBounds(22, 480, 76, 16);
+		guessResult.setBounds(24, 791, 76, 16);
 		clueWindow.getContentPane().add(guessResult);
 		
 		JTextArea guess = new JTextArea();
 		guess.setText("Guess");
 		guess.setForeground(Color.WHITE);
 		guess.setBackground(Color.DARK_GRAY);
-		guess.setBounds(282, 480, 37, 16);
+		guess.setBounds(287, 791, 37, 16);
 		clueWindow.getContentPane().add(guess);
 		
 		JTextArea turnText = new JTextArea();
 		turnText.setText("Whose turn?");
 		turnText.setForeground(Color.WHITE);
 		turnText.setBackground(Color.DARK_GRAY);
-		turnText.setBounds(528, 480, 76, 16);
+		turnText.setBounds(522, 791, 76, 16);
 		clueWindow.getContentPane().add(turnText);
 		
 		JTextArea myCards = new JTextArea();
 		myCards.setText("My Cards");
 		myCards.setForeground(Color.WHITE);
 		myCards.setBackground(Color.DARK_GRAY);
-		myCards.setBounds(819, 58, 51, 16);
+		myCards.setBounds(728, 58, 51, 16);
 		clueWindow.getContentPane().add(myCards);
 		
 		JMenuBar menuBar = new JMenuBar();
@@ -146,56 +146,56 @@ public class Window {
 		guessResultCard.setIcon(new ImageIcon(Window.class.getResource("/Resources/Proffesoor Plum.png")));
 		guessResultCard.setForeground(SystemColor.text);
 		guessResultCard.setBackground(SystemColor.window);
-		guessResultCard.setBounds(12, 498, 100, 150);
+		guessResultCard.setBounds(12, 809, 100, 150);
 		clueWindow.getContentPane().add(guessResultCard);
 		
 		JLabel weaponcard = new JLabel("");
 		weaponcard.setIcon(new ImageIcon(Window.class.getResource("/Resources/Knife.png")));
 		weaponcard.setForeground(Color.WHITE);
 		weaponcard.setBackground(Color.WHITE);
-		weaponcard.setBounds(143, 498, 100, 150);
+		weaponcard.setBounds(143, 809, 100, 150);
 		clueWindow.getContentPane().add(weaponcard);
 		
 		JLabel personCard = new JLabel("");
 		personCard.setIcon(new ImageIcon(Window.class.getResource("/Resources/Mr. Green.png")));
 		personCard.setForeground(Color.WHITE);
 		personCard.setBackground(Color.WHITE);
-		personCard.setBounds(253, 498, 100, 150);
+		personCard.setBounds(255, 809, 100, 150);
 		clueWindow.getContentPane().add(personCard);
 		
 		JLabel roomCard = new JLabel("");
 		roomCard.setIcon(new ImageIcon(Window.class.getResource("/Resources/PlaceHolder.png")));
 		roomCard.setForeground(Color.WHITE);
 		roomCard.setBackground(Color.WHITE);
-		roomCard.setBounds(370, 499, 100, 150);
+		roomCard.setBounds(367, 809, 100, 150);
 		clueWindow.getContentPane().add(roomCard);
 		
 		JLabel playTurnCard = new JLabel("");
 		playTurnCard.setIcon(new ImageIcon(Window.class.getResource("/Resources/Mrs White.png")));
 		playTurnCard.setForeground(Color.WHITE);
 		playTurnCard.setBackground(Color.WHITE);
-		playTurnCard.setBounds(513, 498, 100, 150);
+		playTurnCard.setBounds(511, 809, 100, 150);
 		clueWindow.getContentPane().add(playTurnCard);
 		
 		JLabel card1 = new JLabel("");
 		card1.setIcon(new ImageIcon(Window.class.getResource("/Resources/Mrs Scarlet.png")));
 		card1.setForeground(Color.WHITE);
 		card1.setBackground(Color.WHITE);
-		card1.setBounds(797, 99, 100, 150);
+		card1.setBounds(705, 96, 100, 150);
 		clueWindow.getContentPane().add(card1);
 		
 		JLabel card2 = new JLabel("");
 		card2.setIcon(new ImageIcon(Window.class.getResource("/Resources/Pipe.png")));
 		card2.setForeground(Color.WHITE);
 		card2.setBackground(Color.WHITE);
-		card2.setBounds(742, 283, 100, 150);
+		card2.setBounds(705, 271, 100, 150);
 		clueWindow.getContentPane().add(card2);
 		
 		JLabel card3 = new JLabel("");
 		card3.setIcon(new ImageIcon(Window.class.getResource("/Resources/Mrs Peacock.png")));
 		card3.setForeground(Color.WHITE);
 		card3.setBackground(Color.WHITE);
-		card3.setBounds(854, 283, 100, 150);
+		card3.setBounds(705, 445, 100, 150);
 		clueWindow.getContentPane().add(card3);
 		
 		
@@ -206,7 +206,7 @@ public class Window {
 		gameBoard.setConfigFiles("ClueBoard.csv", "rooms.txt");
 		gameBoard.setCardFiles("weapons.txt", "Person.txt");
 		gameBoard.initialize();
-		gameBoard.setBounds(0, 25, 725, 442);
+		gameBoard.setBounds(0, 25, 486, 624);
 		clueWindow.getContentPane().add(gameBoard);
 	
 		//works
@@ -222,14 +222,14 @@ public class Window {
 		diceText.setText("Dice Roll");
 		diceText.setForeground(Color.WHITE);
 		diceText.setBackground(Color.DARK_GRAY);
-		diceText.setBounds(674, 525, 51, 16);
+		diceText.setBounds(728, 612, 51, 16);
 		clueWindow.getContentPane().add(diceText);
 		
 		JLabel diceIcon = new JLabel("");
 		diceIcon.setIcon(new ImageIcon(Window.class.getResource("/Resources/6.png")));
-		diceIcon.setBounds(660, 555, 75, 75);
+		diceIcon.setBounds(718, 653, 75, 75);
 		clueWindow.getContentPane().add(diceIcon);
-		clueWindow.setBounds(100, 100, 1000, 700);
+		clueWindow.setBounds(100, 100, 858, 1000);
 		clueWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 	
