@@ -1,0 +1,1738 @@
+commit 74613e0361b7e3a790b345bc4af2d4e1e78c8318
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Sat Apr 6 01:38:43 2019 -0600
+
+    All tests Passing!!!!!!!
+
+commit 9b5e2aa51bd46e364243c5ceb67aff5f9b0f883a
+Merge: ec4e491 54081ab
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Sat Apr 6 00:22:29 2019 -0600
+
+    Merge branch 'master' of https://github.com/michaelberg12/ClueGame.git
+
+commit ec4e491c792b95e952f9b7bf5cd35a326cd4f48a
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Sat Apr 6 00:22:24 2019 -0600
+
+    test disprove passing :)
+
+commit 54081ab857951b821912400b5faef85570e0631c
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Sat Apr 6 00:09:36 2019 -0600
+
+    Added code for testHandlingSuggestion
+
+commit 39915a540f136dd513526e25b61b4a841f4e19a4
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Sat Apr 6 00:00:14 2019 -0600
+
+    testHandlingSuggestion has most if not all the necessary code
+
+commit 23dc3bac82f02871a962381e23843c952b2dca1c
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Fri Apr 5 23:08:13 2019 -0600
+
+    null pointer error
+
+commit de8ff8bf54a18f92759d4ba38c009d18001f7995
+Merge: e81e8de 3906e27
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Fri Apr 5 22:41:28 2019 -0600
+
+    Merge branch 'master' of https://github.com/michaelberg12/ClueGame.git
+
+commit e81e8de000442cea00abfb0bd57291972f9dd761
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Fri Apr 5 22:41:15 2019 -0600
+
+    Fixed one of the null pointer errors
+
+commit 3906e27d2a134936b5e77b75b3561e7aa00a2383
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Fri Apr 5 22:21:19 2019 -0600
+
+    Tried to figure out error
+
+commit e1eaefc88aa2926629da0c56ef99e6b874002b60
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Fri Apr 5 21:45:26 2019 -0600
+
+    Removed useless code
+
+commit db112dd1ecf7343b5e9f1af386eac425d7531591
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Fri Apr 5 21:42:09 2019 -0600
+
+    Added more code to testHandlingSuggestion
+
+commit 41dd5ec347a6ffe5f7b7fb6b2bc724f59cd68c9d
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Fri Apr 5 21:32:32 2019 -0600
+
+    Added few tests to testHandlingSuggestion(). Still need to fix nullpoint
+
+commit 55d6f386c68cf64c80942fda22d5c5d18696392a
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Fri Apr 5 20:56:21 2019 -0600
+
+    Ran tests and it says that there is a nullpointerexception
+
+commit 5b0c0b61d6f4afb083300343c928fdb717b975d9
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Fri Apr 5 18:49:27 2019 -0600
+
+    Edited few lines of code in test
+
+commit 3e316c6ed00cc8d434172175494a4703ee7f604d
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Fri Apr 5 18:46:53 2019 -0600
+
+    Added few comments
+
+commit fc866c5f5f03c919fdd8bd6e175910587484b951
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Fri Apr 5 18:45:14 2019 -0600
+
+    Tried to call handleSuggestion function for test
+
+commit 058cc814542a89f0ce8a3afc0df5b4ec0c9cf570
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Fri Apr 5 18:36:04 2019 -0600
+
+    Added few lines of code for testHandlingSuggesiton()
+
+commit 1d4006212637ac6d96903169def8c6e064d49c70
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Fri Apr 5 18:26:32 2019 -0600
+
+    Created human player and 4 computer players
+
+commit d254fff7552af3562fea3bbf9c34be8ffab7e992
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Fri Apr 5 18:13:13 2019 -0600
+
+    Added more code to testHandlingSuggestion()
+
+commit 16fa5e07c203c5e77b116f5225969c080f44b47a
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Fri Apr 5 17:49:17 2019 -0600
+
+    Tried to figure out error for testSelectATargetSelection()
+
+commit 042fe5fe56241a146172a4a11eddcce8ffc39049
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Fri Apr 5 16:55:52 2019 -0600
+
+    testCreatingSugg, testCheckAcc, and testDisprovingSugg pass!
+
+commit fb9dcd137b3ab179c8965f568c38df74322350e7
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Fri Apr 5 16:44:09 2019 -0600
+
+    Fixed if statement for testDisprovingSuggestion
+
+commit d1ac65bcb20a9cc77e376d788a5556349b1d5f9c
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Fri Apr 5 16:06:03 2019 -0600
+
+    Tried to find why assertion is failing
+
+commit 67ffe1072d60a4ecf19cb816ffeedb606b166aff
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Fri Apr 5 16:05:28 2019 -0600
+
+    Try to fix condition in if statements in disapproveSuggestion
+
+commit 0b08b03331477d43a397cdb16ae25ff9f8d0c56b
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Fri Apr 5 13:06:07 2019 -0600
+
+    check accusation and check creting suggestion work now
+
+commit 41c3ec05b68c754edfab4bc4006b64d391dab7ad
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Fri Apr 5 12:02:51 2019 -0600
+
+    Null pointer error  fixed only failures left to fix
+
+commit 270bd47565dccab0c42a3f60b944e9390029ce69
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Fri Apr 5 11:46:14 2019 -0600
+
+    fixed one of the null pointer errors
+
+commit 44f22d5045b0bdc95a8640c4a9cef19cacba9a7a
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Fri Apr 5 08:46:54 2019 -0600
+
+    Added additional code to testSelectATargetSelection()
+
+commit 31be0c10e130d79cdcdbfb1894f8b8c1326dc0fb
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Fri Apr 5 01:00:18 2019 -0600
+
+    Added a comment in maybe finding a solution to isRoom()
+
+commit 194154ef56153cf93d976b475358da1007a64e0d
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Fri Apr 5 00:56:02 2019 -0600
+
+    Implement justVisited and refactored to see if worked.
+
+commit af27c5880a49ab8cb6741f99cd5be75dcb807ee0
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Fri Apr 5 00:54:19 2019 -0600
+
+    Setup code for testDisprovingSuggestion. Failing in the function
+
+commit 2f47bc22b83df41660f99bc79fcc824e9fd6cafb
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Fri Apr 5 00:15:42 2019 -0600
+
+    isRoom function in BoardCell.java isn't working in GameActionTests.java
+
+commit e644f3c063dd206adbae0fd70ca5f38309429651
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Fri Apr 5 00:10:52 2019 -0600
+
+    Having trouble with Computer Player selecting a bedroom
+
+commit 980420cd9773f2e2074be3010b337f8f96b50a2d
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Fri Apr 5 00:08:52 2019 -0600
+
+    Add justVisited boolean in pickLocation
+
+commit 20e8c34e2d28676a1f233109a735cbcbcca560fa
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Fri Apr 5 00:06:02 2019 -0600
+
+    Fixed Boolean to be capitalized. Think something is wrong with is Room()
+
+commit bcb7f0893cd38b4189cb3a2e3d5b428bfe6ccbb0
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Wed Apr 3 23:22:12 2019 -0600
+
+    .
+
+commit 3f8a7e0558c39d2cf7fa83eb19ca264f777bf201
+Merge: 3c14ec8 68e5a9b
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Wed Apr 3 22:57:41 2019 -0600
+
+    Merge branch 'master' of https://github.com/michaelberg12/ClueGame.git
+
+commit 3c14ec834cbdd9ffd71099a18e4e1f505eeaae84
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Wed Apr 3 22:57:35 2019 -0600
+
+    fixed null pointer error
+
+commit 68e5a9b53beeab601ccb6e0654170f42dd1ff2dc
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Wed Apr 3 22:55:18 2019 -0600
+
+    Removed unnecessary code.
+
+commit 8a477b83ef708d23b9532cbced47c596d8194f1b
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Wed Apr 3 22:45:30 2019 -0600
+
+    .
+
+commit 245ceb4e4ea36e696248faacefd04f7eb3feb171
+Merge: a01d766 7f85b68
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Wed Apr 3 22:45:12 2019 -0600
+
+    Merge branch 'master' of https://github.com/michaelberg12/ClueGame.git
+
+commit a01d76647026b3e6960325bf80f59aeff2af4119
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Wed Apr 3 22:45:07 2019 -0600
+
+    Deleted unnecessary code
+
+commit 7f85b6892e9e1d1bbb14513b28fb3487f5ea4608
+Merge: 26632c1 5cadccb
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Wed Apr 3 22:43:45 2019 -0600
+
+    Merge branch 'master' of https://github.com/michaelberg12/ClueGame.git
+
+commit 26632c18c0e94eb61dbd2613020ff788f2b9116e
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Wed Apr 3 22:43:38 2019 -0600
+
+    updated weapons had wrench twice changed to pipe
+
+commit 5cadccb08f909fe95d55fcbcd0b816a6568448bd
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Wed Apr 3 22:43:05 2019 -0600
+
+    Fixed testCheckAccusation test!
+
+commit ede51b518b9b959b9e80d9aee6762f25bc168495
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Wed Apr 3 22:20:47 2019 -0600
+
+    .
+
+commit 66e0eb5a338ad3dcb5ff00dd20b766db70a433aa
+Merge: 0a6ab1f bfbca68
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Wed Apr 3 22:20:29 2019 -0600
+
+    Merge branch 'master' of https://github.com/michaelberg12/ClueGame.git
+
+commit 0a6ab1f12a77341ce1dff2ea94e07d6f1319f40f
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Wed Apr 3 22:20:24 2019 -0600
+
+    Refactored some code. Fixing test
+
+commit bfbca68d62a96b1b3d929146a826936187482ecf
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Wed Apr 3 22:05:26 2019 -0600
+
+    added setter for player location
+
+commit 0f93405ca21779d3e564b753dd31b97f53939934
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Wed Apr 3 21:45:32 2019 -0600
+
+    Created getters and setters for Solution.java
+
+commit 29c119aeedd180f1f30180333d0e7f1f82f68257
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Wed Apr 3 21:41:09 2019 -0600
+
+    Added code to fix testCheckAccusation
+
+commit 67c2ee88981beae995134701e6a70112a25fd458
+Merge: d1b9092 bf3e401
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Wed Apr 3 15:57:01 2019 -0600
+
+    Merge branch 'master' of https://github.com/michaelberg12/ClueGame.git
+
+commit d1b90920e929123ed3e3fecc5e51b1c67824ae7f
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Wed Apr 3 15:56:52 2019 -0600
+
+    framework done for handle suggestion
+
+commit bf3e401afd80d2a2fd13c06288cbadbd02cd8ee6
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Wed Apr 3 15:53:01 2019 -0600
+
+    Added more code for tests. Not finished.
+
+commit 793453578956391e4b842370bd7edde326df433c
+Merge: 891818f a780c42
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Wed Apr 3 15:21:34 2019 -0600
+
+    Merge branch 'master' of https://github.com/michaelberg12/ClueGame.git
+
+commit 891818f7cd093dda8d524a383146968310eba2fd
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Wed Apr 3 15:21:29 2019 -0600
+
+    Make accusation and make suggestion framework done
+
+commit a780c4222efd47ab87373665ac5f65f9d60d43be
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Wed Apr 3 15:17:48 2019 -0600
+
+    Finished testCheckAccusation test
+
+commit 559a3f196961bec9e39114e58465f28be4120c85
+Merge: 219cba0 03b75e4
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Wed Apr 3 15:16:55 2019 -0600
+
+    Merge branch 'master' of https://github.com/michaelberg12/ClueGame.git
+
+commit 219cba061329d49f0e0355006866a019ccd718da
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Wed Apr 3 15:16:46 2019 -0600
+
+    Finished with tests for checking accusations
+
+commit 03b75e434c3bce63d3855cad5b19ccb1478176c8
+Merge: 72dd1cb 3aab3c3
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Wed Apr 3 15:07:02 2019 -0600
+
+    Merge branch 'master' of https://github.com/michaelberg12/ClueGame.git
+
+commit 72dd1cbf52dccf3d432ef21f17c95a73fe985102
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Wed Apr 3 15:06:53 2019 -0600
+
+    added a getter
+
+commit 3aab3c3cf9d23c0e5363d70d82a3a261d1e98e98
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Wed Apr 3 14:51:47 2019 -0600
+
+    Added code to testCheckAccusation
+
+commit 6e54b71165b6d9cf13aca3dc3d1b1b0022efe363
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Wed Apr 3 13:01:53 2019 -0600
+
+    Added more code for a test
+
+commit 316dd002c97f44e025cd2068be211f996c9e5321
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Wed Apr 3 12:42:05 2019 -0600
+
+    Got one test to pass for if no rooms in list, select randomly
+
+commit fbb83e977ae66537a85b3e5161c25867c5da786f
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Tue Apr 2 15:16:26 2019 -0600
+
+    refactored card class
+
+commit bfafe94ff9f723c1696a508d884ae4bcc63be1de
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Tue Apr 2 15:10:54 2019 -0600
+
+    fixed null pointer error on test
+
+commit e432e51b40d6619c4ef8c3a47e7e0400e1a2561a
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Tue Apr 2 15:06:31 2019 -0600
+
+    updated card deck
+
+commit fab5b664bdb693f3d4115dd7a0547b17a8933297
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Tue Apr 2 15:03:46 2019 -0600
+
+    Added a test for testSelectAtargetSelection()
+
+commit c64feeedde851a80c60f8c6c832727ca52c56a56
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Tue Apr 2 14:48:46 2019 -0600
+
+    change player constructor and updated board accordingly
+
+commit c170ef40b8fa49e64a7883ea782644899db144a9
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Tue Apr 2 14:41:35 2019 -0600
+
+    added sorted card deck
+
+commit 576f0963d208211eb66d3c22c2ec3650ce284040
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Mon Apr 1 12:58:51 2019 -0600
+
+    Added authors name at top of file
+
+commit 47a2816561cb7445785911ad7855127a55969b85
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Mon Apr 1 12:57:26 2019 -0600
+
+    Added few ideas on how to implement the tests
+
+commit 9d3621a6406fe772e22deb6124500964b0901b6c
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Mon Apr 1 12:53:33 2019 -0600
+
+    framework for disprove suggestion done
+
+commit 58e3383326838d4d68dbcf8681a71d6ef3a6e523
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Mon Apr 1 12:40:04 2019 -0600
+
+    disproveSuggestion framework written
+
+commit 7bbff5b22acaa6bb23efe3ebd5d4bc96b7f603ca
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Mon Apr 1 12:27:25 2019 -0600
+
+    finished the random selection still buggy
+
+commit 3eb43a0a4d10e382c556eae27eea4c62ced70730
+Merge: ffbe631 e2bfe46
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Mon Apr 1 12:23:25 2019 -0600
+
+    Merge branch 'master' of https://github.com/michaelberg12/ClueGame.git
+
+commit ffbe631963fcf50a10ffc89330b3abf0639e505c
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Mon Apr 1 12:23:04 2019 -0600
+
+    added pick location still need to implement randomly picking form set
+
+commit e2bfe46b7817eee49cfcb272c16b897928c77d88
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Mon Apr 1 12:06:59 2019 -0600
+
+    Added author names
+
+commit dfd7cdb46070e9715017ef687a365512683d3730
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Mon Apr 1 12:04:49 2019 -0600
+
+    Commented out print statements in GameSetupTests.java
+
+commit 3eaef3a048b52bd5b4c6ecd3a2b97c4d4175d39d
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Mon Apr 1 12:02:22 2019 -0600
+
+    Rebasing
+
+commit 4f90913e7813a6879e27c8de924df102a44e6941
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Thu Mar 21 15:19:52 2019 -0600
+
+    all tests passing
+
+commit 240a511e3a1fca5291b7386447ea9dc92b21da5d
+Merge: 8add6e4 7cada67
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Thu Mar 21 15:00:41 2019 -0600
+
+    Merge branch 'master' of https://github.com/michaelberg12/ClueGame.git
+
+commit 8add6e4d3ab3f6379d43d7aea2d4cf5225719e95
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Thu Mar 21 15:00:31 2019 -0600
+
+    fixed the deal cards
+
+commit 7cada6703d49b82f777fbf911898a0b107ec8837
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Thu Mar 21 14:49:04 2019 -0600
+
+    Added comments to each test for later implementation
+
+commit 2951fea0e3c24924ad995af68d22b1bb459af1de
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Thu Mar 21 14:37:32 2019 -0600
+
+    Created GameActionTests.java class and added empty tests
+
+commit eb92c5e729a1e2f37535bc6f51897ed369b85bd6
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Thu Mar 21 14:22:57 2019 -0600
+
+    fixed tests null pointer error
+
+commit ef102e099b56668428da0a0026134473d2ef3fa0
+Merge: 203785a 4635db9
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Wed Mar 20 16:16:50 2019 -0600
+
+    Merge branch 'master' of https://github.com/michaelberg12/ClueGame.git
+
+commit 203785a1be10bc3ccdc0bf4ccdefe5a0862f9f8e
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Wed Mar 20 16:16:45 2019 -0600
+
+    finished framework for dealcards
+
+commit 4635db92f76650a0640347bf7032e5f004e8f205
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Wed Mar 20 15:59:27 2019 -0600
+
+    Added our names
+
+commit 087d12a4210212404581f65d7f2bb914510d7856
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Wed Mar 20 15:58:25 2019 -0600
+
+    Added a comment to the deal test
+
+commit 6300001eb3d1480e5f3acd3638cf574cce834842
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Wed Mar 20 15:50:56 2019 -0600
+
+    Fixed part of test in testHasCard()
+
+commit fb1898e7f8ad9c650e496a8b855b27f663966507
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Wed Mar 20 15:43:17 2019 -0600
+
+    Fixed a test
+
+commit d4e94a68e56a238e7a170df8effe55463c439c86
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Wed Mar 20 15:41:23 2019 -0600
+
+    Fixed and added code to testNumberOfCardsInDeck
+
+commit b43ebaf97bd0d9f06dd99e1972fa353175da0536
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Wed Mar 20 15:39:30 2019 -0600
+
+    Added more code for the tests
+
+commit 8cdf51787ff697410a216c929f5652fb70841487
+Merge: 5f09d34 59ccc4f
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Wed Mar 20 15:23:37 2019 -0600
+
+    Merge branch 'master' of https://github.com/michaelberg12/ClueGame.git
+
+commit 5f09d346cd4123b09e29013fcb2cdd2c42c16279
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Wed Mar 20 15:23:24 2019 -0600
+
+    .
+
+commit de23a78d9d86099b4163d2a6cf20e512de3c9b86
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Wed Mar 20 15:23:18 2019 -0600
+
+    Added more code to tests
+
+commit 59ccc4fbfe2909c3fa200ff622498a18c28b0445
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Wed Mar 20 15:21:13 2019 -0600
+
+    updated initialize
+
+commit 1d193b82e37ca752125165b083162d77705d8179
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Wed Mar 20 15:16:39 2019 -0600
+
+    added cardType Support
+
+commit e1a2172f9b0728b494879a4e4afd9fed4e749cf4
+Merge: aaa6c02 56bdee0
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Wed Mar 20 15:11:49 2019 -0600
+
+    Merge branch 'master' of https://github.com/michaelberg12/ClueGame.git
+
+commit aaa6c026e2c2f1dc0976b826d266ec8783e4643c
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Wed Mar 20 15:11:43 2019 -0600
+
+    "Working" loadCards()
+
+commit 56bdee00dbd3c7a102baa3a900aed8c8d4f5d108
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Wed Mar 20 15:05:07 2019 -0600
+
+    Added @Before setUp() for tests
+
+commit 2a1a02ebb77b8909479793cf38d96b2c60ac16cc
+Merge: 4e703ed 3c9def1
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Wed Mar 20 15:02:31 2019 -0600
+
+    Merge branch 'master' of https://github.com/michaelberg12/ClueGame.git
+
+commit 4e703ed85552893e369717b2ab3e8113b49a0a3e
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Wed Mar 20 15:02:25 2019 -0600
+
+    not working but more up to date load cards
+
+commit 3c9def1b029580bb36a29f40f4a868c3188e83e4
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Wed Mar 20 14:40:37 2019 -0600
+
+    Added few comments
+
+commit 04a17668eaf5ac18fb4884fbe8e108ee5df5afdc
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Wed Mar 20 14:35:34 2019 -0600
+
+    Added more code to testTypeOfCode() test
+
+commit 4d91ed621b73f73c340a5d1a80258e2a5720b67a
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Wed Mar 20 14:32:18 2019 -0600
+
+    Added more code to the testHasCard().
+
+commit ab6d53cc57b14bb8d75c3229fb382a2e8c1e1eb0
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Wed Mar 20 14:30:01 2019 -0600
+
+    finished setCardFile
+
+commit d50917ed221a7412d00921ac191579454bdabd72
+Merge: c956ac5 0694c26
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Tue Mar 19 15:03:09 2019 -0600
+
+    Merge branch 'master' of https://github.com/michaelberg12/ClueGame.git
+
+commit c956ac55867c485d8b72259c274399f3388f9b31
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Tue Mar 19 15:02:56 2019 -0600
+
+    Person and weapon config files added
+
+commit 0694c267d8e38caaffe650b9045ff1f0a2ddaca1
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Tue Mar 19 15:02:11 2019 -0600
+
+    Have comments to each test
+
+commit cd1a7713589c37b3871da1cdab4a6617a1eb09fc
+Merge: 59818d6 1c8b74c
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Tue Mar 19 15:01:39 2019 -0600
+
+    Merge branch 'master' of https://github.com/michaelberg12/ClueGame.git
+
+commit 59818d68876b6f902efb87d3d55d188d34b8d575
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Tue Mar 19 15:01:33 2019 -0600
+
+    Started working on the GameSetupTests.java. Created few tests.
+
+commit 1c8b74c953387de5d6b89f75780edb8365322719
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Tue Mar 19 14:49:22 2019 -0600
+
+    finished solution
+
+commit ab12c70e1bf4396a69b5fa36313d0dd74ba2b240
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Tue Mar 19 14:48:20 2019 -0600
+
+    finished card
+
+commit cd4bb57dff575e6427f88fb584b4ab972ef87e8f
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Tue Mar 19 14:44:00 2019 -0600
+
+    CardType Filled out
+
+commit 4c57e07d2b17a0b741f49b09e06d1a5b67abdb59
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Tue Mar 19 14:38:02 2019 -0600
+
+    Computer Player filled out
+
+commit 85fe13c43aeeebdcf70ecd519f7e23000917c0db
+Merge: 121bccb 10e8bed
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Tue Mar 19 14:34:37 2019 -0600
+
+    Merge branch 'master' of https://github.com/michaelberg12/ClueGame.git
+
+commit 121bccb21da0aeee5f7da9dc48654f8901927f06
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Tue Mar 19 14:34:29 2019 -0600
+
+    Created GameSetupTests.java class to test for loading people,
+    load/creating deck of cards, and dealing cards
+
+commit 10e8bedd07ec015f88c93478345ff4a0e5e074d5
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Tue Mar 19 14:34:23 2019 -0600
+
+    Player classes added defaults
+
+commit 0094977471e8f7e9fbdd9a2f24221aafd765192c
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Tue Mar 19 14:26:20 2019 -0600
+
+    Classes added
+
+commit 85db08f770e1a7b8811ed8b2b0a4a1a3272b43d3
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Mon Mar 18 14:05:40 2019 -0600
+
+    got rid of warnings
+
+commit f1de38659368b13804f3ab1314c1ebb7e0bb8928
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Mon Mar 18 13:58:18 2019 -0600
+
+    refactored unused function and improved function variable names
+
+commit 44a3850f7adcc82efedc863c844c788ac59de6a9
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Mon Mar 18 13:54:31 2019 -0600
+
+    moved initializations to relevant functions
+
+commit 26a58496b218d2a273e1347c224db446cd29d49c
+Merge: 4e310e9 cfa78d9
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Mon Mar 18 13:50:01 2019 -0600
+
+    Merge branch 'master' of https://github.com/michaelberg12/ClueGame.git
+
+commit 4e310e9198834c691e59ab44eae6e3047ae408a7
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Mon Mar 18 13:49:54 2019 -0600
+
+    Refactored the file reading system from scanner to split
+
+commit cfa78d997826203c2c2bbe75d7879873704e0bee
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Mon Mar 18 13:39:51 2019 -0600
+
+    Removed a System.out line
+
+commit 38aae0d4ab820e471c1c23bbf4d20d1d83437100
+Merge: f67e9fe ac28ffa
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Mon Mar 18 13:27:29 2019 -0600
+
+    Merge branch 'master' of https://github.com/michaelberg12/ClueGame.git
+
+commit ac28ffab4ed180c1b85b80332b4fda447d7eb500
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Mon Mar 18 13:26:45 2019 -0600
+
+    Reverted to juint 4
+
+commit f67e9fe4c8322176e07d45533af86264bcb46578
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Mon Mar 18 13:13:53 2019 -0600
+
+    JUnit
+
+commit 89380f75476c9b0d351aca48726df2afda04e100
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Mon Mar 18 13:11:34 2019 -0600
+
+    Juint 5 error
+
+commit 4c23a5ed41d8ac2acb91c0b4a09be08e8e118129
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Mon Mar 18 12:58:16 2019 -0600
+
+    Added names to files
+
+commit 617ab7ba2a76c87471c8a9b36ae29d2b9a22ced3
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Fri Mar 15 22:20:55 2019 -0600
+
+    All tests are passing and I'm big happy
+
+commit ee5575b951c46cd8631937898a862ae832be61ba
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Fri Mar 15 22:17:11 2019 -0600
+
+    Tests all passing finxed calcADJ again
+
+commit 656daa476dc7ff5986b0760bf21b9b5290eb4b11
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Fri Mar 15 21:32:48 2019 -0600
+
+    More passing tests fixed calcTargets and calc adj
+
+commit d9bea824928aece85fd10ac0421e4c80767b2075
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Fri Mar 15 19:49:14 2019 -0600
+
+    More passing tests
+
+commit 2ffed33e8f3951320f6ad2a4f59af74cb482fbf3
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Fri Mar 15 18:12:35 2019 -0600
+
+    No test errors
+
+commit 1a4205462fa63996e386450de1fc2eb58b9099ef
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Fri Mar 15 17:57:28 2019 -0600
+
+    All tests passing
+
+commit dcd0768cdfc02b289a3b4a2463211adddf70c701
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Fri Mar 15 16:50:02 2019 -0600
+
+    refactoring corrections
+
+commit 4b4f0459777209345aab7c9c5b0455728b04d3a0
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Fri Mar 15 16:36:26 2019 -0600
+
+    Passing exception tests
+
+commit 6f6aa5ec4c1b289ab028f127be723ab8a6fe87a8
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Fri Mar 15 16:28:13 2019 -0600
+
+    more passing tests
+
+commit c7cf5b2e31b2ea391628c8a3dcc389b2cdd5d267
+Merge: 6ffefc7 a81ba6d
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Fri Mar 15 14:42:27 2019 -0600
+
+    Merge branch 'master' of https://github.com/michaelberg12/ClueGame.git
+
+commit 6ffefc7c4cebd10bab2553d2c688f8de85f9a5b4
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Fri Mar 15 14:42:19 2019 -0600
+
+    debugging
+
+commit a81ba6d61e2cb6213c1e39865226d3b72f5c8a5f
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Fri Mar 15 14:18:30 2019 -0600
+
+    Little fixes
+
+commit edf959bb600a86d19bb92162909fb79a09036b96
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Fri Mar 15 14:16:23 2019 -0600
+
+    Added another test
+
+commit 90261495695534d5941636ed27ed85bd81e30fee
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Fri Mar 15 14:11:12 2019 -0600
+
+    Added test for each edge of the board
+
+commit 864934bb5d38dc0811678d04275907107ef33d6f
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Fri Mar 15 13:57:32 2019 -0600
+
+    Fixed a test
+
+commit 7134f4ae8b28048a4582d172416ee056fe5c86e0
+Merge: b5b02bd 8284b1e
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Fri Mar 15 13:57:07 2019 -0600
+
+    Merge branch 'master' of https://github.com/michaelberg12/ClueGame.git
+
+commit b5b02bdc90199854c4163c4d26b695f45061481c
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Fri Mar 15 13:56:59 2019 -0600
+
+    Added few comments and fixed one of the tests
+
+commit 8284b1e0ac082badc9b246521bef1df018052e0d
+Merge: f147437 4f14964
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Fri Mar 15 13:53:12 2019 -0600
+
+    Merge branch 'master' of https://github.com/michaelberg12/ClueGame.git
+
+commit f1474377d422c894210ba66b229d7adb5d447393
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Fri Mar 15 13:53:06 2019 -0600
+
+    Exception added
+
+commit 4f14964a822e0cc0163df7bd1b355b64cdd2e1c3
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Fri Mar 15 13:51:36 2019 -0600
+
+    Added tests for Targets along walkways
+
+commit 29f424a965f8dd09cc55c1d91ac7e5c06fe0461e
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Fri Mar 15 13:37:32 2019 -0600
+
+    .
+
+commit c252e2a46794687a95a5bf236b4103e76f4b5276
+Merge: 42e99e9 74d8113
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Fri Mar 15 13:37:07 2019 -0600
+
+    Merge branch 'master' of https://github.com/michaelberg12/ClueGame.git
+
+commit 42e99e90243e7d011d9bd0b2fac6fdf19f7d19ec
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Fri Mar 15 13:36:59 2019 -0600
+
+    Added two more tests (allows user to enter room and targets calc. when
+    leaving a room
+
+commit 74d8113f84eb93db5b17c72e6110be6d414e3959
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Fri Mar 15 13:19:01 2019 -0600
+
+    refactoring and fixed getAdjList
+
+commit bf302aef97a59c1f7681c6a7c3e761787406a17a
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Fri Mar 15 13:11:28 2019 -0600
+
+    added get adjlist
+
+commit 0fe64d62ed0196d9198129c5eb3b7e75d2cf1636
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Wed Mar 13 16:15:13 2019 -0600
+
+    Added few more tests
+
+commit 28b04f30ac53524da7bf0f33976e87158fa7277d
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Wed Mar 13 15:41:47 2019 -0600
+
+    Finished testAdjacencyWalkways
+
+commit 6efa27160353d7513650ab0aade50ca067905f3d
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Wed Mar 13 15:27:55 2019 -0600
+
+    Finished testAdjacencyRoomExit
+
+commit b7bbb81fece9abbc145723bdba353a21e2e2371d
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Wed Mar 13 15:07:07 2019 -0600
+
+    Finished testAdjacencyRoomExit
+
+commit f3b19d62bb8f4d1f37ccedb5fb56096fde4e3039
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Wed Mar 13 15:02:54 2019 -0600
+
+    Finished testAdjacenciesInsideRooms
+
+commit cad42fc7451a7384a5ca8371ce621c67b7fdcff3
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Wed Mar 13 14:25:40 2019 -0600
+
+    Commented out on line 29 since it has been already called on line 27.
+
+commit 64824a8dcf51cae85252b8de3d509ca9aecc9935
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Wed Mar 13 14:17:31 2019 -0600
+
+    Wanted to see why it wouldn't run
+
+commit 7d23e71495223135cd53fa0885255adf6a51a0e6
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Mon Mar 11 10:44:12 2019 -0600
+
+    Added the @BeforeClass
+
+commit 2efe43767ca8eb651a7add3dbfde6fb71014b5bd
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Mon Mar 11 10:40:52 2019 -0600
+
+    Created new class to test adjacency
+
+commit e214bbc92581650c964eb97482990e294b3d18bb
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Mon Mar 11 10:32:26 2019 -0600
+
+    Added the CTest_BoardAdjTargetTests.java under package tests for 14A-1
+
+commit 5d9587f93e0103945dd12bd7d66fad8865bb3db1
+Merge: 137918a 27329c9
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Mon Mar 11 10:14:53 2019 -0600
+
+    Merge branch 'master' of https://github.com/michaelberg12/ClueGame.git
+    
+    Conflicts:
+            ClueGame/src/tests/BoardTests.java
+
+commit 137918a05e8015749063dbd75fca862d7705505b
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Mon Mar 11 10:12:54 2019 -0600
+
+    .
+
+commit 27329c95f058530d81a66460f5387348b379a27c
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Wed Mar 6 17:09:12 2019 -0700
+
+    small
+
+commit bc18472a551ceb25c6788692935c28d4ad489ce4
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Wed Mar 6 17:08:44 2019 -0700
+
+    passing tests
+
+commit b28230ab78b33601ade972004821c9fb0e6585bb
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Wed Mar 6 16:53:28 2019 -0700
+
+    Files moved and bug fixes
+
+commit 4b3c8ae5bc5d4f9f4c99e7356e1e0b0abd0efaf8
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Wed Mar 6 15:45:32 2019 -0700
+
+    tests and stuff
+
+commit 902120418181534d220d35a03cd1d252a8e4fd2a
+Merge: abc0f59 75b028c
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Wed Mar 6 14:29:45 2019 -0700
+
+    Merge branch 'master' of https://github.com/michaelberg12/ClueGame.git
+
+commit abc0f59aeddacd1962b2b8f20176837d44a22826
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Wed Mar 6 14:28:05 2019 -0700
+
+    syntax errors
+
+commit 75b028c4383867df0843906dc19449a6f7f1af2e
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Wed Mar 6 14:27:07 2019 -0700
+
+    Added getInitial() to one of the tests
+
+commit 90c7d6abfff05ef51dd8f019580cda4dabedbf15
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Wed Mar 6 14:13:36 2019 -0700
+
+    Imported experiment.BoardCell
+
+commit 265dbe0e920f6a54662ade1b0e4a6332f3a687df
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Wed Mar 6 14:10:15 2019 -0700
+
+    Fixed small spelling error in code
+
+commit fa37f285076c66499e852ebff8e70ced948d7251
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Wed Mar 6 13:45:50 2019 -0700
+
+    added some basic code for reading the files
+
+commit f6024fa26be3744a716c1822a70e404c98442955
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Tue Mar 5 15:25:19 2019 -0700
+
+    small change
+
+commit f4be12868df6ed20393856643ef6ad2c538f7072
+Merge: 4a5c219 cccad7d
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Tue Mar 5 15:24:43 2019 -0700
+
+    Merge branch 'master' of https://github.com/michaelberg12/ClueGame.git
+
+commit 4a5c219283813cf22637da8b8a9e0602025cb0cc
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Tue Mar 5 15:24:38 2019 -0700
+
+    fixes for getter, setter, and tests
+
+commit cccad7d87d08e216b9dff2c41e0d6ea1dc4cc6b6
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Tue Mar 5 15:08:24 2019 -0700
+
+    .
+
+commit bc08aafa42e7ad61320fe6efaae2a86878664ab3
+Merge: 8b1fbe1 3d52b67
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Tue Mar 5 15:07:59 2019 -0700
+
+    Merge branch 'master' of https://github.com/michaelberg12/ClueGame.git
+
+commit 8b1fbe14ddd4ee32820e92506d1b2c801ae5dbcd
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Tue Mar 5 15:07:54 2019 -0700
+
+    Added our names
+
+commit 3d52b6725b552a4d6bcf41793d165e761151dfbc
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Tue Mar 5 15:05:29 2019 -0700
+
+    gitlog added
+
+commit 8156f40950eef42a714588e936e8fa680e459005
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Tue Mar 5 15:05:11 2019 -0700
+
+    Added text file and explanation for the text file
+
+commit e6ecbaa67f9b88658624f70719d5ac50aa647911
+Merge: f478289 29dc3e4
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Tue Mar 5 15:03:11 2019 -0700
+
+    Merge branch 'master' of https://github.com/michaelberg12/ClueGame.git
+
+commit f478289661faf0fb09fc380e9d32a05fbb7ce46a
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Tue Mar 5 15:03:04 2019 -0700
+
+    Created text file for explanation for the test
+
+commit 29dc3e477213dfa51ecb83ad3d6aeafd292ae965
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Tue Mar 5 15:01:59 2019 -0700
+
+    added legend test
+
+commit 56ef3c605907c13525f13160ae0c27eb8ab5caab
+Merge: a0b5802 12d3a3c
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Tue Mar 5 14:49:54 2019 -0700
+
+    Merge branch 'master' of https://github.com/michaelberg12/ClueGame.git
+    
+    Conflicts:
+            ClueGame/src/tests/BoardTests.java
+
+commit a0b5802e06cd71985246eaf0983924f2d9943834
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Tue Mar 5 14:46:22 2019 -0700
+
+    changed the before
+
+commit 12d3a3caf466cc2a661f729dd04363439aa7b4f9
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Tue Mar 5 14:46:02 2019 -0700
+
+    Updated correctInitial Test
+
+commit 178831dc643dcbb6a42171e294d5a37096de5681
+Merge: 8f4381c 89cbf49
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Tue Mar 5 14:44:52 2019 -0700
+
+    Merge branch 'master' of https://github.com/michaelberg12/ClueGame.git
+
+commit 8f4381c891f1822612a748144c243adae21dcea8
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Tue Mar 5 14:44:41 2019 -0700
+
+    added more tests
+
+commit 89cbf491276d2166f3884df20f096823d79c2044
+Merge: d21c891 5d8cfad
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Tue Mar 5 14:30:57 2019 -0700
+
+    Merge branch 'master' of https://github.com/michaelberg12/ClueGame.git
+    
+    Conflicts:
+            ClueGame/src/tests/BoardTests.java
+
+commit d21c891e963fb305a185669b44db8b3020fa58cc
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Tue Mar 5 14:30:36 2019 -0700
+
+    Added a Before method and test for correct initials
+
+commit 5d8cfad1257ee6cb7e9fb4f5bcea7f81970f3ec9
+Merge: 1248e9e d028810
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Tue Mar 5 14:24:22 2019 -0700
+
+    Merge branch 'master' of https://github.com/michaelberg12/ClueGame.git
+
+commit 1248e9e412ca5a74695b6916df0948b9fd18922b
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Tue Mar 5 14:24:15 2019 -0700
+
+    started door direction test added some getter and setters
+
+commit d0288103082f89fcffb67aaaa52abe338c2b488c
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Tue Mar 5 14:21:12 2019 -0700
+
+    Corrected spelling
+
+commit 2de7a94e74cdce28e5136de8f49bdc110e47319b
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Tue Mar 5 14:11:40 2019 -0700
+
+    added test class
+
+commit faa7e9fb7093624fdd54a981bf227edb5b233278
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Tue Mar 5 14:11:08 2019 -0700
+
+    Changed name to getInstance
+
+commit 79e67d341126d0eaad197c60974397f15c6e6124
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Mon Mar 4 18:53:48 2019 -0700
+
+    Deleted the print statement
+
+commit 71219c36d67720deceaa463212e3bdd4d8e0884a
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Mon Mar 4 15:06:14 2019 -0700
+
+    all tests working
+
+commit c8a3fafc9be68684af5e2ad8a3389e0434ca0663
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Mon Mar 4 14:33:22 2019 -0700
+
+    tests fixed mostly
+
+commit a3b371e12695b5e4b61bb2c6e40531dd85ce0add
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Mon Mar 4 14:09:59 2019 -0700
+
+    Fixed null error
+
+commit b11d0fd28d6b211e2d0441fe31e041b53b030dc1
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Mon Mar 4 13:51:05 2019 -0700
+
+    Added constructor to BoardCell
+
+commit 942edbd1f9ffba1f5ca48112cb3b906134c2cd4c
+Merge: 664a95c c479e63
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Mon Mar 4 13:47:12 2019 -0700
+
+    Merge branch 'master' of https://github.com/michaelberg12/ClueGame.git
+
+commit 664a95c454674eff5e73851bfe1291fec89578be
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Mon Mar 4 13:47:08 2019 -0700
+
+    null debugging
+
+commit c479e63c53e117e8272ea6928b282b10fd6e594a
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Mon Mar 4 13:42:52 2019 -0700
+
+    Deleted few comments
+
+commit 37534d2f5fc1b0893a6df0ccba5339d225614c76
+Merge: fb035a5 eedc4ed
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Mon Mar 4 13:36:33 2019 -0700
+
+    Merge branch 'master' of https://github.com/michaelberg12/ClueGame.git
+
+commit fb035a59c5b1f1a6bdf9d95c8e22a4a292c85bf1
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Mon Mar 4 13:36:28 2019 -0700
+
+    got rid of is walkway condition
+
+commit eedc4ed8979575424870b414105c1b78da220cbc
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Mon Mar 4 13:36:16 2019 -0700
+
+    Tests
+
+commit 56ddb16e46226b4f8d4d86dfef3e58fbfcf66d32
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Mon Mar 4 13:32:12 2019 -0700
+
+    Added all of the tests
+
+commit ab63d036561fb3b605d6fed89f6d48303bd708c8
+Merge: 014396b ddd2170
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Mon Mar 4 13:31:56 2019 -0700
+
+    Merge branch 'master' of https://github.com/michaelberg12/ClueGame.git
+
+commit 014396bf6a70c42f14d007efc29138c74f8169e6
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Mon Mar 4 13:31:50 2019 -0700
+
+    Added all of the tests
+
+commit ddd217027812a152a90fcbff3a37dd51cdeae1cb
+Merge: e75d0a4 96e0dce
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Mon Mar 4 13:30:09 2019 -0700
+
+    Merge branch 'master' of https://github.com/michaelberg12/ClueGame.git
+
+commit e75d0a42e805d44a477a4c1ded704bc90613b375
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Mon Mar 4 13:29:59 2019 -0700
+
+    initialized grid with a 4x4
+
+commit 96e0dcee8b5f9c47f05b0efa2247607dd09c910b
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Mon Mar 4 13:24:14 2019 -0700
+
+    Added few more tests
+
+commit 393e75d7da9df80e533009352d5d22bab3317c2a
+Merge: e665ccb 77b8a21
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Mon Mar 4 13:23:55 2019 -0700
+
+    Merge branch 'master' of https://github.com/michaelberg12/ClueGame.git
+
+commit e665ccb71f5c8af91c94cd67257d89816bca15a1
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Mon Mar 4 13:23:48 2019 -0700
+
+    Added a few more tests
+
+commit 77b8a21cffdc42895daccf2ba44b3f0402596e00
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Mon Mar 4 13:22:36 2019 -0700
+
+    deleted repeated code
+
+commit be4f3350fdbf175c4676e96dc92c3cadf9efb2b0
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Mon Mar 4 13:16:24 2019 -0700
+
+    Added few comments
+
+commit f43d2afc88a925c7e658fb39bdd3958cf2ba12dd
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Mon Mar 4 13:14:08 2019 -0700
+
+    Deleted another test since already have duplicate
+
+commit 74c06d00539a92a79b7105bf218e4379fc83d7e2
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Mon Mar 4 13:12:53 2019 -0700
+
+    Deleted one of the tests
+
+commit a9194125312b363caa2717f74cdc247b9fc7860a
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Mon Mar 4 13:12:10 2019 -0700
+
+    Little Changes
+
+commit cbdb8617589e575c94880771a165a0b8a4b8489f
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Mon Mar 4 13:11:12 2019 -0700
+
+    .
+
+commit 26216e54f00ecca6c83830e99df0030be64402f3
+Merge: cea433e 3f083fe
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Mon Mar 4 13:10:55 2019 -0700
+
+    Added adj tests
+
+commit cea433e1e6b9f4ccf539e0189caa822b4d237489
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Mon Mar 4 13:10:02 2019 -0700
+
+    Added all of tests for adjacency lists
+
+commit 3f083fe404c3bdb09cd022ca66c5a09f3b3975b1
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Mon Mar 4 13:08:37 2019 -0700
+
+    test compile errors fixed in intboard
+
+commit e96bc96bcf42f2516a3b4e012457b81aaca3841e
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Mon Mar 4 13:04:35 2019 -0700
+
+    fixed errors in tests
+
+commit 06f7f1dee5385769633a68a91e5ad144399f68bc
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Mon Mar 4 12:58:59 2019 -0700
+
+    Added a few tests in IntBoardTests
+
+commit 4fc9caf4fd88d0a2c7998ee483fee354495c629e
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Mon Mar 4 12:54:48 2019 -0700
+
+    error fixes
+
+commit 5fc5cbe73814c9fd7d47e46f2d4deefbf98d54b4
+Merge: 7ce5029 2f11728
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Mon Mar 4 12:53:40 2019 -0700
+
+    Merge branch 'master' of https://github.com/michaelberg12/ClueGame.git
+    
+    Conflicts:
+            ClueGame/src/experiment/IntBoard.java
+
+commit 7ce50293040cc6c7ed5a07b3fe634c20e2538dc4
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Mon Mar 4 12:52:18 2019 -0700
+
+    calc adj modifications
+
+commit 2f11728eb7b14885e9b2160b5876ddb2b0342470
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Mon Mar 4 12:44:33 2019 -0700
+
+    Added a [
+
+commit 4d06585a13e6067c7629164281e9579fa9ed2dae
+Merge: d135c1b 0cd20e9
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Mon Mar 4 12:42:55 2019 -0700
+
+    Merge branch 'master' of https://github.com/michaelberg12/ClueGame.git
+
+commit d135c1b17a19d104e1e7684a38fbbb8ca0c5d688
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Mon Mar 4 12:42:48 2019 -0700
+
+    Added another test for test Adjacency
+
+commit 0cd20e9a4bf9a08deebf41e131a524bd2b80a19a
+Merge: 1af95d5 35fc853
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Mon Mar 4 12:38:33 2019 -0700
+
+    Merge branch 'master' of https://github.com/michaelberg12/ClueGame.git
+
+commit 1af95d567495f87e21904c786b5af6a7f06b9a09
+Merge: bf2635d b155380
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Mon Mar 4 12:38:23 2019 -0700
+
+    Merge branch 'master' of https://github.com/michaelberg12/ClueGame.git
+    
+    Conflicts:
+            ClueGame/src/experiment/IntBoard.java
+
+commit 35fc85319f9184f9677a6985207add94ecec3faa
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Mon Mar 4 12:34:25 2019 -0700
+
+    Made edits to calcTargets
+
+commit bf2635d1a13ecbe07b8275ad522d50ce6330a29c
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Mon Mar 4 12:33:46 2019 -0700
+
+    Modified calc Adjcencies
+
+commit b155380a0cc04f55e58226647c50332552dcd43e
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Mon Mar 4 12:29:43 2019 -0700
+
+    Worked on calcTargets. The list for visited and targets are HashSets
+
+commit 84a90bb459e9add9ca72fcdb46944987f58fcd75
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Mon Mar 4 12:09:46 2019 -0700
+
+    Changed row and col to public
+
+commit 9960616cb67bf55e608570adc7332c62520fa2b5
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Mon Mar 4 12:03:57 2019 -0700
+
+    Added Adj. Test for cell (0,0) as in example
+
+commit b2a5a458360e89407636e152a139cec588368238
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Thu Feb 28 15:21:29 2019 -0700
+
+    Put few if statements
+
+commit 79c45b4bbe717e076d684eac7328ef8120f0a809
+Merge: ce27edb 9f61b11
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Thu Feb 28 15:20:54 2019 -0700
+
+    Merge branch 'master' of https://github.com/michaelberg12/ClueGame.git
+
+commit ce27edbbf0897cd9aaa223b1ab9231b8303fc67e
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Thu Feb 28 15:20:48 2019 -0700
+
+    Added few if statements
+
+commit 9f61b11cda3368b009424ec9e4ec070f2b326182
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Thu Feb 28 15:16:27 2019 -0700
+
+    default
+
+commit 51c4e6764f0cd3f147073243eaafe1289f466a88
+Merge: 77804c5 9bbc13a
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Thu Feb 28 15:16:09 2019 -0700
+
+    Merge branch 'master' of https://github.com/michaelberg12/ClueGame.git
+
+commit 77804c543b38c8e11540c34b2684a294570ec528
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Thu Feb 28 15:16:04 2019 -0700
+
+    added bad config exception and door direction enum
+
+commit 9bbc13a0887dd5b8d5c756c785d49ed9beb8b7f8
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Thu Feb 28 15:13:50 2019 -0700
+
+    Changed x and y to row and col
+
+commit 95b6e6ffc8d96db1aafc48e4b526d630716ea588
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Thu Feb 28 15:13:15 2019 -0700
+
+    Changed x and y to row and col
+
+commit 552110649d24c1c4ddc0d0cc3637135011e6210d
+Merge: 77f5a35 290a27d
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Thu Feb 28 15:09:42 2019 -0700
+
+    Merge remote-tracking branch 'origin/master'
+    
+    Conflicts:
+            ClueGame/src/experiment/IntBoard.java
+
+commit 77f5a3540100ccd58e9139842a200a5d3aa320fe
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Thu Feb 28 15:08:05 2019 -0700
+
+    Changes to calcAdj
+
+commit 290a27da342471c7fa0edaa6d6c3f5af3a04fb70
+Merge: 34c6232 092350e
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Thu Feb 28 15:02:45 2019 -0700
+
+    Merge branch 'master' of https://github.com/michaelberg12/ClueGame.git
+
+commit 34c6232fd8efeb27628501d97b3ad97a60a013ae
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Thu Feb 28 15:02:36 2019 -0700
+
+    added code in calcAdjacancies
+
+commit 092350ef81ecb2260488cd21dc906fbabd592778
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Thu Feb 28 15:02:14 2019 -0700
+
+    Renamed to column to col
+
+commit 8342f2be48cc52a1744380cbbff729294ef7fb2e
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Thu Feb 28 14:55:03 2019 -0700
+
+    Test Import
+
+commit 38606ebbc70972059106239bba8cd60781ea8622
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Thu Feb 28 14:49:29 2019 -0700
+
+    Import Test
+
+commit a824361dc973c2dab38239f41865b1fb06b1161d
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Thu Feb 28 14:47:26 2019 -0700
+
+    Add some changes to calcAdj
+
+commit 90ec34bf3603bb7355d10a095774c7ac060c7c0a
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Thu Feb 28 14:46:39 2019 -0700
+
+    Added changes to calcAdjacencies
+
+commit 8911219cb7ebd9f7d518180da8e5258053b4dd21
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Thu Feb 28 14:45:32 2019 -0700
+
+    Add changes to calcAdnacencies
+
+commit 168364628adec79455feb496124308c582d54e6a
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Thu Feb 28 14:39:44 2019 -0700
+
+    added board class
+
+commit ac2aba464b4d35ac0c98e627a95fc8804036bfb6
+Merge: bdac438 ffcb02f
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Thu Feb 28 14:37:52 2019 -0700
+
+    Merge branch 'master' of https://github.com/michaelberg12/ClueGame.git
+
+commit ffcb02f5395d0446c68041d6e5ad9071ac387cfe
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Thu Feb 28 14:29:45 2019 -0700
+
+    Declared a Map, Sets and grid
+
+commit 1cb8307575ac2dac1e61bdf0c196f43a75ffb70e
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Thu Feb 28 14:22:33 2019 -0700
+
+    Created a constructor for IntBoard
+
+commit bdac438433b50029193d8c73019f0fb7761ac9f9
+Merge: a2729dc 17486af
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Thu Feb 28 14:20:26 2019 -0700
+
+    Merge branch 'master' of https://github.com/michaelberg12/ClueGame.git
+
+commit a2729dc7d9fa0cb5fab14b4eab8bf8f1d05a8cbc
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Thu Feb 28 14:20:10 2019 -0700
+
+    added testing files
+
+commit 17486af72e1446dd6e12aaa044a5dece3be3347c
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Thu Feb 28 14:17:31 2019 -0700
+
+    Made few changes and comments to implement later
+
+commit 078339b22165db26167d8487afcfe003c9494829
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Thu Feb 28 14:12:21 2019 -0700
+
+    Changed name of the ints to row and column
+
+commit 9c1ec7b368a07dc1a8142ae078a2281c1eec342b
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Tue Feb 26 17:11:03 2019 -0700
+
+    Added calcTargets(startCell, pathLength) and getTargets()
+
+commit d356ba729d468ab6bc906ade49dade084c3ff546
+Author: jtphan <jtphan@MZ026-25.adit.mines.edu>
+Date:   Tue Feb 26 15:11:34 2019 -0700
+
+    Created calcAdjacencies() and getAdjList()
+
+commit c4f0e84c4c6947b9381db0e7ce1858bc20773cdd
+Merge: 78c8c96 11f783a
+Author: jtphan <jtphan@MZ026-25.adit.mines.edu>
+Date:   Tue Feb 26 15:10:15 2019 -0700
+
+    Merge branch 'master' of https://github.com/michaelberg12/ClueGame.git
+
+commit 78c8c96b2940443ac76f4bce27f1551fffaca3fe
+Author: jtphan <jtphan@MZ026-25.adit.mines.edu>
+Date:   Tue Feb 26 15:09:48 2019 -0700
+
+    Created calcAdjacencies() and getADjList()
+
+commit 11f783aa1461fe6df3bfc954fed41138b800d406
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Tue Feb 26 15:05:15 2019 -0700
+
+    Added the testing class
+
+commit bd721cb5a639e30401acbd121ca5488e1fbf39f3
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Tue Feb 26 15:02:48 2019 -0700
+
+    Added classes cell and int board
+
+commit a9f6c6567e77436906049893482c5daa14340967
+Author: Michael Berg <gala52210@yahoo.com>
+Date:   Tue Feb 26 14:56:49 2019 -0700
+
+    First File
