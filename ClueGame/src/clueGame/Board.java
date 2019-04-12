@@ -5,6 +5,7 @@ import java.awt.Point;
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -581,14 +582,33 @@ public class Board extends JPanel{
 				getCellAt(i, j).draw(g);
 			}
 		}
-		
+		//Draws players
 		for(Player playersLoc: players) {
 			playersLoc.draw(g);
 			
 		}
-		
+		//Draws computer players
 		for(ComputerPlayer computerPlayersLoc: computerPlayers) {
 			computerPlayersLoc.draw(g);
 		}
+		
+		
+		//Printing out the Room names
+		String[] rooms = new String[] {"Butterfly Room", "Computer Room", "Kitchen", "Dining Room", "Bedroom", "Parlor","Music Room", "Game Room", "Living Room"};
+		
+		g.setFont(new Font("TimesRoman", Font.PLAIN, 13));
+		g.setColor(Color.WHITE);
+		
+		g.drawString(rooms[0], 15, 15);
+		g.drawString(rooms[1], 215, 50);
+		g.drawString(rooms[2], 329, 590);
+		g.drawString(rooms[3], 415, 300);
+		g.drawString(rooms[4], 420, 15);
+		g.drawString(rooms[5], 5, 325);
+		g.drawString(rooms[6], 350, 325);
+		g.drawString(rooms[7], 145, 360);
+		g.drawString(rooms[8], 170, 550);
+		g.drawString("Closet", 30, 560); 
+		
 	}	
 }
