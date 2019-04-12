@@ -26,13 +26,14 @@ public class BoardCell {
 	public final int HEIGHT = 27;
 	
 	public BoardCell(String initital, DoorDirection direction, int row, int col) {
-		pix.x = row * WIDTH;
-		pix.y = row * HEIGHT;
+		pix = new Point();
 		
 		this.row = row;
 		this.col = col;
 		this.initital = initital;
 		this.direction = direction;
+		pix.x = row * WIDTH;
+		pix.y = row * HEIGHT;
 	}
 
 	public BoardCell(String initital) {

@@ -203,6 +203,9 @@ public class Window {
 		
 		//doesnt work
 		Board gameBoard = Board.getInstance();
+		gameBoard.setConfigFiles("ClueBoard.csv", "rooms.txt");
+		gameBoard.setCardFiles("weapons.txt", "Person.txt");
+		gameBoard.initialize();
 		gameBoard.setBounds(0, 25, 725, 442);
 		clueWindow.getContentPane().add(gameBoard);
 	
