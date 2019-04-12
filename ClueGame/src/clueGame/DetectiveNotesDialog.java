@@ -1,4 +1,5 @@
 //Authors: Michael Berg and Jennifer Phan
+
 package clueGame;
 
 import java.awt.GridLayout;
@@ -33,6 +34,7 @@ public class DetectiveNotesDialog extends JDialog{
 		add(panel);
 		setResizable(false);
 	}
+	
 	//People with checkboxes
 	private JPanel PeoplePanel() {
 		JPanel mainPanel = new JPanel();
