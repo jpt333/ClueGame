@@ -69,7 +69,7 @@ public class Window {
 		frmClue.getContentPane().setEnabled(false);
 		frmClue.setForeground(Color.WHITE);
 		frmClue.setAlwaysOnTop(true);
-		frmClue.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\urber\\git\\ClueGame\\ClueGame\\clueAppIcon.png"));
+		frmClue.setIconImage(Toolkit.getDefaultToolkit().getImage(Window.class.getResource("/Resources/clueGameLogo.png")));
 		frmClue.setTitle("Clue Game");
 		frmClue.getContentPane().setBackground(Color.DARK_GRAY);
 		frmClue.getContentPane().setLayout(null);
@@ -83,14 +83,14 @@ public class Window {
 		frmClue.getContentPane().add(btnNewButton);
 		
 		JButton btnNextPlayer = new JButton("Next Player");
-		btnNextPlayer.setBounds(774, 531, 158, 38);
+		btnNextPlayer.setBounds(774, 525, 158, 38);
 		frmClue.getContentPane().add(btnNextPlayer);
 		
 		JTextArea txtrGuessResult = new JTextArea();
 		txtrGuessResult.setForeground(Color.WHITE);
 		txtrGuessResult.setBackground(Color.DARK_GRAY);
 		txtrGuessResult.setText("Guess Result");
-		txtrGuessResult.setBounds(17, 480, 76, 16);
+		txtrGuessResult.setBounds(22, 480, 76, 16);
 		frmClue.getContentPane().add(txtrGuessResult);
 		
 		JTextArea txtrGuess = new JTextArea();
@@ -104,7 +104,7 @@ public class Window {
 		txtrWhoseTurn.setText("Whose turn?");
 		txtrWhoseTurn.setForeground(Color.WHITE);
 		txtrWhoseTurn.setBackground(Color.DARK_GRAY);
-		txtrWhoseTurn.setBounds(565, 480, 76, 16);
+		txtrWhoseTurn.setBounds(528, 480, 76, 16);
 		frmClue.getContentPane().add(txtrWhoseTurn);
 		
 		JTextArea txtrMyCards = new JTextArea();
@@ -155,12 +155,12 @@ public class Window {
 		label_3.setBounds(370, 499, 100, 150);
 		frmClue.getContentPane().add(label_3);
 		
-		JLabel label_4 = new JLabel("");
-		label_4.setIcon(new ImageIcon(Window.class.getResource("/Resources/Mrs White.png")));
-		label_4.setForeground(Color.WHITE);
-		label_4.setBackground(Color.WHITE);
-		label_4.setBounds(552, 499, 100, 150);
-		frmClue.getContentPane().add(label_4);
+		JLabel guessIcon = new JLabel("");
+		guessIcon.setIcon(new ImageIcon(Window.class.getResource("/Resources/Mrs White.png")));
+		guessIcon.setForeground(Color.WHITE);
+		guessIcon.setBackground(Color.WHITE);
+		guessIcon.setBounds(513, 498, 100, 150);
+		frmClue.getContentPane().add(guessIcon);
 		
 		JLabel label_5 = new JLabel("");
 		label_5.setIcon(new ImageIcon(Window.class.getResource("/Resources/Mrs Scarlet.png")));
@@ -183,9 +183,21 @@ public class Window {
 		label_7.setBounds(854, 283, 100, 150);
 		frmClue.getContentPane().add(label_7);
 		
-		JPanel panel = new JPanel();
-		panel.setBounds(0, 25, 725, 445);
-		frmClue.getContentPane().add(panel);
+		JPanel gameBoard = new JPanel();
+		gameBoard.setBounds(0, 25, 725, 445);
+		frmClue.getContentPane().add(gameBoard);
+		
+		JTextArea txtrDiceRoll = new JTextArea();
+		txtrDiceRoll.setText("Dice Roll");
+		txtrDiceRoll.setForeground(Color.WHITE);
+		txtrDiceRoll.setBackground(Color.DARK_GRAY);
+		txtrDiceRoll.setBounds(674, 525, 51, 16);
+		frmClue.getContentPane().add(txtrDiceRoll);
+		
+		JLabel diceIcon = new JLabel("");
+		diceIcon.setIcon(new ImageIcon(Window.class.getResource("/Resources/6.png")));
+		diceIcon.setBounds(660, 555, 75, 75);
+		frmClue.getContentPane().add(diceIcon);
 		frmClue.setBounds(100, 100, 1000, 700);
 		frmClue.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
