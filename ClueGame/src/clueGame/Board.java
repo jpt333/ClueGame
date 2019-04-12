@@ -575,21 +575,19 @@ public class Board extends JPanel{
 	
 	
 	public void paintComponent(Graphics g) {
-
-		super.paintComponent(g);
-		setLayout(new GridLayout(25,17));
 		//draws the cells/rooms
 		for(int i = 0; i < getNumRows(); i++){
 			for(int j = 0; j < getNumColumns(); j++){
 				getCellAt(i, j).draw(g);
 			}
 		}
-		//draws the room names 
 		
-	}
-	
-	
-	
-	
-	
+		for(Player playersLoc: players) {
+			playersLoc.draw(g);
+		}
+		
+		for(ComputerPlayer computerPlayersLoc: computerPlayers) {
+			computerPlayersLoc.draw(g);
+		}
+	}	
 }
