@@ -49,7 +49,7 @@ public class BoardCell {
 	}
 
 	public Boolean isWalkway() {
-		if(initital == "W"){
+		if(getInitial() == 'W'){
 			return true;
 		}
 		return false;
@@ -83,7 +83,6 @@ public class BoardCell {
 	}
 	
 	public void draw(Graphics g) {
-<<<<<<< HEAD
 		//Draw the board, room directions, rooms,...
 		
 		if(isWalkway()) {
@@ -105,9 +104,8 @@ public class BoardCell {
 			}
 		
 		if(this.isRoom()) {
-=======
+
 		if(this.isRoom()) {
->>>>>>> refs/remotes/origin/master
 			//Paints the doorways and rooms
 			if(isDoorway()) {
 				if (direction == DoorDirection.UP){
@@ -159,16 +157,15 @@ public class BoardCell {
 			g.setColor(color);
 			g.fillRect(pix.x, pix.y, WIDTH, HEIGHT);
 		}
-<<<<<<< HEAD
+
 	//} 
 	}
 	}
-=======
+
 		if(isWalkway()) {
 			color = Color.RED;
 			g.setColor(color);
 			g.fillRect(pix.x, pix.y, WIDTH, HEIGHT);
 		}
 	} 	
->>>>>>> refs/remotes/origin/master
 }
