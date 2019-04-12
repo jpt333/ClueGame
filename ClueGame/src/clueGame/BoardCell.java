@@ -83,7 +83,7 @@ public class BoardCell {
 	}
 	
 	public void draw(Graphics g) {
-		//Draw rectangles and other things for board
+		//Draw the board, room directions, rooms,...
 		
 		if(isWalkway()) {
 			color = Color.DARK_GRAY;
@@ -96,14 +96,13 @@ public class BoardCell {
 		}
 		
 		if(isRoom()) {
-
 			if(this.isRoom()) {
 				color = Color.MAGENTA;
 				g.setColor(color);
 				g.fillRect(pix.x, pix.y, WIDTH, HEIGHT);
 			
 			}
-		}
+		
 		if(this.isRoom()) {
 			//Paints the doorways and rooms
 			if(isDoorway()) {
@@ -152,5 +151,6 @@ public class BoardCell {
 			
 		}
 	//} 
+	}
 	}
 }
