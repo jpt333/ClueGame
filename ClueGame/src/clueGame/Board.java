@@ -579,13 +579,12 @@ public class Board extends JPanel{
 		super.paintComponent(g);
 		setLayout(new GridLayout(25,17));
 		//draws the cells/rooms
-
-		for(int i = 0; i < 25; i++){
-			for(int j = 0; j < 16; j++){
+		for(int i = 0; i < getNumRows(); i++){
+			for(int j = 0; j < getNumColumns(); j++){
 				getCellAt(i, j).draw(g);
 			}
 		}
-		//draws the room names
+		//draws the room names 
 		
 	}
 	
