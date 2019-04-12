@@ -666,7 +666,7 @@ public class Board extends JPanel{
 						}else {
 							AffineTransform orig = g2.getTransform();
 							g2.rotate(-Math.PI/2);
-							g2.drawString("Very Long Testing String", 0, 0 );
+							g2.drawString(entry.getValue(), -(rowLoc + 2) * HEIGHT, startingPioint + width);
 							g2.setTransform(orig);
 							break;
 						}
@@ -694,7 +694,7 @@ public class Board extends JPanel{
 						}else {
 							AffineTransform orig = g2.getTransform();
 							g2.rotate(-Math.PI/2);
-							g2.drawString(entry.getValue(), 0, 0 );
+							g2.drawString(entry.getValue(), -(rowLoc + 1) * HEIGHT, startingPioint + width);
 							g2.setTransform(orig);
 							break;
 						}
