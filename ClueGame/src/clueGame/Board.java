@@ -584,6 +584,7 @@ public class Board extends JPanel{
 		
 		for(Player playersLoc: players) {
 			playersLoc.draw(g);
+			
 		}
 		
 		for(ComputerPlayer computerPlayersLoc: computerPlayers) {

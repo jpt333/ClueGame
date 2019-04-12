@@ -22,7 +22,7 @@ public class BoardCell {
 	private Point pix;
 	private Color color;
 	
-	public final int WIDTH = 29;
+	public final int WIDTH = 39;
 	public final int HEIGHT = 26;
 	
 	public BoardCell(String initital, DoorDirection direction, int row, int col) {
@@ -103,7 +103,7 @@ public class BoardCell {
 			}
 			else if (direction == DoorDirection.RIGHT){
 				g.setColor(Color.CYAN);
-				g.fillRect(pix.x + 23, pix.y, 6, HEIGHT);
+				g.fillRect(pix.x + 33, pix.y, 6, HEIGHT);
 			}
 			else if(direction == DoorDirection.RIGHT) {
 				g.setColor(Color.CYAN);

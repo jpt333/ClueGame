@@ -94,21 +94,21 @@ public class Window {
 		guessResult.setForeground(Color.WHITE);
 		guessResult.setBackground(Color.DARK_GRAY);
 		guessResult.setText("Guess Result");
-		guessResult.setBounds(24, 791, 76, 16);
+		guessResult.setBounds(23, 681, 76, 16);
 		clueWindow.getContentPane().add(guessResult);
 		
 		JTextArea guess = new JTextArea();
 		guess.setText("Guess");
 		guess.setForeground(Color.WHITE);
 		guess.setBackground(Color.DARK_GRAY);
-		guess.setBounds(287, 791, 37, 16);
+		guess.setBounds(283, 681, 37, 16);
 		clueWindow.getContentPane().add(guess);
 		
 		JTextArea turnText = new JTextArea();
 		turnText.setText("Whose turn?");
 		turnText.setForeground(Color.WHITE);
 		turnText.setBackground(Color.DARK_GRAY);
-		turnText.setBounds(522, 791, 76, 16);
+		turnText.setBounds(523, 681, 76, 16);
 		clueWindow.getContentPane().add(turnText);
 		
 		JTextArea myCards = new JTextArea();
@@ -146,35 +146,35 @@ public class Window {
 		guessResultCard.setIcon(new ImageIcon(Window.class.getResource("/Resources/Proffesoor Plum.png")));
 		guessResultCard.setForeground(SystemColor.text);
 		guessResultCard.setBackground(SystemColor.window);
-		guessResultCard.setBounds(12, 809, 100, 150);
+		guessResultCard.setBounds(12, 722, 100, 150);
 		clueWindow.getContentPane().add(guessResultCard);
 		
 		JLabel weaponcard = new JLabel("");
 		weaponcard.setIcon(new ImageIcon(Window.class.getResource("/Resources/Knife.png")));
 		weaponcard.setForeground(Color.WHITE);
 		weaponcard.setBackground(Color.WHITE);
-		weaponcard.setBounds(143, 809, 100, 150);
+		weaponcard.setBounds(143, 722, 100, 150);
 		clueWindow.getContentPane().add(weaponcard);
 		
 		JLabel personCard = new JLabel("");
 		personCard.setIcon(new ImageIcon(Window.class.getResource("/Resources/Mr. Green.png")));
 		personCard.setForeground(Color.WHITE);
 		personCard.setBackground(Color.WHITE);
-		personCard.setBounds(255, 809, 100, 150);
+		personCard.setBounds(255, 722, 100, 150);
 		clueWindow.getContentPane().add(personCard);
 		
 		JLabel roomCard = new JLabel("");
 		roomCard.setIcon(new ImageIcon(Window.class.getResource("/Resources/PlaceHolder.png")));
 		roomCard.setForeground(Color.WHITE);
 		roomCard.setBackground(Color.WHITE);
-		roomCard.setBounds(367, 809, 100, 150);
+		roomCard.setBounds(367, 722, 100, 150);
 		clueWindow.getContentPane().add(roomCard);
 		
 		JLabel playTurnCard = new JLabel("");
 		playTurnCard.setIcon(new ImageIcon(Window.class.getResource("/Resources/Mrs White.png")));
 		playTurnCard.setForeground(Color.WHITE);
 		playTurnCard.setBackground(Color.WHITE);
-		playTurnCard.setBounds(511, 809, 100, 150);
+		playTurnCard.setBounds(507, 722, 100, 150);
 		clueWindow.getContentPane().add(playTurnCard);
 		
 		JLabel card1 = new JLabel("");
@@ -195,7 +195,7 @@ public class Window {
 		card3.setIcon(new ImageIcon(Window.class.getResource("/Resources/Mrs Peacock.png")));
 		card3.setForeground(Color.WHITE);
 		card3.setBackground(Color.WHITE);
-		card3.setBounds(705, 445, 100, 150);
+		card3.setBounds(705, 447, 100, 150);
 		clueWindow.getContentPane().add(card3);
 		
 
@@ -203,21 +203,21 @@ public class Window {
 		gameBoard.setConfigFiles("ClueBoard.csv", "rooms.txt");
 		gameBoard.setCardFiles("weapons.txt", "Person.txt");
 		gameBoard.initialize();
-		gameBoard.setBounds(0, 25, 493, 624);
+		gameBoard.setBounds(0, 25, 702, 624);
 		clueWindow.getContentPane().add(gameBoard);
 		
 		JTextArea diceText = new JTextArea();
 		diceText.setText("Dice Roll");
 		diceText.setForeground(Color.WHITE);
 		diceText.setBackground(Color.DARK_GRAY);
-		diceText.setBounds(728, 612, 51, 16);
+		diceText.setBounds(728, 621, 51, 16);
 		clueWindow.getContentPane().add(diceText);
 		
 		JLabel diceIcon = new JLabel("");
 		diceIcon.setIcon(new ImageIcon(Window.class.getResource("/Resources/6.png")));
-		diceIcon.setBounds(718, 653, 75, 75);
+		diceIcon.setBounds(719, 660, 75, 75);
 		clueWindow.getContentPane().add(diceIcon);
-		clueWindow.setBounds(100, 100, 858, 1000);
+		clueWindow.setBounds(100, 100, 848, 920);
 		clueWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 	

@@ -18,6 +18,7 @@ public class Player{
 	
 	public final int WIDTH = 26;
 	public final int HEIGHT = 26;
+	public final int CENTER_FACTOR = 7;
 	
 	public Player(String playerName, BoardCell currentLocation, Color color) {
 		this.playerName = playerName;
@@ -29,7 +30,7 @@ public class Player{
 		//Draw character
 		pixel = currentLocation.getCord();
 		g.setColor(color);
-		g.fillOval(pixel.x, pixel.y, WIDTH, HEIGHT);
+		g.fillOval(pixel.x + CENTER_FACTOR, pixel.y, WIDTH, HEIGHT);
 	}
 
 	
