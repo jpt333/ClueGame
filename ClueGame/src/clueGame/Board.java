@@ -596,7 +596,7 @@ public class Board extends JPanel{
 		String[] rooms = new String[] {"Butterfly Room", "Computer Room", "Kitchen", "Dining Room", "Bedroom", "Parlor","Music Room", "Game Room", "Living Room"};
 		
 		g.setFont(new Font("TimesRoman", Font.PLAIN, 13));
-		g.setColor(Color.BLACK);
+		g.setColor(Color.WHITE);
 		
 		g.drawString(rooms[0], 15, 15);
 		g.drawString(rooms[1], 215, 50);
