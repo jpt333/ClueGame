@@ -34,7 +34,7 @@ import javax.swing.ImageIcon;
 import javax.swing.AbstractAction;
 import javax.swing.Action;
 
-public class ClueGameGUI {
+public class ClueGameGUI extends JFrame{
 
 	private JFrame clueWindow;
 	
@@ -44,16 +44,10 @@ public class ClueGameGUI {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					ClueGameGUI window = new ClueGameGUI();
-					window.clueWindow.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+			ClueGameGUI loadingWindow = new ClueGameGUI();
+			
+			ClueGameGUI window = new ClueGameGUI();
+			window.clueWindow.setVisible(true);
 	}
 
 	
