@@ -38,9 +38,6 @@ public class LoadingIntro extends JFrame {
 	 */
 	public static void main(String[] args) {
 		LoadingIntro frame = new LoadingIntro();
-		frame.setVisible(true);
-		frame.update();
-		frame.dispose();
 	}
 
 	/**
@@ -83,6 +80,10 @@ public class LoadingIntro extends JFrame {
 		label.setAlignment(Label.CENTER);
 		label.setBounds(10, 149, 424, 35);
 		contentPane.add(label);
+		
+		setVisible(true);
+		update();
+		dispose();
 	}
 	
 	public void update() {

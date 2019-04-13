@@ -44,8 +44,7 @@ public class ClueGameGUI extends JFrame{
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
-			ClueGameGUI loadingWindow = new ClueGameGUI();
-			
+			LoadingIntro loadingWindow = new LoadingIntro();
 			ClueGameGUI window = new ClueGameGUI();
 			window.clueWindow.setVisible(true);
 	}
