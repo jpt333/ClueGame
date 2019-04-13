@@ -44,7 +44,9 @@ public class ClueGameGUI extends JFrame{
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+			// comment this out to get rid of the loading its only for fun and doesn't do anything
 			LoadingIntro loadingWindow = new LoadingIntro();
+			//----------------------------------------------
 			ClueGameGUI window = new ClueGameGUI();
 			window.clueWindow.setVisible(true);
 	}
