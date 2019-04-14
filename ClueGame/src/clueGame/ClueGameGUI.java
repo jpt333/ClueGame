@@ -44,10 +44,10 @@ public class ClueGameGUI extends JFrame{
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
-			// comment this out to get rid of the loading its only for fun and doesn't do anything
+			ClueGameGUI window = new ClueGameGUI();
+			//comment this out to get rid of the loading its only for fun and doesn't do anything
 			LoadingIntro loadingWindow = new LoadingIntro();
 			//----------------------------------------------
-			ClueGameGUI window = new ClueGameGUI();
 			window.clueWindow.setVisible(true);
 	}
 
@@ -55,20 +55,18 @@ public class ClueGameGUI extends JFrame{
 	/**
 	 * Create the application.
 	 */
-	public ClueGameGUI() {
-		initialize();
-	}
+	
 	
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize() {
+	ClueGameGUI() {
 		clueWindow = new JFrame();
 		clueWindow.setResizable(false);
 		clueWindow.getContentPane().setForeground(Color.WHITE);
 		clueWindow.getContentPane().setEnabled(false);
 		clueWindow.setForeground(Color.WHITE);
-		clueWindow.setIconImage(Toolkit.getDefaultToolkit().getImage(ClueGameGUI.class.getResource("/Resources/clueGameLogo.png")));
+		clueWindow.setIconImage(Toolkit.getDefaultToolkit().getImage(ClueGameGUI.class.getResource("/Resources/Miscellaneous/clueGameLogo.png")));
 		clueWindow.setTitle("Clue Game");
 		clueWindow.getContentPane().setBackground(Color.DARK_GRAY);
 		clueWindow.getContentPane().setLayout(null);
