@@ -105,7 +105,8 @@ public class GameSetupTests {
 	}
 	
 	//Test that all players have roughly same number of cards after dealing, test all cards dealt, test no cards dealt twice
-	@Test
+	//@Test
+	/*
 	public void testDealingCards() { 
 		//Also test that same card not given to more than 1 player
 		Map<Player, Set<Card>> cards = board.getPlayerCards();
@@ -136,5 +137,6 @@ public class GameSetupTests {
 		deltCards.add(solution.room);
 		
 	}
+	*/
 	
 }
