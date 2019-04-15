@@ -25,12 +25,13 @@ import javax.swing.SpringLayout;
 import java.awt.Component;
 import javax.swing.Box;
 import javax.swing.JButton;
+import javax.swing.JDialog;
 import javax.swing.JTextPane;
 import javax.swing.JTextArea;
 import java.awt.Label;
 import java.awt.Font;
 
-public class LoadingIntro extends JFrame {
+public class LoadingIntro extends JDialog  {
 
 	public final int TIMEDURRATION = 2000;
 	
@@ -66,7 +67,7 @@ public class LoadingIntro extends JFrame {
 		setResizable(false);
 		setIconImage(Toolkit.getDefaultToolkit().getImage(LoadingIntro.class.getResource("/Resources/Miscellaneous/clueGameLogo.png")));
 		setBackground(Color.DARK_GRAY);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.DARK_GRAY);
@@ -114,7 +115,9 @@ public class LoadingIntro extends JFrame {
 		accusationButton.setBounds(188, 215, 75, 40);
 		contentPane.add(accusationButton);
 		
+		setAlwaysOnTop (true);
 		contentPane.repaint();
+		
 	}
 	
 	private void update() {
