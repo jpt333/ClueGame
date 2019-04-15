@@ -52,6 +52,8 @@ public class ClueGameGUI extends JFrame{
 
 	
 	ClueGameGUI() {
+		//everything concerning board set up and the first turn goes here
+		
 		assets = new AssetsManager();
 		//set layout and colors
 		clueWindow = new JFrame();
@@ -63,77 +65,8 @@ public class ClueGameGUI extends JFrame{
 		clueWindow.getContentPane().setBackground(Color.DARK_GRAY);
 		clueWindow.getContentPane().setLayout(null);
 		
-		JButton accusationButton = new JButton("Make an Accusation");
-		accusationButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-			}
-		});
-		accusationButton.setBounds(673, 822, 158, 38);
-		clueWindow.getContentPane().add(accusationButton);
-		
-		//Next Player button
-		JButton nextPlayer = new JButton("Next Player");
-		nextPlayer.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				//what happens when next player is pressed
-			}
-		});
-		nextPlayer.setBounds(673, 758, 158, 38);
-		clueWindow.getContentPane().add(nextPlayer);
-		
-		JTextArea guessResult = new JTextArea();
-		guessResult.setForeground(Color.WHITE);
-		guessResult.setBackground(Color.DARK_GRAY);
-		guessResult.setText("Guess Result");
-		guessResult.setBounds(23, 681, 76, 16);
-		clueWindow.getContentPane().add(guessResult);
-		
-		JTextArea guess = new JTextArea();
-		guess.setText("Guess");
-		guess.setForeground(Color.WHITE);
-		guess.setBackground(Color.DARK_GRAY);
-		guess.setBounds(283, 681, 37, 16);
-		clueWindow.getContentPane().add(guess);
-		
-		JTextArea turnText = new JTextArea();
-		turnText.setText("Whose turn?");
-		turnText.setForeground(Color.WHITE);
-		turnText.setBackground(Color.DARK_GRAY);
-		turnText.setBounds(523, 681, 76, 16);
-		clueWindow.getContentPane().add(turnText);
-		
-		JTextArea myCards = new JTextArea();
-		myCards.setText("My Cards");
-		myCards.setForeground(Color.WHITE);
-		myCards.setBackground(Color.DARK_GRAY);
-		myCards.setBounds(728, 58, 51, 16);
-		clueWindow.getContentPane().add(myCards);
-		
-		JMenuBar menuBar = new JMenuBar();
-		menuBar.setBounds(0, 0, 994, 25);
-		clueWindow.getContentPane().add(menuBar);
-		
-		JMenu dropMenu = new JMenu("File");
-		menuBar.add(dropMenu);
-		//add detectivenotes to dropmenu in File
-		JMenuItem detectiveNotes = new JMenuItem("Detective Notes");
-		detectiveNotes.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				DetectiveNotesDialog dialog = new DetectiveNotesDialog();
-				dialog.setVisible(true);
-			}
-		});
-		dropMenu.add(detectiveNotes);
-		//add quit to dropmenu
-		JMenuItem quit = new JMenuItem("Quit");
-		quit.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				clueWindow.dispose();
-			}
-		});
-		dropMenu.add(quit);
-
+		addButtons();
+		addElements();
 		//loads the game board
 		
 		Board gameBoard = Board.getInstance();
@@ -144,48 +77,16 @@ public class ClueGameGUI extends JFrame{
 		gameBoard.setBounds(0, 25, 702, 676);
 		clueWindow.getContentPane().add(gameBoard);
 		
+		Random rand = new Random();
+		//6 because the max dice number is 6
+		int diceRoll = rand.nextInt(6);
+		
 		Player self = gameBoard.getHumanPlayer();
+		gameBoard.calcTargets(self.getCurrentLocation().getLocation().y, self.getCurrentLocation().getLocation().x, diceRoll);
+		
 		Set<Card> cards = self.getCards();
 		Card cardArray[] = new Card[cards.size()];
 		cards.toArray(cardArray);
-		//this is the result of the guess
-		JLabel guessResultCard = new JLabel("");
-		
-		assets.setAsset(guessResultCard, "Unknown", CardType.PERSON);
-		
-		guessResultCard.setForeground(SystemColor.text);
-		guessResultCard.setBackground(SystemColor.window);
-		guessResultCard.setBounds(12, 722, 100, 150);
-		clueWindow.getContentPane().add(guessResultCard);
-		
-		
-		//these three are the guess cards
-		JLabel weaponcard = new JLabel("");
-		
-		assets.setAsset(weaponcard, "Unknown", CardType.PERSON);
-		
-		weaponcard.setForeground(Color.WHITE);
-		weaponcard.setBackground(Color.WHITE);
-		weaponcard.setBounds(143, 722, 100, 150);
-		clueWindow.getContentPane().add(weaponcard);
-		
-		JLabel personCard = new JLabel("");
-		
-		assets.setAsset(personCard, "Unknown", CardType.PERSON);
-		
-		personCard.setForeground(Color.WHITE);
-		personCard.setBackground(Color.WHITE);
-		personCard.setBounds(255, 722, 100, 150);
-		clueWindow.getContentPane().add(personCard);
-		
-		JLabel roomCard = new JLabel("");
-		
-		assets.setAsset(roomCard, "Unknown", CardType.PERSON);
-		
-		roomCard.setForeground(Color.WHITE);
-		roomCard.setBackground(Color.WHITE);
-		roomCard.setBounds(367, 722, 100, 150);
-		clueWindow.getContentPane().add(roomCard);
 		
 		//which players turn it is
 		
@@ -239,7 +140,7 @@ public class ClueGameGUI extends JFrame{
 		JLabel diceIcon = new JLabel("");
 		
 		//any number outside 1-6 will display a question mark
-		assets.setAsset(diceIcon, 7);
+		assets.setAsset(diceIcon, diceRoll);
 		
 		diceIcon.setBounds(719, 660, 75, 75);
 		clueWindow.getContentPane().add(diceIcon);
@@ -253,4 +154,119 @@ public class ClueGameGUI extends JFrame{
 	}
 	
 
+	private void addButtons() {
+		JButton accusationButton = new JButton("Make an Accusation");
+		accusationButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
+		accusationButton.setBounds(673, 822, 158, 38);
+		clueWindow.getContentPane().add(accusationButton);
+		
+		//Next Player button
+		JButton nextPlayer = new JButton("Next Player");
+		nextPlayer.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				//what happens when next player is pressed
+			}
+		});
+		nextPlayer.setBounds(673, 758, 158, 38);
+		clueWindow.getContentPane().add(nextPlayer);
+	}
+	
+	private void addElements() {
+		JTextArea guessResult = new JTextArea();
+		guessResult.setForeground(Color.WHITE);
+		guessResult.setBackground(Color.DARK_GRAY);
+		guessResult.setText("Guess Result");
+		guessResult.setBounds(23, 681, 76, 16);
+		clueWindow.getContentPane().add(guessResult);
+		
+		JTextArea guess = new JTextArea();
+		guess.setText("Guess");
+		guess.setForeground(Color.WHITE);
+		guess.setBackground(Color.DARK_GRAY);
+		guess.setBounds(283, 681, 37, 16);
+		clueWindow.getContentPane().add(guess);
+		
+		JTextArea turnText = new JTextArea();
+		turnText.setText("Whose turn?");
+		turnText.setForeground(Color.WHITE);
+		turnText.setBackground(Color.DARK_GRAY);
+		turnText.setBounds(523, 681, 76, 16);
+		clueWindow.getContentPane().add(turnText);
+		
+		JTextArea myCards = new JTextArea();
+		myCards.setText("My Cards");
+		myCards.setForeground(Color.WHITE);
+		myCards.setBackground(Color.DARK_GRAY);
+		myCards.setBounds(728, 58, 51, 16);
+		clueWindow.getContentPane().add(myCards);
+		
+		JMenuBar menuBar = new JMenuBar();
+		menuBar.setBounds(0, 0, 994, 25);
+		clueWindow.getContentPane().add(menuBar);
+		
+		JMenu dropMenu = new JMenu("File");
+		menuBar.add(dropMenu);
+		//add detectivenotes to dropmenu in File
+		JMenuItem detectiveNotes = new JMenuItem("Detective Notes");
+		detectiveNotes.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				DetectiveNotesDialog dialog = new DetectiveNotesDialog();
+				dialog.setVisible(true);
+			}
+		});
+		
+		dropMenu.add(detectiveNotes);
+		//add quit to dropmenu
+		JMenuItem quit = new JMenuItem("Quit");
+		quit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				clueWindow.dispose();
+			}
+		});
+		dropMenu.add(quit);
+		
+		//this is the result of the guess
+		JLabel guessResultCard = new JLabel("");
+		
+		assets.setAsset(guessResultCard, "Unknown", CardType.PERSON);
+		
+		guessResultCard.setForeground(SystemColor.text);
+		guessResultCard.setBackground(SystemColor.window);
+		guessResultCard.setBounds(12, 722, 100, 150);
+		clueWindow.getContentPane().add(guessResultCard);
+		
+		
+		//these three are the guess cards
+		JLabel weaponcard = new JLabel("");
+		
+		assets.setAsset(weaponcard, "Unknown", CardType.PERSON);
+		
+		weaponcard.setForeground(Color.WHITE);
+		weaponcard.setBackground(Color.WHITE);
+		weaponcard.setBounds(143, 722, 100, 150);
+		clueWindow.getContentPane().add(weaponcard);
+		
+		JLabel personCard = new JLabel("");
+		
+		assets.setAsset(personCard, "Unknown", CardType.PERSON);
+		
+		personCard.setForeground(Color.WHITE);
+		personCard.setBackground(Color.WHITE);
+		personCard.setBounds(255, 722, 100, 150);
+		clueWindow.getContentPane().add(personCard);
+		
+		JLabel roomCard = new JLabel("");
+		
+		assets.setAsset(roomCard, "Unknown", CardType.PERSON);
+		
+		roomCard.setForeground(Color.WHITE);
+		roomCard.setBackground(Color.WHITE);
+		roomCard.setBounds(367, 722, 100, 150);
+		clueWindow.getContentPane().add(roomCard);
+	}
+	
 }

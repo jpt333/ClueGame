@@ -19,6 +19,7 @@ public class BoardCell {
 	private String initital;
 	private DoorDirection direction;
 	
+	private Point location;
 	private Point pix;
 	private Color color;
 	
@@ -26,26 +27,25 @@ public class BoardCell {
 	public final int HEIGHT = 26;
 	
 	public BoardCell(String initital, DoorDirection direction, int row, int col) {
-		pix = new Point();
-		
+		location = new Point(col, row);
 		this.row = row;
 		this.col = col;
 		this.initital = initital; 
 		this.direction = direction;
-		pix.x = col * WIDTH;
-		pix.y = row * HEIGHT;
+		pix = new Point(col * WIDTH, row * HEIGHT);
+	}
+
+	public Point getLocation() {
+		return location;
 	}
 
 	public BoardCell(String initital, int row, int col) {
-		pix = new Point();
-		
+		location = new Point(col, row);
 		this.row = row;
 		this.col = col;
 		this.initital = initital;
 		this.direction = null;
-		
-		pix.x = col * WIDTH;
-		pix.y = row * HEIGHT;
+		pix = new Point(col * WIDTH, row * HEIGHT);
 	}
 
 	public Boolean isWalkway() {

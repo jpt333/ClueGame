@@ -137,6 +137,10 @@ public class Player{
 		this.currentLocation = currentLocation;
 	}
 	
+	public BoardCell getCurrentLocation() {
+		return currentLocation;
+	}
+
 	public Set<Card> getCards() {
 		return cards;	
 	}
