@@ -64,13 +64,19 @@ public class ClueGameGUI extends JFrame{
 		
 		JButton accusationButton = new JButton("Make an Accusation");
 		accusationButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
+			public void actionPerformed(ActionEvent e) {
+				
 			}
 		});
 		accusationButton.setBounds(673, 822, 158, 38);
 		clueWindow.getContentPane().add(accusationButton);
 		
 		JButton nextPlayer = new JButton("Next Player");
+		nextPlayer.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				//what happens when next player is pressed
+			}
+		});
 		nextPlayer.setBounds(673, 758, 158, 38);
 		clueWindow.getContentPane().add(nextPlayer);
 		
@@ -143,7 +149,7 @@ public class ClueGameGUI extends JFrame{
 		//this is the result of the guess
 		JLabel guessResultCard = new JLabel("");
 		
-		assets.setAsset(guessResultCard, "missing" , cardArray[0].getCardType());
+		assets.setAsset(guessResultCard, "Unknown", CardType.PERSON);
 		
 		guessResultCard.setForeground(SystemColor.text);
 		guessResultCard.setBackground(SystemColor.window);
@@ -154,7 +160,7 @@ public class ClueGameGUI extends JFrame{
 		//these three are the guess cards
 		JLabel weaponcard = new JLabel("");
 		
-		assets.setAsset(weaponcard, "missing", cardArray[1].getCardType());
+		assets.setAsset(weaponcard, "Unknown", CardType.PERSON);
 		
 		weaponcard.setForeground(Color.WHITE);
 		weaponcard.setBackground(Color.WHITE);
@@ -163,7 +169,7 @@ public class ClueGameGUI extends JFrame{
 		
 		JLabel personCard = new JLabel("");
 		
-		assets.setAsset(personCard, "missing", cardArray[2].getCardType());
+		assets.setAsset(personCard, "Unknown", CardType.PERSON);
 		
 		personCard.setForeground(Color.WHITE);
 		personCard.setBackground(Color.WHITE);
@@ -172,7 +178,7 @@ public class ClueGameGUI extends JFrame{
 		
 		JLabel roomCard = new JLabel("");
 		
-		assets.setAsset(roomCard, "Bedroom", CardType.ROOM);
+		assets.setAsset(roomCard, "Unknown", CardType.PERSON);
 		
 		roomCard.setForeground(Color.WHITE);
 		roomCard.setBackground(Color.WHITE);
@@ -183,7 +189,7 @@ public class ClueGameGUI extends JFrame{
 		
 		JLabel playTurnCard = new JLabel("");
 		
-		assets.setAsset(playTurnCard, "Mrs. White", CardType.PERSON);
+		assets.setAsset(playTurnCard, self.getPlayerName(), CardType.PERSON);
 		
 		playTurnCard.setForeground(Color.WHITE);
 		playTurnCard.setBackground(Color.WHITE);
@@ -230,7 +236,8 @@ public class ClueGameGUI extends JFrame{
 		
 		JLabel diceIcon = new JLabel("");
 		
-		assets.setAsset(diceIcon, 2);
+		//any number outside 1-6 will display a question mark
+		assets.setAsset(diceIcon, 7);
 		
 		diceIcon.setBounds(719, 660, 75, 75);
 		clueWindow.getContentPane().add(diceIcon);

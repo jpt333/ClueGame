@@ -597,6 +597,10 @@ public class Board extends JPanel{
 				getCellAt(i, j).draw(g);
 			}
 		}
+		//draw targets
+		for(BoardCell highlight: targets){
+			highlight.highlight(g);
+		}
 		//Draws players
 		for(Player playersLoc: players) {
 			playersLoc.draw(g);
