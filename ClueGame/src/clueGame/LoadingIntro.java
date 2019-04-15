@@ -60,7 +60,7 @@ public class LoadingIntro extends JFrame {
 		int randomNum = rand.nextInt(FUNNYLINES.length);
 		
 		setResizable(false);
-		setIconImage(Toolkit.getDefaultToolkit().getImage(LoadingIntro.class.getResource("/Resources/clueGameLogo.png")));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(LoadingIntro.class.getResource("/Resources/Miscellaneous/clueGameLogo.png")));
 		setBackground(Color.DARK_GRAY);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);

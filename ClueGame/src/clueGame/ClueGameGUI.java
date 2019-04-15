@@ -37,7 +37,7 @@ import javax.swing.Action;
 public class ClueGameGUI extends JFrame{
 
 	private JFrame clueWindow;
-	
+	private AssetsManager assets;
 	//generated using window builder
 	
 	/**
@@ -61,9 +61,10 @@ public class ClueGameGUI extends JFrame{
 	 * Initialize the contents of the frame.
 	 */
 	ClueGameGUI() {
+		assets = new AssetsManager();
+		
 		clueWindow = new JFrame();
 		clueWindow.setResizable(false);
-		clueWindow.getContentPane().setForeground(Color.WHITE);
 		clueWindow.getContentPane().setEnabled(false);
 		clueWindow.setForeground(Color.WHITE);
 		clueWindow.setIconImage(Toolkit.getDefaultToolkit().getImage(ClueGameGUI.class.getResource("/Resources/Miscellaneous/clueGameLogo.png")));
@@ -135,62 +136,7 @@ public class ClueGameGUI extends JFrame{
 		});
 		dropMenu.add(quit);
 
-		JLabel guessResultCard = new JLabel("");
-		guessResultCard.setIcon(new ImageIcon(ClueGameGUI.class.getResource("/Resources/Proffesoor Plum.png")));
-		guessResultCard.setForeground(SystemColor.text);
-		guessResultCard.setBackground(SystemColor.window);
-		guessResultCard.setBounds(12, 722, 100, 150);
-		clueWindow.getContentPane().add(guessResultCard);
-		
-		JLabel weaponcard = new JLabel("");
-		weaponcard.setIcon(new ImageIcon(ClueGameGUI.class.getResource("/Resources/Knife.png")));
-		weaponcard.setForeground(Color.WHITE);
-		weaponcard.setBackground(Color.WHITE);
-		weaponcard.setBounds(143, 722, 100, 150);
-		clueWindow.getContentPane().add(weaponcard);
-		
-		JLabel personCard = new JLabel("");
-		personCard.setIcon(new ImageIcon(ClueGameGUI.class.getResource("/Resources/Mr. Green.png")));
-		personCard.setForeground(Color.WHITE);
-		personCard.setBackground(Color.WHITE);
-		personCard.setBounds(255, 722, 100, 150);
-		clueWindow.getContentPane().add(personCard);
-		
-		JLabel roomCard = new JLabel("");
-		roomCard.setIcon(new ImageIcon(ClueGameGUI.class.getResource("/Resources/PlaceHolder.png")));
-		roomCard.setForeground(Color.WHITE);
-		roomCard.setBackground(Color.WHITE);
-		roomCard.setBounds(367, 722, 100, 150);
-		clueWindow.getContentPane().add(roomCard);
-		
-		JLabel playTurnCard = new JLabel("");
-		playTurnCard.setIcon(new ImageIcon(ClueGameGUI.class.getResource("/Resources/Mrs White.png")));
-		playTurnCard.setForeground(Color.WHITE);
-		playTurnCard.setBackground(Color.WHITE);
-		playTurnCard.setBounds(507, 722, 100, 150);
-		clueWindow.getContentPane().add(playTurnCard);
-		
-		JLabel card1 = new JLabel("");
-		card1.setIcon(new ImageIcon(ClueGameGUI.class.getResource("/Resources/Mrs Scarlet.png")));
-		card1.setForeground(Color.WHITE);
-		card1.setBackground(Color.WHITE);
-		card1.setBounds(705, 96, 100, 150);
-		clueWindow.getContentPane().add(card1);
-		
-		JLabel card2 = new JLabel("");
-		card2.setIcon(new ImageIcon(ClueGameGUI.class.getResource("/Resources/Pipe.png")));
-		card2.setForeground(Color.WHITE);
-		card2.setBackground(Color.WHITE);
-		card2.setBounds(705, 271, 100, 150);
-		clueWindow.getContentPane().add(card2);
-		
-		JLabel card3 = new JLabel("");
-		card3.setIcon(new ImageIcon(ClueGameGUI.class.getResource("/Resources/Mrs Peacock.png")));
-		card3.setForeground(Color.WHITE);
-		card3.setBackground(Color.WHITE);
-		card3.setBounds(705, 447, 100, 150);
-		clueWindow.getContentPane().add(card3);
-	
+		//loads the game board
 		
 		Board gameBoard = Board.getInstance();
 		gameBoard.setConfigFiles("ClueBoard.csv", "rooms.txt");
@@ -198,6 +144,87 @@ public class ClueGameGUI extends JFrame{
 		gameBoard.initialize();
 		gameBoard.setBounds(0, 25, 702, 676);
 		clueWindow.getContentPane().add(gameBoard);
+		
+		//this is the result of the guess
+		JLabel guessResultCard = new JLabel("");
+		
+		assets.setAsset(guessResultCard, "Professor Plum", CardType.PERSON);
+		
+		guessResultCard.setForeground(SystemColor.text);
+		guessResultCard.setBackground(SystemColor.window);
+		guessResultCard.setBounds(12, 722, 100, 150);
+		clueWindow.getContentPane().add(guessResultCard);
+		
+		
+		//these three are the guess cards
+		JLabel weaponcard = new JLabel("");
+		
+		assets.setAsset(weaponcard, "Knife", CardType.WEAPON);
+		
+		weaponcard.setForeground(Color.WHITE);
+		weaponcard.setBackground(Color.WHITE);
+		weaponcard.setBounds(143, 722, 100, 150);
+		clueWindow.getContentPane().add(weaponcard);
+		
+		JLabel personCard = new JLabel("");
+		
+		assets.setAsset(personCard, "Mr. Green", CardType.PERSON);
+		
+		personCard.setForeground(Color.WHITE);
+		personCard.setBackground(Color.WHITE);
+		personCard.setBounds(255, 722, 100, 150);
+		clueWindow.getContentPane().add(personCard);
+		
+		JLabel roomCard = new JLabel("");
+		
+		assets.setAsset(roomCard, "Bedroom", CardType.ROOM);
+		
+		roomCard.setForeground(Color.WHITE);
+		roomCard.setBackground(Color.WHITE);
+		roomCard.setBounds(367, 722, 100, 150);
+		clueWindow.getContentPane().add(roomCard);
+		
+		//which players turn it is
+		
+		JLabel playTurnCard = new JLabel("");
+		
+		assets.setAsset(playTurnCard, "Mrs. White", CardType.PERSON);
+		
+		playTurnCard.setForeground(Color.WHITE);
+		playTurnCard.setBackground(Color.WHITE);
+		playTurnCard.setBounds(507, 722, 100, 150);
+		clueWindow.getContentPane().add(playTurnCard);
+		
+		//cards that were delt to the player
+		
+		JLabel card1 = new JLabel("");
+		
+		assets.setAsset(card1, "Miss Scarlet", CardType.PERSON);
+		
+		card1.setForeground(Color.WHITE);
+		card1.setBackground(Color.WHITE);
+		card1.setBounds(705, 96, 100, 150);
+		clueWindow.getContentPane().add(card1);
+		
+		JLabel card2 = new JLabel("");
+		
+		assets.setAsset(card2, "Pipe", CardType.WEAPON);
+		
+		card2.setForeground(Color.WHITE);
+		card2.setBackground(Color.WHITE);
+		card2.setBounds(705, 271, 100, 150);
+		clueWindow.getContentPane().add(card2);
+		
+		JLabel card3 = new JLabel("");
+		
+		assets.setAsset(card3, "Mrs. Peacock", CardType.PERSON);
+		
+		card3.setForeground(Color.WHITE);
+		card3.setBackground(Color.WHITE);
+		card3.setBounds(705, 447, 100, 150);
+		clueWindow.getContentPane().add(card3);
+	
+		//shows the dice elements
 		
 		JTextArea diceText = new JTextArea();
 		diceText.setText("Dice Roll");
@@ -207,7 +234,9 @@ public class ClueGameGUI extends JFrame{
 		clueWindow.getContentPane().add(diceText);
 		
 		JLabel diceIcon = new JLabel("");
-		diceIcon.setIcon(new ImageIcon(ClueGameGUI.class.getResource("/Resources/6.png")));
+		
+		assets.setAsset(diceIcon, 6);
+		
 		diceIcon.setBounds(719, 660, 75, 75);
 		clueWindow.getContentPane().add(diceIcon);
 		clueWindow.setBounds(100, 100, 848, 920);
