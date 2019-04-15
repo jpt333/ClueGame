@@ -71,6 +71,7 @@ public class ClueGameGUI extends JFrame{
 		accusationButton.setBounds(673, 822, 158, 38);
 		clueWindow.getContentPane().add(accusationButton);
 		
+		//Next Player button
 		JButton nextPlayer = new JButton("Next Player");
 		nextPlayer.setBounds(673, 758, 158, 38);
 		clueWindow.getContentPane().add(nextPlayer);
@@ -191,7 +192,7 @@ public class ClueGameGUI extends JFrame{
 		playTurnCard.setBounds(507, 722, 100, 150);
 		clueWindow.getContentPane().add(playTurnCard);
 		
-		//cards that were delt to the player
+		//cards that were dealt to the player
 		
 		JLabel card1 = new JLabel("");
 		
