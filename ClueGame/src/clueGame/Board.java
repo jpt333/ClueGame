@@ -2,6 +2,8 @@
 package clueGame;
 
 import java.awt.Point;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.awt.geom.AffineTransform;
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
@@ -715,4 +717,16 @@ public class Board extends JPanel{
 			}
 		}
 	}	
+	//Mouse Click listener
+	public void mouseClicked(MouseEvent e) {
+			//get clicked its location and repaint
+		repaint();
+	}
+	public void mousePressed (MouseEvent e) {}
+	public void mouseExited (MouseEvent e) {}
+	public void mouseEntered (MouseEvent e) {}
+	public void mouseReleased (MouseEvent e) {}
+	
+	
+	
 }
