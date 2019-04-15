@@ -147,7 +147,7 @@ public class ClueGameGUI extends JFrame{
 		clueWindow.setBounds(100, 100, 848, 920);
 		clueWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		LoadingIntro loadingWindow = new LoadingIntro(self);
+		//LoadingIntro loadingWindow = new LoadingIntro(self);
 		
 		clueWindow.setVisible(true);
 		

@@ -115,11 +115,11 @@ public class BoardCell {
 	}
 
 	public void highlight(Graphics g) {
-		Color highlightColor = new Color(255, 0, 0, 127);
+		
+		Color highlightColor = new Color(255, 0, 0, 60);
 		g.setColor(highlightColor);
-		g.fillRect(pix.x, pix.y + 20, WIDTH, 6);
-		g.fillRect(pix.x + 33, pix.y, 6, HEIGHT);
-		g.fillRect(pix.x, pix.y, 6, HEIGHT);
-		g.fillRect(pix.x, pix.y, WIDTH, 6);
+		g.fillRect(pix.x, pix.y, WIDTH, HEIGHT);
+		g.drawRect(pix.x, pix.y, WIDTH, HEIGHT);
+		
 	}
 }
