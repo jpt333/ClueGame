@@ -114,6 +114,7 @@ public class BoardCell {
 		}
 	}
 
+	//Helps draw targets
 	public void highlight(Graphics g) {
 		
 		Color highlightColor = new Color(255, 0, 0, 60);
