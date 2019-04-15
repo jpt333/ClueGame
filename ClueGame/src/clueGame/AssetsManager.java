@@ -41,7 +41,7 @@ public class AssetsManager {
 	}
 	
 	private String getDicePath(int number) {
-		if(number <=0 && number > 6) {
+		if(number <=0 || number > 6) {
 			//dice number not found
 			return "/Resources/Miscellaneous/Missing Dice.png";
 		}

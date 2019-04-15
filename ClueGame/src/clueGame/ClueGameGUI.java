@@ -46,20 +46,10 @@ public class ClueGameGUI extends JFrame{
 	public static void main(String[] args) {
 			ClueGameGUI window = new ClueGameGUI();
 			//comment this out to get rid of the loading its only for fun and doesn't do anything
-			LoadingIntro loadingWindow = new LoadingIntro();
-			//----------------------------------------------
-			window.clueWindow.setVisible(true);
+			
 	}
 
 	
-	/**
-	 * Create the application.
-	 */
-	
-	
-	/**
-	 * Initialize the contents of the frame.
-	 */
 	ClueGameGUI() {
 		assets = new AssetsManager();
 		
@@ -235,12 +225,15 @@ public class ClueGameGUI extends JFrame{
 		
 		JLabel diceIcon = new JLabel("");
 		
-		assets.setAsset(diceIcon, 6);
+		assets.setAsset(diceIcon, 234);
 		
 		diceIcon.setBounds(719, 660, 75, 75);
 		clueWindow.getContentPane().add(diceIcon);
 		clueWindow.setBounds(100, 100, 848, 920);
 		clueWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		LoadingIntro loadingWindow = new LoadingIntro();
+		clueWindow.setVisible(true);
 	}
 	
 
