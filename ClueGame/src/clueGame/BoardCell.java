@@ -115,8 +115,9 @@ public class BoardCell {
 	}
 
 	public void highlight(Graphics g) {
-		g.setColor(Color.RED);
-		g.fillRect(pix.x + 20, pix.y, 5, HEIGHT);
+		Color highlightColor = new Color(255, 0, 0, 127);
+		g.setColor(highlightColor);
+		g.fillRect(pix.x, pix.y + 20, WIDTH, 6);
 		g.fillRect(pix.x + 33, pix.y, 6, HEIGHT);
 		g.fillRect(pix.x, pix.y, 6, HEIGHT);
 		g.fillRect(pix.x, pix.y, WIDTH, 6);
