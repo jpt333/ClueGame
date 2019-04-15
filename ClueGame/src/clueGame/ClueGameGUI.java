@@ -53,7 +53,7 @@ public class ClueGameGUI extends JFrame{
 	
 	ClueGameGUI() {
 		assets = new AssetsManager();
-		
+		//set layout and colors
 		clueWindow = new JFrame();
 		clueWindow.setResizable(false);
 		clueWindow.getContentPane().setEnabled(false);
@@ -109,7 +109,7 @@ public class ClueGameGUI extends JFrame{
 		
 		JMenu dropMenu = new JMenu("File");
 		menuBar.add(dropMenu);
-		
+		//add detectivenotes to dropmenu in File
 		JMenuItem detectiveNotes = new JMenuItem("Detective Notes");
 		detectiveNotes.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -118,7 +118,7 @@ public class ClueGameGUI extends JFrame{
 			}
 		});
 		dropMenu.add(detectiveNotes);
-		
+		//add quit to dropmenu
 		JMenuItem quit = new JMenuItem("Quit");
 		quit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
