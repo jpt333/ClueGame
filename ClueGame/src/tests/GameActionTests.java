@@ -65,17 +65,13 @@ public class GameActionTests {
 		
 		//TESTING!!!!!!!!!!!!!!!!!
 		//Bedroom exists in list
-		System.out.println(targetss.contains(board.getCellAt(8, 2)));
+		//System.out.println(targetss.contains(board.getCellAt(8, 2)));
 
 		BoardCell select = player.pickLocation(targetss);
-		//System.out.println(select.getInitial()); //IT"S NOT SELECTING ROOM
-		System.out.println(select);
+		//System.out.println(select.getInitial());
+		//System.out.println(select);
 
-		//System.out.print(select.isWalkway());
-		//System.out.print(select.isRoom());
-		System.out.print(select);
-		//OR ISROOM() ISN"T WORKING!!!!!!!
-		//should initial be a char?
+		
 		
 		assertEquals(select, board.getCellAt(8,2));
 		
@@ -83,7 +79,6 @@ public class GameActionTests {
 		select = player.pickLocation(targetss);
 		board.calcTargets(8,4,2);
 		Set<BoardCell> targets2 = board.getTargets();
-		System.out.println(select);
 		
 	}
 	
@@ -258,7 +253,7 @@ public class GameActionTests {
 		//sugg. only human can disprove, but human accuser, return null
 		
 		//this is not working even though it looks like it is 
-		System.out.println(board.handleSuggestion(playerHuman));
+		//System.out.println(board.handleSuggestion(playerHuman));
 		
 		//suggestion only human can disprove returns answer
 		suggestion.person = killer;

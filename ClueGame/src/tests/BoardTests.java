@@ -50,8 +50,8 @@ public class BoardTests {
 		//System.out.println(legend);
 		
 		assertEquals("Walkway",legend.get('W'));
-		assertEquals("Living room",legend.get('L'));
-		assertEquals("Dining room",legend.get('D'));
+		assertEquals("Living Room",legend.get('L'));
+		assertEquals("Dining Room",legend.get('D'));
 		
 		assertEquals(ACTUAL_ROOM_COUNT, legend.size()); 
 		
