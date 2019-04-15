@@ -5,6 +5,7 @@ import java.awt.Point;
 import java.awt.geom.AffineTransform;
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
+import java.awt.Label;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
@@ -578,7 +579,14 @@ public class Board extends JPanel{
 		return true;
 	}
 	
-
+	public Player getHumanPlayer() {
+		Player playersLoc[] = new Player[players.size()];
+		
+		Random rand = new Random();
+		players.toArray(playersLoc);
+		int randomNum = rand.nextInt(playersLoc.length);
+		return playersLoc[randomNum];
+	}
 		
 	
 	

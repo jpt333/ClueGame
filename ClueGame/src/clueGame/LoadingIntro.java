@@ -38,17 +38,7 @@ public class LoadingIntro extends JDialog  {
 	private JPanel contentPane;
 	private JProgressBar progressBar;
 	
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		LoadingIntro frame = new LoadingIntro();
-	}
-
-	/**
-	 * Create the frame.
-	 */
-	public LoadingIntro() {
+	public LoadingIntro(Player self) {
 		AssetsManager assets = new AssetsManager();
 		final String FUNNYLINES[] = new String[9];
 		FUNNYLINES[0] = "Scrunching Scrunchies";
@@ -98,7 +88,7 @@ public class LoadingIntro extends JDialog  {
 		//the card the person will be
 		JLabel humanPlayer = new JLabel("");
 		
-		assets.setAsset(humanPlayer, "Mrs. Peacock", CardType.PERSON);
+		assets.setAsset(humanPlayer, self.getPlayerName(), CardType.PERSON);
 		
 		humanPlayer.setForeground(Color.WHITE);
 		humanPlayer.setBackground(Color.WHITE);

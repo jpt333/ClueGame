@@ -19,6 +19,8 @@ import com.jgoodies.forms.layout.ColumnSpec;
 import com.jgoodies.forms.layout.RowSpec;
 import com.jgoodies.forms.layout.FormSpecs;
 import java.awt.event.ActionListener;
+import java.util.Random;
+import java.util.Set;
 import java.awt.event.ActionEvent;
 import javax.swing.JEditorPane;
 import javax.swing.JTextArea;
@@ -130,13 +132,18 @@ public class ClueGameGUI extends JFrame{
 		gameBoard.setConfigFiles("ClueBoard.csv", "rooms.txt");
 		gameBoard.setCardFiles("weapons.txt", "Person.txt");
 		gameBoard.initialize();
+		gameBoard.dealCards();
 		gameBoard.setBounds(0, 25, 702, 676);
 		clueWindow.getContentPane().add(gameBoard);
 		
+		Player self = gameBoard.getHumanPlayer();
+		Set<Card> cards = self.getCards();
+		Card cardArray[] = new Card[cards.size()];
+		cards.toArray(cardArray);
 		//this is the result of the guess
 		JLabel guessResultCard = new JLabel("");
 		
-		assets.setAsset(guessResultCard, "Professor Plum", CardType.PERSON);
+		assets.setAsset(guessResultCard, "missing" , cardArray[0].getCardType());
 		
 		guessResultCard.setForeground(SystemColor.text);
 		guessResultCard.setBackground(SystemColor.window);
@@ -147,7 +154,7 @@ public class ClueGameGUI extends JFrame{
 		//these three are the guess cards
 		JLabel weaponcard = new JLabel("");
 		
-		assets.setAsset(weaponcard, "Knife", CardType.WEAPON);
+		assets.setAsset(weaponcard, "missing", cardArray[1].getCardType());
 		
 		weaponcard.setForeground(Color.WHITE);
 		weaponcard.setBackground(Color.WHITE);
@@ -156,7 +163,7 @@ public class ClueGameGUI extends JFrame{
 		
 		JLabel personCard = new JLabel("");
 		
-		assets.setAsset(personCard, "Mr. Green", CardType.PERSON);
+		assets.setAsset(personCard, "missing", cardArray[2].getCardType());
 		
 		personCard.setForeground(Color.WHITE);
 		personCard.setBackground(Color.WHITE);
@@ -187,7 +194,7 @@ public class ClueGameGUI extends JFrame{
 		
 		JLabel card1 = new JLabel("");
 		
-		assets.setAsset(card1, "Miss Scarlet", CardType.PERSON);
+		assets.setAsset(card1, cardArray[0].getCardName() , cardArray[0].getCardType());
 		
 		card1.setForeground(Color.WHITE);
 		card1.setBackground(Color.WHITE);
@@ -196,7 +203,7 @@ public class ClueGameGUI extends JFrame{
 		
 		JLabel card2 = new JLabel("");
 		
-		assets.setAsset(card2, "Pipe", CardType.WEAPON);
+		assets.setAsset(card2, cardArray[1].getCardName() , cardArray[1].getCardType());
 		
 		card2.setForeground(Color.WHITE);
 		card2.setBackground(Color.WHITE);
@@ -205,7 +212,7 @@ public class ClueGameGUI extends JFrame{
 		
 		JLabel card3 = new JLabel("");
 		
-		assets.setAsset(card3, "Mrs. Peacock", CardType.PERSON);
+		assets.setAsset(card3, cardArray[2].getCardName() , cardArray[2].getCardType());
 		
 		card3.setForeground(Color.WHITE);
 		card3.setBackground(Color.WHITE);
@@ -230,7 +237,7 @@ public class ClueGameGUI extends JFrame{
 		clueWindow.setBounds(100, 100, 848, 920);
 		clueWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		LoadingIntro loadingWindow = new LoadingIntro();
+		LoadingIntro loadingWindow = new LoadingIntro(self);
 		
 		clueWindow.setVisible(true);
 		

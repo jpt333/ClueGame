@@ -13,12 +13,13 @@ public class Player{
 	private String playerName;
 	private Color color;
 	private Point pixel;
+
 	protected Set<Card> cards;
 	protected BoardCell currentLocation;
 	
-	public final int WIDTH = 26;
-	public final int HEIGHT = 26;
-	public final int CENTER_FACTOR = 7;
+	private final int WIDTH = 26;
+	private final int HEIGHT = 26;
+	private final int CENTER_FACTOR = 7;
 	
 	public Player(String playerName, BoardCell currentLocation, Color color) {
 		this.playerName = playerName;
@@ -128,8 +129,16 @@ public class Player{
 		return answer;
 	}
 	
+	public String getPlayerName() {
+		return playerName;
+	}
+	
 	public void setCurrentLocation(BoardCell currentLocation){
 		this.currentLocation = currentLocation;
+	}
+	
+	public Set<Card> getCards() {
+		return cards;	
 	}
 	
 	public void setCards(Set<Card> cardSet) {

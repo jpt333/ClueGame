@@ -64,7 +64,6 @@ public class AssetsManager {
 			return "/Resources/Weapons/" + cardName + ".png";
 		}
 		
-		//unreachable
-		return null;
+		return "/Resources/Miscellaneous/Missing Card.png";
 	}
 }
