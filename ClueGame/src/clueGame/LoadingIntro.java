@@ -4,10 +4,13 @@ import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import java.awt.Color;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
@@ -21,6 +24,7 @@ import net.miginfocom.swing.MigLayout;
 import javax.swing.SpringLayout;
 import java.awt.Component;
 import javax.swing.Box;
+import javax.swing.JButton;
 import javax.swing.JTextPane;
 import javax.swing.JTextArea;
 import java.awt.Label;
@@ -44,7 +48,7 @@ public class LoadingIntro extends JFrame {
 	 * Create the frame.
 	 */
 	public LoadingIntro() {
-		
+		AssetsManager assets = new AssetsManager();
 		final String FUNNYLINES[] = new String[9];
 		FUNNYLINES[0] = "Scrunching Scrunchies";
 		FUNNYLINES[1] = "Removing Stripes from Striped Horses";
@@ -83,10 +87,37 @@ public class LoadingIntro extends JFrame {
 		
 		setVisible(true);
 		update();
-		dispose();
+		
+		JLabel humanPlayerTitle = new JLabel("You are:");
+		humanPlayerTitle.setForeground(Color.WHITE);
+		humanPlayerTitle.setBackground(Color.WHITE);
+		humanPlayerTitle.setBounds(203, 14, 100, 10);
+		contentPane.add(humanPlayerTitle);
+		
+		//the card the person will be
+		JLabel humanPlayer = new JLabel("");
+		
+		assets.setAsset(humanPlayer, "Mrs. Peacock", CardType.PERSON);
+		
+		humanPlayer.setForeground(Color.WHITE);
+		humanPlayer.setBackground(Color.WHITE);
+		humanPlayer.setBounds(175, 40, 100, 150);
+		contentPane.add(humanPlayer);
+		
+		//button to continue
+		JButton accusationButton = new JButton("Ok");
+		accusationButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+			}
+		});
+		accusationButton.setBounds(188, 215, 75, 40);
+		contentPane.add(accusationButton);
+		
+		contentPane.repaint();
 	}
 	
-	public void update() {
+	private void update() {
 		long startTime = System.nanoTime();
 		while(TimeUnit.MILLISECONDS.convert(System.nanoTime() - startTime, TimeUnit.NANOSECONDS) < TIMEDURRATION) {
 			int time = (int) TimeUnit.MILLISECONDS.convert(System.nanoTime() - startTime, TimeUnit.NANOSECONDS);
@@ -95,5 +126,8 @@ public class LoadingIntro extends JFrame {
 			
 			progressBar.repaint();
 		}
+		
+		contentPane.removeAll();
+		contentPane.repaint();
 	}
 }

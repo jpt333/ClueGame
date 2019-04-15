@@ -225,7 +225,7 @@ public class ClueGameGUI extends JFrame{
 		
 		JLabel diceIcon = new JLabel("");
 		
-		assets.setAsset(diceIcon, 234);
+		assets.setAsset(diceIcon, 2);
 		
 		diceIcon.setBounds(719, 660, 75, 75);
 		clueWindow.getContentPane().add(diceIcon);
