@@ -3,7 +3,8 @@ package clueGame;
 
 import java.awt.Color;
 import java.awt.Graphics;
-import java.awt.Point; 
+import java.awt.Point;
+import java.awt.Rectangle;
 
 import clueGame.DoorDirection;
 
@@ -122,5 +123,13 @@ public class BoardCell {
 		g.fillRect(pix.x, pix.y, WIDTH, HEIGHT);
 		g.drawRect(pix.x, pix.y, WIDTH, HEIGHT);
 		
+	}
+
+	public boolean hasTarget(int x, int y) {
+		Rectangle rect = new Rectangle(pix.x, pix.y, 39, 26);
+		if(rect.contains(new Point(x, y))) {
+			return true;
+		}
+		return false;
 	}
 }

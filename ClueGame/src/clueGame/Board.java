@@ -2,6 +2,7 @@
 package clueGame;
 
 import java.awt.Point;
+import java.awt.Rectangle;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.geom.AffineTransform;
@@ -59,6 +60,8 @@ public class Board extends JPanel{
 	
 	private int x;
 	private int y;
+	
+	Point pixel;
 	
 	public final int WIDTH = 39;
 	public final int HEIGHT = 26;
@@ -718,15 +721,30 @@ public class Board extends JPanel{
 		}
 	}	
 	//Mouse Click listener
-	public void mouseClicked(MouseEvent e) {
+	private class ClickListener implements MouseListener{
+		public void mouseClicked(MouseEvent e) {
 			//get clicked its location and repaint
-		repaint();
+		BoardCell chosenBox = null;
+		
+		for(int i = 0; i < getNumRows(); i++) {
+			for(int j = 0; j < getNumColumns(); j++) {
+				if(getCellAt(i,j).hasTarget(e.getX(), e.getY())) {
+					chosenBox = getCellAt(i,j);
+					repaint();
+					break;
+				}
+			}
+		}
+		
+		
+		
+		
 	}
 	public void mousePressed (MouseEvent e) {}
 	public void mouseExited (MouseEvent e) {}
 	public void mouseEntered (MouseEvent e) {}
 	public void mouseReleased (MouseEvent e) {}
-	
+	}
 	
 	
 }
