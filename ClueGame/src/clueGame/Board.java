@@ -25,6 +25,7 @@ import java.util.Random;
 import java.util.Scanner;
 import java.util.Set;
 
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import clueGame.BoardCell;
@@ -720,13 +721,14 @@ public class Board extends JPanel{
 			}
 		}
 	}	
+	
 	//Mouse Click listener
-<<<<<<< Upstream, based on origin/master
 	private class ClickListener implements MouseListener{
 		public void mouseClicked(MouseEvent e) {
 			//get clicked its location and repaint
 		BoardCell chosenBox = null;
 		
+		//check if chosen target from the targets
 		for(int i = 0; i < getNumRows(); i++) {
 			for(int j = 0; j < getNumColumns(); j++) {
 				if(getCellAt(i,j).hasTarget(e.getX(), e.getY())) {
@@ -736,16 +738,16 @@ public class Board extends JPanel{
 				}
 			}
 		}
-		
-		
-		
-		
-=======
-	
-	//addMouseListener(new MouseAdapter();
-	public void mouseClicked(MouseEvent e) {
-		repaint();
->>>>>>> 958c121 general refactoring
+		//if cell exists and is a target, repaint
+		if(chosenBox != null) {
+			if(targets.contains(chosenBox)) {
+				repaint();
+				
+			}
+		}else {
+			JOptionPane.showMessageDialog(null, "That is a correct target.", "Message", JOptionPane.INFORMATION_MESSAGE);
+			repaint();
+		}
 	}
 	public void mousePressed (MouseEvent e) {}
 	public void mouseExited (MouseEvent e) {}

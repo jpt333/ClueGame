@@ -121,7 +121,7 @@ public class BoardCell {
 		g.setColor(highlightColor);
 		g.fillRect(pix.x, pix.y, WIDTH, HEIGHT);
 		g.drawRect(pix.x, pix.y, WIDTH, HEIGHT);
-<<<<<<< Upstream, based on origin/master
+
 		
 	}
 
@@ -131,7 +131,6 @@ public class BoardCell {
 			return true;
 		}
 		return false;
-=======
->>>>>>> 958c121 general refactoring
+
 	}
 }
