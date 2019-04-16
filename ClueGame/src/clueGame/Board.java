@@ -721,6 +721,7 @@ public class Board extends JPanel{
 		}
 	}	
 	//Mouse Click listener
+<<<<<<< Upstream, based on origin/master
 	private class ClickListener implements MouseListener{
 		public void mouseClicked(MouseEvent e) {
 			//get clicked its location and repaint
@@ -739,6 +740,12 @@ public class Board extends JPanel{
 		
 		
 		
+=======
+	
+	//addMouseListener(new MouseAdapter();
+	public void mouseClicked(MouseEvent e) {
+		repaint();
+>>>>>>> 958c121 general refactoring
 	}
 	public void mousePressed (MouseEvent e) {}
 	public void mouseExited (MouseEvent e) {}

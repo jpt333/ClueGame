@@ -117,11 +117,11 @@ public class BoardCell {
 
 	//Helps draw targets
 	public void highlight(Graphics g) {
-		
 		Color highlightColor = new Color(255, 0, 0, 60);
 		g.setColor(highlightColor);
 		g.fillRect(pix.x, pix.y, WIDTH, HEIGHT);
 		g.drawRect(pix.x, pix.y, WIDTH, HEIGHT);
+<<<<<<< Upstream, based on origin/master
 		
 	}
 
@@ -131,5 +131,7 @@ public class BoardCell {
 			return true;
 		}
 		return false;
+=======
+>>>>>>> 958c121 general refactoring
 	}
 }
