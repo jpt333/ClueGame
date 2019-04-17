@@ -121,17 +121,10 @@ public class BoardCell {
 		g.setColor(highlightColor);
 		g.fillRect(pix.x, pix.y, WIDTH, HEIGHT);
 		g.drawRect(pix.x, pix.y, WIDTH, HEIGHT);
-<<<<<<< Upstream, based on origin/master
-		
 	}
 
 	public boolean hasTarget(int x, int y) {
 		Rectangle rect = new Rectangle(pix.x, pix.y, 39, 26);
-		if(rect.contains(new Point(x, y))) {
-			return true;
-		}
-		return false;
-=======
->>>>>>> 958c121 general refactoring
+		return rect.contains(new Point(x, y));
 	}
 }

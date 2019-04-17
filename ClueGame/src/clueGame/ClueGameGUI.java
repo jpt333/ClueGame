@@ -20,6 +20,8 @@ import com.jgoodies.forms.layout.ColumnSpec;
 import com.jgoodies.forms.layout.RowSpec;
 import com.jgoodies.forms.layout.FormSpecs;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.Random;
 import java.util.Set;
 import java.awt.event.ActionEvent;
@@ -41,11 +43,9 @@ public class ClueGameGUI extends JFrame{
 
 	private JFrame clueWindow;
 	private AssetsManager assets;
+	Board gameBoard;
 	//generated using window builder
 	
-	/**
-	 * Launch the application.
-	 */
 	public static void main(String[] args) {
 			ClueGameGUI window = new ClueGameGUI();
 	}
@@ -69,7 +69,7 @@ public class ClueGameGUI extends JFrame{
 		addElements();
 		//loads the game board
 		
-		Board gameBoard = Board.getInstance();
+		gameBoard = Board.getInstance();
 		gameBoard.setConfigFiles("ClueBoard.csv", "rooms.txt");
 		gameBoard.setCardFiles("weapons.txt", "Person.txt");
 		gameBoard.initialize();
@@ -267,6 +267,15 @@ public class ClueGameGUI extends JFrame{
 		roomCard.setBackground(Color.WHITE);
 		roomCard.setBounds(367, 722, 100, 150);
 		clueWindow.getContentPane().add(roomCard);
+	}
+	
+	void boardMovment(){
+		gameBoard.addMouseListener(new MouseAdapter() {
+			public void actionPerformed(MouseEvent  e) {
+				//compare this point to the location 
+				e.getPoint();
+			}
+		});
 	}
 	
 }

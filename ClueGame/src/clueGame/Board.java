@@ -720,38 +720,4 @@ public class Board extends JPanel{
 			}
 		}
 	}	
-	//Mouse Click listener
-<<<<<<< Upstream, based on origin/master
-	private class ClickListener implements MouseListener{
-		public void mouseClicked(MouseEvent e) {
-			//get clicked its location and repaint
-		BoardCell chosenBox = null;
-		
-		for(int i = 0; i < getNumRows(); i++) {
-			for(int j = 0; j < getNumColumns(); j++) {
-				if(getCellAt(i,j).hasTarget(e.getX(), e.getY())) {
-					chosenBox = getCellAt(i,j);
-					repaint();
-					break;
-				}
-			}
-		}
-		
-		
-		
-		
-=======
-	
-	//addMouseListener(new MouseAdapter();
-	public void mouseClicked(MouseEvent e) {
-		repaint();
->>>>>>> 958c121 general refactoring
-	}
-	public void mousePressed (MouseEvent e) {}
-	public void mouseExited (MouseEvent e) {}
-	public void mouseEntered (MouseEvent e) {}
-	public void mouseReleased (MouseEvent e) {}
-	}
-	
-	
 }
