@@ -34,6 +34,7 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import java.awt.Component;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import javax.swing.AbstractAction;
@@ -274,6 +275,29 @@ public class ClueGameGUI extends JFrame{
 			public void actionPerformed(MouseEvent  e) {
 				//compare this point to the location 
 				e.getPoint();
+				
+				BoardCell chosenBox = null;
+				
+				//check if chosen target from the targets
+				for(int i = 0; i < gameBoard.getNumRows(); i++) {
+					for(int j = 0; j < gameBoard.getNumColumns(); j++) {
+						if(gameBoard.getCellAt(i,j).hasTarget(e.getX(), e.getY())) {
+							chosenBox = gameBoard.getCellAt(i,j);
+							repaint();
+							break;
+						}
+					}
+				}
+				//if cell exists and is a target, repaint
+				if(chosenBox != null) {
+					if(gameBoard.getTargets().contains(chosenBox)) {
+						repaint();
+						
+					}
+				}else {
+					JOptionPane.showMessageDialog(null, "That is a correct target.", "Message", JOptionPane.INFORMATION_MESSAGE);
+					repaint();
+				}
 			}
 		});
 	}

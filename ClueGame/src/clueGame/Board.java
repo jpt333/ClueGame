@@ -721,42 +721,4 @@ public class Board extends JPanel{
 			}
 		}
 	}	
-<<<<<<< HEAD
-=======
-	
-	//Mouse Click listener
-	private class ClickListener implements MouseListener{
-		public void mouseClicked(MouseEvent e) {
-			//get clicked its location and repaint
-		BoardCell chosenBox = null;
-		
-		//check if chosen target from the targets
-		for(int i = 0; i < getNumRows(); i++) {
-			for(int j = 0; j < getNumColumns(); j++) {
-				if(getCellAt(i,j).hasTarget(e.getX(), e.getY())) {
-					chosenBox = getCellAt(i,j);
-					repaint();
-					break;
-				}
-			}
-		}
-		//if cell exists and is a target, repaint
-		if(chosenBox != null) {
-			if(targets.contains(chosenBox)) {
-				repaint();
-				
-			}
-		}else {
-			JOptionPane.showMessageDialog(null, "That is a correct target.", "Message", JOptionPane.INFORMATION_MESSAGE);
-			repaint();
-		}
-	}
-	public void mousePressed (MouseEvent e) {}
-	public void mouseExited (MouseEvent e) {}
-	public void mouseEntered (MouseEvent e) {}
-	public void mouseReleased (MouseEvent e) {}
-	}
-	
-	
->>>>>>> branch 'master' of https://github.com/michaelberg12/ClueGame.git
 }
