@@ -121,6 +121,7 @@ public class BoardCell {
 		g.setColor(highlightColor);
 		g.fillRect(pix.x, pix.y, WIDTH, HEIGHT);
 		g.drawRect(pix.x, pix.y, WIDTH, HEIGHT);
+
 	}
 
 	public boolean hasTarget(int x, int y) {
