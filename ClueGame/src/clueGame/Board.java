@@ -593,7 +593,10 @@ public class Board extends JPanel{
 		int randomNum = rand.nextInt(playersLoc.length);
 		return playersLoc[randomNum];
 	}
-		
+	
+	public void deleteTargets() {
+		targets.clear();
+	}
 	
 	
 	public void paintComponent(Graphics g) {

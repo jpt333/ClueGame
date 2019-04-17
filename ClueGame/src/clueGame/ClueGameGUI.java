@@ -45,6 +45,7 @@ public class ClueGameGUI extends JFrame{
 	private JFrame clueWindow;
 	private AssetsManager assets;
 	Board gameBoard;
+	Player self;
 	//generated using window builder
 	
 	public static void main(String[] args) {
@@ -82,7 +83,7 @@ public class ClueGameGUI extends JFrame{
 		//6 because the max dice number is 6
 		int diceRoll = rand.nextInt(6);
 		
-		Player self = gameBoard.getHumanPlayer();
+		self = gameBoard.getHumanPlayer();
 		gameBoard.calcTargets(self.getCurrentLocation().getLocation().y, self.getCurrentLocation().getLocation().x, diceRoll);
 		
 		Set<Card> cards = self.getCards();
@@ -291,8 +292,10 @@ public class ClueGameGUI extends JFrame{
 				
 				if(chosenBox != null) {
 					if(gameBoard.getTargets().contains(chosenBox)) {
-						JOptionPane.showMessageDialog(null, "That is a correct target.", "Message", JOptionPane.INFORMATION_MESSAGE);
-						repaint();
+						self.setCurrentLocation(chosenBox);
+						gameBoard.deleteTargets();
+						gameBoard.revalidate();
+						gameBoard.repaint();
 						
 					}
 				}else {
