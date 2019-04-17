@@ -148,10 +148,11 @@ public class ClueGameGUI extends JFrame{
 		clueWindow.setBounds(100, 100, 848, 920);
 		clueWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		//LoadingIntro loadingWindow = new LoadingIntro(self);
+		LoadingIntro loadingWindow = new LoadingIntro(self);
 		
 		clueWindow.setVisible(true);
 		
+		boardMovment();
 	}
 	
 
@@ -272,12 +273,10 @@ public class ClueGameGUI extends JFrame{
 	
 	void boardMovment(){
 		gameBoard.addMouseListener(new MouseAdapter() {
-			public void actionPerformed(MouseEvent  e) {
+			@Override
+            public void mouseReleased(MouseEvent e) {
 				//compare this point to the location 
-				e.getPoint();
-				
 				BoardCell chosenBox = null;
-				
 				//check if chosen target from the targets
 				for(int i = 0; i < gameBoard.getNumRows(); i++) {
 					for(int j = 0; j < gameBoard.getNumColumns(); j++) {
@@ -289,15 +288,17 @@ public class ClueGameGUI extends JFrame{
 					}
 				}
 				//if cell exists and is a target, repaint
+				
 				if(chosenBox != null) {
 					if(gameBoard.getTargets().contains(chosenBox)) {
+						JOptionPane.showMessageDialog(null, "That is a correct target.", "Message", JOptionPane.INFORMATION_MESSAGE);
 						repaint();
 						
 					}
 				}else {
-					JOptionPane.showMessageDialog(null, "That is a correct target.", "Message", JOptionPane.INFORMATION_MESSAGE);
 					repaint();
 				}
+				
 			}
 		});
 	}

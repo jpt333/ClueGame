@@ -125,7 +125,7 @@ public class BoardCell {
 	}
 
 	public boolean hasTarget(int x, int y) {
-		Rectangle rect = new Rectangle(pix.x, pix.y, 39, 26);
+		Rectangle rect = new Rectangle(pix.x, pix.y, WIDTH, HEIGHT);
 		return rect.contains(new Point(x, y));
 	}
 }
