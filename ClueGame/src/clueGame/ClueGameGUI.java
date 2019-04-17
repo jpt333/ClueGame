@@ -296,7 +296,8 @@ public class ClueGameGUI extends JFrame{
 						gameBoard.deleteTargets();
 						gameBoard.revalidate();
 						gameBoard.repaint();
-						
+						clueWindow.revalidate();
+						clueWindow.repaint();
 					}
 				}else {
 					repaint();
