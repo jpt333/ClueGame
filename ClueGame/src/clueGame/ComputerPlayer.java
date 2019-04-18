@@ -10,38 +10,23 @@ import java.util.Set;
 
 public class ComputerPlayer extends Player {
 
-	ArrayList<Character> roomsVisited;
+	Set<Character> roomsVisited;
 	BoardCell justVisited;
 	
 	public ComputerPlayer(String playerName, BoardCell currentLocation, Color color) {
 		super(playerName, currentLocation, color);
-		roomsVisited = new ArrayList<>();
+		roomsVisited = new HashSet<>();
 		
 	}
 
 	
 	public BoardCell pickLocation(Set<BoardCell> targets) {
+		
 		for(BoardCell targetsLoc: targets) {
 			
 			//check if it is a room
 			if(targetsLoc.isRoom()) {
-				//check to see if it has been visited
-				for(Character roomsVisitedLoc: roomsVisited) {
-					if(targetsLoc.getInitial() == roomsVisitedLoc.charValue()) {
-						continue;
-					}
-				}
-				//add to visited room and return
-				roomsVisited.add(targetsLoc.getInitial());
-
-				//check to see in not just visited , if so return
-				if(targetsLoc != justVisited) {
-					justVisited = targetsLoc;
-					return targetsLoc;
-				}
 				
-				justVisited = targetsLoc;
-				return targetsLoc;
 			}
 		}
 		
