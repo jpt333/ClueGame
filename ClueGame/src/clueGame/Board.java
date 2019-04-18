@@ -670,7 +670,7 @@ public class Board extends JPanel{
 						maxRowColInt = localMax;
 					}
 					//last position and the local max is the sane the global max
-					if(localMax == maxRowColInt && j == getNumColumns()-1) {
+					if(localMax == maxRowColInt && (j == getNumColumns()-1)) {
 						maxRowCol.add(i);
 					}
 				}
@@ -691,18 +691,18 @@ public class Board extends JPanel{
 					a1++;
 					if((maxRowCol.size() + 1)/2 == a1) {
 						for(int a2 = 0; true; a2++) {
-							//find the first occurance for centering
+							//find the first occurrence for centering
 							if(entry.getKey().equals(board[rowLoc][a2].getInitial())){
 								//starting point - half the width + half the length
-								startingPioint = (a2 * WIDTH) - width/2 + ((maxRowColInt/2)* WIDTH);
+								startingPioint = (a2 * WIDTH) - width/2  + ((maxRowColInt/2) * WIDTH);
 								break;
 							}
 						}
 						//here is where the text will be rendered 
-						if((width*1.5) < maxRowColInt * WIDTH) {
-							g.drawString(entry.getValue(), startingPioint, (rowLoc + 1) * HEIGHT);
+						if((width*1.5) < (maxRowColInt * WIDTH)) {
+							g.drawString(entry.getValue(), startingPioint + 15 , (rowLoc + 1) * HEIGHT);
 							break;
-						}else {
+						}else { //butterfly and livingroom
 							AffineTransform orig = g2.getTransform();
 							g2.rotate(-Math.PI/2);
 							g2.drawString(entry.getValue(), -(rowLoc + 2) * HEIGHT, startingPioint + width);
@@ -720,14 +720,14 @@ public class Board extends JPanel{
 						//here is where the text will be rendered 
 						
 						for(int a2 = 0; true; a2++) {
-							//find the first occurance for centering
+							//find the first occurrence for centering
 							if(entry.getKey().equals(board[rowLoc][a2].getInitial())){
 								//starting point - half the width + half the length
-								startingPioint = (a2 * WIDTH) - width/2 + ((maxRowColInt/2)* WIDTH);
+								startingPioint = (a2 * WIDTH) - width/2 + ((maxRowColInt/2)* WIDTH); //Here is where computerRoom is not starting in center somewhere
 								break;
 							}
 						}
-						if((width*1.5) < maxRowColInt * WIDTH) {
+						if((width*1.5) < maxRowColInt * WIDTH) {//computer, closet, kitchen, music   //computer affected here
 							g.drawString(entry.getValue(), startingPioint,  (rowLoc + 1) * HEIGHT);
 							break;
 						}else {
