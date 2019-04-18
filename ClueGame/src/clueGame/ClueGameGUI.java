@@ -46,6 +46,8 @@ public class ClueGameGUI extends JFrame{
 	private AssetsManager assets;
 	Board gameBoard;
 	Player self;
+	
+	boolean moved = false;
 	//generated using window builder
 	
 	public static void main(String[] args) {
@@ -290,14 +292,12 @@ public class ClueGameGUI extends JFrame{
 				}
 				//if cell exists and is a target, repaint
 				
-				if(chosenBox != null) {
+				if(chosenBox != null && !moved) {
 					if(gameBoard.getTargets().contains(chosenBox)) {
 						self.setCurrentLocation(chosenBox);
 						gameBoard.deleteTargets();
-						gameBoard.revalidate();
-						gameBoard.repaint();
-						clueWindow.revalidate();
-						clueWindow.repaint();
+						moved = true;
+						redraw();
 					}
 				}else {
 					repaint();
@@ -305,6 +305,13 @@ public class ClueGameGUI extends JFrame{
 				
 			}
 		});
+	}
+	
+	private void redraw() {
+		gameBoard.revalidate();
+		gameBoard.repaint();
+		clueWindow.revalidate();
+		clueWindow.repaint();
 	}
 	
 }
