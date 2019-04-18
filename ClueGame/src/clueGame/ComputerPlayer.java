@@ -10,7 +10,7 @@ import java.util.Set;
 
 public class ComputerPlayer extends Player {
 
-	Set<Character> roomsVisited;
+	Set<BoardCell> roomsVisited;
 	BoardCell justVisited;
 	
 	public ComputerPlayer(String playerName, BoardCell currentLocation, Color color) {
@@ -26,7 +26,15 @@ public class ComputerPlayer extends Player {
 			
 			//check if it is a room
 			if(targetsLoc.isRoom()) {
-				
+				//
+				if(roomsVisited.contains(targetsLoc)) {
+					//contains the room
+					continue;
+				}else {
+					//doesnt contain the room
+					roomsVisited.add(targetsLoc);
+					return targetsLoc;
+				}
 			}
 		}
 		
