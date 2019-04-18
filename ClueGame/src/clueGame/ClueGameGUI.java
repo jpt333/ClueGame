@@ -314,16 +314,16 @@ public class ClueGameGUI extends JFrame{
 				}
 				//if cell exists and is a target, repaint
 				
-				if(chosenBox != null && !moved) {
-					if(gameBoard.getTargets().contains(chosenBox)) {
-						self.setCurrentLocation(chosenBox);
-						gameBoard.deleteTargets();
-						moved = true;
-						redraw();
-					}
-				}else {
-					
-					repaint();
+				if(chosenBox == null) {
+					//do nothing
+				}else if(gameBoard.getTargets().contains(chosenBox) && !moved){
+					self.setCurrentLocation(chosenBox);
+					gameBoard.deleteTargets();
+					moved = true;
+					redraw();
+				}else if(!gameBoard.getTargets().contains(chosenBox) && !moved) {
+					JOptionPane.showMessageDialog(null, "That is not target.", "Message", JOptionPane.INFORMATION_MESSAGE);
+					redraw();
 				}
 				
 			}
