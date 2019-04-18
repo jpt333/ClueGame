@@ -174,6 +174,7 @@ public class ClueGameGUI extends JFrame{
 		nextPlayer.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//what happens when next player is pressed
+				System.out.println(gameBoard.getPlayers());
 			}
 		});
 		nextPlayer.setBounds(673, 758, 158, 38);

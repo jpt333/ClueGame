@@ -148,4 +148,8 @@ public class Player{
 	public void setCards(Set<Card> cardSet) {
 		cards = cardSet;	
 	}
+
+	public Color getColor() {
+		return color;
+	}
 }

@@ -91,11 +91,10 @@ public class Board extends JPanel{
 	public void initialize(){
 		//initialize variables
 		adjMatrix = new HashMap<BoardCell, Set<BoardCell>>();
-		
+		computerPlayers = new HashSet<>();
 		visited = new HashSet<>();
 		targets = new HashSet<>();
 		players = new HashSet<>();
-		computerPlayers = new HashSet<>();
 		cards = new HashSet<>();
 		
 		cardDeck = new CardDeck();
@@ -587,11 +586,17 @@ public class Board extends JPanel{
 	
 	public Player getHumanPlayer() {
 		Player playersLoc[] = new Player[players.size()];
-		
 		Random rand = new Random();
 		players.toArray(playersLoc);
 		int randomNum = rand.nextInt(playersLoc.length);
-		return playersLoc[randomNum];
+		
+		Player self = playersLoc[randomNum];
+		players.remove(self);
+		for(Player i: players) {
+			new ComputerPlayer(i.getPlayerName(), i.getCurrentLocation(), i.getColor());
+		}
+		players.add(self);
+		return self;
 	}
 	
 	public void deleteTargets() {
@@ -645,7 +650,7 @@ public class Board extends JPanel{
 					if(entry.getKey().equals(board[i][j].getInitial())) {
 						localMax++;
 					}
-					//if localmax is reset it and add the row clear previous rows
+					//if local max is reset it and add the row clear previous rows
 					if(localMax > maxRowColInt) {
 						//reset max
 						maxRowCol.clear();
