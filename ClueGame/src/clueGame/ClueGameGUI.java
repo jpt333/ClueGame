@@ -178,12 +178,23 @@ public class ClueGameGUI extends JFrame{
 		nextPlayer.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//what happens when next player is pressed
+				ComputerPlayer currentPlayer = gameBoard.nextPlayer();
 				if(moved) {
 					Random rand = new Random();
 					int diceRoll = rand.nextInt(6) + 1;
-					assets.setAsset(diceIcon, diceRoll);
-					assets.setAsset(playTurnCard, gameBoard.nextPlayer().getPlayerName(), CardType.PERSON);
-					redraw();
+					if(currentPlayer == null) {
+						//code for 
+						moved = false;
+						gameBoard.calcTargets(self.getCurrentLocation().getLocation().y, self.getCurrentLocation().getLocation().x, diceRoll);
+						assets.setAsset(diceIcon, diceRoll);
+						assets.setAsset(playTurnCard, self.getPlayerName(), CardType.PERSON);
+						
+						redraw();
+					}else {
+						assets.setAsset(diceIcon, diceRoll);
+						assets.setAsset(playTurnCard, currentPlayer.getPlayerName(), CardType.PERSON);
+						redraw();
+					}
 				}
 			}
 		});

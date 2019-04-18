@@ -611,13 +611,13 @@ public class Board extends JPanel{
 		targets.clear();
 	}
 	
-	public Player nextPlayer() {
+	public ComputerPlayer nextPlayer() {
 		computerPlayerArray = new ComputerPlayer[computerPlayers.size()];
 		computerPlayers.toArray(computerPlayerArray);
 		currentPlayer++;
 		if(currentPlayer == 6) {
 			currentPlayer = 0;
-			return self;
+			return null;
 		}
 		return computerPlayerArray[currentPlayer - 1];
 	}
