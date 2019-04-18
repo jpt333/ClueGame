@@ -51,6 +51,13 @@ public class Board extends JPanel{
 	private Set<ComputerPlayer> computerPlayers;
 	private Set<Player> players; 
 	
+	
+	private int currentPlayer;
+	private ComputerPlayer computerPlayerArray[];
+	private Player self;  
+	
+	
+	
 	private Set<Card> cards; //deck of cards
 	private CardDeck cardDeck; //sorted deck of cards
 	
@@ -89,6 +96,7 @@ public class Board extends JPanel{
 	}
 	
 	public void initialize(){
+		 currentPlayer = 0;
 		//initialize variables
 		adjMatrix = new HashMap<BoardCell, Set<BoardCell>>();
 		computerPlayers = new HashSet<>();
@@ -590,7 +598,7 @@ public class Board extends JPanel{
 		players.toArray(playersLoc);
 		int randomNum = rand.nextInt(playersLoc.length);
 		
-		Player self = playersLoc[randomNum];
+		self = playersLoc[randomNum];
 		players.remove(self);
 		for(Player i: players) {
 			new ComputerPlayer(i.getPlayerName(), i.getCurrentLocation(), i.getColor());
@@ -604,13 +612,17 @@ public class Board extends JPanel{
 	}
 	
 	public Player nextPlayer() {
-		
-		
-		ComputerPlayer computerPlayerLoc[] = new ComputerPlayer[computerPlayers.size()];
-		computerPlayers.toArray(computerPlayerLoc);
-		
-		
-		return computerPlayerLoc[0];
+		computerPlayerArray = new ComputerPlayer[computerPlayers.size()];
+		computerPlayers.toArray(computerPlayerArray);
+		currentPlayer++;
+		if(currentPlayer == 0) {
+			return self;
+		}
+		if(currentPlayer == 7) {
+			currentPlayer = 1;
+			return self;
+		}
+		return computerPlayerArray[currentPlayer - 1];
 	}
 	
 	public void paintComponent(Graphics g) {

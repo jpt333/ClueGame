@@ -301,6 +301,7 @@ public class ClueGameGUI extends JFrame{
 						redraw();
 					}
 				}else {
+					
 					repaint();
 				}
 				
