@@ -603,6 +603,15 @@ public class Board extends JPanel{
 		targets.clear();
 	}
 	
+	public Player nextPlayer() {
+		
+		
+		ComputerPlayer computerPlayerLoc[] = new ComputerPlayer[computerPlayers.size()];
+		computerPlayers.toArray(computerPlayerLoc);
+		
+		
+		return computerPlayerLoc[0];
+	}
 	
 	public void paintComponent(Graphics g) {
 		//draws the cells/rooms
