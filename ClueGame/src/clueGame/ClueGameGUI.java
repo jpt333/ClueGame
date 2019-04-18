@@ -326,7 +326,6 @@ public class ClueGameGUI extends JFrame{
 					redraw();
 				}else if(!gameBoard.getTargets().contains(chosenBox) && !moved) {
 					JOptionPane.showMessageDialog(null, "That is not target.", "Message", JOptionPane.INFORMATION_MESSAGE);
-					redraw();
 				}
 				
 			}

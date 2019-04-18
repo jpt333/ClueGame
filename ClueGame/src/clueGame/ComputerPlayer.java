@@ -27,7 +27,7 @@ public class ComputerPlayer extends Player {
 			if(targetsLoc.isRoom()) {
 				//check to see if it has been visited
 				for(Character roomsVisitedLoc: roomsVisited) {
-					if(targetsLoc.getInitial() == roomsVisitedLoc) {
+					if(targetsLoc.getInitial() == roomsVisitedLoc.charValue()) {
 						continue;
 					}
 				}

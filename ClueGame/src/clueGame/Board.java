@@ -634,10 +634,7 @@ public class Board extends JPanel{
 			highlight.highlight(g);
 		}
 		//Draws players
-		for(Player playersLoc: players) {
-			playersLoc.draw(g);
-			
-		}
+		self.draw(g);
 		//Draws computer players
 		for(ComputerPlayer computerPlayersLoc: computerPlayers) {
 			computerPlayersLoc.draw(g);
@@ -646,8 +643,6 @@ public class Board extends JPanel{
 		
 		g.setFont(new Font("TimesRoman", Font.PLAIN, 13));
 		g.setColor(Color.WHITE);
-		
-		
 		
 		
 		//algorithm for centering names in room it is very inefficient 
