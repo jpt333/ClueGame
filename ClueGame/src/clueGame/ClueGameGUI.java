@@ -44,8 +44,12 @@ public class ClueGameGUI extends JFrame{
 
 	private JFrame clueWindow;
 	private AssetsManager assets;
-	Board gameBoard;
-	Player self;
+	
+	private JLabel diceIcon;
+	private JLabel playTurnCard;
+	private Board gameBoard;
+	private Player self;
+	
 	
 	boolean moved = false;
 	//generated using window builder
@@ -83,7 +87,7 @@ public class ClueGameGUI extends JFrame{
 		
 		Random rand = new Random();
 		//6 because the max dice number is 6
-		int diceRoll = rand.nextInt(6);
+		int diceRoll = rand.nextInt(6) + 1;
 		
 		self = gameBoard.getHumanPlayer();
 		gameBoard.calcTargets(self.getCurrentLocation().getLocation().y, self.getCurrentLocation().getLocation().x, diceRoll);
@@ -94,7 +98,7 @@ public class ClueGameGUI extends JFrame{
 		
 		//which players turn it is
 		
-		JLabel playTurnCard = new JLabel("");
+		playTurnCard = new JLabel("");
 		
 		assets.setAsset(playTurnCard, self.getPlayerName(), CardType.PERSON);
 		
@@ -141,7 +145,7 @@ public class ClueGameGUI extends JFrame{
 		diceText.setBounds(728, 621, 51, 16);
 		clueWindow.getContentPane().add(diceText);
 		
-		JLabel diceIcon = new JLabel("");
+		diceIcon = new JLabel("");
 		
 		//any number outside 1-6 will display a question mark
 		assets.setAsset(diceIcon, diceRoll);
@@ -174,7 +178,13 @@ public class ClueGameGUI extends JFrame{
 		nextPlayer.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//what happens when next player is pressed
-				System.out.println(gameBoard.getPlayers());
+				if(moved) {
+					Random rand = new Random();
+					int diceRoll = rand.nextInt(6) + 1;
+					assets.setAsset(diceIcon, diceRoll);
+					assets.setAsset(playTurnCard, gameBoard.nextPlayer().getPlayerName(), CardType.PERSON);
+					redraw();
+				}
 			}
 		});
 		nextPlayer.setBounds(673, 758, 158, 38);

@@ -601,7 +601,7 @@ public class Board extends JPanel{
 		self = playersLoc[randomNum];
 		players.remove(self);
 		for(Player i: players) {
-			new ComputerPlayer(i.getPlayerName(), i.getCurrentLocation(), i.getColor());
+			computerPlayers.add(new ComputerPlayer(i.getPlayerName(), i.getCurrentLocation(), i.getColor()));
 		}
 		players.add(self);
 		return self;
@@ -615,11 +615,8 @@ public class Board extends JPanel{
 		computerPlayerArray = new ComputerPlayer[computerPlayers.size()];
 		computerPlayers.toArray(computerPlayerArray);
 		currentPlayer++;
-		if(currentPlayer == 0) {
-			return self;
-		}
-		if(currentPlayer == 7) {
-			currentPlayer = 1;
+		if(currentPlayer == 6) {
+			currentPlayer = 0;
 			return self;
 		}
 		return computerPlayerArray[currentPlayer - 1];
