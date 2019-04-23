@@ -167,6 +167,9 @@ public class ClueGameGUI extends JFrame{
 		JButton accusationButton = new JButton("Make an Accusation");
 		accusationButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				//make accusation dialog
+				
+				//check if correct
 				
 			}
 		});
@@ -188,6 +191,12 @@ public class ClueGameGUI extends JFrame{
 						gameBoard.calcTargets(self.getCurrentLocation().getLocation().y, self.getCurrentLocation().getLocation().x, diceRoll);
 						assets.setAsset(diceIcon, diceRoll);
 						assets.setAsset(playTurnCard, self.getPlayerName(), CardType.PERSON);
+						//check if in room 
+						if(self.getCurrentLocation().isRoom()) {
+							//make a suggestion
+							
+							//have the board handle the suggestion
+						}
 						redraw();
 					}else {
 						//computer players turn
@@ -196,6 +205,12 @@ public class ClueGameGUI extends JFrame{
 						gameBoard.calcTargets(currentPlayer.getCurrentLocation().getLocation().y, currentPlayer.getCurrentLocation().getLocation().x, diceRoll);
 						currentPlayer.setCurrentLocation(currentPlayer.pickLocation(gameBoard.getTargets()));
 						gameBoard.deleteTargets();
+						//check if in room 
+						if(currentPlayer.getCurrentLocation().isRoom()) {
+							//make a suggestion
+							
+							//have the board handle the suggestion
+						}
 						redraw();
 					}
 				}
