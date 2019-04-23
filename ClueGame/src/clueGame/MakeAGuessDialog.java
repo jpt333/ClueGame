@@ -27,7 +27,8 @@ public class MakeAGuessDialog extends JDialog{
 		JLabel weapon = new JLabel("Weapon");
 		JButton submitBtn = new JButton("Submit");
 		JButton cancelBtn = new JButton("Cancel");
-		JLabel roomLabel = new JLabel("");         //stores the actual room player is in
+		
+		JLabel roomLabel = new JLabel("");         //NEED TO GET WHAT ROOM HUMAN PLAYER IS IN
 		JComboBox<String> personGuess = new JComboBox<String>();
 		personGuess.addItem("Miss Scarlet");
 		personGuess.addItem("Colonel Mustard");
@@ -52,7 +53,7 @@ public class MakeAGuessDialog extends JDialog{
 		add(weaponGuess);
 		add(submitBtn);
 		add(cancelBtn);
-
+		
 	}
 	
 	public static void main(String[] args) {
