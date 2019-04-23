@@ -53,8 +53,6 @@ public class MakeAGuessDialog extends JDialog{
 		add(submitBtn);
 		add(cancelBtn);
 
-		
-		
 	}
 	
 	public static void main(String[] args) {
