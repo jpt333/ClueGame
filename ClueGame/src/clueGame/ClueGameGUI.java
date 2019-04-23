@@ -167,7 +167,9 @@ public class ClueGameGUI extends JFrame{
 		JButton accusationButton = new JButton("Make an Accusation");
 		accusationButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//make accusation dialog
+				//Make Accusation Dialog
+					MakeAGuessDialog dialog = new MakeAGuessDialog();
+					dialog.setVisible(true);
 				
 				//check if correct
 				

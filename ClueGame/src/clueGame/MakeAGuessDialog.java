@@ -45,7 +45,7 @@ public class MakeAGuessDialog extends JDialog{
 		weaponGuess.addItem("Knife");
 		
 		add(yourRoom);
-		add(roomLabel);
+		add(roomLabel);     //NEED TO UPDATE WHERE HUMAN PLAYER IS IN ROOM
 		add(person);
 		add(personGuess);
 		add(weapon);
