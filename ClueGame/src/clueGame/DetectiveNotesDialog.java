@@ -45,7 +45,9 @@ public class DetectiveNotesDialog extends JDialog{
 		for(String person : people) {
 			peoplee = new JCheckBox(person);
 			mainPanel.add(peoplee);
-				}
+			//peoplee.setSelected(true);
+			
+		}
 		return mainPanel;
 	}
 	
