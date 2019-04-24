@@ -4,6 +4,7 @@ package clueGame;
 
 import java.awt.Dimension;
 import java.awt.GridLayout;
+import java.util.Vector;
 
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
@@ -38,6 +39,8 @@ public class DetectiveNotesDialog extends JDialog{
 	
 	//People with checkboxes
 	private JPanel PeoplePanel() {
+		
+		
 		JPanel mainPanel = new JPanel();
 		mainPanel.setBorder(new TitledBorder(new EtchedBorder(), "People"));
 		//People
@@ -48,6 +51,7 @@ public class DetectiveNotesDialog extends JDialog{
 			//peoplee.setSelected(true);
 			
 		}
+		
 		return mainPanel;
 	}
 	
