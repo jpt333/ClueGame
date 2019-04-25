@@ -579,13 +579,13 @@ public class Board extends JPanel{
 	}
 	
 	public Boolean checkAccusation(Solution accusation) {
-		if(!getSolution().getPerson().equals(accusation.getPerson())) {
+		if(!(getSolution().person.equals(accusation.getPerson()))) {
 			return false;
 		}
-		if(!getSolution().getRoom().equals(accusation.getRoom())) {
+		if(!(getSolution().room.equals(accusation.getRoom()))) {
 			return false;
 		}
-		if(!getSolution().getWeapon().equals(accusation.getWeapon())) {
+		if(!(getSolution().weapon.equals(accusation.getWeapon()))) {
 			return false;
 		}
 		
@@ -742,4 +742,25 @@ public class Board extends JPanel{
 			}
 		}
 	}	
+	
+	public void incorrectAccusation(Solution soln) { 
+
+		String message = "Incorrect guess. " + soln.getPerson() + " " + soln.getWeapon() + " " 
+				+ soln.getRoom() + " was not the answer. "; 
+
+		JOptionPane.showMessageDialog(null, message);
+		System.out.print(solution.person);
+		System.out.print(solution.room);
+		System.out.print(solution.weapon);
+	}
+	
+	public void correctAccusation(Solution soln) { 
+		String message = "You win! " + soln.getPerson() + " " + soln.getWeapon() + " " + 
+				soln.getRoom() + " was the correct answer!"; 
+
+		JOptionPane.showMessageDialog(null, message);
+	}
+	
+
+	
 }

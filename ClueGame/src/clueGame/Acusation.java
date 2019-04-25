@@ -33,6 +33,9 @@ public class Acusation extends JDialog {
 	JComboBox roomBox;
 	JPanel buttonPane;
 	
+	Board board = Board.getInstance();
+	
+	
 	public String getSelectedRoom() {
 		return selectedRoom;
 	}
@@ -72,11 +75,24 @@ public class Acusation extends JDialog {
 		submitButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
-				System.out.println("Here: " + (String) personBox.getSelectedItem());
+				//System.out.println("Here: " + (String) personBox.getSelectedItem());
 				selectedRoom = currentRoomString;
 				selectedPerson = (String) personBox.getSelectedItem();
 				selectedWeapon = (String) weaponBox.getSelectedItem();
 				dispose();
+				
+				Solution suggestion = new Solution();
+				suggestion.person = new Card(getSelectedPerson(), CardType.PERSON);
+				suggestion.room = new Card(getSelectedRoom(), CardType.ROOM);
+				suggestion.weapon = new Card(getSelectedWeapon(), CardType.WEAPON);
+				
+				
+				
+				if(board.checkAccusation(suggestion) == false) {
+					board.incorrectAccusation(suggestion);
+				}else {
+					board.correctAccusation(suggestion);
+				}
 			}
 		});
 		buttonPane.add(submitButton);
@@ -101,6 +117,19 @@ public class Acusation extends JDialog {
 				selectedPerson = (String) personBox.getSelectedItem();
 				selectedWeapon = (String) weaponBox.getSelectedItem();
 				dispose();
+				
+				Solution suggestion = new Solution();
+				suggestion.person = new Card(getSelectedPerson(), CardType.PERSON);
+				suggestion.room = new Card(getSelectedRoom(), CardType.ROOM);
+				suggestion.weapon = new Card(getSelectedWeapon(), CardType.WEAPON);
+				
+				
+				
+				if(board.checkAccusation(suggestion) == false) {
+					board.incorrectAccusation(suggestion);
+				}else {
+					board.correctAccusation(suggestion);
+				}
 			}
 		});
 		JButton cancelButton = new JButton("Cancel");
