@@ -24,36 +24,95 @@ import java.awt.event.ActionEvent;
 public class Acusation extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		try {
-			Acusation dialog = new Acusation();
-			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-			dialog.setVisible(true);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+	String selectedRoom = null;
+	String selectedPerson = null;
+	String selectedWeapon = null;
+	
+	JComboBox weaponBox;
+	JComboBox personBox;
+	JComboBox roomBox;
+	JPanel buttonPane;
+	
+	public String getSelectedRoom() {
+		return selectedRoom;
 	}
 
-	/**
-	 * Create the dialog.
-	 */
+
+	public String getSelectedPerson() {
+		return selectedPerson;
+	}
+
+
+	public String getSelectedWeapon() {
+		return selectedWeapon;
+	}
+
 	public Acusation() {
+		statiicElements();
+		accusationElements();
+	}
+	
+	public Acusation(String currentRoom) {
+		statiicElements();
+		suggestionElements(currentRoom);
+	}
+	
+	private void suggestionElements(String currentRoomString) {
+		JLabel roomLabel = new JLabel("Your Room");
+		roomLabel.setForeground(Color.WHITE);
+		roomLabel.setBounds(10, 11, 139, 37);
+		contentPanel.add(roomLabel);
+		
+		JLabel currentRoom = new JLabel(currentRoomString);
+		currentRoom.setForeground(Color.WHITE);
+		currentRoom.setBounds(137, 14, 150, 30);
+		contentPanel.add(currentRoom);
+		
+		JButton submitButton = new JButton("Submit");
+		submitButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				selectedRoom = currentRoomString;
+				selectedPerson = (String) personBox.getSelectedItem();
+				selectedWeapon = (String) weaponBox.getSelectedItem();
+				dispose();
+			}
+		});
+		buttonPane.add(submitButton);
+		getRootPane().setDefaultButton(submitButton);
+	}
+	
+	private void accusationElements() {
+		JLabel roomLabel = new JLabel("Room");
+		roomLabel.setForeground(Color.WHITE);
+		roomLabel.setBounds(10, 11, 139, 37);
+		contentPanel.add(roomLabel);
+		
+		String[] rooms = {"Butterfly Room", "Computer Room", "Kitchen", "Dining Room", "Bedroom", "Parlor", "Music Room", "Game Room", "Living Room"};
+		roomBox = new JComboBox(rooms);
+		roomBox.setBounds(137, 14, 150, 30);
+		contentPanel.add(roomBox);
+		
+		JButton submitButton = new JButton("Submit");
+		submitButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				selectedRoom = (String) roomBox.getSelectedItem();
+				selectedPerson = (String) personBox.getSelectedItem();
+				selectedWeapon = (String) weaponBox.getSelectedItem();
+				dispose();
+			}
+		});
+		buttonPane.add(submitButton);
+		getRootPane().setDefaultButton(submitButton);
+	}
+	
+	private void statiicElements() {
 		setTitle("Accusation");
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 313, 300);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBackground(Color.DARK_GRAY);
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 		contentPanel.setLayout(null);
-		
-		JLabel roomLabel = new JLabel("Room");
-		roomLabel.setForeground(Color.WHITE);
-		roomLabel.setBounds(10, 11, 139, 37);
-		contentPanel.add(roomLabel);
 		
 		JLabel personLabel = new JLabel("Person");
 		personLabel.setForeground(Color.WHITE);
@@ -65,40 +124,44 @@ public class Acusation extends JDialog {
 		weaponLabel.setBounds(10, 180, 139, 37);
 		contentPanel.add(weaponLabel);
 		
-		String[] rooms = {"Butterfly Room", "Computer Room", "Kitchen", "Dining Room", "Bedroom", "Parlor", "Music Room", "Game Room", "Living Room"};
-		JComboBox roomBox = new JComboBox(rooms);
-		roomBox.setBounds(224, 19, 150, 30);
-		contentPanel.add(roomBox);
-		
 		String[] people = {"Colonel Mustard", "Miss Scarlet", "Mr. Green", "Mrs. Peacock", "Mrs. White", "Professor Plum"};
-		JComboBox personBox = new JComboBox(people);
-		personBox.setBounds(224, 99, 150, 30);
+		personBox = new JComboBox(people);
+		personBox.setBounds(137, 99, 150, 30);
 		contentPanel.add(personBox);
 		
 		String[] weapons = {"Wrench", "Candlestick", "Pipe", "Rope", "Revolver", "Knife"};
-		JComboBox weaponBox = new JComboBox(weapons);
-		weaponBox.setBounds(224, 180, 150, 30);
+		weaponBox = new JComboBox(weapons);
+		weaponBox.setBounds(137, 183, 150, 30);
 		contentPanel.add(weaponBox);
-		{
-			JPanel buttonPane = new JPanel();
-			buttonPane.setBackground(Color.DARK_GRAY);
-			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
-			getContentPane().add(buttonPane, BorderLayout.SOUTH);
-			
-			JButton cancelButton = new JButton("Cancel");
-			cancelButton.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent arg0) {
-					dispose();
-				}
-			});
-			cancelButton.setActionCommand("OK");
-			buttonPane.add(cancelButton);
-			{
-				JButton okButton = new JButton("Submit");
-				okButton.setActionCommand("OK");
-				buttonPane.add(okButton);
-				getRootPane().setDefaultButton(okButton);
+		
+		buttonPane = new JPanel();
+		buttonPane.setBackground(Color.DARK_GRAY);
+		buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
+		getContentPane().add(buttonPane, BorderLayout.SOUTH);
+		
+		JButton cancelButton = new JButton("Cancel");
+		cancelButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				selectedRoom = null;
+				selectedPerson = null;
+				selectedWeapon = null;
+				dispose();
+			}
+		});
+		buttonPane.add(cancelButton);
+		
+		//
+		
+	}
+	
+	//testing
+		public static void main(String[] args) {
+			try {
+				Acusation dialog = new Acusation();
+				dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+				dialog.setVisible(true);
+			} catch (Exception e) {
+				e.printStackTrace();
 			}
 		}
-	}
 }
