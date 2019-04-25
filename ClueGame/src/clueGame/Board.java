@@ -749,6 +749,8 @@ public class Board extends JPanel{
 				+ soln.getRoom() + " was not the answer. "; 
 
 		JOptionPane.showMessageDialog(null, message);
+		
+		//testing to check the actual solution of the game
 		System.out.print(solution.person);
 		System.out.print(solution.room);
 		System.out.print(solution.weapon);
