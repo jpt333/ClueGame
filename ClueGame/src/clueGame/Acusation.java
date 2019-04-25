@@ -122,9 +122,7 @@ public class Acusation extends JDialog {
 				suggestion.person = new Card(selectedPerson, CardType.PERSON);
 				suggestion.room = new Card(selectedRoom, CardType.ROOM);
 				suggestion.weapon = new Card(selectedWeapon, CardType.WEAPON);
-				System.out.print(suggestion.person);
-				System.out.print(suggestion.room);
-				System.out.print(suggestion.weapon);
+				
 				
 				if(board.checkAccusation(suggestion) == false) {
 					board.incorrectAccusation(suggestion);
@@ -205,8 +203,8 @@ public class Acusation extends JDialog {
 		//Card guessResult = gameBoard.handleSuggestionTech(suggestion);
 		
 		assets.setAsset(personCard, selectedPerson, CardType.PERSON);
-		assets.setAsset(weaponcard, selectedRoom, CardType.WEAPON);
-		assets.setAsset(roomCard, selectedWeapon, CardType.ROOM);
+		assets.setAsset(weaponcard, selectedRoom, CardType.ROOM);
+		assets.setAsset(roomCard, selectedWeapon, CardType.WEAPON);
 		//assets.setAsset(guessResultCard, guessResult.getCardName(), guessResult.getCardType());
 	}
 	

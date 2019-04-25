@@ -174,8 +174,8 @@ public class ClueGameGUI extends JFrame{
 		
 		accusationButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
 				Acusation accusation = new Acusation();
+				accusation.setAssetManager(gameBoard, assets, personCard, weaponcard, roomCard, guessResultCard);
 				accusation.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 				accusation.setVisible(true);
 			}
