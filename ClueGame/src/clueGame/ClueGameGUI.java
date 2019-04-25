@@ -10,6 +10,7 @@ import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import javax.swing.JButton;
 import javax.swing.JDesktopPane;
+import javax.swing.JDialog;
 import javax.swing.JTextPane;
 import javax.swing.SwingConstants;
 import java.awt.GridBagLayout;
@@ -165,16 +166,45 @@ public class ClueGameGUI extends JFrame{
 
 	private void addButtons() {
 		JButton accusationButton = new JButton("Make an Accusation");
+		
 		accusationButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+					Acusation accusation = new Acusation();
+					accusation.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+					
+				
 				//Make Accusation Dialog
-					MakeAGuessDialog dialog = new MakeAGuessDialog();
-					dialog.setVisible(true);
 				
-				//check if correct
+				//Implementing accusation
+				if(self.getCurrentLocation().isRoom()) {
+					if(self.getCurrentLocation().getInitial() == 'B') {
+						accusation = new Acusation("Butterfly Room");
+					}else if(self.getCurrentLocation().getInitial() == 'C') {
+						accusation = new Acusation("Computer Room");
+					}else if(self.getCurrentLocation().getInitial() == 'K') {
+						accusation = new Acusation("Kitchen");
+					}else if(self.getCurrentLocation().getInitial() == 'D') {
+						accusation = new Acusation("Dining Room");
+					}else if(self.getCurrentLocation().getInitial() == 'A') {
+						accusation = new Acusation("Bedroom");
+					}else if(self.getCurrentLocation().getInitial() == 'P') {
+						accusation = new Acusation("Parlor");
+					}else if(self.getCurrentLocation().getInitial() == 'M') {
+						accusation = new Acusation("Music Room");
+					}else if(self.getCurrentLocation().getInitial() == 'G') {
+						accusation = new Acusation("Game Room");
+					}else if(self.getCurrentLocation().getInitial() == 'L') {
+						accusation = new Acusation("Living Room");
+					}else {
+						accusation = new Acusation();
+					}
+				}
 				
+				accusation.setVisible(true);
 			}
 		});
+		
 		accusationButton.setBounds(673, 822, 158, 38);
 		clueWindow.getContentPane().add(accusationButton);
 		
