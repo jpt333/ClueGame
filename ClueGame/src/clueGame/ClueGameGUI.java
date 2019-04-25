@@ -48,6 +48,11 @@ public class ClueGameGUI extends JFrame{
 	
 	private JLabel diceIcon;
 	private JLabel playTurnCard;
+	private JLabel guessResultCard;
+	private JLabel weaponcard;
+	private JLabel personCard;
+	private JLabel roomCard;
+	
 	private Board gameBoard;
 	private Player self;
 	
@@ -273,7 +278,7 @@ public class ClueGameGUI extends JFrame{
 		dropMenu.add(quit);
 		
 		//this is the result of the guess
-		JLabel guessResultCard = new JLabel("");
+		guessResultCard = new JLabel("");
 		
 		assets.setAsset(guessResultCard, "Unknown", CardType.PERSON);
 		
@@ -284,7 +289,7 @@ public class ClueGameGUI extends JFrame{
 		
 		
 		//these three are the guess cards
-		JLabel weaponcard = new JLabel("");
+		weaponcard = new JLabel("");
 		
 		assets.setAsset(weaponcard, "Unknown", CardType.PERSON);
 		
@@ -293,7 +298,7 @@ public class ClueGameGUI extends JFrame{
 		weaponcard.setBounds(143, 722, 100, 150);
 		clueWindow.getContentPane().add(weaponcard);
 		
-		JLabel personCard = new JLabel("");
+		personCard = new JLabel("");
 		
 		assets.setAsset(personCard, "Unknown", CardType.PERSON);
 		
@@ -302,7 +307,7 @@ public class ClueGameGUI extends JFrame{
 		personCard.setBounds(255, 722, 100, 150);
 		clueWindow.getContentPane().add(personCard);
 		
-		JLabel roomCard = new JLabel("");
+		roomCard = new JLabel("");
 		
 		assets.setAsset(roomCard, "Unknown", CardType.PERSON);
 		
@@ -323,33 +328,7 @@ public class ClueGameGUI extends JFrame{
 					for(int j = 0; j < gameBoard.getNumColumns(); j++) {
 						if(gameBoard.getCellAt(i,j).hasTarget(e.getX(), e.getY())) {
 							chosenBox = gameBoard.getCellAt(i,j);
-							if(chosenBox.isRoom()) {
-								//make a suggestion
-								Acusation accusation = new Acusation();
-								if(chosenBox.getInitial() == 'B') {
-									accusation = new Acusation("Butterfly Room");
-								}else if(chosenBox.getInitial() == 'C') {
-									accusation = new Acusation("Computer Room");
-								}else if(chosenBox.getInitial() == 'K') {
-									accusation = new Acusation("Kitchen");
-								}else if(chosenBox.getInitial() == 'D') {
-									accusation = new Acusation("Dining Room");
-								}else if(chosenBox.getInitial() == 'A') {
-									accusation = new Acusation("Bedroom");
-								}else if(chosenBox.getInitial() == 'P') {
-									accusation = new Acusation("Parlor");
-								}else if(chosenBox.getInitial() == 'M') {
-									accusation = new Acusation("Music Room");
-								}else if(chosenBox.getInitial() == 'G') {
-									accusation = new Acusation("Game Room");
-								}else if(chosenBox.getInitial() == 'L') {
-									accusation = new Acusation("Living Room");
-								}
-								accusation.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-								accusation.setVisible(true);
-								
-								//have the board handle the suggestion
-							}
+							
 							repaint();
 							break;
 						}
@@ -363,6 +342,47 @@ public class ClueGameGUI extends JFrame{
 					self.setCurrentLocation(chosenBox);
 					gameBoard.deleteTargets();
 					moved = true;
+					redraw();
+					if(chosenBox.isRoom()) {
+						//make a suggestion
+						Acusation accusation = new Acusation();
+						if(chosenBox.getInitial() == 'B') {
+							accusation = new Acusation("Butterfly Room");
+						}else if(chosenBox.getInitial() == 'C') {
+							accusation = new Acusation("Computer Room");
+						}else if(chosenBox.getInitial() == 'K') {
+							accusation = new Acusation("Kitchen");
+						}else if(chosenBox.getInitial() == 'D') {
+							accusation = new Acusation("Dining Room");
+						}else if(chosenBox.getInitial() == 'A') {
+							accusation = new Acusation("Bedroom");
+						}else if(chosenBox.getInitial() == 'P') {
+							accusation = new Acusation("Parlor");
+						}else if(chosenBox.getInitial() == 'M') {
+							accusation = new Acusation("Music Room");
+						}else if(chosenBox.getInitial() == 'G') {
+							accusation = new Acusation("Game Room");
+						}else if(chosenBox.getInitial() == 'L') {
+							accusation = new Acusation("Living Room");
+						}
+						accusation.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+						accusation.setVisible(true);
+						//have the board handle the suggestion
+						Solution suggestion = new Solution();
+						
+						//bad solution but it might just work
+						suggestion.person = new Card(accusation.getSelectedPerson(), CardType.PERSON);
+						suggestion.room = new Card(accusation.getSelectedRoom(), CardType.ROOM);
+						suggestion.weapon = new Card(accusation.getSelectedWeapon(), CardType.WEAPON);
+						
+						Card guessResult = gameBoard.handleSuggestionTech(suggestion);
+						
+						assets.setAsset(personCard, accusation.getSelectedPerson(), CardType.PERSON);
+						assets.setAsset(weaponcard, accusation.getSelectedRoom(), CardType.WEAPON);
+						assets.setAsset(roomCard, accusation.getSelectedWeapon(), CardType.ROOM);
+						assets.setAsset(guessResultCard, guessResult.getCardName(), guessResult.getCardType());
+						
+					}
 					redraw();
 				}else if(!gameBoard.getTargets().contains(chosenBox) && !moved) {
 					JOptionPane.showMessageDialog(null, "That is not target.", "Message", JOptionPane.INFORMATION_MESSAGE);
