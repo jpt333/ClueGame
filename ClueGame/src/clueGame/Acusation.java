@@ -86,7 +86,9 @@ public class Acusation extends JDialog {
 				suggestion.room = new Card(getSelectedRoom(), CardType.ROOM);
 				suggestion.weapon = new Card(getSelectedWeapon(), CardType.WEAPON);
 				
-				
+				System.out.println(suggestion.person);
+				System.out.println(suggestion.room);
+				System.out.println(suggestion.weapon);
 				
 				if(board.checkAccusation(suggestion) == false) {
 					board.incorrectAccusation(suggestion);
@@ -122,8 +124,9 @@ public class Acusation extends JDialog {
 				suggestion.person = new Card(getSelectedPerson(), CardType.PERSON);
 				suggestion.room = new Card(getSelectedRoom(), CardType.ROOM);
 				suggestion.weapon = new Card(getSelectedWeapon(), CardType.WEAPON);
-				
-				
+				System.out.print(suggestion.person);
+				System.out.print(suggestion.room);
+				System.out.print(suggestion.weapon);
 				
 				if(board.checkAccusation(suggestion) == false) {
 					board.incorrectAccusation(suggestion);
