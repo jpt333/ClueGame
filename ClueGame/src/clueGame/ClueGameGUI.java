@@ -365,15 +365,17 @@ public class ClueGameGUI extends JFrame{
 						}else if(chosenBox.getInitial() == 'L') {
 							accusation = new Acusation("Living Room");
 						}
-						accusation.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+						accusation.setDefaultCloseOperation(JDialog.HIDE_ON_CLOSE);
 						accusation.setVisible(true);
 						//have the board handle the suggestion
 						Solution suggestion = new Solution();
 						
 						//bad solution but it might just work
+						//this code needs to wait for the submit bitton to be pressed maybe pass out the 
 						suggestion.person = new Card(accusation.getSelectedPerson(), CardType.PERSON);
 						suggestion.room = new Card(accusation.getSelectedRoom(), CardType.ROOM);
 						suggestion.weapon = new Card(accusation.getSelectedWeapon(), CardType.WEAPON);
+						
 						
 						Card guessResult = gameBoard.handleSuggestionTech(suggestion);
 						

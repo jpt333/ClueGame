@@ -24,9 +24,9 @@ import java.awt.event.ActionEvent;
 public class Acusation extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
-	String selectedRoom = null;
-	String selectedPerson = null;
-	String selectedWeapon = null;
+	String selectedRoom;
+	String selectedPerson;
+	String selectedWeapon;
 	
 	JComboBox weaponBox;
 	JComboBox personBox;
@@ -71,6 +71,8 @@ public class Acusation extends JDialog {
 		JButton submitButton = new JButton("Submit");
 		submitButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				
+				System.out.println("Here: " + (String) personBox.getSelectedItem());
 				selectedRoom = currentRoomString;
 				selectedPerson = (String) personBox.getSelectedItem();
 				selectedWeapon = (String) weaponBox.getSelectedItem();
@@ -158,7 +160,7 @@ public class Acusation extends JDialog {
 	//testing
 		public static void main(String[] args) {
 			try {
-				Acusation dialog = new Acusation();
+				Acusation dialog = new Acusation("Room");
 				dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 				dialog.setVisible(true);
 			} catch (Exception e) {
