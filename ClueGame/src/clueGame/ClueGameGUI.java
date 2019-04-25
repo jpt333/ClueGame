@@ -328,55 +328,6 @@ public class ClueGameGUI extends JFrame{
 					for(int j = 0; j < gameBoard.getNumColumns(); j++) {
 						if(gameBoard.getCellAt(i,j).hasTarget(e.getX(), e.getY())) {
 							chosenBox = gameBoard.getCellAt(i,j);
-
-							if(chosenBox.isRoom()) {
-								//make a suggestion
-								Acusation accusation = new Acusation();
-								if(chosenBox.getInitial() == 'B') {
-									accusation = new Acusation("Butterfly Room");
-								}else if(chosenBox.getInitial() == 'C') {
-									accusation = new Acusation("Computer Room");
-								}else if(chosenBox.getInitial() == 'K') {
-									accusation = new Acusation("Kitchen");
-								}else if(chosenBox.getInitial() == 'D') {
-									accusation = new Acusation("Dining Room");
-								}else if(chosenBox.getInitial() == 'A') {
-									accusation = new Acusation("Bedroom");
-								}else if(chosenBox.getInitial() == 'P') {
-									accusation = new Acusation("Parlor");
-								}else if(chosenBox.getInitial() == 'M') {
-									accusation = new Acusation("Music Room");
-								}else if(chosenBox.getInitial() == 'G') {
-									accusation = new Acusation("Game Room");
-								}else if(chosenBox.getInitial() == 'L') {
-									accusation = new Acusation("Living Room");
-								}
-								
-								accusation.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-								accusation.setVisible(true);
-								
-								//have the board handle the suggestion
-								CardDeck playerCards = new CardDeck();
-								Card personAccus = new Card(accusation.selectedPerson, CardType.PERSON, Character.toString(chosenBox.getInitial()));
-								Card roomAccus = new Card(accusation.selectedRoom, CardType.ROOM, Character.toString(chosenBox.getInitial()));
-								Card weaponAccus = new Card(accusation.selectedWeapon, CardType.WEAPON, Character.toString(chosenBox.getInitial()));
-								playerCards.people.add(personAccus);
-								playerCards.people.add(roomAccus);
-								playerCards.weapons.add(weaponAccus);
-								
-								//self.createSuggestion(playerCards);
-								//gameBoard.handleSuggestion(self);
-								Solution accus = new Solution();
-								accus.setAnsPerson(personAccus);
-								accus.setAnsRoom(roomAccus);
-								accus.setAnsWeapon(weaponAccus);
-								
-								if(gameBoard.checkAccusation(accus)) {
-									System.out.print("WINNER!");
-								}else {
-									System.out.print("Not correct");
-								}
-							}
 							repaint();
 							break;
 						}
@@ -413,7 +364,7 @@ public class ClueGameGUI extends JFrame{
 						}else if(chosenBox.getInitial() == 'L') {
 							accusation = new Acusation("Living Room");
 						}
-						accusation.setDefaultCloseOperation(JDialog.HIDE_ON_CLOSE);
+						accusation.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 						accusation.setVisible(true);
 						//have the board handle the suggestion
 						Solution suggestion = new Solution();
