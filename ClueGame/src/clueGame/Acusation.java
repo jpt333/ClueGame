@@ -24,14 +24,21 @@ import java.awt.event.ActionEvent;
 public class Acusation extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
-	String selectedRoom;
-	String selectedPerson;
-	String selectedWeapon;
+	private String selectedRoom;
+	private String selectedPerson;
+	private String selectedWeapon;
 	
-	JComboBox weaponBox;
-	JComboBox personBox;
-	JComboBox roomBox;
-	JPanel buttonPane;
+	private JComboBox weaponBox;
+	private JComboBox personBox;
+	private JComboBox roomBox;
+	private JPanel buttonPane;
+	
+	private Board gameBoard;
+	private AssetsManager assets;
+	private JLabel personCard;
+	private JLabel weaponcard;
+	private JLabel roomCard;
+	private JLabel guessResultCard;
 	
 	Board board = Board.getInstance();
 	
@@ -86,15 +93,6 @@ public class Acusation extends JDialog {
 				suggestion.room = new Card(getSelectedRoom(), CardType.ROOM);
 				suggestion.weapon = new Card(getSelectedWeapon(), CardType.WEAPON);
 				
-				System.out.println(suggestion.person);
-				System.out.println(suggestion.room);
-				System.out.println(suggestion.weapon);
-				
-				if(board.checkAccusation(suggestion) == false) {
-					board.incorrectAccusation(suggestion);
-				}else {
-					board.correctAccusation(suggestion);
-				}
 			}
 		});
 		buttonPane.add(submitButton);
@@ -121,9 +119,9 @@ public class Acusation extends JDialog {
 				dispose();
 				
 				Solution suggestion = new Solution();
-				suggestion.person = new Card(getSelectedPerson(), CardType.PERSON);
-				suggestion.room = new Card(getSelectedRoom(), CardType.ROOM);
-				suggestion.weapon = new Card(getSelectedWeapon(), CardType.WEAPON);
+				suggestion.person = new Card(selectedPerson, CardType.PERSON);
+				suggestion.room = new Card(selectedRoom, CardType.ROOM);
+				suggestion.weapon = new Card(selectedWeapon, CardType.WEAPON);
 				System.out.print(suggestion.person);
 				System.out.print(suggestion.room);
 				System.out.print(suggestion.weapon);
@@ -182,11 +180,33 @@ public class Acusation extends JDialog {
 		buttonPane.setBackground(Color.DARK_GRAY);
 		buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
 		getContentPane().add(buttonPane, BorderLayout.SOUTH);
+	}
+	
+	public void setAssetManager(Board gameBoard, AssetsManager assets, JLabel personCard, JLabel weaponcard, JLabel roomCard, JLabel guessResultCard) {
+		this.gameBoard = gameBoard;
+		this.assets = assets;
+		this.personCard = personCard;
+		this.weaponcard = weaponcard;
+		this.roomCard = roomCard;
+		this.guessResultCard = guessResultCard;
+	}
+	
+	public void updatAssets() {
+		Solution suggestion = new Solution();
+		//bad solution but it might just work
+		//this code needs to wait for the submit button to be pressed maybe pass out the 
 		
+		suggestion.person = new Card(selectedPerson, CardType.PERSON);
+		suggestion.room = new Card(selectedRoom, CardType.ROOM);
+	    suggestion.weapon = new Card(selectedWeapon, CardType.WEAPON);
+	
+		//something wrong with guess result
+		Card guessResult = gameBoard.handleSuggestionTech(suggestion);
 		
-		
-		//
-		
+		assets.setAsset(personCard, selectedPerson, CardType.PERSON);
+		assets.setAsset(weaponcard, selectedRoom, CardType.WEAPON);
+		assets.setAsset(roomCard, selectedWeapon, CardType.ROOM);
+		assets.setAsset(guessResultCard, guessResult.getCardName(), guessResult.getCardType());
 	}
 	
 	//testing

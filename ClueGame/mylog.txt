@@ -1,3 +1,279 @@
+commit 632ead9d55b958aefacccb053e8fa5f85bf67ac3
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Wed Apr 17 23:18:35 2019 -0600
+
+    fixed last bug
+
+commit d220cf9438f9f67afea70d89e587f11f074c664c
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Wed Apr 17 23:08:52 2019 -0600
+
+    Partial fix
+
+commit 3a761c279876e976a9ab418be7ffba969bb94c74
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Wed Apr 17 22:58:13 2019 -0600
+
+    deleted bad code
+
+commit 113bcd3be3bba35ee7078e06a27ee619fe925646
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Wed Apr 17 22:23:03 2019 -0600
+
+    fixed the rendering bug
+
+commit 7c4961ef76ec718bb1d4868867c61572d0aad294
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Wed Apr 17 22:09:53 2019 -0600
+
+    Computer Players moving
+
+commit 4c361afebbf914fce23bff2a79f9f7d8055684df
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Wed Apr 17 22:01:05 2019 -0600
+
+    finished player movment
+
+commit 54a97d468946f2b24f5ed716898a4a4c563d85ab
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Wed Apr 17 21:52:07 2019 -0600
+
+    Move players resets properly
+
+commit ea1c6adad40e6f1be812f3d4daf72ae743dac296
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Wed Apr 17 21:35:04 2019 -0600
+
+    next player mostly working
+
+commit 3b549bd221e1c99da555dadeb709dd6618d8dabc
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Wed Apr 17 21:12:38 2019 -0600
+
+    added next player function
+
+commit 9c26ef5b63af5cf7d3eeb50355755437abb89dd2
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Wed Apr 17 19:59:28 2019 -0600
+
+    added next player function
+
+commit 176f6fa7425117d598558dcda87e5a2a40d93d2f
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Wed Apr 17 19:42:30 2019 -0600
+
+    added computer player list
+
+commit 44631f27f026dd54d580daeca3ee9e81db3bd14c
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Wed Apr 17 18:46:28 2019 -0600
+
+    added move vartiable
+
+commit 56f357aa4f4db15f23fd0626017eac84ea585146
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Wed Apr 17 17:53:00 2019 -0600
+
+    Fixed the drawing bug
+
+commit 585f458f4246871959c8de2ad82e89d5546eb9e2
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Wed Apr 17 17:47:21 2019 -0600
+
+    clicking moves the player now
+
+commit 8a4eebf8cea5ebba785f32ff10dd1e9c7f9a483d
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Wed Apr 17 17:17:57 2019 -0600
+
+    working target selection
+
+commit 23fc42f473ff026963c49aaba132c09411bf475e
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Wed Apr 17 16:46:13 2019 -0600
+
+    moved code to correct location
+
+commit 9670c9b8505b8346646eede2f553a2858c324345
+Merge: 089b476 6a2776e
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Wed Apr 17 15:47:59 2019 -0600
+
+    Merge branch 'master' of https://github.com/michaelberg12/ClueGame.git
+    
+    Conflicts:
+            ClueGame/src/clueGame/Board.java
+            ClueGame/src/clueGame/BoardCell.java
+
+commit 089b476c799896a3ffedbbea4da3b6b329b9d364
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Wed Apr 17 15:45:51 2019 -0600
+
+    Function created for board movment
+
+commit 6a2776ea4be73169b23e8bfb180bdb13e1539e7e
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Mon Apr 15 20:28:29 2019 -0600
+
+    Added the function for mouseaction for targets
+
+commit 945c7c89b80ea3ca000fb36a4dab0e94ba6041bc
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Mon Apr 15 18:57:27 2019 -0600
+
+    general refactoring
+
+commit 2478b1c57273d774982cbd7c92aa45bd5127a850
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Mon Apr 15 18:35:17 2019 -0600
+
+    Tried to make player move when clicked. Still need to fix
+
+commit f3b8524fa113f952e4f46dfb1871847d5bf237ad
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Mon Apr 15 17:53:04 2019 -0600
+
+    Added comment
+
+commit d5cfff3af0591d4b5ad1f6e416be6c20932793c9
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Mon Apr 15 17:31:29 2019 -0600
+
+    Added frame for mouseclick
+
+commit 1f5acdbc7d07d35e14882500ee5f63740f65fa6a
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Mon Apr 15 17:22:37 2019 -0600
+
+    Perfected the target color
+
+commit c35c248e5c51ca6d54906cf5dcf4896a275aebd0
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Mon Apr 15 15:46:33 2019 -0600
+
+    Displaying corectly still need to work on the color
+
+commit f1cab1760946569fa55570162a5df700a80b1b4b
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Mon Apr 15 15:41:21 2019 -0600
+
+    targets are displaying but weirdly
+
+commit 8d86d8b4c694b0dadc4d7f1855c7aa41f52dff8e
+Merge: d7fd5f5 6ad004a
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Mon Apr 15 15:21:46 2019 -0600
+
+    Merge branch 'master' of https://github.com/michaelberg12/ClueGame.git
+
+commit d7fd5f500b5b9704d75e80b9bcda074a4dd59464
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Mon Apr 15 15:21:39 2019 -0600
+
+    added another asset and updates how the board cells are displayed
+
+commit 6ad004ae4d4f6601dd4afbeb541b57f7512cf016
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Mon Apr 15 08:54:54 2019 -0600
+
+    Added few comments
+
+commit 4d4f75c9581164f30014992ca44f23db9dfbf36d
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Mon Apr 15 08:49:20 2019 -0600
+
+    Deleted old comments
+
+commit bf17c8326e028d236e1dcd92f4bc635e9c758511
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Mon Apr 15 08:48:59 2019 -0600
+
+    Fixed test for legendtest in BoardTests.java. Now passing
+
+commit c3d081391c692d5cba410f6218e1a239ce4a0a3e
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Mon Apr 15 08:23:14 2019 -0600
+
+    Added few comments
+
+commit 591e3de753f45f93f4d10916afc2150e407ce44b
+Author: Jennifer Phan <jpt4542@gmail.com>
+Date:   Mon Apr 15 08:17:50 2019 -0600
+
+    Added author names
+
+commit ac5061dc09a2f7ae5d747308e980755aac29b2a0
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Mon Apr 15 02:52:01 2019 -0600
+
+    worked on displaying
+
+commit 0d0bb5239519143dbbffe6356df79003da762ad2
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Mon Apr 15 02:06:29 2019 -0600
+
+    More progress on the intro
+
+commit 84242737d3b18b9c2d70c8998167be82c53b3521
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Mon Apr 15 00:47:44 2019 -0600
+
+    Intro Screen Finished
+
+commit 17e76cdc2585c2a6db75238f55e30a506a989d88
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Sun Apr 14 22:53:54 2019 -0600
+
+    fixed dice nullPointer bug
+
+commit ab64db4d9841edf36cabcf98e2537dfb27093be1
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Sun Apr 14 22:28:33 2019 -0600
+
+    Finished the asset manager so that the gui can just take a card name
+
+commit 961b10440ee47c69ca805402a17fb7c765551144
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Sun Apr 14 16:10:29 2019 -0600
+
+    put assets in folders and created an asset manager for easy use
+
+commit 8b0e7bce00006545f25cadb79ab7e7568c56fcdc
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Sun Apr 14 15:18:34 2019 -0600
+
+    Added more Assets
+
+commit 395a86d03dacf3fd68c4bf07d026fdf135f89692
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Sat Apr 13 17:47:30 2019 -0600
+
+    added comments
+
+commit 1fb69bfcf8785ea081528525406def38cf234df5
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Sat Apr 13 13:29:49 2019 -0600
+
+    Refactoring Improvemts
+
+commit 2c3fc98cf7b4459fccb31040cd96a9be9a78a398
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Sat Apr 13 13:24:47 2019 -0600
+
+    General refactoring
+
+commit 378a3d4ce0246e676a4c893d1c5e9dc4ed7bcbb7
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Sat Apr 13 02:16:48 2019 -0600
+
+    added a fun loading class
+
+commit 4ca44d48bd66eb1acea2b8cf8792d24812f0d9fd
+Author: Michael Berg <urberg@yahoo.com>
+Date:   Fri Apr 12 05:50:07 2019 -0600
+
+    git log and small other changes
+
 commit 203b566434e62bc05e544f6fd884ce5bb780786c
 Author: Michael Berg <urberg@yahoo.com>
 Date:   Fri Apr 12 05:44:30 2019 -0600

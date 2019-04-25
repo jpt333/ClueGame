@@ -367,28 +367,6 @@ public class ClueGameGUI extends JFrame{
 						accusation.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 						accusation.setVisible(true);
 						//have the board handle the suggestion
-						Solution suggestion = new Solution();
-						
-						
-						
-						//bad solution but it might just work
-						//this code needs to wait for the submit button to be pressed maybe pass out the 
-						
-//						suggestion.person = new Card(accusation.getSelectedPerson(), CardType.PERSON);
-//						suggestion.room = new Card(accusation.getSelectedRoom(), CardType.ROOM);
-//						suggestion.weapon = new Card(accusation.getSelectedWeapon(), CardType.WEAPON);
-//						
-//						if(gameBoard.checkAccusation(suggestion) == false) {
-//							
-//						}
-						
-						//something wrong with guess result
-						//Card guessResult = gameBoard.handleSuggestionTech(suggestion);
-						
-//						assets.setAsset(personCard, accusation.getSelectedPerson(), CardType.PERSON);
-//						assets.setAsset(weaponcard, accusation.getSelectedRoom(), CardType.WEAPON);
-//						assets.setAsset(roomCard, accusation.getSelectedWeapon(), CardType.ROOM);
-//						assets.setAsset(guessResultCard, guessResult.getCardName(), guessResult.getCardType());
 						
 					}
 					redraw();
