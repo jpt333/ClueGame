@@ -101,6 +101,16 @@ public class Acusation extends JDialog {
 				dispose();
 			}
 		});
+		JButton cancelButton = new JButton("Cancel");
+		cancelButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				selectedRoom = null;
+				selectedPerson = null;
+				selectedWeapon = null;
+				dispose();
+			}
+		});
+		buttonPane.add(cancelButton);
 		buttonPane.add(submitButton);
 		getRootPane().setDefaultButton(submitButton);
 	}
@@ -139,16 +149,7 @@ public class Acusation extends JDialog {
 		buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
 		getContentPane().add(buttonPane, BorderLayout.SOUTH);
 		
-		JButton cancelButton = new JButton("Cancel");
-		cancelButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				selectedRoom = null;
-				selectedPerson = null;
-				selectedWeapon = null;
-				dispose();
-			}
-		});
-		buttonPane.add(cancelButton);
+		
 		
 		//
 		
