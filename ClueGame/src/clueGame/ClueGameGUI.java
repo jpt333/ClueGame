@@ -170,37 +170,8 @@ public class ClueGameGUI extends JFrame{
 		accusationButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-					Acusation accusation = new Acusation();
-					accusation.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-					
-				
-				//Make Accusation Dialog
-				
-				//Implementing accusation
-				if(self.getCurrentLocation().isRoom()) {
-					if(self.getCurrentLocation().getInitial() == 'B') {
-						accusation = new Acusation("Butterfly Room");
-					}else if(self.getCurrentLocation().getInitial() == 'C') {
-						accusation = new Acusation("Computer Room");
-					}else if(self.getCurrentLocation().getInitial() == 'K') {
-						accusation = new Acusation("Kitchen");
-					}else if(self.getCurrentLocation().getInitial() == 'D') {
-						accusation = new Acusation("Dining Room");
-					}else if(self.getCurrentLocation().getInitial() == 'A') {
-						accusation = new Acusation("Bedroom");
-					}else if(self.getCurrentLocation().getInitial() == 'P') {
-						accusation = new Acusation("Parlor");
-					}else if(self.getCurrentLocation().getInitial() == 'M') {
-						accusation = new Acusation("Music Room");
-					}else if(self.getCurrentLocation().getInitial() == 'G') {
-						accusation = new Acusation("Game Room");
-					}else if(self.getCurrentLocation().getInitial() == 'L') {
-						accusation = new Acusation("Living Room");
-					}else {
-						accusation = new Acusation();
-					}
-				}
-				
+				Acusation accusation = new Acusation();
+				accusation.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 				accusation.setVisible(true);
 			}
 		});
@@ -224,11 +195,6 @@ public class ClueGameGUI extends JFrame{
 						assets.setAsset(diceIcon, diceRoll);
 						assets.setAsset(playTurnCard, self.getPlayerName(), CardType.PERSON);
 						//check if in room 
-						if(self.getCurrentLocation().isRoom()) {
-							//make a suggestion
-							
-							//have the board handle the suggestion
-						}
 						redraw();
 					}else {
 						//computer players turn
@@ -357,6 +323,33 @@ public class ClueGameGUI extends JFrame{
 					for(int j = 0; j < gameBoard.getNumColumns(); j++) {
 						if(gameBoard.getCellAt(i,j).hasTarget(e.getX(), e.getY())) {
 							chosenBox = gameBoard.getCellAt(i,j);
+							if(chosenBox.isRoom()) {
+								//make a suggestion
+								Acusation accusation = new Acusation();
+								if(chosenBox.getInitial() == 'B') {
+									accusation = new Acusation("Butterfly Room");
+								}else if(chosenBox.getInitial() == 'C') {
+									accusation = new Acusation("Computer Room");
+								}else if(chosenBox.getInitial() == 'K') {
+									accusation = new Acusation("Kitchen");
+								}else if(chosenBox.getInitial() == 'D') {
+									accusation = new Acusation("Dining Room");
+								}else if(chosenBox.getInitial() == 'A') {
+									accusation = new Acusation("Bedroom");
+								}else if(chosenBox.getInitial() == 'P') {
+									accusation = new Acusation("Parlor");
+								}else if(chosenBox.getInitial() == 'M') {
+									accusation = new Acusation("Music Room");
+								}else if(chosenBox.getInitial() == 'G') {
+									accusation = new Acusation("Game Room");
+								}else if(chosenBox.getInitial() == 'L') {
+									accusation = new Acusation("Living Room");
+								}
+								accusation.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+								accusation.setVisible(true);
+								
+								//have the board handle the suggestion
+							}
 							repaint();
 							break;
 						}
