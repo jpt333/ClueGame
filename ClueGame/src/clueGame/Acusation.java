@@ -65,15 +65,18 @@ public class Acusation extends JDialog {
 		weaponLabel.setBounds(10, 180, 139, 37);
 		contentPanel.add(weaponLabel);
 		
-		JComboBox roomBox = new JComboBox();
+		String[] rooms = {"Butterfly Room", "Computer Room", "Kitchen", "Dining Room", "Bedroom", "Parlor", "Music Room", "Game Room", "Living Room"};
+		JComboBox roomBox = new JComboBox(rooms);
 		roomBox.setBounds(224, 19, 150, 30);
 		contentPanel.add(roomBox);
 		
-		JComboBox personBox = new JComboBox();
+		String[] people = {"Colonel Mustard", "Miss Scarlet", "Mr. Green", "Mrs. Peacock", "Mrs. White", "Professor Plum"};
+		JComboBox personBox = new JComboBox(people);
 		personBox.setBounds(224, 99, 150, 30);
 		contentPanel.add(personBox);
 		
-		JComboBox weaponBox = new JComboBox();
+		String[] weapons = {"Wrench", "Candlestick", "Pipe", "Rope", "Revolver", "Knife"};
+		JComboBox weaponBox = new JComboBox(weapons);
 		weaponBox.setBounds(224, 180, 150, 30);
 		contentPanel.add(weaponBox);
 		{
@@ -85,6 +88,7 @@ public class Acusation extends JDialog {
 			JButton cancelButton = new JButton("Cancel");
 			cancelButton.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
+					dispose();
 				}
 			});
 			cancelButton.setActionCommand("OK");
@@ -96,22 +100,5 @@ public class Acusation extends JDialog {
 				getRootPane().setDefaultButton(okButton);
 			}
 		}
-	}
-	private static void addPopup(Component component, final JPopupMenu popup) {
-		component.addMouseListener(new MouseAdapter() {
-			public void mousePressed(MouseEvent e) {
-				if (e.isPopupTrigger()) {
-					showMenu(e);
-				}
-			}
-			public void mouseReleased(MouseEvent e) {
-				if (e.isPopupTrigger()) {
-					showMenu(e);
-				}
-			}
-			private void showMenu(MouseEvent e) {
-				popup.show(e.getComponent(), e.getX(), e.getY());
-			}
-		});
 	}
 }
