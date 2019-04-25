@@ -86,13 +86,13 @@ public class Acusation extends JDialog {
 				selectedRoom = currentRoomString;
 				selectedPerson = (String) personBox.getSelectedItem();
 				selectedWeapon = (String) weaponBox.getSelectedItem();
+				
+				System.out.println(selectedRoom);
+				System.out.println(selectedPerson);
+				System.out.println(selectedWeapon);
+				
+				updatAssets();
 				dispose();
-				
-				Solution suggestion = new Solution();
-				suggestion.person = new Card(getSelectedPerson(), CardType.PERSON);
-				suggestion.room = new Card(getSelectedRoom(), CardType.ROOM);
-				suggestion.weapon = new Card(getSelectedWeapon(), CardType.WEAPON);
-				
 			}
 		});
 		buttonPane.add(submitButton);
@@ -183,6 +183,7 @@ public class Acusation extends JDialog {
 	}
 	
 	public void setAssetManager(Board gameBoard, AssetsManager assets, JLabel personCard, JLabel weaponcard, JLabel roomCard, JLabel guessResultCard) {
+		
 		this.gameBoard = gameBoard;
 		this.assets = assets;
 		this.personCard = personCard;
@@ -191,7 +192,7 @@ public class Acusation extends JDialog {
 		this.guessResultCard = guessResultCard;
 	}
 	
-	public void updatAssets() {
+	private void updatAssets() {
 		Solution suggestion = new Solution();
 		//bad solution but it might just work
 		//this code needs to wait for the submit button to be pressed maybe pass out the 
@@ -201,12 +202,12 @@ public class Acusation extends JDialog {
 	    suggestion.weapon = new Card(selectedWeapon, CardType.WEAPON);
 	
 		//something wrong with guess result
-		Card guessResult = gameBoard.handleSuggestionTech(suggestion);
+		//Card guessResult = gameBoard.handleSuggestionTech(suggestion);
 		
 		assets.setAsset(personCard, selectedPerson, CardType.PERSON);
 		assets.setAsset(weaponcard, selectedRoom, CardType.WEAPON);
 		assets.setAsset(roomCard, selectedWeapon, CardType.ROOM);
-		assets.setAsset(guessResultCard, guessResult.getCardName(), guessResult.getCardType());
+		//assets.setAsset(guessResultCard, guessResult.getCardName(), guessResult.getCardType());
 	}
 	
 	//testing

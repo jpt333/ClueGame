@@ -343,8 +343,11 @@ public class ClueGameGUI extends JFrame{
 					moved = true;
 					redraw();
 					if(chosenBox.isRoom()) {
+						
 						//make a suggestion
 						Acusation accusation = new Acusation();
+						
+						
 						if(chosenBox.getInitial() == 'B') {
 							accusation = new Acusation("Butterfly Room");
 						}else if(chosenBox.getInitial() == 'C') {
@@ -364,6 +367,7 @@ public class ClueGameGUI extends JFrame{
 						}else if(chosenBox.getInitial() == 'L') {
 							accusation = new Acusation("Living Room");
 						}
+						accusation.setAssetManager(gameBoard, assets, personCard, weaponcard, roomCard, guessResultCard);
 						accusation.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 						accusation.setVisible(true);
 						//have the board handle the suggestion
