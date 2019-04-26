@@ -41,7 +41,7 @@ public class Acusation extends JDialog {
 	private JLabel roomCard;
 	private JLabel guessResultCard;
 	
-	Board board = Board.getInstance();
+	Board board = Board.getInstance();          //Is this correct in getting the board in ClueGameGUI?
 	
 	
 	public String getSelectedRoom() {

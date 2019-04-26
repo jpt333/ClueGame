@@ -579,17 +579,22 @@ public class Board extends JPanel{
 	}
 	
 	public Boolean checkAccusation(Solution accusation) {
-		if(!(getSolution().person.equals(accusation.getPerson()))) {
+//		if(!getSolution().getPerson().equals(accusation.getPerson())) {
+//			return false;
+//		}
+//		if(!getSolution().getRoom().equals(accusation.getRoom())) {
+//			return false;
+//		}
+//		if(!getSolution().getWeapon().equals(accusation.getWeapon())) {
+//			return false;
+//		}
+//		
+//		return true;
+		if(solution.getPerson().equals(accusation.getPerson()) && solution.getRoom().equals(accusation.getRoom()) && solution.getWeapon().equals(accusation.getWeapon()) ) {
+			return true;
+		}else {
 			return false;
 		}
-		if(!(getSolution().room.equals(accusation.getRoom()))) {
-			return false;
-		}
-		if(!(getSolution().weapon.equals(accusation.getWeapon()))) {
-			return false;
-		}
-		
-		return true;
 	}
 	
 	public Player getHumanPlayer() {
