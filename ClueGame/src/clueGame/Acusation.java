@@ -98,7 +98,7 @@ public class Acusation extends JDialog {
 				suggestion.weapon = new Card(selectedWeapon, CardType.WEAPON);
 				
 				
-				if(board.checkAccusation(suggestion) == false) {   //should move to ClueGameGUI?
+				if(board.checkAccusation(suggestion).equals(false)) {   //should move to ClueGameGUI?
 					board.incorrectAccusation(suggestion);
 				}else {
 					board.correctAccusation(suggestion);
@@ -137,7 +137,7 @@ public class Acusation extends JDialog {
 				suggestion.weapon = new Card(selectedWeapon, CardType.WEAPON);
 				
 				
-				if(board.checkAccusation(suggestion) == false) {       //should move to ClueGameGUI?
+				if(board.checkAccusation(suggestion).equals(false)) {       //should move to ClueGameGUI?
 					board.incorrectAccusation(suggestion);
 				}else {
 					board.correctAccusation(suggestion);
