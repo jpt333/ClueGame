@@ -588,7 +588,7 @@ public class Board extends JPanel{
 //		if(!getSolution().getWeapon().equals(accusation.getWeapon())) {
 //			return false;
 //		}
-//		
+		System.out.print("HERE");
 //		return true;
 		if(solution.getPerson().equals(accusation.getPerson()) && solution.getRoom().equals(accusation.getRoom()) && solution.getWeapon().equals(accusation.getWeapon()) ) {
 			return true;
