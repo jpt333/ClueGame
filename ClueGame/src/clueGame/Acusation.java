@@ -91,6 +91,18 @@ public class Acusation extends JDialog {
 				System.out.println(selectedPerson);
 				System.out.println(selectedWeapon);
 				
+				Solution suggestion = new Solution();
+				suggestion.person = new Card(selectedPerson, CardType.PERSON);
+				suggestion.room = new Card(selectedRoom, CardType.ROOM);
+				suggestion.weapon = new Card(selectedWeapon, CardType.WEAPON);
+				
+				
+				if(board.checkAccusation(suggestion) == false) {
+					board.incorrectAccusation(suggestion);
+				}else {
+					board.correctAccusation(suggestion);
+				}
+				
 				updatAssets();
 				dispose();
 			}
