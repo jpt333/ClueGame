@@ -200,12 +200,12 @@ public class Acusation extends JDialog {
 	    suggestion.weapon = new Card(selectedWeapon, CardType.WEAPON);
 	
 		//something wrong with guess result
-		//Card guessResult = gameBoard.handleSuggestionTech(suggestion);
+		Card guessResult = gameBoard.handleSuggestionTech(suggestion);
 		
 		assets.setAsset(personCard, selectedPerson, CardType.PERSON);
 		assets.setAsset(weaponcard, selectedRoom, CardType.ROOM);
 		assets.setAsset(roomCard, selectedWeapon, CardType.WEAPON);
-		//assets.setAsset(guessResultCard, guessResult.getCardName(), guessResult.getCardType());
+		assets.setAsset(guessResultCard, guessResult.getCardName(), guessResult.getCardType());
 	}
 	
 	//testing
