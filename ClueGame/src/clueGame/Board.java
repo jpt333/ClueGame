@@ -605,7 +605,7 @@ public class Board extends JPanel{
 		self = playersLoc[randomNum];
 		players.remove(self);
 		for(Player i: players) {
-			computerPlayers.add(new ComputerPlayer(i.getPlayerName(), i.getCurrentLocation(), i.getColor()));
+			computerPlayers.add(new ComputerPlayer(i.getPlayerName(), i.getCurrentLocation(), i.getColor(), i.getCards()));
 		}
 		players.add(self);
 		return self;

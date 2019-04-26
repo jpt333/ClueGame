@@ -13,10 +13,10 @@ public class ComputerPlayer extends Player {
 	Set<Character> roomsVisited;
 	BoardCell justVisited;
 	
-	public ComputerPlayer(String playerName, BoardCell currentLocation, Color color) {
+	public ComputerPlayer(String playerName, BoardCell currentLocation, Color color, Set<Card> cardsIn) {
 		super(playerName, currentLocation, color);
 		roomsVisited = new HashSet<>();
-		
+		cards = cardsIn;
 	}
 
 	

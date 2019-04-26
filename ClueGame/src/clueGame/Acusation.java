@@ -98,11 +98,7 @@ public class Acusation extends JDialog {
 				suggestion.weapon = new Card(selectedWeapon, CardType.WEAPON);
 				
 				
-				if(gameBoard.checkAccusation(suggestion) == false) {   //should move to ClueGameGUI?
-					gameBoard.incorrectAccusation(suggestion);
-				}else {
-					gameBoard.correctAccusation(suggestion);
-				}
+				//you don't check suggestions just accusations
 				
 				updatAssets();
 				dispose();
