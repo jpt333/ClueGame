@@ -1,3 +1,4 @@
+//Authors: Michael Berg and Jennifer Phan
 package clueGame;
 
 import java.awt.BorderLayout;
@@ -97,7 +98,7 @@ public class Acusation extends JDialog {
 				suggestion.weapon = new Card(selectedWeapon, CardType.WEAPON);
 				
 				
-				if(board.checkAccusation(suggestion) == false) {
+				if(board.checkAccusation(suggestion) == false) {   //should move to ClueGameGUI?
 					board.incorrectAccusation(suggestion);
 				}else {
 					board.correctAccusation(suggestion);
@@ -105,7 +106,7 @@ public class Acusation extends JDialog {
 				
 				updatAssets();
 				dispose();
-			}
+			}							//Does it need a cancel button?
 		});
 		buttonPane.add(submitButton);
 		getRootPane().setDefaultButton(submitButton);
@@ -136,7 +137,7 @@ public class Acusation extends JDialog {
 				suggestion.weapon = new Card(selectedWeapon, CardType.WEAPON);
 				
 				
-				if(board.checkAccusation(suggestion) == false) {
+				if(board.checkAccusation(suggestion) == false) {       //should move to ClueGameGUI?
 					board.incorrectAccusation(suggestion);
 				}else {
 					board.correctAccusation(suggestion);
