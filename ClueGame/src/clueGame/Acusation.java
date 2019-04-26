@@ -140,7 +140,7 @@ public class Acusation extends JDialog {
 				if(board.checkAccusation(suggestion) == false) {       //should move to ClueGameGUI?
 					board.incorrectAccusation(suggestion);
 				}else {
-					board.correctAccusation(suggestion);
+					board.correctAccusation(suggestion); 
 				}
 			}
 		});
