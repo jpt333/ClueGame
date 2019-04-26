@@ -63,7 +63,6 @@ public class ClueGameGUI extends JFrame{
 	public static void main(String[] args) {
 			ClueGameGUI window = new ClueGameGUI();
 	}
-
 	
 	ClueGameGUI() {
 		//everything concerning board set up and the first turn goes here

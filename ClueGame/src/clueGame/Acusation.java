@@ -1,3 +1,4 @@
+//Authors: Michael Berg and Jennifer Phan
 package clueGame;
 
 import java.awt.BorderLayout;
@@ -40,7 +41,7 @@ public class Acusation extends JDialog {
 	private JLabel roomCard;
 	private JLabel guessResultCard;
 	
-	Board board = Board.getInstance();
+	Board board = Board.getInstance();          //Is this correct in getting the board in ClueGameGUI?
 	
 	
 	public String getSelectedRoom() {
@@ -91,9 +92,21 @@ public class Acusation extends JDialog {
 				System.out.println(selectedPerson);
 				System.out.println(selectedWeapon);
 				
+				Solution suggestion = new Solution();
+				suggestion.person = new Card(selectedPerson, CardType.PERSON);
+				suggestion.room = new Card(selectedRoom, CardType.ROOM);
+				suggestion.weapon = new Card(selectedWeapon, CardType.WEAPON);
+				
+				
+				if(board.checkAccusation(suggestion) == false) {   //should move to ClueGameGUI?
+					board.incorrectAccusation(suggestion);
+				}else {
+					board.correctAccusation(suggestion);
+				}
+				
 				updatAssets();
 				dispose();
-			}
+			}							//Does it need a cancel button?
 		});
 		buttonPane.add(submitButton);
 		getRootPane().setDefaultButton(submitButton);
@@ -124,7 +137,7 @@ public class Acusation extends JDialog {
 				suggestion.weapon = new Card(selectedWeapon, CardType.WEAPON);
 				
 				
-				if(board.checkAccusation(suggestion) == false) {
+				if(board.checkAccusation(suggestion).equals(false)) {       //should move to ClueGameGUI?
 					board.incorrectAccusation(suggestion);
 				}else {
 					board.correctAccusation(suggestion);
