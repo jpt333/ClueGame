@@ -41,7 +41,7 @@ public class Acusation extends JDialog {
 	private JLabel roomCard;
 	private JLabel guessResultCard;
 	
-	Board board = Board.getInstance();          //Is this correct in getting the board in ClueGameGUI?
+	//Board board = Board.getInstance();          //Is this correct in getting the board in ClueGameGUI?
 	
 	
 	public String getSelectedRoom() {
@@ -98,10 +98,10 @@ public class Acusation extends JDialog {
 				suggestion.weapon = new Card(selectedWeapon, CardType.WEAPON);
 				
 				
-				if(board.checkAccusation(suggestion) == false) {   //should move to ClueGameGUI?
-					board.incorrectAccusation(suggestion);
+				if(gameBoard.checkAccusation(suggestion) == false) {   //should move to ClueGameGUI?
+					gameBoard.incorrectAccusation(suggestion);
 				}else {
-					board.correctAccusation(suggestion);
+					gameBoard.correctAccusation(suggestion);
 				}
 				
 				updatAssets();
@@ -137,10 +137,10 @@ public class Acusation extends JDialog {
 				suggestion.weapon = new Card(selectedWeapon, CardType.WEAPON);
 				
 				
-				if(board.checkAccusation(suggestion) == false) {       //should move to ClueGameGUI?
-					board.incorrectAccusation(suggestion);
+				if(gameBoard.checkAccusation(suggestion) == false) {       //should move to ClueGameGUI?
+					gameBoard.incorrectAccusation(suggestion);
 				}else {
-					board.correctAccusation(suggestion); 
+					gameBoard.correctAccusation(suggestion); 
 				}
 			}
 		});
