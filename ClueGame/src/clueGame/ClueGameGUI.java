@@ -173,10 +173,12 @@ public class ClueGameGUI extends JFrame{
 		
 		accusationButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Acusation accusation = new Acusation();
-				accusation.setAssetManager(gameBoard, assets, personCard, weaponcard, roomCard, guessResultCard);
-				accusation.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-				accusation.setVisible(true);
+				if(moved == false) {
+					Acusation accusation = new Acusation();
+					accusation.setAssetManager(gameBoard, assets, personCard, weaponcard, roomCard, guessResultCard);
+					accusation.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+					accusation.setVisible(true);
+				}
 			}
 		});
 		
@@ -198,7 +200,6 @@ public class ClueGameGUI extends JFrame{
 						gameBoard.calcTargets(self.getCurrentLocation().getLocation().y, self.getCurrentLocation().getLocation().x, diceRoll);
 						assets.setAsset(diceIcon, diceRoll);
 						assets.setAsset(playTurnCard, self.getPlayerName(), CardType.PERSON);
-						//check if in room 
 						redraw();
 					}else {
 						//computer players turn
@@ -210,8 +211,14 @@ public class ClueGameGUI extends JFrame{
 						//check if in room 
 						if(currentPlayer.getCurrentLocation().isRoom()) {
 							//make a suggestion
-							
+							Solution computerSuggestion = currentPlayer.createSuggestion(gameBoard.getDeck());
 							//have the board handle the suggestion
+							Card guessResult = gameBoard.handleSuggestionTech(computerSuggestion);
+							
+							assets.setAsset(personCard, computerSuggestion.person.getCardName(), CardType.PERSON);
+							assets.setAsset(weaponcard, computerSuggestion.room.getCardName(), CardType.ROOM);
+							assets.setAsset(roomCard, computerSuggestion.weapon.getCardName(), CardType.WEAPON);
+							assets.setAsset(guessResultCard, guessResult.getCardName(), guessResult.getCardType());
 						}
 						redraw();
 					}

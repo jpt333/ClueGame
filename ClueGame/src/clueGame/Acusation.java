@@ -88,21 +88,15 @@ public class Acusation extends JDialog {
 				selectedPerson = (String) personBox.getSelectedItem();
 				selectedWeapon = (String) weaponBox.getSelectedItem();
 				
-				System.out.println(selectedRoom);
-				System.out.println(selectedPerson);
-				System.out.println(selectedWeapon);
-				
 				Solution suggestion = new Solution();
 				suggestion.person = new Card(selectedPerson, CardType.PERSON);
 				suggestion.room = new Card(selectedRoom, CardType.ROOM);
 				suggestion.weapon = new Card(selectedWeapon, CardType.WEAPON);
 				
-				
 				//you don't check suggestions just accusations
-				
 				updatAssets();
 				dispose();
-			}							//Does it need a cancel button?
+			}							
 		});
 		buttonPane.add(submitButton);
 		getRootPane().setDefaultButton(submitButton);
