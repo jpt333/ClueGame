@@ -189,11 +189,9 @@ public class ComputerPlayer extends Player {
 		}
 		Card carddArray[] = new Card[cardsMatching.size()];
 		if(cardsMatching.size() == 1) {
-			System.out.println("Exactly one 1");
 			return cardsMatching.toArray(carddArray)[0];
 		}
 		else if(cardsMatching.size() > 1) {
-			System.out.println("More than 1");
 			Random rand = new Random();
 			int randomNum = rand.nextInt(cardsMatching.size());
 			return cardsMatching.toArray(carddArray)[randomNum];

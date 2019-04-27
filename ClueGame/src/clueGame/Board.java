@@ -354,10 +354,6 @@ public class Board extends JPanel{
 			visitedAddresses.add(randomNum);
 		}
 		
-		System.out.println(solution.room.getCardName());
-		System.out.println(solution.weapon.getCardName());
-		System.out.println(solution.person.getCardName());
-		
 		for(Player playerLoc: players) {
 			  
 			Set<Card> cardSet =  new HashSet<>();
