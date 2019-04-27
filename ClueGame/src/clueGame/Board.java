@@ -346,6 +346,7 @@ public class Board extends JPanel{
 				if(a1 == 2) {
 					if(cardsLoc[randomNum].getCardType() == CardType.ROOM) {
 						solution.room = cardsLoc[randomNum];
+						
 						break;
 					}
 				}
@@ -353,6 +354,9 @@ public class Board extends JPanel{
 			visitedAddresses.add(randomNum);
 		}
 		
+		System.out.println(solution.room.getCardName());
+		System.out.println(solution.weapon.getCardName());
+		System.out.println(solution.person.getCardName());
 		
 		for(Player playerLoc: players) {
 			  
@@ -589,11 +593,9 @@ public class Board extends JPanel{
 //			return false;
 //		}
 //		return true;
-		if(solution.getPerson().equals(accusation.getPerson()) && solution.getRoom().equals(accusation.getRoom()) && solution.getWeapon().equals(accusation.getWeapon()) ) {
-			return true;
-		}else {
-			return false;
-		}
+		return(solution.getPerson().getCardName().equals(accusation.getPerson().getCardName()) 
+				&& solution.getRoom().getCardName().equals(accusation.getRoom().getCardName()) 
+				&& solution.getWeapon().getCardName().equals(accusation.getWeapon().getCardName()));
 	}
 	
 	public Player getHumanPlayer() {
