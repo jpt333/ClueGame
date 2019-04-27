@@ -131,6 +131,7 @@ public class Acusation extends JDialog {
 					gameBoard.incorrectAccusation(suggestion);
 				}else {
 					gameBoard.correctAccusation(suggestion); 
+					dispose();
 				}
 			}
 		});

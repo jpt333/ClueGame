@@ -745,17 +745,12 @@ public class Board extends JPanel{
 		}
 	}	
 	
+	//these should be in gui
 	public void incorrectAccusation(Solution soln) { 
-
 		String message = "Incorrect guess. " + soln.getPerson() + " " + soln.getWeapon() + " " 
 				+ soln.getRoom() + " was not the answer. "; 
 
 		JOptionPane.showMessageDialog(null, message);
-		
-		//testing to check the actual solution of the game
-		System.out.print(solution.person);
-		System.out.print(solution.room);
-		System.out.print(solution.weapon);
 	}
 	
 	public void correctAccusation(Solution soln) { 
