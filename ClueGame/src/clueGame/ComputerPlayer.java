@@ -79,7 +79,7 @@ public class ComputerPlayer extends Player {
 				//randomly select a person card
 				locAvailableCards.rooms.toArray(carddArray);
 				int randomNum = rand.nextInt(locAvailableCards.rooms.size());
-				answer.person = carddArray[randomNum];
+				answer.room = carddArray[randomNum];
 				
 				carddArray = new Card[locAvailableCards.people.size()];
 				//randomly select a person card

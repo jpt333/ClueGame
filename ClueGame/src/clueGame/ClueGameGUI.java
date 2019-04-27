@@ -206,6 +206,24 @@ public class ClueGameGUI extends JFrame{
 						assets.setAsset(diceIcon, diceRoll);
 						assets.setAsset(playTurnCard, currentPlayer.getPlayerName(), CardType.PERSON);
 						gameBoard.calcTargets(currentPlayer.getCurrentLocation().getLocation().y, currentPlayer.getCurrentLocation().getLocation().x, diceRoll);
+						//accusation
+						int chance = rand.nextInt(100);
+						if(chance == 50) {
+							//50 is arbitrary
+							Solution computerAcusation = currentPlayer.makeAccusation(gameBoard.getDeck());
+							if(gameBoard.checkAccusation(computerAcusation) == true) {       //should move to ClueGameGUI?
+								String message =currentPlayer.getPlayerName() + "made a correct accusation (" + computerAcusation.getPerson() + " " + computerAcusation.getWeapon() + " " 
+										+ computerAcusation.getRoom() + ") you lose. "; 
+
+								JOptionPane.showMessageDialog(null, message);
+							}else {
+								String message =currentPlayer.getPlayerName() + "made an incorrect accusation ( " + computerAcusation.getPerson() + " " + computerAcusation.getWeapon() + " " 
+										+ computerAcusation.getRoom() + ") the game is still going. "; 
+
+								JOptionPane.showMessageDialog(null, message);
+								dispose();
+							}
+						}
 						currentPlayer.setCurrentLocation(currentPlayer.pickLocation(gameBoard.getTargets()));
 						gameBoard.deleteTargets();
 						//check if in room 
